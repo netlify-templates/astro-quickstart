@@ -1,8 +1,49 @@
-# Welcome to [Astro](https://astro.build)
+# Astro Quickstart Template    
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/starter)
+![netlify + astro logo](coming soon)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This is a bare-bones Astro project that has everything you need to quickly deploy it to [Netlify](https://netlify.com). 
+
+Click this button and it will help you create a new repo, create a new Netlify project, and deploy!
+
+[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-quickstart)
+
+## Setup
+
+Clone this repo with one of these options:
+- Click the 'Deploy to Netlify' button above
+- Click the 'Use this template' button at the top of the page
+- Or via the command line `git clone https://github.com/netlify-templates/astro-quickstart`
+
+Then install the necessary packages and run the project locally to make sure everything works.
+
+```bash
+npm install
+npm run dev serve
+```
+
+Alternatively, you can run this locally with [the Netlify CLI](https://docs.netlify.com/cli/get-started/)'s `netlify dev` command for more options like receiving a live preview to share (`netlify dev --live`) and the ability to test [Netlify Functions](https://www.netlify.com/products/functions) and [redirects](https://docs.netlify.com/routing/redirects/). 
+
+## Deploying
+
+There are a few ways to deploy this template:
+- Click the 'Deploy to Netlify' button above 
+- Use the `netlify deploy` command
+- Head to the [Netlify UI](https://app.netlify.com/) to deploy via GitHub or [drag and drop](https://app.netlify.com/drop) the project folder
+- Use the Netlify CLI's create from template command `netlify sites:create-template astro-quickstart` which will create a repo, Netlify project, and deploy it
+
+## Astro 💙 Netlify Resources
+
+Here are some resources to help you on your Angular + Netlify coding fun!
+
+- [Astro on Netlify Integration Page](https://docs.netlify.com/integrations/frameworks/astro)
+- [Build wicked fast sites with Astro: An Introduction](https://www.netlify.com/blog/2021/07/08/build-wicked-fast-sites-with-astro-an-introduction/#main)
+
+- [A Template for Building Shopify Stores with Astro and the Storefront API](https://www.netlify.com/blog/2021/07/23/build-a-modern-shopping-site-with-astro-and-serverless-functions)
+
+Hope this template helps :) Happy coding 👩🏻‍💻!
+
+---
 
 ## 🚀 Project Structure
 
