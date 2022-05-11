@@ -29,23 +29,26 @@ Click this button and it will help you create a new repo, create a new Netlify p
   > Alternatively, you can run this locally with [the Netlify CLI](https://docs.netlify.com/cli/get-started/)'s by running the `netlify dev` command for more options like receiving a live preview to share (`netlify dev --live`) and the ability to test [Netlify Functions](https://www.netlify.com/products/functions) and [redirects](https://docs.netlify.com/routing/redirects/). 
 
   ### 2. Deploying
-  - Install the Netlify CLI globally
+  - Install the Netlify CLI globally `npm install netlify-cli -g`
     
-    `npm install netlify-cli -g`
+  - Run `npm run build`
+
+  - Then use the `netlify deploy` for a deploy preview link or `netlify deploy --prod` to deploy to production
+
+  Here are a few other ways you can deploy this template:
+  
+  - Head to the [Netlify UI](https://app.netlify.com/) to deploy via GitHub or [drag and drop](https://app.netlify.com/drop) the project folder
     
-  - Run the `netlify init` command to setup your project
-
-  - Then use the `netlify deploy` command
-
-  There are a few ways to deploy this template:
-    - Head to the [Netlify UI](https://app.netlify.com/) to deploy via GitHub or [drag and drop](https://app.netlify.com/drop) the project folder
-    - Use the Netlify CLI's create from template command `netlify sites:create-template astro-quickstart` which will create a repo, Netlify project, and deploy it
+  - Use the Netlify CLI's create from template command `netlify sites:create-template astro-quickstart` which will create a repo, Netlify project, and deploy it
+    
+  - If you want to utilize continuous deployment through GitHub webhooks, run the Netlify command `netlify init` to create a new project based on your repo or `netlify link` to connect your repo to an existing project
 
 ## Astro 💙 Netlify Resources
 
 Here are some resources to help you on your Astro + Netlify coding fun!
 
 - [Astro on Netlify Integration Page](https://docs.netlify.com/integrations/frameworks/astro)
+
 - [Build wicked fast sites with Astro: An Introduction](https://www.netlify.com/blog/2021/07/08/build-wicked-fast-sites-with-astro-an-introduction/#main)
 
 - [A Template for Building Shopify Stores with Astro and the Storefront API](https://www.netlify.com/blog/2021/07/23/build-a-modern-shopping-site-with-astro-and-serverless-functions)
