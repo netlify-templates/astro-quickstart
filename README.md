@@ -21,17 +21,23 @@ Click this button and it will help you create a new repo, create a new Netlify p
 
   - Then install the necessary packages and run the project locally to make sure everything works.
 
-  ```bash
-  npm install
-  npm run dev
-  ```
+    ```bash
+    npm install
+    npm run dev
+    ```
 
-  Alternatively, you can run this locally with [the Netlify CLI](https://docs.netlify.com/cli/get-started/)'s `netlify dev` command for more options like receiving a live preview to share (`netlify dev --live`) and the ability to test [Netlify Functions](https://www.netlify.com/products/functions) and [redirects](https://docs.netlify.com/routing/redirects/). 
+  > Alternatively, you can run this locally with [the Netlify CLI](https://docs.netlify.com/cli/get-started/)'s by running the `netlify dev` command for more options like receiving a live preview to share (`netlify dev --live`) and the ability to test [Netlify Functions](https://www.netlify.com/products/functions) and [redirects](https://docs.netlify.com/routing/redirects/). 
 
   ### 2. Deploying
+  - Install the Netlify CLI globally
+    
+    `npm install netlify-cli -g`
+    
+  - Run the `netlify init` command to setup your project
 
-  - There are a few ways to deploy this template:
-    - Use the `netlify deploy` command
+  - Then use the `netlify deploy` command
+
+  There are a few ways to deploy this template:
     - Head to the [Netlify UI](https://app.netlify.com/) to deploy via GitHub or [drag and drop](https://app.netlify.com/drop) the project folder
     - Use the Netlify CLI's create from template command `netlify sites:create-template astro-quickstart` which will create a repo, Netlify project, and deploy it
 
