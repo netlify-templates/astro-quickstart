@@ -10,7 +10,7 @@ Click this button and it will help you create a new repo, create a new Netlify p
 
 [![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-quickstart)
 
-## Regular Setup
+## 💫 Regular Setup
 
  ### 1. Cloning + Install Packages
 
