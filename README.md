@@ -4,6 +4,10 @@
 
 This is a bare-bones Astro project that has everything you need to quickly deploy it to [Netlify](https://netlify.com). 
 
+Hate reading, here's a video: https://youtu.be/SknFflQVOys!
+
+Love reading, here's blog post: www.netlify.app/blog/deploy-your-astro-project-fast/!
+
 ## ⚡️ Quick Setup + Deploy Option
 
 Click this button and it will help you create a new repo, create a new Netlify project, and deploy!
