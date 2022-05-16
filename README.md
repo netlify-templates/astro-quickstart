@@ -36,8 +36,6 @@ Click this button and it will help you create a new repo, create a new Netlify p
   - Then use the `netlify deploy` for a deploy preview link or `netlify deploy --prod` to deploy to production
 
   Here are a few other ways you can deploy this template:
-  
-  - Head to the [Netlify UI](https://app.netlify.com/) to deploy via GitHub or [drag and drop](https://app.netlify.com/drop) the project folder
     
   - Use the Netlify CLI's create from template command `netlify sites:create-template astro-quickstart` which will create a repo, Netlify project, and deploy it
     
