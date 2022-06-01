@@ -1,5 +1,5 @@
 # example netlify.toml
 [build]
-  command = "astro build"
+  command = "wrong"
   functions = "netlify/functions"
   publish = "dist"
