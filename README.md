@@ -10,18 +10,18 @@ Love reading, here's blog post: www.netlify.app/blog/deploy-your-astro-project-f
 
 ## Table of Contents:
 
-- [⚡️ Quick Setup + Deploy Option](#⚡️-quick-setup--deploy-option)
-- [💫 Regular Setup](#💫-regular-setup)
+- [⚡️ Quick Setup + Deploy Option](#-quick-setup--deploy-option)
+- [💫 Regular Setup](#-regular-setup)
   - [Cloning + Install Packages](#1-cloning--install-packages)
   - [Deploying](#2-deploying)
-- [Astro 💙 Netlify Resources](#astro-💙-netlify-resources)
-- [🚀 Project Structure](#🚀-project-structure)
-- [🧞 Commands](#🧞-commands)
-- [🛠 Testing](#🛠-testing)
+- [Astro 💙 Netlify Resources](#astro--netlify-resources)
+- [🚀 Project Structure](#-project-structure)
+- [🧞 Commands](#-commands)
+- [🛠 Testing](#-testing)
   - [Included Default Testing](#included-default-testing)
   - [Removing Renovate](#removing-renovate)
   - [Removing Cypress](#removing-cypress)
-- [👀 Want to learn more?](#👀-want-to-learn-more)
+- [👀 Want to learn more?](#-want-to-learn-more)
 
 ## ⚡️ Quick Setup + Deploy Option
 
