@@ -10,26 +10,26 @@ Love reading, here's blog post: www.netlify.app/blog/deploy-your-astro-project-f
 
 ## Table of Contents:
 
-- [⚡️ Quick Setup + Deploy Option](#-quick-setup--deploy-option)
-- [💫 Regular Setup](#-regular-setup)
+- [Quick Setup + Deploy Option](#quick-setup--deploy-option)
+- [Regular Setup](#regular-setup)
   - [Cloning + Install Packages](#1-cloning--install-packages)
   - [Deploying](#2-deploying)
-- [Astro 💙 Netlify Resources](#astro--netlify-resources)
-- [🚀 Project Structure](#-project-structure)
-- [🧞 Commands](#-commands)
-- [🛠 Testing](#-testing)
+- [Astro + Netlify Resources](#astro--netlify-resources)
+- [Project Structure](#project-structure)
+- [Commands](#commands)
+- [Testing](#testing)
   - [Included Default Testing](#included-default-testing)
   - [Removing Renovate](#removing-renovate)
   - [Removing Cypress](#removing-cypress)
-- [👀 Want to learn more?](#-want-to-learn-more)
+- [Want to learn more?](#want-to-learn-more)
 
-## ⚡️ Quick Setup + Deploy Option
+## Quick Setup + Deploy Option
 
 Click this button and it will help you create a new repo, create a new Netlify project, and deploy!
 
 [![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-quickstart)
 
-## 💫 Regular Setup
+## Regular Setup
 
  ### 1. Cloning + Install Packages
 
@@ -60,7 +60,7 @@ Click this button and it will help you create a new repo, create a new Netlify p
     
   - If you want to utilize continuous deployment through GitHub webhooks, run the Netlify command `netlify init` to create a new project based on your repo or `netlify link` to connect your repo to an existing project
 
-## Astro 💙 Netlify Resources
+## Astro + Netlify Resources
 
 Here are some resources to help you on your Astro + Netlify coding fun!
 
@@ -74,7 +74,7 @@ Hope this template helps :) Happy coding 👩🏻‍💻!
 
 ---
 
-## 🚀 Project Structure
+## Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -96,7 +96,7 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -107,7 +107,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
 
-## 🛠 Testing
+## Testing
 
 ### Included Default Testing
 
@@ -149,6 +149,6 @@ And lastly if you’d like to remove Cypress entirely, delete the entire `cypre
 npm uninstall cypress
 ```
 
-## 👀 Want to learn more?
+## Want to learn more?
 
 Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
