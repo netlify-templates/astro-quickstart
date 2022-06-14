@@ -8,13 +8,28 @@ Hate reading, here's a video: https://youtu.be/SknFflQVOys!
 
 Love reading, here's blog post: www.netlify.app/blog/deploy-your-astro-project-fast/!
 
-## ⚡️ Quick Setup + Deploy Option
+## Table of Contents:
+
+- [Quick Setup + Deploy Option](#quick-setup--deploy-option)
+- [Regular Setup](#regular-setup)
+  - [Cloning + Install Packages](#1-cloning--install-packages)
+  - [Deploying](#2-deploying)
+- [Astro + Netlify Resources](#astro--netlify-resources)
+- [Project Structure](#project-structure)
+- [Commands](#commands)
+- [Testing](#testing)
+  - [Included Default Testing](#included-default-testing)
+  - [Removing Renovate](#removing-renovate)
+  - [Removing Cypress](#removing-cypress)
+- [Want to learn more?](#want-to-learn-more)
+
+## Quick Setup + Deploy Option
 
 Click this button and it will help you create a new repo, create a new Netlify project, and deploy!
 
 [![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-quickstart)
 
-## 💫 Regular Setup
+## Regular Setup
 
  ### 1. Cloning + Install Packages
 
@@ -45,7 +60,7 @@ Click this button and it will help you create a new repo, create a new Netlify p
     
   - If you want to utilize continuous deployment through GitHub webhooks, run the Netlify command `netlify init` to create a new project based on your repo or `netlify link` to connect your repo to an existing project
 
-## Astro 💙 Netlify Resources
+## Astro + Netlify Resources
 
 Here are some resources to help you on your Astro + Netlify coding fun!
 
@@ -59,7 +74,7 @@ Hope this template helps :) Happy coding 👩🏻‍💻!
 
 ---
 
-## 🚀 Project Structure
+## Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -81,7 +96,7 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -92,6 +107,48 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
 
-## 👀 Want to learn more?
+## Testing
+
+### Included Default Testing
+
+We’ve included some tooling that helps us maintain these templates. This template currently uses:
+
+- [Renovate](https://www.mend.io/free-developer-tools/renovate/) - to regularly update our dependencies
+- [Cypress](https://www.cypress.io/) - to run tests against how the template runs in the browser
+- [Cypress Netlify Build Plugin](https://github.com/cypress-io/netlify-plugin-cypress) - to run our tests during our build process
+
+If your team is not interested in this tooling, you can remove them with ease!
+
+### Removing Renovate
+
+In order to keep our project up-to-date with dependencies we use a tool called [Renovate](https://github.com/marketplace/renovate). If you’re not interested in this tooling, delete the `renovate.json` file and commit that onto your main branch.
+
+### Removing Cypress
+
+For our testing, we use [Cypress](https://www.cypress.io/) for end-to-end testing. This makes sure that we can validate that our templates are rendering and displaying as we’d expect. By default, we have Cypress not generate deploy links if our tests don’t pass. If you’d like to keep Cypress and still generate the deploy links, go into your `netlify.toml` and delete the plugin configuration lines:
+
+```diff
+[[plugins]]
+  package = "netlify-plugin-cypress"
+-  [plugins.inputs.postBuild]
+-    enable = true
+-
+-  [plugins.inputs]
+-    enable = false 
+```
+
+If you’d like to remove the `netlify-plugin-cypress` build plugin entirely, you’d need to delete the entire block above instead. And then make sure sure to remove the package from the dependencies using:
+
+```bash
+npm uninstall -D netlify-plugin-cypress
+```
+
+And lastly if you’d like to remove Cypress entirely, delete the entire `cypress` folder and the `cypress.config.ts` file. Then remove the dependency using:
+
+```bash
+npm uninstall cypress
+```
+
+## Want to learn more?
 
 Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
