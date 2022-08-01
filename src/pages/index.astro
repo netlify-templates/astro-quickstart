@@ -5,21 +5,23 @@ import Layout from '../components/Layout.astro';
 <Layout title="Astro Quickstart">
 	<main>
       <div class="header">
+        <h1>Quickstart Template</h1>
         <div class="logo">
-          <img src="https://res.cloudinary.com/dzkoxrsdj/image/upload/v1652291187/astro_1_c1yk5a.png">
+          <img src="https://res.cloudinary.com/dzkoxrsdj/image/upload/v1652291187/astro_1_c1yk5a.png" alt="Netlify plus Astro banner">
+        </div>
+        <div class="bttns">
+          <a href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-quickstart" class="bttn primary">Deploy to Netlify</a>
+          <a href="https://github.com/netlify-templates/astro-quickstart" class="bttn secondary">View Repo</a>
         </div>
       </div>
 			<div class="resource-list">
         <h2>
-            Here are some resources to help you on your Astro + Netlify journey:
+          This is a bare-bones Astro project that has everything you need to quickly deploy it to Netlify
         </h2>
         <ul>
           <li>
-            <a href="https://github.com/netlify-templates/astro-quickstart">The Astro Quickstart repo</a>
-          </li>
-          <li>
             <a href="https://ntl.fyi/38O9wmY">Netlify Blog: Astro posts</a>
-						</li>
+					</li>
           <li>
             <a href="https://ntl.fyi/3KHGtyz">Netlify Docs</a>
           </li>
@@ -33,43 +35,3 @@ import Layout from '../components/Layout.astro';
       </footer>
 	</main>
 </Layout>
-<style>
-  html {
-		background-color: unset;
-	}
-	.logo img {
-    padding: 30px 0;
-    width: 100%;
-  }
-
-  .resource-list {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: larger;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .resource-list ul {
-      text-align: left;
-      margin: 0 auto;
-      width: 300px;
-  }
-
-  .resource-list a {
-    color: black;
-    line-height: 30px;
-  }
-
-  footer {
-    bottom: 10px;
-    font-family: Helvetica, Arial, sans-serif;
-    margin: 0 auto;
-    width: 100%;
-    position: fixed;
-    text-align: center;
-  }
-
-  footer img {
-      width: 20px;
-  }
-</style>
