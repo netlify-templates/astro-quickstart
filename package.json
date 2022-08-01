@@ -9,7 +9,8 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^1.0.0-beta.20"
+    "astro": "^1.0.0-beta.20",
+    "sass": "^1.54.0"
   },
   "dependencies": {
     "cypress": "^10.0.3"
