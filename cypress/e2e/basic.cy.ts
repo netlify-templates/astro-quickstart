@@ -4,8 +4,8 @@ describe('empty spec', () => {
   })
 
   it('displays the resources text', () => {
-    cy.get('h2')
-    .contains('Here are some resources to help you on your Astro + Netlify journey');
+    cy.get('h1')
+    .contains('Quickstart Template');
   })
   it('renders the image', () => {
     cy.get('img')
