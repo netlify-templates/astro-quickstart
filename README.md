@@ -85,8 +85,10 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── src/
 │   ├── components/
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── pages/
+│   │   └── index.astro
+│   └── style/
+│       └── demo-styling.scss
 └── package.json
 ```
 
@@ -95,6 +97,32 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components or layouts.
 
 Any static assets, like images, can be placed in the `public/` directory.
+
+## Styling
+
+We've added some modern styling to this template using Sass within an external stylesheet, this will allow you to easily remove our styling and add in your own. 
+
+If you decide that you want to keep our styling you can review our style notes below. 
+
+### Notes on Styling
+
+The variables below give you the ability to change the gradient colors of the blobs and are interpolated into the URL string of the background-img within the body. 
+
+```scss
+// Controls the blob blur gradient colors within the body bckground image url
+$top-right-blur-1: '20C6B7';
+$top-right-blur-2: '4D9ABF';
+$bttm-left-blur-1: 'FF5C02';
+$bttm-left-blur-2: 'FFCDB1';
+
+...
+
+body{
+    background-image: url("data:image/svg+xml,%3Csvg width='1728' height='1235' viewBox='0 0 1728 1235' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.75' filter='url(%23filter0_f_39_143)'%3E%3Ccircle cy='1000' r='264' fill='url(%23paint0_linear_39_143)'/%3E%3C/g%3E%3Cg opacity='0.65' filter='url(%23filter1_f_39_143)'%3E%3Ccircle cx='1720' cy='264' r='379' fill='url(%23paint1_linear_39_143)'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f_39_143' x='-485' y='515' width='970' height='970' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='110.5' result='effect1_foregroundBlur_39_143'/%3E%3C/filter%3E%3Cfilter id='filter1_f_39_143' x='1120' y='-336' width='1200' height='1200' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeGaussianBlur stdDeviation='110.5' result='effect1_foregroundBlur_39_143'/%3E%3C/filter%3E%3ClinearGradient id='paint0_linear_39_143' x1='196.5' y1='902' x2='-2.55853e-05' y2='1264' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23#{$bttm-left-blur-1}'/%3E%3Cstop offset='1' stop-color='%23FFCDB1'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_39_143' x1='1720' y1='-115' x2='1720' y2='643' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23#{$top-right-blur-1}'/%3E%3Cstop offset='1' stop-color='%23#{$top-right-blur-2}'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+    ...
+  }
+```
+
 
 ## Commands
 
