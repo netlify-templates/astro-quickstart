@@ -16,6 +16,8 @@ Love reading, here's blog post: www.netlify.app/blog/deploy-your-astro-project-f
   - [Deploying](#2-deploying)
 - [Astro + Netlify Resources](#astro--netlify-resources)
 - [Project Structure](#project-structure)
+- [Styling](#styling)
+  - [Notes on Styling](#notes-on-styling)
 - [Commands](#commands)
 - [Testing](#testing)
   - [Included Default Testing](#included-default-testing)
