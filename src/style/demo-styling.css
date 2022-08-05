@@ -15,7 +15,7 @@ html {
     background: var(--color-bg);
     font-family: var(--main-family);
     min-height: 100%;
-  }
+}
 
 #background {
     position: fixed;
