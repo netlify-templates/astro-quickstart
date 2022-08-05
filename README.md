@@ -18,6 +18,7 @@ Love reading, here's blog post: www.netlify.app/blog/deploy-your-astro-project-f
 - [Project Structure](#project-structure)
 - [Styling](#styling)
   - [Notes on Styling](#notes-on-styling)
+  - [Remove Styling](#remove-styling)
 - [Commands](#commands)
 - [Testing](#testing)
   - [Included Default Testing](#included-default-testing)
@@ -118,7 +119,7 @@ The variables below give you the ability to change the gradient colors of the bl
 --bttm-left-blur-2: #FFCDB1;
 ```
 
-## Remove Styling
+### Remove Styling
 
 If you decide that our styling is not for you, all you'll need to do is remove the [demo-styling.css](https://github.com/netlify-templates/astro-quickstart/tree/main/src/style/demo-styling.css) file. 
 
