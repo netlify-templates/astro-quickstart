@@ -103,7 +103,7 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 ## Styling
 
-We've added some modern styling to this template using Sass within an external stylesheet, this will allow you to easily remove our styling and add in your own. 
+We've added some modern styling to this template using css within an external stylesheet, this will allow you to easily remove our styling and add in your own. 
 
 If you decide that you want to keep our styling you can review our style notes below. 
 
