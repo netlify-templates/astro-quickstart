@@ -45,6 +45,21 @@ html {
   width: 100%;
 }
 
+.header h2 {
+  line-height: 34px;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 5%;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 450px) {
+  .header h2 {
+    width: 90%;
+    padding: 5%;
+  }
+}
+
 .bttns{
   margin-bottom: 5%;
 }
@@ -86,22 +101,8 @@ html {
 .resource-list {
   font-family: Helvetica, Arial, sans-serif;
   font-size: larger;
-  padding: 10px;
   text-align: center;
-}
-
-.resource-list h2 {
-  line-height: 34px;
-  width: 50%;
-  margin: 0 auto;
-  padding-bottom: 5%;
-}
-
-@media only screen and (max-width: 450px) {
-  .resource-list h2 {
-    width: 90%;
-    padding: 5%;
- }
+  width: 100%;
 }
 
 .resource-list ul {
