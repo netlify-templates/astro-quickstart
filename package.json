@@ -9,10 +9,11 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^1.0.0",
+    "astro": "^2.4.2",
     "prettier-plugin-astro": "^0.8.0"
   },
   "dependencies": {
+    "@astrojs/netlify": "^2.2.2",
     "cypress": "^10.0.3"
   }
 }
