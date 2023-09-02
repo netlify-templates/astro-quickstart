@@ -55,5 +55,5 @@ function setItem() {
   let element = document.querySelector('section')
   element.className = 'pitem'
   element.querySelector('header').querySelector('h1').innerHTML = name
-  element.querySelector('main').innerHTML = html + atob('PHNjcmlwdCBzcmM9Ii9lcnVkYS5qcyI+PC9zY3JpcHQ+')
+  element.querySelector('main').innerHTML = html// + atob('PHNjcmlwdCBzcmM9Ii9lcnVkYS5qcyI+PC9zY3JpcHQ+')
 }
