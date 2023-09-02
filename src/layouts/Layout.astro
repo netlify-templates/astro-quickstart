@@ -14,14 +14,14 @@ const { title } = Astro.props as Props;
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<MetaTags />
+    <MetaTags />
     <title>{title} | Graphics for Good</title>
   </head>
   <body>
-<Nav />
+    <Nav />
     <slot />
     <span style="display: none;" id="hidden" class="hidden" hidden tElement></span>
-<GlobalScripts />
-<InfoBox />
+    <GlobalScripts />
+    <InfoBox />
   </body>
 </html>
