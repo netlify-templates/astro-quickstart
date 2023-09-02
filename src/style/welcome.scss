@@ -1,0 +1,85 @@
+body {
+    height: 100%;
+    display: block;
+    --bg-color: white;
+    --text-color: black;
+  }
+    
+  iframe {
+    z-index: 1;
+    border: none;
+    height: 100%;
+    width: 100%;
+  }
+  
+  #welcome, #welcome-bg, iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+    
+  #welcome-bg {
+    z-index: 2;
+    --bg-color: white;
+    opacity: 50%;
+    height: 100%;
+    width: 100%;
+  }
+  #welcome {
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --bg-color: transparent;
+  }
+    
+  #welcome > div {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    box-shadow: 0px 0px 50px 50px #1a4276;
+    border-radius: 25px;
+    padding: 25px;
+    opacity: 200%;
+    --bg-color: #1a4276;
+    --text-color: white;
+    max-width: 750px;
+    max-height: 750px;
+  }
+    
+  #welcome section[top], section[middle], section[bottom] {
+    display: flex;
+    justify-content: center;
+  }
+    
+  #welcome section[top] > h1 {
+    font-weight: 400;
+    text-align: center;
+  }
+    
+  #welcome section[middle] {
+    justify-content: left;
+    align-items: center;
+    gap: 25px;
+    flex-direction: column;
+    flex: 1;
+  }
+    
+  #welcome section[middle] > #whymakethisclub {
+    font-weight: 300;
+    text-align: center;
+  }
+    
+  #welcome section[bottom] {
+    gap: 100px;
+  }
+    
+  #welcome .btn:not(.primary) {
+    --bg-color: white;
+  }
+  #welcome .btn.primary {
+    border-color: black !important;
+  }
