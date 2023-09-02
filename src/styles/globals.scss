@@ -73,20 +73,6 @@ body {
   flex-direction: column; */
 }
 
-a#go2content[href="javascript:scrollToNum()"] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 8px;
-  opacity: 0;
-  z-index: -999;
-
-  &:focus {
-    opacity: 100;
-    z-index: 999;
-  }
-}
-
 [conicSans] {
   font-family: 'Shantell Sans', sans-serif
 }
