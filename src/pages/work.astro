@@ -1,62 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-<metaTags />
-    <meta property="title" content="Member Work | Graphics for Good">
-    <meta property="og:title" content="Member Work | Graphics for Good">
-    <title>Member Work | Graphics for Good</title>
-  </head>
-  <body>
-<nav bBorder />
-    <section id="content"></section>
-    <main class="photos" id="mwork">
-      <section>
-        <style>
-          main.photos#mwork > h1 {
-            -webkit-user-select: none; /* Safari */
-            -ms-user-select: none; /* IE 10 and IE 11 */
-            user-select: none; /* Standard syntax */
-          }
-        </style>
-        <h1 style="--text-color: blue; cursor: pointer;" onclick="magic()" title="Click here to convert to list!">Member Work</h1>
-        <div class="carousel">
-          <a href="javascript:goBack(0)">
-            <img src="assets/arrows/L.svg" class="button" draggable="false">
-          </a>
-          <ul class="imgs">
-            <img src="assets/blank.png" draggable="false">
-            <img class="left" src="assets/members/isabelle/portfolio/previews/Birds-are-essential-for-our-environment!.png" draggable="false">
-            <img class="active" src="assets/members/shikha/portfolio/previews/Did-you-know.png" draggable="false">
-            <img class="right" src="assets/members/shikha/portfolio/previews/Women's-History-Month!.png" draggable="false">
-            <img src="assets/members/samantha/portfolio/previews/Help-save-the-oceans_1.png" draggable="false">
-            <img src="assets/members/samantha/portfolio/previews/Help-save-the-oceans_2.png" draggable="false">
-            <img src="assets/members/samantha/portfolio/previews/Help-save-the-oceans_3.png" draggable="false">
-            <img src="assets/members/samantha/portfolio/previews/Help-save-the-oceans_4.png" draggable="false">
-            <img src="assets/members/isabelle/portfolio/previews/DON'T-EAT-FROGS.png" draggable="false">
-            <img src="assets/members/isabelle/portfolio/previews/Untitled-(800-x-1000-px).png" draggable="false">
-            <img src="assets/members/shikha/portfolio/previews/Elarra.jpg" draggable="false">
-            <img src="assets/members/shikha/portfolio/previews/Fairy.jpg" draggable="false">
-            <img src="assets/members/shikha/portfolio/previews/c3.jpg" draggable="false">
-            <img src="assets/members/shikha/portfolio/previews/Rapunzel.jpg" draggable="false">
-            <img src="assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_4.png" draggable="false">
-            <img src="assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_5.png" draggable="false">
-            <img src="assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_6.png" draggable="false">
-            <img src="assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_7.png" draggable="false">
-            <!--<img src="assets/members/hanlin/portfolio/previews/G4G-Ad.png" draggable="false">-->
-            <img src="assets/blank.png" draggable="false">
-          </ul>
-          <a href="javascript:goForw(0)">
-            <img src="assets/arrows/R.svg" class="button" draggable="false">
-          </a>
-        </div>
-      </section>
-    </main>
-    <span style="display: none;" id="hidden" class="hidden" hidden tElement></span>
-    <script is:inline src="convertCarousel.js"></script>
-    <script is:inline src="carousel.js"></script>
-    <script is:inline src="work.js"></script>
-    <script is:inline src="modal.js"></script>
-<globalScripts />
-<infoBox />
-  </body>
-</html>
+---
+import Layout from '../layouts/Layout.astro'
+---
+<Layout title="Member Work">
+  <section id="content"></section>
+  <main class="photos" id="mwork">
+    <section>
+      <style>
+        main.photos#mwork > h1 {
+          -webkit-user-select: none; /* Safari */
+          -ms-user-select: none; /* IE 10 and IE 11 */
+          user-select: none; /* Standard syntax */
+        }
+      </style>
+      <h1 style="--text-color: blue; cursor: pointer;" onclick="magic()" title="Click here to convert to list!">Member Work</h1>
+      <div class="carousel">
+        <a href="javascript:goBack(0)">
+          <img src="assets/arrows/L.svg" class="button" draggable="false">
+        </a>
+        <ul class="imgs">
+          <img src="assets/blank.png" draggable="false">
+          <img class="left" src="assets/members/isabelle/portfolio/previews/Birds-are-essential-for-our-environment!.png" draggable="false">
+          <img class="active" src="assets/members/shikha/portfolio/previews/Did-you-know.png" draggable="false">
+          <img class="right" src="assets/members/shikha/portfolio/previews/Women's-History-Month!.png" draggable="false">
+          <img src="assets/members/samantha/portfolio/previews/Help-save-the-oceans_1.png" draggable="false">
+          <img src="assets/members/samantha/portfolio/previews/Help-save-the-oceans_2.png" draggable="false">
+          <img src="assets/members/samantha/portfolio/previews/Help-save-the-oceans_3.png" draggable="false">
+          <img src="assets/members/samantha/portfolio/previews/Help-save-the-oceans_4.png" draggable="false">
+          <img src="assets/members/isabelle/portfolio/previews/DON'T-EAT-FROGS.png" draggable="false">
+          <img src="assets/members/isabelle/portfolio/previews/Untitled-(800-x-1000-px).png" draggable="false">
+          <img src="assets/members/shikha/portfolio/previews/Elarra.jpg" draggable="false">
+          <img src="assets/members/shikha/portfolio/previews/Fairy.jpg" draggable="false">
+          <img src="assets/members/shikha/portfolio/previews/c3.jpg" draggable="false">
+          <img src="assets/members/shikha/portfolio/previews/Rapunzel.jpg" draggable="false">
+          <img src="assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_4.png" draggable="false">
+          <img src="assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_5.png" draggable="false">
+          <img src="assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_6.png" draggable="false">
+          <img src="assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_7.png" draggable="false">
+          <!--<img src="assets/members/hanlin/portfolio/previews/G4G-Ad.png" draggable="false">-->
+          <img src="assets/blank.png" draggable="false">
+        </ul>
+        <a href="javascript:goForw(0)">
+          <img src="assets/arrows/R.svg" class="button" draggable="false">
+        </a>
+      </div>
+    </section>
+  </main>
+  <script is:inline src="convertCarousel.js"></script>
+  <script is:inline src="carousel.js"></script>
+  <script is:inline src="work.js"></script>
+  <script is:inline src="modal.js"></script>
+</Layout>

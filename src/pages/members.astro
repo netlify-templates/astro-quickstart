@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-<metaTags />
-    <meta property="title" content="Members | Graphics for Good">
-    <meta property="og:title" content="Members | Graphics for Good">
-    <title>Members | Graphics for Good</title>
-  </head>
-  <body>
-<nav />
-    <script is:inline src="/members.js"></script>
-    <script is:inline src="/modal.js"></script>
-<globalScripts />
-<infoBox />
-  </body>
-</html>
+---
+import Layout from '../layouts/Layout.astro'
+---
+<Layout title="Members">
+  <script is:inline src="/members.js"></script>
+  <script is:inline src="/modal.js"></script>
+</Layout>
