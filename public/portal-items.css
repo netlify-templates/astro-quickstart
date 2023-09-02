@@ -1,0 +1,12 @@
+#emailtemplatetext {
+  text-align: center;
+  border-radius: 10px !important;
+  margin: 10px;
+  --bg-color: white;
+  --text-color: black;
+}
+#emailtemplatetext > * {
+  text-align: center;
+  --bg-color: white !important;
+  --text-color: black;
+}
