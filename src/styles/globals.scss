@@ -835,7 +835,7 @@ main#profile {
       outline: none;
       background-size: contain;
       background-repeat: no-repeat;
-      background-posision: center;
+      background-position: center;
 
       &:hover {
         border-radius: 25%;
@@ -1042,9 +1042,6 @@ form[method="POST"] {
       --bg-color: var(--orig-bg-color);
     }
   }
-}
-
-form[action] input::selection, form[action] textarea::selection, form[action] select::selection {
 }
 
 form[action] * {
