@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<metaTags />
+    <meta property="title" content="Graphics for Good">
+    <meta property="og:title" content="Graphics for Good">
+    <title>Graphics for Good</title>
+    <link rel="stylesheet" href="welcome.css" />
+  </head>
+  <body>
+    <iframe></iframe>
+    <div id="welcome-bg"></div>
+    <div id="welcome">
+      <div>
+        <section top>
+          <h1>Welcome to Graphics for Good</h1>
+        </section>
+        <section middle>
+          <h1 id="whymakethisclub">Why make this club?</h1>
+          <p class="text" centered style="text-align: justify;">
+            Our mission is to help create change in the world through design. We understand the importance of design in the non-profit sector, and we want to use our skills and resources to support organizations that are making a positive impact in our community and beyond. We strive to provide free design help for non-profits that support a wide range of causes, from environmental protection to healthcare, education and more.
+          </p>
+          <p class="text" centered style="text-align: justify;">
+            Our team of experienced designers are passionate about using their skills for good and are dedicated to working closely with non-profit organizations to create graphics and designs that accurately reflect their mission and message. We believe that by providing high-quality design at no cost, we can empower non-profits to more effectively communicate their message and achieve their goals, ultimately making a greater impact in the world.
+          </p>
+        </section>
+        <section bottom>
+          <a onclick="goBack()" class="btn primary">Proceed</a>
+          <a onclick="window.close()" class="btn">Close</a>
+        </section>
+      </div>
+    </div>
+    <script>
+      function setCookie(cname,cvalue,exdays,cpath='/') {
+      const d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = 'expires=' + d.toUTCString();
+        document.cookie = `${cname}=${cvalue};${expires};path=${cpath}`;
+      }
+  
+      function getCookie(cname) {
+        let name = `${cname}=`;
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return '';
+      }
+  
+      setCookie('hasVisited', true, (365/12))
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const path = urlParams.get('p')
+      document.querySelector('iframe').src = `${path}?o=n`
+  
+      function goBack() {
+        history.go(-1)
+        location.href = path.replace('/index.html', '/')
+      }
+    </script>
+  <!--  <script src="eruda.js"></script>-->
+  </body>
+</html>
