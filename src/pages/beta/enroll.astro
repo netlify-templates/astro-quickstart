@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enroll | Website Beta | Graphics for Good</title>
+    <link rel="icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Website Features Beta Program</h1>
+    <button id="enroll">Enroll</button>
+    <button id="unenroll">UnEnroll</button>
+    <script>
+      enroll.addEventListener('click', function() {
+        localStorage.setItem('isBeta', true)
+        let status = String(!!localStorage.getItem('isBeta'))
+          .replace('true', '')
+          .replace('false', 'Un')
+        let word = 'in'
+        if (status === 'Un') {
+          word = 'from'
+        }
+        alert(`${status}Enrolled you ${word} the beta program.`)
+      })
+      unenroll.addEventListener('click', function() {
+        localStorage.removeItem('isBeta')
+        let status = String(!!localStorage.getItem('isBeta'))
+          .replace('true', '')
+          .replace('false', 'Un')
+        let word = 'in'
+        if (status === 'Un') {
+          word = 'from'
+        }
+        alert(`${status}Enrolled you ${word} the beta program.`)
+      })
+    </script>
+  </body>
+</html>
