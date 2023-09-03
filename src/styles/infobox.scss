@@ -1,0 +1,19 @@
+#infobox {
+    --b-r: 25px;
+    --width: calc(200px - 4px);
+    
+    position: sticky;
+    bottom: var(--b-r);
+    left: calc((100% - var(--width)) - var(--b-r)*3);
+    
+    margin: 0;
+  
+    width: var(--width);
+    aspect-ratio: 16 / 9;
+  
+    border-color: var(--orig-bg-color);
+  
+    &[open] {
+        display: inline-flex;
+    }
+}  

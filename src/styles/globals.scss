@@ -101,7 +101,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font, 'Dekko', sans-serif);
+  --font: 'Dekko', sans-serif;
   line-height: 100%;
 }
 
@@ -110,7 +110,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   content: '';
 /*  --bg-color: white; /* For browsers that do not support gradients */
-  background: linear-gradient(var(--grad-start, var(--orig-bg-color)), var(--grad-end, #6c78e5)) !important;
+  --bg-color: transparent;
+  background-image: linear-gradient(var(--grad-start, var(--orig-bg-color)), var(--grad-end, #6c78e5)) !important;
 }
 
 section {
@@ -350,7 +351,7 @@ form[method="POST"] {
     }
   }
 
-  &[action="https://getform.io/f/2c851fff-2ff1-4b87-a215-4f7a9a7d8986"] {
+  &.contact {
     margin-top: 0;
   }
 
@@ -396,51 +397,6 @@ form[action] * {
   --text-color: black;
 
   max-width: 100%;
-}
-
-ul#photos {
-  margin: 0;
-  list-style: none;
-  padding: 0;
-  width: 100%;
-
-  & > li {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-
-    & > div {
-      flex: 1;
-      height: auto;
-    }
-
-    & img {
-      width: 100%;
-      border-radius: 15px;
-      transition: 500ms ease-in-out;
-      cursor: pointer;
-
-      &:hover {
-        border-radius: 10px;
-        transition: 500ms ease-in-out;
-      }
-    }
-
-    & > img:not(& > div > img) {
-      flex: 1;
-      max-width: 100%;
-      height: auto;
-      border-radius: 15px;
-      transition: 500ms ease-in-out;
-      margin: auto 0;
-
-      &:hover {
-        border-radius: 10px;
-        transition: 500ms ease-in-out;
-      }
-    }
-  }
 }
 
 #modal {
@@ -539,26 +495,6 @@ ul#photos {
   }
 }
 
-#infobox {
-  --b-r: 25px;
-  --width: calc(200px - 4px);
-  
-  position: sticky;
-  bottom: var(--b-r);
-  left: calc((100% - var(--width)) - var(--b-r)*3);
-  
-  margin: 0;
-
-  width: var(--width);
-  aspect-ratio: 16 / 9;
-
-  border-color: var(--orig-bg-color);
-
-  &[open] {
-    display: inline-flex;
-  }
-}
-
 h1, h2, h3, h4, h5, h6, img, a.btn {
   &[onclick]:not(main &) {
     -webkit-user-select: none; /* Safari */
@@ -573,5 +509,5 @@ h1, h2, h3, h4, h5, h6, img, a.btn {
 }
 
 a {
-  line-height: 100%;
+  line-height: 1;
 }
