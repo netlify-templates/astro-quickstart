@@ -1,69 +1,71 @@
 main#mission {
+  --text-color: black;
+
+  position: relative;
+
+  padding: 25px;
+  width: calc(100% - 50px);
+  
+  display: flex;
+  flex-direction: column;
+  
+  & > .container {
     position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    max-width: 1500px;
+    height: 100%;
   
-    padding: 25px;
-    width: calc(100% - 50px);
-    
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 25px;
   
-     & > .container {
-      position: relative;
-      left: 50%;
-      transform: translate(-50%, 0);
-  
-      max-width: 1500px;
-      height: 100%;
-    
+    & > section {
+      max-width: calc(50% - 75px);
+      flex: 1;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      align-items: center;
       gap: 25px;
+      padding: 25px;
+      --bg-color: white;
+      --text-color: black;
   
-      & > section {
-        max-width: calc(50% - 75px);
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        padding: 25px;
-        --bg-color: white;
-        --text-color: black;
-  
-        &#contact {
-          & h2 {
-            margin-block: 0;
-          }
+      &#contact {
+        & h2 {
+          margin-block: 0;
         }
+      }
   
-        & > div:not([hHr]) {
-          min-height: calc(50% - 50px);
+      & > div:not([hHr]) {
+        min-height: calc(50% - 50px);
   
-          &:not(div.carousel) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-          }
+        &:not(div.carousel) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 25px;
         }
+      }
         
-        & h1 {
+      & h1 {
+        text-align: center;
+      }
+  
+      &#contact form *:not(button) {
+        width: calc(100% - 20px);
+      }
+        
+      .missiontext {
+          margin: 0;
+          padding: 0;
+          max-width: 100%;
+        /*  min-width: 500px;  */
           text-align: center;
-        }
-  
-        &#contact form *:not(button) {
-          width: calc(100% - 20px);
-        }
-        
-        .missiontext {
-            margin: 0;
-            padding: 0;
-            max-width: 100%;
-          /*  min-width: 500px;  */
-            text-align: center;
-        }        
       }
     }
+  }
 }
   
 @media (width < 1006px) {
