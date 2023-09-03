@@ -177,11 +177,11 @@ function checkSetFooter() {
   setTimeout(function() {
     if (document.body.clientHeight <= window.innerHeight) {
       document.documentElement.classList.add('fullHeight')
-      let hasHeader = false
+      let hasHero= false
       document.documentElement.querySelectorAll('body > *').forEach(function(e) {
-        if (e.tagName === 'HEADER') hasHeader = true
+        if (e.classList.includes('hero')) hasHero = true
       })
-      if (hasHeader === false) {
+      if (hasHero === false) {
         document.body.classList.add('fullHeight')
         // footer.style.position = 'absolute'
         // footer.style.bottom = '0'
@@ -203,8 +203,8 @@ function checkSetFooter() {
 let isTall = false
 if (document.body.clientHeight < window.innerHeight) {
   isTall === true
-  if (!!document.getElementsByTagName('header')[0]) {
-    document.getElementsByTagName('header')[0].style.flex = '1'
+  if (!!document.getElementsByClassName('hero')[0]) {
+    document.getElementsByClassName('hero')[0].style.flex = '1'
   }
 }
 
