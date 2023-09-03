@@ -13,6 +13,8 @@ a#go2content[href="javascript:scrollToNum()"] {
 }
   
 .header {
+  --bg-color: var(--orig-bg-color);
+  --text-color: white;
   --transition-time: 1000ms;
   --transition: transform var(--transition-time) ease;
   --padding: 1rem /* 16px */;
@@ -27,7 +29,6 @@ a#go2content[href="javascript:scrollToNum()"] {
   margin: 0;
 
   gap: var(--padding);
-  --text-color: white;
 
   & > :first-child {
     padding-left: var(--padding);
