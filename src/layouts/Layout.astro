@@ -1,6 +1,6 @@
 ---
 import MetaTags from '../components/metatags.astro'
-import Nav from '../components/nav.astro'
+import Header from '../components/header.astro'
 import GlobalScripts from '../components/globalscripts.astro'
 import InfoBox from '../components/infobox.astro'
 
@@ -24,7 +24,7 @@ if (dTitle.startsWith(' | ')) dTitle = dTitle.replace(' | ', '')
     <title>{dTitle}</title>
   </head>
   <body>
-    <Nav />
+    <Header />
     <slot />
     <span style="display: none;" class="hidden" hidden tElement></span>
     <GlobalScripts />
