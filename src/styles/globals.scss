@@ -19,9 +19,7 @@
 
   --shadow-color: white;
   --shadow-size: 10px;
-}
 
-*:not(header *:not(.text, #menu, .missiontext), header, body, html) {
   font-family: var(--font, 'Dekko', sans-serif);
   background-color: var(--bg-color, --orig-bg-color);
   color: var(--text-color, white);
@@ -59,7 +57,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.fullHeight:not(body > *.fullHeight, header.fullHeight) {
+.fullHeight:not(body > *.fullHeight, .hero.fullHeight) {
   height: 100% !important;
 }
 
@@ -105,26 +103,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font, 'Dekko', sans-serif);
   line-height: 100%;
-}
-
-header.fullHeight {
-  min-height: calc(100% - 210px);
-  flex: 1;
-}
-
-.template {
-  --bg-color: white;
-  --text-color: black;
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 15px;
-  margin-right: 15px;
-
-  * {
-  --bg-color: white;
-  --text-color: black;
-  }
 }
 
 .gradient {
@@ -191,10 +169,8 @@ section {
 }
 
 .missiontext {
-  & > * {
   --bg-color: white;
   --text-color: black;
-  }
   & > .text  {
     text-align: justify;
     max-width: 500px;
@@ -268,32 +244,6 @@ main {
 }
 
 
-main#portal {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  width: 100%;
-
-  & > #menu {
-    --bg-color: white;
-    --text-color: black;
-
-    width: auto;
-    max-width: 100%;
-    height: auto;
-  
-    margin: 25px;
-    padding: var(--padding) 25px 25px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-  }
-}
-
 #menu {
   --bg-color: white;
   --text-color: black;
@@ -320,7 +270,7 @@ main#portal {
     border-radius: 10px;
   }
 
-  &:not(main#portal > #menu) {
+  &:not(main#portal > &) {
     max-width: 375px;
     
     margin: 32px;

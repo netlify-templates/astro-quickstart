@@ -9,13 +9,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: var(--text-color, white);
+    --text-color: white;
   
     &:not(&.fullHeight) {
         min-height: 37.5vw;
     }
     
     &.fullHeight {
+        min-height: calc(100% - 210px);
+        flex: 1;
         align-items: center;
     }
   
