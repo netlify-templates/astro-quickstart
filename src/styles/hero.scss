@@ -12,49 +12,49 @@
     color: var(--text-color, white);
   
     &:not(&.fullHeight) {
-      min-height: 37.5vw;
+        min-height: 37.5vw;
     }
     
     &.fullHeight {
-      align-items: center;
+        align-items: center;
     }
   
     & > div {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      width: 100%;
-  
-      & > * {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
         width: 100%;
-      }
+
+        & > * {
+            width: 100%;
+        }
     }
   
     & h1:not(#menu > h1):not(#whymakethisclub), & h2, & h3 {
-      --shadow-color: #0a0a52;
-      --shadow-size: 10px;
-      text-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
+        --shadow-color: #0a0a52;
+        --shadow-size: 10px;
+        text-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
     }
   
     & h1:not(#menu > h1):not(#whymakethisclub) {
-      margin: 0;
-      text-transform: uppercase;
-      font-weight: 400;
-      font-size: 4.5rem;
-      max-width: 12.89ch;
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 4.5rem;
+        max-width: 12.89ch;
     }
     & h2 {
-      margin: 0;
-      font-weight: 400;
-      font-size: 2.4rem;
-      max-width: 30.39ch;
+        margin: 0;
+        font-weight: 400;
+        font-size: 2.4rem;
+        max-width: 30.39ch;
     }
     & h3 {
-      margin: 0;
-      font-weight: 400;
-      font-size: 1.2rem;
-      max-width: 56.59ch;
+        margin: 0;
+        font-weight: 400;
+        font-size: 1.2rem;
+        max-width: 56.59ch;
     }
   }
     

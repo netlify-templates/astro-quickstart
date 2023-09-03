@@ -54,11 +54,19 @@ main#mission {
         &#contact form *:not(button) {
           width: calc(100% - 20px);
         }
+        
+        .missiontext {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+          /*  min-width: 500px;  */
+            text-align: center;
+        }        
       }
     }
-  }
+}
   
-  @media (width < 1006px) {
+@media (width < 1006px) {
     main#mission {
       & > .vHr {
         width: var(--height);
@@ -74,6 +82,4 @@ main#mission {
         }
       }
     }
-  }
-  
-  
+}
