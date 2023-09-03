@@ -25,6 +25,10 @@
   color: var(--text-color, white);
 }
 
+*:not(header *:not(.text, #menu, .missiontext), header, body, html) {
+  background-color: var(--bg-color, --orig-bg-color);
+}
+
 /*  Custom Scrollbar  */
 ::-webkit-scrollbar {
   width: var(--scroll-bar-width);
