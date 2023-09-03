@@ -1,4 +1,6 @@
 ---
+import '../styles/hero.scss'
+
 export interface Props {
 	idName: string;
 }
@@ -6,11 +8,9 @@ export interface Props {
 const { idName } = Astro.props as Props;
 
 ---
-<header id={idName}>
-    <section>
-      <div>
-        <h1>Graphics for Good</h1>
-        <h2>Empowering Non-Profits Through the Power of Design!</h1>
-      </div>
-    </section>
-</header>
+<section class="hero" id={idName}>
+  <div>
+    <h1>Graphics for Good</h1>
+    <h2>Empowering Non-Profits Through the Power of Design!</h1>
+  </div>
+</section>
