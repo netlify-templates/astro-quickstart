@@ -1,4 +1,4 @@
-let siteUpdatedDate = '07/14/2023'
+let siteUpdatedDate = '09/01/2023'
 let pageDates = {
   // members: '04/27/2023'
 }
