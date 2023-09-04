@@ -1083,7 +1083,9 @@ if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
   else {
     var bio = document.createElement('p')
     bio.id = 'bio'
-    var bioText = `${defaultBio().replace('{pronouciation}', '').replace(' is ', ' was ').substring(0, defaultBio().replace('{pronouciation}', '').replace(' is ', ' was ').split('').length - 1)} until ${leftMembers[user]['date']}.`
+    let leftDefaultBio = defaultBio().replace('{pronouciation}', '').replace(' is ', ' was ')
+    leftDefaultBio.substring(0, leftDefaultBio.split('').length - 1)
+    var bioText = `${leftDefaultBio} until ${leftMembers[user]['date']}.`
     bio.innerHTML = bioText
     section.appendChild(bio)
 //    var fElement = document.createElement('footer')
