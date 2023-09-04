@@ -18,17 +18,21 @@ a#go2content[href="javascript:scrollToNum()"] {
   --transition-time: 1000ms;
   --transition: transform var(--transition-time) ease;
   --padding: 1rem /* 16px */;
-  z-index: 2;
-  box-shadow: 0px 0px 10px 0px var(--orig-bg-color);
+
+  margin: 0;
+  position: sticky;
+
+  width: 100%;
 
   display: flex;
   align-items: center;
-  
-  width: 100%;
-  /* flex-basis: 150px; */
-  margin: 0;
-
   gap: var(--padding);
+  /* flex-basis: 150px; */
+  
+
+  box-shadow: 0px 0px 10px 0px var(--orig-bg-color);
+
+  z-index: 2;
 
   & > :first-child {
     padding-left: var(--padding);

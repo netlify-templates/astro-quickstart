@@ -210,12 +210,4 @@ if (document.body.clientHeight < window.innerHeight) {
   }
 }
 
-let navigation = document.getElementsByTagName('nav')[0]
-
-if (!!document.querySelector('#content')) {
-  let nHeight = navigation.clientHeight
-  if (navigation.getAttribute('bBorder') === '') {
-    nHeight+=2
-  }
-  document.getElementById('content').style.paddingTop = `${nHeight}px`
-}
+let navigation = document.getElementsByTagName('nav')[0]  
