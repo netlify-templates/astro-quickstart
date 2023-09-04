@@ -72,7 +72,8 @@ a#go2content[href="javascript:scrollToNum()"] {
     flex: 1;
     padding: var(--padding) 0;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
+    align-items: center;
 
     & > div {
       display: flex;
