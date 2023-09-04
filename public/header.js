@@ -1,7 +1,7 @@
 let isSmallScreen = false
-let nav = document.querySelector('.header > .nav')
-let btnsDiv = nav.querySelector('div')
-let openSVG = nav.querySelector('.nav-hbg')
+let header = document.querySelector('.header > .nav')
+let btnsDiv = header.querySelector('div')
+let openSVG = header.querySelector('.nav-hbg')
 let closeSVG = btnsDiv.querySelector('div.nav-info > :last-child')
 openSVG.addEventListener('click', function(e) {
   btnsDiv.classList.add('ready')
