@@ -22,7 +22,7 @@
 
   font-family: var(--font, 'Dekko', sans-serif);
   background-color: var(--bg-color, --orig-bg-color);
-  color: var(--text-color, white);
+  color: white
 }
 
 *:not(.hero *:not(.text, #menu, .missiontext), .hero, body, html) {

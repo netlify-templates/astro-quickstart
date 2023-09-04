@@ -1,5 +1,5 @@
 main#mission {
-  --text-color: black;
+  color: black;
 
   position: relative;
 
@@ -30,7 +30,7 @@ main#mission {
       gap: 25px;
       padding: 25px;
       --bg-color: white;
-      --text-color: black;
+      color: black;
   
       &#contact {
         & h2 {

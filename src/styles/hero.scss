@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    --text-color: white;
+    color: white;
   
     &:not(&.fullHeight) {
         min-height: 37.5vw;

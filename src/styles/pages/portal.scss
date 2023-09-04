@@ -8,7 +8,7 @@ main#portal {
   
     & > #menu {
         --bg-color: white;
-        --text-color: black;
+        color: black;
     
         width: auto;
         max-width: 100%;
@@ -26,7 +26,7 @@ main#portal {
 
 .template {
     --bg-color: white;
-    --text-color: black;
+    color: black;
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -35,7 +35,7 @@ main#portal {
   
     * {
         --bg-color: white;
-        --text-color: black;
+        color: black;
     }
 }
   
@@ -45,10 +45,10 @@ main#portal {
     border-radius: 10px !important;
     margin: 10px;
     --bg-color: white;
-    --text-color: black;
+    color: black;
 }
 #emailtemplatetext > * {
     text-align: center;
     --bg-color: white !important;
-    --text-color: black;
+    color: black;
 }

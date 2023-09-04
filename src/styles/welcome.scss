@@ -2,7 +2,7 @@ body {
   height: 100%;
   display: block;
   --bg-color: white;
-  --text-color: black;
+  color: black;
 }
   
 iframe {
@@ -45,7 +45,7 @@ iframe {
   padding: 25px;
   opacity: 200%;
   --bg-color: #1a4276;
-  --text-color: white;
+  color: white;
   max-width: 750px;
   max-height: 750px;
 }

@@ -11,7 +11,7 @@ main#profile {
         padding: 25px;
         gap: 12.5px;
         --bg-color: white;
-        --text-color: black;
+        color: black;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -22,7 +22,7 @@ main#profile {
             transition: all 100ms ease;
     
             &:hover {
-                --text-color: blue;
+                color: blue;
             }
     
             &#location {

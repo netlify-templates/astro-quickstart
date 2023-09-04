@@ -14,7 +14,7 @@ a#go2content[href="javascript:scrollToNum()"] {
   
 .header {
   --bg-color: var(--orig-bg-color);
-  --text-color: white;
+  color: white;
   --transition-time: 1000ms;
   --transition: transform var(--transition-time) ease;
   --padding: 1rem /* 16px */;
@@ -61,7 +61,7 @@ a#go2content[href="javascript:scrollToNum()"] {
   
   & h2 {
   /*  margin: 0;  */
-    --text-color: black;
+    color: black;
   }
   .nav {
     height: calc(100% - calc(var(--padding)*2));
@@ -104,7 +104,7 @@ a#go2content[href="javascript:scrollToNum()"] {
       background-repeat: no-repeat;
       background-position: center;
       /* --bg-color: white; */
-      --text-color: black;
+      color: black;
 
       &#instagram {
         border-radius: 8px;
