@@ -1104,15 +1104,15 @@ if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
   }
 }
 else {
-  var header = document.createElement('header')
-  header.className = 'fullHeight'
-  header.id = 'content'
-  document.body.appendChild(header)
+  var hero = document.createElement('hero')
+  hero.className = 'hero fullHeight'
+  hero.id = 'content'
+  document.body.appendChild(hero)
 
   var menu = document.createElement('ul')
   menu.id = 'menu'
   menu.className = 'profile'
-  header.appendChild(menu)
+  hero.appendChild(menu)
 
   var menuH1 = document.createElement('h1')
   menuH1.innerHTML = 'Club Members'
