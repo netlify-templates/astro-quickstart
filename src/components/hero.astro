@@ -3,11 +3,16 @@ import '../styles/hero.scss'
 
 export interface Props {
 	idName: string;
+  classItems = string;
 }
 
-const { idName } = Astro.props as Props;
+const { idName, classItems } = Astro.props as Props;
+let className = 'hero'
+if (!!classItems) { 
+  className = `${className} ${classItems}`
+}
 
 ---
-<section class="hero" id={idName}>
+<section class={className} id={idName}>
   <slot />
 </section>
