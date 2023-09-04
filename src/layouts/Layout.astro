@@ -29,14 +29,9 @@ if (dTitle.startsWith(' | ')) dTitle = dTitle.replace(' | ', '')
     <slot />
     <span style="display: none;" class="hidden" hidden tElement></span>
     <script>
-      var bBorderPages = [
-        '/work'
-      ]
-      bBorderPages.forEach(p => {
-        if (location.pathname === p) {
-          document.querySelector('.header').setAttribute('bBorder', '')
-        }
-      });
+      if (!!document.querySelector('.hero') === false) {
+        document.querySelector('.header').setAttribute('bBorder', '')
+      }
     </script>
     <GlobalScripts />
     <InfoBox />
