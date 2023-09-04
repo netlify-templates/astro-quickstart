@@ -15,12 +15,9 @@ a#go2content[href="javascript:scrollToNum()"] {
 .header {
   --bg-color: var(--orig-bg-color);
   color: white;
-  --transition-time: 1000ms;
-  --transition: transform var(--transition-time) ease;
   --padding: 1rem /* 16px */;
 
   margin: 0;
-  position: sticky;
 
   width: 100%;
 
@@ -120,27 +117,6 @@ a#go2content[href="javascript:scrollToNum()"] {
         background-image: url('/assets/icons/email.svg');
       }
     }
-  }
-
-  &:not(.disappearing):not(.appearing) {
-    position: sticky;
-  }
-
-  &.appearing, &.disappearing {
-    position: fixed;
-  }
-
-  &.disappearing {
-    transform: translateY(-100%);
-    box-shadow: none;
-    transition: 
-      var(--transition), 
-      box-shadow 0ms var(--transition-time);
-  }
-
-  &.appearing {
-    transform: translateY(0%);
-    transition: var(--transition);
   }
 }
 
