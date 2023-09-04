@@ -1106,7 +1106,7 @@ if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
   }
 }
 else {
-  var hero = document.createElement('hero')
+  var hero = document.createElement('section')
   hero.className = 'hero fullHeight'
   hero.id = 'content'
   document.body.appendChild(hero)
