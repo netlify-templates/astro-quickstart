@@ -13,7 +13,7 @@
 :root {
   --orig-bg-color: #1a4276;
  --bg-color: var(--orig-bg-color) ;
-  --text-color: white;
+  color: white;
 
   --scroll-bar-width: 10px;
 
@@ -153,29 +153,29 @@ section {
 
   &:not(.primary) {
     --bg-color: white;
-    --text-color: black;
+    color: black;
     --border-color: black;
   }
   &:not(.primary):hover {
     --bg-color: black;
-    --text-color: white;
+    color: white;
     --border-color: white;
   }
   &.primary {
     --bg-color: black !important;
-    --text-color: white !important;
+    color: white !important;
     --border-color: white;
   }
   &.primary:hover {
     --bg-color: white !important;
-    --text-color: black !important;
+    color: black !important;
     --border-color: black;
   }
 }
 
 .missiontext {
   --bg-color: white;
-  --text-color: black;
+  color: black;
   & > .text  {
     text-align: justify;
     max-width: 500px;
@@ -194,7 +194,7 @@ section {
     background-color: white;
     box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
     --bg-color: white;
-    --text-color: black;
+    color: black;
     border-radius: 25px;
     transition: 500ms ease-in;
 
@@ -251,7 +251,7 @@ main {
 
 #menu {
   --bg-color: white;
-  --text-color: black;
+  color: black;
   
   box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
   border-radius: 25px;
@@ -283,7 +283,7 @@ main {
   }
 
   & h1 {
-    --text-color: black;
+    color: black;
     margin: 0;
     text-transform: uppercase;
     font-weight: 200;
@@ -302,7 +302,7 @@ main {
       text-align: center;
 
       &:hover {
-        --text-color: blue;
+        color: blue;
         transition: all 500ms ease-in;
       }
     }
@@ -312,7 +312,7 @@ main {
 button {
   width: 170px;
   --bg-color: #2e2e2e;
-  --text-color: white;
+  color: white;
   padding: 12px;
   margin: 10px 0;
   border: none;
@@ -377,7 +377,7 @@ form[method="POST"] {
     &::selection {
       border-radius: 25px;
       
-      --text-color: white;
+      color: white;
       --bg-color: var(--orig-bg-color);
     }
   }
@@ -398,7 +398,7 @@ form[action] * {
 }
 
 #whymakethisclub {
-  --text-color: black;
+  color: black;
 
   max-width: 100%;
 }
@@ -413,7 +413,7 @@ form[action] * {
   padding: 0;
   background: transparent;
   isolation: isolate;
-  --text-color: black;
+  color: black;
   border-radius: 25px;
   transition: 500ms ease-in-out;
 
