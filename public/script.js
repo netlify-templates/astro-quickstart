@@ -181,7 +181,7 @@ function checkSetFooter() {
       document.documentElement.classList.add('fullHeight')
       let hasHero= false
       document.documentElement.querySelectorAll('body > *').forEach(function(e) {
-        if (e.classList.includes('hero')) hasHero = true
+        if (e.className.includes('hero')) hasHero = true
       })
       if (hasHero === false) {
         document.body.classList.add('fullHeight')
