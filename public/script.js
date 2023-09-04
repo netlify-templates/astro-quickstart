@@ -77,7 +77,9 @@ if (overflow === 'n') {
 }
 
 
-document.querySelector('#logo').setAttribute('onclick', `location.href = '/'`)
+document.querySelector('.logo').addEventListener('click', function(e) {
+  location.href = '/'
+})
 
 document.querySelectorAll('a').forEach(a => {
   if(!!a.target === false) {
