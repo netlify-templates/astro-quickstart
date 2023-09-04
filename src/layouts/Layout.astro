@@ -1,7 +1,6 @@
 ---
 import MetaTags from '../components/metatags.astro'
 import Header from '../components/header.astro'
-import GlobalScripts from '../components/globalscripts.astro'
 import InfoBox from '../components/infobox.astro'
 
 import '../styles/globals.scss'
@@ -33,7 +32,9 @@ if (dTitle.startsWith(' | ')) dTitle = dTitle.replace(' | ', '')
         document.querySelector('.header').setAttribute('bBorder', '')
       }
     </script>
-    <GlobalScripts />
+    <script is:inline src="/script.js"></script>
+    <script is:inline src="/header.js"></script>
+    <!--<script src="eruda.js"></script>-->
     <InfoBox />
   </body>
 </html>
