@@ -7,10 +7,6 @@ import InfoBox from '../components/infobox.astro'
 import '../styles/globals.scss'
 import '../styles/footer.scss'
 
-var bBorderPages = [
-  '/work'
-]
-
 export interface Props {
 	title: string;
 }
@@ -33,7 +29,10 @@ if (dTitle.startsWith(' | ')) dTitle = dTitle.replace(' | ', '')
     <slot />
     <span style="display: none;" class="hidden" hidden tElement></span>
     <script>
-      {bBorderPages}.forEach(p => {
+      var bBorderPages = [
+        '/work'
+      ]
+      bBorderPages.forEach(p => {
         if (location.pathname === p) {
           document.querySelector('.header').setAttribute('bBorder', '')
         }
