@@ -765,7 +765,7 @@ function setMember() {
     document.title = nTitle
     if (!!setMETA === true) {
       // document.querySelector('meta[property="title"][content]').setAttribute('content', nTitle)
-      document.querySelector('meta[property="og:title"][content]').setAttribute('content', nTitle)
+      // document.querySelector('meta[property="og:title"][content]').setAttribute('content', nTitle)
       document.querySelector('meta[property="description"][content]').setAttribute('content', nBio)
       document.querySelector('meta[property="og:description"][content]').setAttribute('content', nBio)
     }
