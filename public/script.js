@@ -147,13 +147,16 @@ let siteUpdatedDateStr = String(newSiteUpdatedDate).substring(0, 15)
   .replace('Nov', 'November')
   .replace('Dec', 'December')
 let siteUpdatedDateStrS = siteUpdatedDateStr.split(' ')
-if (siteUpdatedDateStrS[2].endsWith('1')) {
+if (siteUpdatedDateStrS[2].startsWith('0')) {
+  siteUpdatedDateStrS[2] = siteUpdatedDateStrS[2].substring(1)
+}
+if (siteUpdatedDateStrS[2].endsWith('1') && siteUpdatedDateStr[2] !== '11') {
   siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}st`
 }
-else if (siteUpdatedDateStrS[2].endsWith('2')) {
+else if (siteUpdatedDateStrS[2].endsWith('2') && siteUpdatedDateStr[2] !== '12') {
   siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}nd`
 }
-else if (siteUpdatedDateStrS[2].endsWith('3')) {
+else if (siteUpdatedDateStrS[2].endsWith('3') && siteUpdatedDateStr[2] !== '13') {
   siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}rd`
 }
 else {
@@ -179,7 +182,7 @@ function checkSetFooter() {
   setTimeout(function() {
     if (document.body.clientHeight <= window.innerHeight) {
       document.documentElement.classList.add('fullHeight')
-      let hasHero= false
+      let hasHero = false
       document.documentElement.querySelectorAll('body > *').forEach(function(e) {
         if (e.className.includes('hero')) hasHero = true
       })
@@ -209,5 +212,3 @@ if (document.body.clientHeight < window.innerHeight) {
     document.getElementsByClassName('hero')[0].style.flex = '1'
   }
 }
-
-let navigation = document.getElementsByTagName('nav')[0]  
