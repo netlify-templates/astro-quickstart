@@ -112,11 +112,11 @@ if (pathName.endsWith('/')) {
 
 let csI = 0
 let csINT = false
-checkSetFooter()
+checkSetFHeight()
 if (location.pathname.startsWith('/members') && location.pathname.endsWith('/members') === false) {
-  csINT = setInterval(checkSetFooter, 10)
+  csINT = setInterval(checkSetFHeight, 10)
 }
-function checkSetFooter() {
+function checkSetFHeight() {
   setTimeout(function() {
     if (document.body.clientHeight <= window.innerHeight) {
       document.documentElement.classList.add('fullHeight')
@@ -126,15 +126,11 @@ function checkSetFooter() {
       })
       if (hasHero === false) {
         document.body.classList.add('fullHeight')
-        // footer.style.position = 'absolute'
-        // footer.style.bottom = '0'
       }
     }
     else {
       document.documentElement.classList.remove('fullHeight')
       document.body.classList.remove('fullHeight')
-      // footer.style.position = ''
-      // footer.style.bottom = ''
     }
     csI++
     if (csI >= 1000 && !!csINT) {

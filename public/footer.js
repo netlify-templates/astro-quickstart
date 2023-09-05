@@ -1,25 +1,25 @@
-let footer = document.createElement('footer')
-let fSpan = footer.appendChild(document.createElement('span'))
-let page = location.pathname.substring(1)
+var footer = document.createElement('footer')
+var fSpan = footer.appendChild(document.createElement('span'))
+var page = location.pathname.substring(1)
 if (!!page === false) {
   page = 'index'
   // page = 'members'
 }
-let uMember = 'adarsh'
-let uMemberName = `${uMember.split('')[0].toUpperCase()}${uMember.substring(1)}`
-let fWord = 'Site'
+var uMember = 'adarsh'
+var uMemberName = `${uMember.split('')[0].toUpperCase()}${uMember.substring(1)}`
+var fWord = 'Site'
 if (!!pageDates[page]) {
   siteUpdatedDate = pageDates[page]
   fWord = 'Page'
 }
-let siteUpdatedDate = '09/01/2023'
-let pageDates = {
+var siteUpdatedDate = '09/01/2023'
+var pageDates = {
   // members: '04/27/2023'
 }
 
-let unixSiteUpdated = new Date(siteUpdatedDate).getTime()/1000
-let newSiteUpdatedDate = (new Date(siteUpdatedDate))
-let siteUpdatedDateStr = String(newSiteUpdatedDate).substring(0, 15)
+var unixSiteUpdated = new Date(siteUpdatedDate).getTime()/1000
+var newSiteUpdatedDate = (new Date(siteUpdatedDate))
+var siteUpdatedDateStr = String(newSiteUpdatedDate).substring(0, 15)
   .replace('Sun', 'Sunday')
   .replace('Mon', 'Monday')
   .replace('Tue', 'Tuesday')
@@ -39,7 +39,7 @@ let siteUpdatedDateStr = String(newSiteUpdatedDate).substring(0, 15)
   .replace('Oct', 'October')
   .replace('Nov', 'November')
   .replace('Dec', 'December')
-let siteUpdatedDateStrS = siteUpdatedDateStr.split(' ')
+var siteUpdatedDateStrS = siteUpdatedDateStr.split(' ')
 if (siteUpdatedDateStrS[2].startsWith('0')) {
   siteUpdatedDateStrS[2] = siteUpdatedDateStrS[2].substring(1)
 }
