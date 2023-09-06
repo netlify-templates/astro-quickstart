@@ -27,10 +27,10 @@ var currImgS = [
   8, 
 ]
 
-document.querySelectorAll('.carousel > a:first-child').forEach(ele, function() {
+document.querySelectorAll('.carousel > a:first-child').forEach(function(ele) {
     ele.addEventLister('click', function(e) { goBack(e) })
 })
-document.querySelectorAll('.carousel > a:last-child').forEach(ele, function() {
+document.querySelectorAll('.carousel > a:last-child').forEach(function(ele) {
     ele.addEventLister('click', function(e) { goForw(e) })
 })
 
