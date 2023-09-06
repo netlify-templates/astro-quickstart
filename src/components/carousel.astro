@@ -1,8 +1,33 @@
+---
+import '../styles/carourel.scss'
+
+export interface Props {
+	carouselIndex: string;
+}
+
+const { carouselIndex } = Astro.props as Props;
+
+---
+<div class="carousel" data-index={carouselIndex}>
+    <a href="javascript:goBack()">
+      <img src="/assets/arrows/L.svg" class="button" draggable="false">
+    </a>
+    <ul class="imgs">
+      <img src="/assets/blank.png" draggable="false">
+      <slot />
+      <img src="/assets/blank.png" draggable="false">
+    </ul>
+    <a href="javascript:goForw()">
+      <img src="/assets/arrows/R.svg" class="button" draggable="false">
+    </a>
+</div>
+<script>
 var currImgS = [
   2, 
   8, 
 ]
-function setImg(car=0) {
+function setImg(e) {
+  let car = parseInt(e.target.parentNode.getAttribute('data-index'))
   let carousel = document.querySelectorAll('.carousel')[car]
   let ul = carousel.querySelector('ul.imgs')
   let imgs = ul.querySelectorAll('img')
@@ -19,8 +44,8 @@ function setImg(car=0) {
 }
 setImg()
 
-function goBack(car=0) {
-  let carousel = document.querySelectorAll('.carousel')[car]
+function goBack(e) {
+  let car = parseInt(e.target.parentNode.getAttribute('data-index'))
   var bAHref = carousel.querySelectorAll('a')[0]
   var fAHref = carousel.querySelectorAll('a')[carousel.querySelectorAll('a').length - 1]
   var bArrow = carousel.querySelectorAll('img')[0]
@@ -64,3 +89,4 @@ function goForw(car=0) {
     bArrow.src = '/assets/arrows/L.svg'
   }
 }
+</script>
