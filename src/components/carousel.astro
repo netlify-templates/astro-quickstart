@@ -26,8 +26,7 @@ var currImgS = [
   2, 
   8, 
 ]
-function setImg(e) {
-  let car = parseInt(e.target.parentNode.getAttribute('data-index'))
+function setImg(car=0) {
   let carousel = document.querySelectorAll('.carousel')[car]
   let ul = carousel.querySelector('ul.imgs')
   let imgs = ul.querySelectorAll('img')
@@ -45,6 +44,7 @@ function setImg(e) {
 setImg()
 
 function goBack(e) {
+    console.log(e)
   let car = parseInt(e.target.parentNode.getAttribute('data-index'))
   var bAHref = carousel.querySelectorAll('a')[0]
   var fAHref = carousel.querySelectorAll('a')[carousel.querySelectorAll('a').length - 1]
@@ -67,7 +67,9 @@ function goBack(e) {
   }
 }
 
-function goForw(car=0) {
+function goForw(e) {
+    console.log(e)
+  let car = parseInt(e.target.parentNode.getAttribute('data-index'))
   let carousel = document.querySelectorAll('.carousel')[car]
   var bAHref = carousel.querySelectorAll('a')[0]
   var fAHref = carousel.querySelectorAll('a')[carousel.querySelectorAll('a').length - 1]
