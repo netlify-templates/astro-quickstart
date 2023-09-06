@@ -9,7 +9,7 @@ const { carouselIndex } = Astro.props as Props;
 
 ---
 <div class="carousel" data-index={carouselIndex}>
-    <a href="javascript:goBack()">
+    <a href="javascript: ;">
       <img src="/assets/arrows/L.svg" class="button" draggable="false">
     </a>
     <ul class="imgs">
@@ -17,7 +17,7 @@ const { carouselIndex } = Astro.props as Props;
       <slot />
       <img src="/assets/blank.png" draggable="false">
     </ul>
-    <a href="javascript:goForw()">
+    <a href="javascript: ;">
       <img src="/assets/arrows/R.svg" class="button" draggable="false">
     </a>
 </div>
