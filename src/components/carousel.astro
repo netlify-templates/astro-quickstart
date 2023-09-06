@@ -9,7 +9,7 @@ const { carouselIndex } = Astro.props as Props;
 
 ---
 <div class="carousel" data-index={carouselIndex}>
-    <a href="javascript: ;">
+    <a href=`javascript: goBack(${carouselIndex});`>
       <img src="/assets/arrows/L.svg" class="button" draggable="false">
     </a>
     <ul class="imgs">
@@ -17,7 +17,7 @@ const { carouselIndex } = Astro.props as Props;
       <slot />
       <img src="/assets/blank.png" draggable="false">
     </ul>
-    <a href="javascript: ;">
+    <a href=`javascript: goForw(${carouselIndex});`>
       <img src="/assets/arrows/R.svg" class="button" draggable="false">
     </a>
 </div>
@@ -26,13 +26,6 @@ var currImgS = [
   2, 
   8, 
 ]
-
-document.querySelectorAll('.carousel > a:first-child').forEach(function(ele) {
-    ele.addEventLister('click', function(e) { goBack(e) })
-})
-document.querySelectorAll('.carousel > a:last-child').forEach(function(ele) {
-    ele.addEventLister('click', function(e) { goForw(e) })
-})
 
 function setImg(car=0) {
   let carousel = document.querySelectorAll('.carousel')[car]
@@ -51,9 +44,7 @@ function setImg(car=0) {
 }
 setImg()
 
-function goBack(e) {
-    console.log(e)
-  let car = parseInt(e.target.parentNode.getAttribute('data-index'))
+function goBack(car=0) {
   var bAHref = carousel.querySelectorAll('a')[0]
   var fAHref = carousel.querySelectorAll('a')[carousel.querySelectorAll('a').length - 1]
   var bArrow = carousel.querySelectorAll('img')[0]
@@ -75,9 +66,7 @@ function goBack(e) {
   }
 }
 
-function goForw(e) {
-    console.log(e)
-  let car = parseInt(e.target.parentNode.getAttribute('data-index'))
+function goForw(car=0) {
   let carousel = document.querySelectorAll('.carousel')[car]
   var bAHref = carousel.querySelectorAll('a')[0]
   var fAHref = carousel.querySelectorAll('a')[carousel.querySelectorAll('a').length - 1]
