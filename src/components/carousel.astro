@@ -28,10 +28,10 @@ var currImgS = [
 ]
 
 document.querySelectorAll('.carousel > img:first-child').forEach(ele, function() {
-    ele.addEventLister('click', goBack)
+    ele.addEventLister('click', function(e) { goBack(e) })
 })
 document.querySelectorAll('.carousel > img:last-child').forEach(ele, function() {
-    ele.addEventLister('click', goForw)
+    ele.addEventLister('click', function(e) { goForw(e) })
 })
 
 function setImg(car=0) {
