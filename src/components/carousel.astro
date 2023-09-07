@@ -5,7 +5,9 @@ export interface Props {
 	carouselIndex: string;
 }
 
-const { carouselIndex } = Astro.props as Props;
+var { carouselIndex } = Astro.props as Props;
+
+carouselIndex = parseInt(carouselIndex)
 
 var forwFunction = `javascript:goBack(${carouselIndex});`
 var backFunction = `javascript:goForw(${carouselIndex});`
