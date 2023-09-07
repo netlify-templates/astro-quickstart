@@ -7,9 +7,12 @@ export interface Props {
 
 const { carouselIndex } = Astro.props as Props;
 
+var forwFunction = `javascript:goBack(${carouselIndex});`
+var backFunction = `javascript:goForw(${carouselIndex});`
+
 ---
-<div class="carousel" data-index={carouselIndex}>
-    <a href=`javascript: goBack(${carouselIndex});`>
+<div class="carousel">
+    <a href={forwFunction}>
       <img src="/assets/arrows/L.svg" class="button" draggable="false">
     </a>
     <ul class="imgs">
@@ -17,7 +20,7 @@ const { carouselIndex } = Astro.props as Props;
       <slot />
       <img src="/assets/blank.png" draggable="false">
     </ul>
-    <a href=`javascript: goForw(${carouselIndex});`>
+    <a href={backFunction}>
       <img src="/assets/arrows/R.svg" class="button" draggable="false">
     </a>
 </div>
@@ -45,10 +48,13 @@ function setImg(car=0) {
 setImg()
 
 function goBack(car=0) {
-  var bAHref = carousel.querySelectorAll('a')[0]
-  var fAHref = carousel.querySelectorAll('a')[carousel.querySelectorAll('a').length - 1]
-  var bArrow = carousel.querySelectorAll('img')[0]
-  var fArrow = carousel.querySelectorAll('img')[carousel.querySelectorAll('img').length - 1]
+  let carousel = document.querySelectorAll('.carousel')[car]
+  var aS = carousel.querySelectorAll('a')
+  var bAHref = aS[0]
+  var fAHref = aS[aS.length-1]
+  var imgS = carousel.querySelectorAll('img')
+  var bArrow = imgS[0]
+  var fArrow = imgS[imgS.length-1]
   let ul = carousel.querySelector('ul.imgs')
   let imgs = ul.querySelectorAll('img')
   currImgS[car]--
@@ -68,10 +74,12 @@ function goBack(car=0) {
 
 function goForw(car=0) {
   let carousel = document.querySelectorAll('.carousel')[car]
-  var bAHref = carousel.querySelectorAll('a')[0]
-  var fAHref = carousel.querySelectorAll('a')[carousel.querySelectorAll('a').length - 1]
-  var bArrow = carousel.querySelectorAll('img')[0]
-  var fArrow = carousel.querySelectorAll('img')[carousel.querySelectorAll('img').length - 1]
+  var aS = carousel.querySelectorAll('a')
+  var bAHref = aS[0]
+  var fAHref = aS[aS.length-1]
+  var imgS = carousel.querySelectorAll('img')
+  var bArrow = imgS[0]
+  var fArrow = imgS[imgS.length-1]
   let ul = carousel.querySelector('ul.imgs')
   let imgs = ul.querySelectorAll('img')
   currImgS[car]++
