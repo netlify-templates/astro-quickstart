@@ -1,5 +1,6 @@
 ---
 const userData = {
+  username: 'adarsh'
   name: 'Adarsh Kumar <span id="tag">(Website Manager/Designer)</span>',
   pronunciation: false, //'Uh-da-r-sh',
   email: {
@@ -9,6 +10,7 @@ const userData = {
     },
   }, 
   pfp: {
+    url: `/assets/members/${userData.username}/pfp.png`
     g4g: {
       sizes: [
         {
@@ -21,7 +23,8 @@ const userData = {
   },
   location: {
     city: 'Bay Area', 
-    state: '', 
+    state: '',
+    combined: `${userData.location.city}, ${userData.location.state}`
   }, 
   bio: {
     w1: 'the',
@@ -29,31 +32,41 @@ const userData = {
   }, 
   socials: [
     {
-      handle: 'RockGamerAK',
-      platforms: [
-        'Website',
-      ],
-    },
+      url: 'https://RockGamerAK.com', 
+      name: 'Website', 
+    }, 
     {
-      handle: 'RockGamerHub',
-      platforms: [
-        'YouTube',
-      ],
-    },
+      url: 'https://youtube.com/@RockGamerHub'
+      name: 'YouTube', 
+    }, 
     {
-      handle: 'RockGamerAK',
-      platforms: [
-        'Instagram',
-        'Threads',
-        'Twitter',
-        'TikTok',
-        'Twitch',
-        'Discord',
-      ],
-      discord: {
-        id: '768273827549282305',
-      },
-    },
+      url: 'https://instagram.com/RockGamerAK', 
+      name: 'Instagram', 
+    }, 
+    {
+      url: 'https://threads.net/@RockGamerAK', 
+      name: 'Threads', 
+    }, 
+    {
+      url: 'https://X.com/@RockGamerAK', 
+      name: 'Twitter', 
+    }, 
+    {
+      url: 'https://tiktok.com/@RockGamerAK'
+      name: 'TikTok', 
+    }, 
+    {
+      url: 'https://twitch.tv/RockGamerAK', 
+      name: 'Twitch', 
+    }, 
+    {
+      url: 'https://kick.com/RockGamerAK', 
+      name: 'Kick', 
+    }, 
+    {
+      url: 'https://discord.com/users/768273827549282305', 
+      name: 'Discord'
+    }
     {
       handle: 'W.Web.Wizards',
       platforms: [
@@ -118,31 +131,62 @@ const userData = {
   ],
 }
 
+if (!!userData.email.g4g) {
+  userData.email.address = `${userData.username}@graphics-for-good.com`
+}
+else {
+  let uName = userData.name
+  if (uName.includes('<')) {
+    uName = uName.split('<')[0]
+  }
+  uName = uName.split(' ')
+  userData.email.address = `${uName[0].split('')[0]}${uName[1]}${userData.email.dtech.year}`
+}
+if (userData.location.combined.endsWith(', ')) {
+  let str = userData.location.combined
+  str.substring(0, str.length-2)
+  userData.location.combined = str
+}
+
+userData.location.mapLink = userData.location.combined
+while (userData.location.mapLink.includes(' ')) {
+  userData.location.mapLink = userData.location.mapLink.replace(' ', '+')
+}
+userData.location.mapLink = `https://www.google.com/maps/place/${userData.location.mapLink}`
+
+userData.socials.forEach(function(social, i) {
+  userData.socials[i].icon = social.url
+})
+
 import Layout from '../../layouts/Layout.astro'
 
 import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 ---
 <Layout title="Members">
-  <script is:inline>
-    var hasAddedMemberInfo = false
-  </script>
-  <script is:inline src="/members.js"></script>
   <section id="content"></section>
   <main id="profile" class="profile">
     <section>
-      <span id="pfp"></span>
-      <h1 id="name"></h1>
-      <a id="email" href=""></a>
-      <a id="location" href="">
+      <span id="pfp" style={`background-image: url('${userData[pfp][url]}')`}></span>
+      <h1 id="name">{userData.name}</h1>
+      <a id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
+      <a id="location" href={userData.location.mapLink}>
         <div></div>
-        <span></span>
+        <span>{userData.location.combined}</span>
       </a>
       <ul id="socials">
-        
+        {userData.socials.map((social) => (
+          <li>
+            <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')'`}></a>
+          </li>
+        ))}
       </ul>
       <p id="bio"></p>
     </section>
   </main>
+  <script is:inline>
+    var hasAddedMemberInfo = false
+  </script>
+  <script is:inline src="/members.js"></script>
   <script is:inline src="/modal.js"></script>
 </Layout>
