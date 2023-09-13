@@ -1,3 +1,8 @@
+var siteUpdatedDate = '09/13/2023'
+var pageDates = {
+  // members: '04/27/2023'
+}
+
 var footer = document.createElement('footer')
 var fSpan = footer.appendChild(document.createElement('span'))
 var page = location.pathname.substring(1)
@@ -12,11 +17,6 @@ if (!!pageDates[page]) {
   siteUpdatedDate = pageDates[page]
   fWord = 'Page'
 }
-var siteUpdatedDate = '09/01/2023'
-var pageDates = {
-  // members: '04/27/2023'
-}
-
 var unixSiteUpdated = new Date(siteUpdatedDate).getTime()/1000
 var newSiteUpdatedDate = (new Date(siteUpdatedDate))
 var siteUpdatedDateStr = String(newSiteUpdatedDate).substring(0, 15)
