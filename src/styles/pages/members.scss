@@ -15,74 +15,81 @@ main#profile {
         display: flex;
         flex-direction: column;
         align-items: center;
-    
-        & > a {
-            margin: 0;
-            text-decoration: none;
+    }
+    a {
+        margin: 0;
+        text-decoration: none;
+
+        :is(#email, #location) {
+            line-height: 1;
             transition: all 100ms ease;
-    
             &:hover {
                 color: blue;
+                &:visited {
+                    color: purple;
+                }
             }
-    
-            &#location {
-                & > div {
-                    position: relative;
-                    top: 0;
-                    left: 0;
-                    
-                    height: 16px;
-                    width: 16px;
-                    display: inline-block;
-                    aspect-ratio: 1 / 1;
+        }
+
+        &#location {
+            min-height: 16px;
+            min-width: 16px;
+
+            position: relative;
+            & > div {
+                position: absolute;
+                top: 0.5px;
+                left: 0;
                 
-                    background-image: url('/assets/icons/location.svg');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                }
-        
-                &:hover {
-                    & > div {
-                        background-image: url('/assets/icons/location-blue.svg');
-                    }
-                }
-        
-                & > span {
-                    line-height: 100%;
-                    position: relative;
-                    top: -4px;
+                height: 16px;
+                width: 16px;
+                display: inline-block;
+                aspect-ratio: 1;
+            
+                background-image: url('/assets/icons/location.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                #location:hover > & {
+                    background-image: url('/assets/icons/location-blue.svg');
                 }
             }
-        }
     
-        & > #name {
-            margin: 0;
-            text-align: center;
-            font-size: 1.75rem;
-        }
-        & > #bio {
-            max-width: 500px;
-            text-align: center;
-            margin: 0;
-        }
-    
-        & > #pfp[style] {
-            cursor: pointer;
-            border-radius: 100%;
-            transition: 500ms ease-in-out;
-            width: var(--pfp-size);
-            height: var(--pfp-size);
-            border: none;
-            outline: none;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-    
-            &:hover {
-            border-radius: 25%;
-            transition: 500ms ease-in-out;
+            & > span {
+                line-height: 1;
+                position: relative;
+                top: -4px;
             }
+        }
+    }
+
+    & > #name {
+        margin: 0;
+        text-align: center;
+        font-size: 1.75rem;
+    }
+    & > #bio {
+        max-width: 500px;
+        text-align: center;
+        margin: 0;
+    }
+
+    & > #pfp[style] {
+        cursor: pointer;
+        border-radius: 100%;
+        transition: 500ms ease-in-out;
+        width: var(--pfp-size);
+        height: var(--pfp-size);
+        border: none;
+        outline: none;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:hover {
+        border-radius: 25%;
+        transition: 500ms ease-in-out;
         }
     }
 }

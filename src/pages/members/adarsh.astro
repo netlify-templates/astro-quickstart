@@ -124,26 +124,25 @@ import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 ---
 <Layout title="Members">
-  <section id="content">
-    <main id="profile" class="profile">
-      <section>
-        <span id="pfp"></span>
-        <h1 id="name"></h1>
-        <a id="email" href=""></a>
-        <a id="location" href="">
-          <div></div>
-          <span></span>
-        </a>
-        <ul id="socials">
-
-        </ul>
-        <p id="bio"></p>
-      </section>
-    </main>
-  </section>
+  <script is:inline src="/members.js"></script>
+  <section id="content"></section>
+  <main id="profile" class="profile">
+    <section>
+      <span id="pfp"></span>
+      <h1 id="name"></h1>
+      <a id="email" href=""></a>
+      <a id="location" href="">
+        <div></div>
+        <span></span>
+      </a>
+      <ul id="socials">
+        
+      </ul>
+      <p id="bio"></p>
+    </section>
+  </main>
   <script is:inline>
     var hasAddedMemberInfo = false
   </script>
-  <script is:inline src="/members.js"></script>
   <script is:inline src="/modal.js"></script>
 </Layout>

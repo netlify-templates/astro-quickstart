@@ -248,21 +248,6 @@ main {
   }
 }
 
-main#profile {
-  a {
-    line-height: 1;
-    &:is(#email, #location) {
-      color: black;
-      &:hover {
-        color: blue;
-        &:visited {
-          color: purple;
-        }
-      }
-    }
-  }
-}
-
 #menu {
   --bg-color: white;
   color: black;
