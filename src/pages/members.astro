@@ -1,4 +1,7 @@
 ---
+const members = []
+
+
 import Layout from '../layouts/Layout.astro'
 
 import '../styles/pages/members.scss'
@@ -6,6 +9,15 @@ import '../styles/hero.scss'
 import '../styles/photos.scss'
 ---
 <Layout title="Members">
+  <section class="hero fullHeight" id="content">
+    <ul id="menu">
+      <h1>Club Members</h1>
+      {members.map((member) => ( <a href={`/members/${member.split(' ')[0].toLowerCase()}`}><li>{member}</li></a> ))}
+    </ul>
+  </section>
+  <script is:inline>
+    var createdMainMembersPageContent = true
+  </script>
   <script is:inline src="/members.js"></script>
   <script is:inline src="/modal.js"></script>
 </Layout>

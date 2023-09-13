@@ -1106,19 +1106,21 @@ if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
   }
 }
 else {
-  var hero = document.createElement('section')
-  hero.className = 'hero fullHeight'
-  hero.id = 'content'
-  document.body.appendChild(hero)
-
-  var menu = document.createElement('ul')
-  menu.id = 'menu'
-  menu.className = 'profile'
-  hero.appendChild(menu)
-
-  var menuH1 = document.createElement('h1')
-  menuH1.innerHTML = 'Club Members'
-  menu.appendChild(menuH1)
-
-  addMembers()
+  if (!!createdMainMembersPageContent === false) {
+    var hero = document.createElement('section')
+    hero.className = 'hero fullHeight'
+    hero.id = 'content'
+    document.body.appendChild(hero)
+  
+    var menu = document.createElement('ul')
+    menu.id = 'menu'
+    menu.className = 'profile'
+    hero.appendChild(menu)
+  
+    var menuH1 = document.createElement('h1')
+    menuH1.innerHTML = 'Club Members'
+    menu.appendChild(menuH1)
+  
+    addMembers()
+  }
 }
