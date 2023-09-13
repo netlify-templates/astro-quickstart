@@ -251,7 +251,7 @@ main {
 main#profile {
   a {
     line-height: 1;
-    &#email {
+    &:is(#email, #location) {
       color: black;
       &:hover {
         color: blue;
