@@ -1026,7 +1026,7 @@ if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
   contentEle.id = 'content'
   document.body.appendChild(contentEle)
 
-  document.getElementsByTagName('nav')[0].setAttribute('bBorder', '')
+  document.getElementsByTagName('header')[0].setAttribute('bBorder', '')
 
   var main = document.createElement('main')
   main.id = 'profile'
