@@ -1,52 +1,143 @@
 ---
-const userData = {}
+const userData = {
+  name: 'Adarsh Kumar <span id="tag">(Website Manager/Designer)</span>',
+  pronunciation: false, //'Uh-da-r-sh',
+  email: {
+    g4g: true,
+    dtech: {
+      year: 25,
+    },
+  }, 
+  pfp: {
+    g4g: {
+      sizes: [
+        {
+          ext: 'png',
+          name: 'full', 
+      }, 
+      ],
+    },
+    google: 'AEdFTp7icI4wRK0FPsc17CnhxoQslGk8Pj8cUQo8a6S80w',
+  },
+  location: {
+    city: 'Bay Area', 
+    state: '', 
+  }, 
+  bio: {
+    w1: 'the',
+    w2: 'for',
+  }, 
+  socials: [
+    {
+      handle: 'RockGamerAK',
+      platforms: [
+        'Website',
+      ],
+    },
+    {
+      handle: 'RockGamerHub',
+      platforms: [
+        'YouTube',
+      ],
+    },
+    {
+      handle: 'RockGamerAK',
+      platforms: [
+        'Instagram',
+        'Threads',
+        'Twitter',
+        'TikTok',
+        'Twitch',
+        'Discord',
+      ],
+      discord: {
+        id: '768273827549282305',
+      },
+    },
+    {
+      handle: 'W.Web.Wizards',
+      platforms: [
+        'Instagram',
+      ],
+    },
+    {
+      handle: 'W_Web_Wizards',
+      platforms: [
+        'Twitter',
+      ],
+    },
+    {
+      handle: 'akumarrws',
+      platforms: [
+        'Instagram',
+        'Threads',
+      ],
+    },
+    {
+      handle: 'akumar.transit',
+      platforms: [
+        'Instagram',
+      ],
+    },
+    {
+      handle: 'akumar.photos',
+      platforms: [
+        'Instagram',
+      ],
+    },
+    {
+      handle: 'akumarrws',
+      platforms: [
+        'Twitter',
+        'YouTube',
+        'TikTok',
+        'Discord',
+      ],
+      discord: {
+        id: '1097241365198409728',
+      },
+    },
+  ],
+  portfolio: [
+    {
+      img: {
+        element: 'img',
+        path: 'IMG_4052.png'
+      },
+      capt: '<a href="https://parks.RockGamerAK.com">A website</a> that I made promoting saving parks!',
+      desc: `Made by: <a href="/members/adarsh">Adarsh</a>`,
+    },
+    {
+      img: {
+        element: 'img',
+        path: 'IMG_4069.png',
+      },
+      capt: '<a href="https://rockgamerak.wixsite.com/games/jeopardy">A Jeopardy! Game</a> that I made!',
+      desc: `Made by: <a href="/members/adarsh">Adarsh</a>`,
+    }
+  ],
+}
 
 import Layout from '../../layouts/Layout.astro'
 
 import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 ---
-
-var section = document.createElement('section')
-main.appendChild(section)
-
-var pfp = document.createElement('span')
-pfp.id = 'pfp'
-pfp.src = '/assets/blank.png'
-section.appendChild(pfp)
-
-var nameEle = document.createElement('h1')
-nameEle.id = 'name'
-section.appendChild(nameEle)
-
-var emailEle = document.createElement('a')
-emailEle.id = 'email'
-section.appendChild(emailEle)
-
-var locationEle = document.createElement('a')
-locationEle.id = 'location'
-
-var locationIcon = document.createElement('div')
-locationEle.appendChild(locationIcon)
-
-var locationSpan = document.createElement('span')
-locationEle.appendChild(locationSpan)
-
-section.appendChild(locationEle)
-
-var socialsEle = document.createElement('ul')
-socialsEle.id = 'socials'
-section.appendChild(socialsEle)
-
-var bio = document.createElement('p')
-bio.id = 'bio'
-section.appendChild(bio)
-
 <Layout title="Members">
   <section id="content">
     <main id="profile" class="profile">
       <section>
+        <span id="pfp"></span>
+        <h1 id="name"></h1>
+        <a id="email" href=""></a>
+        <a id="location" href="">
+          <div></div>
+          <span></span>
+        </a>
+        <ul id="socials">
 
+        </ul>
+        <p id="bio"></p>
       </section>
     </main>
   </section>

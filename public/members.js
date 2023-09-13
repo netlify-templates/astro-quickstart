@@ -249,14 +249,6 @@ var MEMBER_DATA = {
         capt: '<a href="https://parks.RockGamerAK.com">A website</a> that I made promoting saving parks!',
         desc: `Made by: <a href="/members/adarsh">Adarsh</a>`,
       },
-      {
-        img: {
-          element: 'img',
-          path: 'IMG_4069.png',
-        },
-        capt: '<a href="https://rockgamerak.wixsite.com/games/jeopardy">A Jeopardy! Game</a> that I made!',
-        desc: `Made by: <a href="/members/adarsh">Adarsh</a>`,
-      }
     ],
   }, 
   isabelle: {
