@@ -253,6 +253,12 @@ main#profile {
     line-height: 1;
     &#email {
       color: black;
+      &:hover {
+        color: blue;
+        &:visited {
+          color: purple;
+        }
+      }
     }
   }
 }
