@@ -41,7 +41,7 @@ main#profile {
         margin: 0;
         text-decoration: none;
 
-        :is(#email, #location) {
+        &:is(#email, #location) {
             line-height: 1;
             transition: all 100ms ease;
             &:hover {
