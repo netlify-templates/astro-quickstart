@@ -16,6 +16,25 @@ main#profile {
         flex-direction: column;
         align-items: center;
     }
+
+    #pfp[style] {
+        cursor: pointer;
+        border-radius: 100%;
+        transition: 500ms ease-in-out;
+        width: var(--pfp-size);
+        height: var(--pfp-size);
+        border: none;
+        outline: none;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:hover {
+        border-radius: 25%;
+        transition: 500ms ease-in-out;
+        }
+    }
+
     a {
         margin: 0;
         text-decoration: none;
@@ -64,33 +83,15 @@ main#profile {
         }
     }
 
-    & > #name {
+    #name {
         margin: 0;
         text-align: center;
         font-size: 1.75rem;
     }
-    & > #bio {
+    #bio {
         max-width: 500px;
         text-align: center;
         margin: 0;
-    }
-
-    & > #pfp[style] {
-        cursor: pointer;
-        border-radius: 100%;
-        transition: 500ms ease-in-out;
-        width: var(--pfp-size);
-        height: var(--pfp-size);
-        border: none;
-        outline: none;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-
-        &:hover {
-        border-radius: 25%;
-        transition: 500ms ease-in-out;
-        }
     }
 }
   
