@@ -248,6 +248,15 @@ main {
   }
 }
 
+main#profile {
+  a {
+    line-height: 1;
+    #email {
+      color: black;
+    }
+  }
+}
+
 
 #menu {
   --bg-color: white;
