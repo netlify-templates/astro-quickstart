@@ -1021,7 +1021,7 @@ if (!!leftMembers[user] === false && !!user) {
 //document.querySelectorAll('footer')[
 //  document.querySelectorAll('footer').length - 1
 //].remove()
-if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
+if ((!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) && !!hasAddedMemberInfo === false) {
   var contentEle = document.createElement('section')
   contentEle.id = 'content'
   document.body.appendChild(contentEle)
@@ -1037,26 +1037,26 @@ if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
   main.appendChild(section)
 
   if (!!leftMembers[user] === false) {
-    let theElemenmts = []
+    let theElements = []
     var pfp = document.createElement('span')
     pfp.id = 'pfp'
     pfp.src = '/assets/blank.png'
-    theElemenmts.push(pfp)
+    theElements.push(pfp)
     section.appendChild(pfp)
 
     var nameEle = document.createElement('h1')
     nameEle.id = 'name'
-    theElemenmts.push(nameEle)
+    theElements.push(nameEle)
     section.appendChild(nameEle)
 
     var emailEle = document.createElement('a')
     emailEle.id = 'email'
-    theElemenmts.push(emailEle)
+    theElements.push(emailEle)
     section.appendChild(emailEle)
 
     var locationEle = document.createElement('a')
     locationEle.id = 'location'
-    theElemenmts.push(locationEle)
+    theElements.push(locationEle)
 
     var locationIcon = document.createElement('div')
     locationEle.appendChild(locationIcon)
@@ -1068,15 +1068,15 @@ if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
 
     var socialsEle = document.createElement('ul')
     socialsEle.id = 'socials'
-    theElemenmts.push(socialsEle)
+    theElements.push(socialsEle)
     section.appendChild(socialsEle)
 
     var bio = document.createElement('p')
     bio.id = 'bio'
-    theElemenmts.push(bio)
+    theElements.push(bio)
     section.appendChild(bio)
 
-    theElemenmts.forEach(function(e) {
+    theElements.forEach(function(e) {
       e.style.display = 'none'
     })
   }
