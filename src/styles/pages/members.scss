@@ -21,8 +21,10 @@ main#profile {
         cursor: pointer;
         border-radius: 100%;
         transition: 500ms ease-in-out;
-        width: var(--pfp-size);
-        height: var(--pfp-size);
+        max-width: var(--pfp-size);
+        max-height: var(--pfp-size);
+        width: 100%;
+        aspect-ratio: 1;
         border: none;
         outline: none;
         background-size: contain;
