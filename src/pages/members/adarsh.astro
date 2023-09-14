@@ -256,7 +256,7 @@ import '../../styles/photos.scss'
       <ul id="photos" style="height: auto; gap: 25px;">
         <li>
           {userData.portfolio.map((photo) => (
-            photo.html
+            <div set:html={photo.html}></div>
           ))}
         </li>
       </ul>
