@@ -212,7 +212,6 @@ userData.portfolio.forEach(function(photo, i) {
                 
   var name = photo['img']['path']
   
-  var img = document.createElement('img')
   if (path === 'YouTube') {
     name = `https://www.youtube-nocookie.com/embed/${photo['img']['vid_id']}?rel=0`
     img.src = `https://img.youtube.com/vi/${photo['img']['vid_id']}/maxresdefault.jpg`
@@ -220,7 +219,6 @@ userData.portfolio.forEach(function(photo, i) {
   else {
     img.src = path
   }
-  var tElement = document.querySelector('[tElement]')
   title = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
   title = title.split('<')
   title.forEach(function(t, i) {
