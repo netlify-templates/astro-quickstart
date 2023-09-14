@@ -125,7 +125,7 @@ section {
     font-weight: 200;
     font-size: 3rem;
   }
-  & h2 {
+  &:not(.profile > section > h2) h2 {
     margin: 0;
     text-transform: uppercase;
     font-weight: 400;
