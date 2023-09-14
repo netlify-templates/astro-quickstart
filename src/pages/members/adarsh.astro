@@ -12,7 +12,7 @@ const userData = {
     },
   }, 
   pfp: {
-    url: `/assets/members/${userData.username}/pfp.png`, 
+    url: `/assets/members/adarsh/pfp.png`, 
     g4g: {
       sizes: [
         {
@@ -26,7 +26,6 @@ const userData = {
   location: {
     city: 'Bay Area', 
     state: '',
-    combined: `${userData.location.city}, ${userData.location.state}`
   }, 
   bio: {
     w1: 'the',
@@ -141,6 +140,8 @@ else {
   uName = uName.split(' ')
   userData.email.address = `${uName[0].split('')[0]}${uName[1]}${userData.email.dtech.year}`
 }
+
+userData.location.combined = `${userData.location.city}, ${userData.location.state}`
 if (userData.location.combined.endsWith(', ')) {
   let str = userData.location.combined
   str.substring(0, str.length-2)
