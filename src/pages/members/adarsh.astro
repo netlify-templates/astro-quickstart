@@ -11,13 +11,12 @@ const userData = {
     },
   }, 
   pfp: {
-    url: `/assets/members/adarsh/pfps/pfp.png`, 
     g4g: {
       sizes: [
         {
           ext: 'png',
           name: 'full', 
-      }, 
+        }, 
       ],
     },
     google: 'AEdFTp7icI4wRK0FPsc17CnhxoQslGk8Pj8cUQo8a6S80w',
@@ -123,6 +122,13 @@ const userData = {
 userData.nameNoTitle = userData.name
 if (userData.nameNoTitle.includes('<')) {
   userData.nameNoTitle = userData.nameNoTitle.split('<')[0]
+}
+
+if (!!userData.pfp.g4g) {
+  userData.pfp.url = `/assets/members/${userData.username}/pfps/pfp-${userData.pfp.g4g[0]}`
+}
+else {
+  userData.pfp.url = `https://lh3.googleusercontent.com/a-/${userData.pfp.google}=s128`
 }
 
 if (!!userData.email.g4g) {
