@@ -125,7 +125,7 @@ if (userData.nameNoTitle.includes('<')) {
 }
 
 if (!!userData.pfp.g4g) {
-  userData.pfp.url = `/assets/members/${userData.username}/pfps/pfp-${userData.pfp.g4g[0]}`
+  userData.pfp.url = `/assets/members/${userData.username}/pfps/pfp-${userData.pfp.g4g.sizes[0].name}.${userData.pfp.g4g.sizes[0].ext}`.replace('-full', '')
 }
 else {
   userData.pfp.url = `https://lh3.googleusercontent.com/a-/${userData.pfp.google}=s128`
