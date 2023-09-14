@@ -117,14 +117,6 @@ const userData = {
       capt: '<a href="https://parks.RockGamerAK.com">A website</a> that I made promoting saving parks!',
       desc: `Made by: <a href="/members/adarsh">Adarsh</a>`,
     },
-    {
-      img: {
-        element: 'img',
-        path: 'IMG_4069.png',
-      },
-      capt: '<a href="https://rockgamerak.wixsite.com/games/jeopardy">A Jeopardy! Game</a> that I made!',
-      desc: `Made by: <a href="/members/adarsh">Adarsh</a>`,
-    }
   ],
 }
 
@@ -262,9 +254,7 @@ import '../../styles/photos.scss'
     </section>
   </main>
   <script is:inline>
-    var isBeta = !!localStorage.getItem('isBeta')
-    var hasAddedMemberInfo = false
-    if (isBeta) hasAddedMemberInfo = true
+    var hasAddedMemberInfo = true
   </script>
   <script is:inline src="/members.js"></script>
   <script is:inline src="/modal.js"></script>
