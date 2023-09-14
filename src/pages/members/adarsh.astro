@@ -129,6 +129,11 @@ const userData = {
   ],
 }
 
+userData.nameNoTitle = userData.name
+if (userData.nameNoTitle.includes('<')) {
+  userData.nameNoTitle = userData.nameNoTitle.split('<')[0]
+}
+
 if (!!userData.email.g4g) {
   userData.email.address = `${userData.username}@graphics-for-good.com`
 }
@@ -164,7 +169,7 @@ import '../../styles/photos.scss'
   <main id="profile" class="profile">
     <section>
       <span id="pfp" style={`background-image: url('${userData.pfp.url}')`}></span>
-      <h1 id="name" set:html={userData.name}></h1>
+      <h1 id="name">{userData.nameNoTitle}</h1>
       <a id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
       <a id="location" href={userData.location.mapLink}>
         <div></div>
