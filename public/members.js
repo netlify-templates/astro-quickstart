@@ -561,22 +561,6 @@ if (!!membersRedirect[user] === false && !!leftMembers[user] === false) {
 
 var protocall = 'mailto:'
 
-function addMembers() {
-  document.querySelector('header').style.display = 'none'
-  var element = document.getElementById('menu')
-  MEMBERS.forEach(member => {
-    var a = document.createElement('a')
-    element.appendChild(a)
-    a.href = `/members/${member}`
-
-    var li = document.createElement('li')
-    a.appendChild(li)
-    uname = MEMBER_DATA[member]['name']
-    li.innerHTML = uname
-  })
-  document.querySelector('header').style.display = ''
-}
-
 function setMember() {
   var pfp = MEMBER_DATA[user]['pfp']
   var hasPfp = !!pfp['g4g']
@@ -1083,25 +1067,5 @@ if ((!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) && !!hasAdd
 
   if (!!leftMembers[user] === false) {
     setMember()
-  }
-}
-else if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {}
-else {
-  if (!!createdMainMembersPageContent === false) {
-    var hero = document.createElement('section')
-    hero.className = 'hero fullHeight'
-    hero.id = 'content'
-    document.body.appendChild(hero)
-  
-    var menu = document.createElement('ul')
-    menu.id = 'menu'
-    menu.className = 'profile'
-    hero.appendChild(menu)
-  
-    var menuH1 = document.createElement('h1')
-    menuH1.innerHTML = 'Club Members'
-    menu.appendChild(menuH1)
-  
-    addMembers()
   }
 }

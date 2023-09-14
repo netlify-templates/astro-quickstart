@@ -24,9 +24,6 @@ import '../styles/photos.scss'
       {members.map((member) => ( <a href={`/members/${member.split(' ')[0].toLowerCase()}`}><li set:html={member}></li></a> ))}
     </ul>
   </section>
-  <script is:inline>
-    var createdMainMembersPageContent = true
-  </script>
   <script is:inline src="/members.js"></script>
   <script is:inline src="/modal.js"></script>
 </Layout>
