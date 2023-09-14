@@ -46,7 +46,7 @@ else {
     uName = uName.split('<')[0]
   }
   uName = uName.split(' ')
-  userData.email.address = `${uName[0].split('')[0]}${uName[1]}${userData.email.dtech.year}`
+  userData.email.address = `${uName[0].split('')[0]}${uName[1]}${userData.email.dtech.year}`.toLowerCase() + '@dtechhs.org'
 }
 
 userData.location.combined = `${userData.location.city}, ${userData.location.state}<BLAHBLAH>`
