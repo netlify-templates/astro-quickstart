@@ -197,22 +197,9 @@ var MEMBER_DATA = {
         },
       },
       {
-        handle: 'W.Web.Wizards',
-        platforms: [
-          'Instagram',
-        ],
-      },
-      {
-        handle: 'W_Web_Wizards',
-        platforms: [
-          'Twitter',
-        ],
-      },
-      {
         handle: 'akumarrws',
         platforms: [
           'Instagram',
-          'Threads',
         ],
       },
       {
@@ -230,6 +217,7 @@ var MEMBER_DATA = {
       {
         handle: 'akumarrws',
         platforms: [
+          'Threads',
           'Twitter',
           'YouTube',
           'TikTok',
