@@ -141,12 +141,8 @@ else {
   userData.email.address = `${uName[0].split('')[0]}${uName[1]}${userData.email.dtech.year}`
 }
 
-userData.location.combined = `${userData.location.city}, ${userData.location.state}`
-if (userData.location.combined.endsWith(', ')) {
-  let str = userData.location.combined
-  str.substring(0, str.length-2)
-  userData.location.combined = str
-}
+userData.location.combined = `${userData.location.city}, ${userData.location.state}<BLAHBLAH>`
+  .replace(', <BLAHBLAH>', '').replace('<BLAHBLAH>', '')
 
 userData.location.mapLink = userData.location.combined
 while (userData.location.mapLink.includes(' ')) {
@@ -155,7 +151,7 @@ while (userData.location.mapLink.includes(' ')) {
 userData.location.mapLink = `https://www.google.com/maps/place/${userData.location.mapLink}`
 
 userData.socials.forEach(function(social, i) {
-  userData.socials[i].icon = social.url
+  userData.socials[i].icon = `/assets/icons/${social.name.toLowerCase()}.svg`
 })
 
 import Layout from '../../layouts/Layout.astro'
@@ -168,7 +164,7 @@ import '../../styles/photos.scss'
   <main id="profile" class="profile">
     <section>
       <span id="pfp" style={`background-image: url('${userData.pfp.url}')`}></span>
-      <h1 id="name">{userData.name}</h1>
+      <h1 id="name" set:html={userData.name}></h1>
       <a id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
       <a id="location" href={userData.location.mapLink}>
         <div></div>
@@ -177,7 +173,7 @@ import '../../styles/photos.scss'
       <ul id="socials">
         {userData.socials.map((social) => (
           <li>
-            <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')'`}></a>
+            <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
           </li>
         ))}
       </ul>
