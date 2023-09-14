@@ -187,6 +187,52 @@ if (userData.bio.result.includes('{pronunciation}')) {
   // }
 }
 
+userData.portfolio.forEach(function(photo, i) {
+  var path = ''
+  var element = photo['img']['element']
+  if (element !== 'iframe') {
+    path = `/assets/members/${user}/portfolio/previews/${photo['img']['path'].replace('.svg', '.png')}`
+  }
+  else if (photo['img']['path'].endsWith('.pdf')) {
+    path = `/assets/members/${user}/portfolio/previews/${photo['img']['path'].replace('.pdf', '.png')}`
+  }
+  else {
+    path = photo['img']['path']
+  }
+                
+  var capt = photo['capt']
+  while (capt.includes('<a target="_blank" href="/')) {
+    capt = capt.replace('<a target="_blank" href="/', '<a href="/')
+  }
+                
+  var desc = photo['desc']
+  while (desc.includes('<a target="_blank" href="/')) {
+    desc = desc.replace('<a target="_blank" href="/', '<a href="/')
+  }
+                
+  var name = photo['img']['path']
+  
+  var img = document.createElement('img')
+  if (path === 'YouTube') {
+    name = `https://www.youtube-nocookie.com/embed/${photo['img']['vid_id']}?rel=0`
+    img.src = `https://img.youtube.com/vi/${photo['img']['vid_id']}/maxresdefault.jpg`
+  }
+  else {
+    img.src = path
+  }
+  var tElement = document.querySelector('[tElement]')
+  title = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
+  title = title.split('<')
+  title.forEach(function(t, i) {
+    if (t.includes('>')) {
+      t = t.split('>')[1]
+      title[i] = t
+    }
+  })
+  title = title.join('')
+  userData.portfolio[i].html = `<img src="${path}" title="${title}"/>`
+})
+
 import Layout from '../../layouts/Layout.astro'
 
 import '../../styles/pages/members.scss'
@@ -211,7 +257,57 @@ import '../../styles/photos.scss'
         ))}
       </ul>
       <p id="bio" set:html={userData.bio.result}></p>
-    </section>
+      <h2>Portfilio</h2>
+      <ul id="photos" style="height: auto; gap: 25px;">
+        <li>
+          {userData.portfolio.map((photo) => (
+            photo.html
+          ))}
+        </li>
+      </ul>
+          userData.portfolio.forEach(photo => {
+            var path = ''
+            var element = photo['img']['element']
+            if (element !== 'iframe') {
+              path = `/assets/members/${user}/portfolio/previews/${photo['img']['path'].replace('.svg', '.png')}`
+            }
+            else if (photo['img']['path'].endsWith('.pdf')) {
+              path = `/assets/members/${user}/portfolio/previews/${photo['img']['path'].replace('.pdf', '.png')}`
+            }
+            else {
+              path = photo['img']['path']
+            }
+    
+            var capt = photo['capt']
+            while (capt.includes('<a target="_blank" href="/')) {
+              capt = capt.replace('<a target="_blank" href="/', '<a href="/')
+            }
+    
+            var desc = photo['desc']
+            while (desc.includes('<a target="_blank" href="/')) {
+              desc = desc.replace('<a target="_blank" href="/', '<a href="/')
+            }
+    
+            var name = photo['img']['path']
+    
+            var img = document.createElement('img')
+            if (path === 'YouTube') {
+              name = `https://www.youtube-nocookie.com/embed/${photo['img']['vid_id']}?rel=0`
+              img.src = `https://img.youtube.com/vi/${photo['img']['vid_id']}/maxresdefault.jpg`
+            }
+            else {
+              img.src = path
+            }
+            var tElement = document.querySelector('[tElement]')
+            tElement.innerHTML = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
+            img.setAttribute('title', tElement.innerText)
+            li.appendChild(img)
+            img.addEventListener('click', function(e) {
+              showItem(name, element, capt, desc, 'p')
+            })
+          })
+          //      document.querySelector('[tElemment]').innerHTML = ''
+      </section>
   </main>
   <script is:inline>
     var isBeta = !!localStorage.getItem('isBeta')
