@@ -9,13 +9,18 @@ import Layout from '../../layouts/Layout.astro'
     <button id="unenroll">UnEnroll</button>
   </main>
   <script>
+    var lStorName = 'isBeta'
     enroll.addEventListener('click', function() {
-      localStorage.setItem('isBeta', true)
-      alert(`Enrolled you in the beta program.`)
+      if (!!localStorage.getItem(lStorName) === false) {
+        localStorage.setItem(lStorName, true)
+        alert(`Enrolled you in the beta program.`)
+      }
     })
     unenroll.addEventListener('click', function() {
-      localStorage.removeItem('isBeta')
-      alert(`UnEnrolled you from the beta program.`)
+      if (!!localStorage.getItem(lStorName)) {
+        localStorage.removeItem(lStorName)
+        alert(`UnEnrolled you from the beta program.`)
+      }
     })
   </script>
 </Layout>
