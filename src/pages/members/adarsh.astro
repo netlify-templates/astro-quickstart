@@ -186,8 +186,8 @@ import '../../styles/photos.scss'
   </main>
   <script is:inline>
     var isBeta = !!localStorage.getItem('isBeta')
-    var hasAddedMemberInfo = true
-    if (isBeta) hasAddedMemberInfo = false
+    var hasAddedMemberInfo = false
+    if (isBeta) hasAddedMemberInfo = true
   </script>
   <script is:inline src="/members.js"></script>
   <script is:inline src="/modal.js"></script>
