@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-  & h1:not(#profile > section > h1) {
+  & h1:not(.profile > section > h1) {
     margin: 0;
     text-transform: uppercase;
     font-weight: 200;
@@ -228,7 +228,7 @@ main {
     align-items: center;
     flex-direction: column;
   }
-  &:not(#mission, .photos, #portal, #profile) {
+  &:not(#mission, .photos, #portal, .profile, .enroll__beta) {
     box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
     border-radius: 25px;
     transition: 500ms ease-in-out;
@@ -236,7 +236,7 @@ main {
       border-radius: 10px;
     }
   }
-  &:is(#mission, .photos, #profile) {
+  &:is(#mission, .photos, .profile) {
     & section {
       box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
       border-radius: 25px;
