@@ -178,6 +178,15 @@ else {
   userData.bio.result = defaultBio(userData.name)
 }
 
+if (userData.bio.result.includes('{pronunciation}')) {
+  // if (!!userData.pronunciation) {
+  //   userData.bio.result = userData.bio.result.replace('{pronunciation}', userData.pronunciation)
+  // }
+  // else {
+    userData.bio.result = userData.bio.result.replace('{pronunciation}', '')
+  // }
+}
+
 import Layout from '../../layouts/Layout.astro'
 
 import '../../styles/pages/members.scss'
