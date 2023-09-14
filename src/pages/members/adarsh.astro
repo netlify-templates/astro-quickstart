@@ -265,49 +265,7 @@ import '../../styles/photos.scss'
           ))}
         </li>
       </ul>
-          userData.portfolio.forEach(photo => {
-            var path = ''
-            var element = photo['img']['element']
-            if (element !== 'iframe') {
-              path = `/assets/members/${user}/portfolio/previews/${photo['img']['path'].replace('.svg', '.png')}`
-            }
-            else if (photo['img']['path'].endsWith('.pdf')) {
-              path = `/assets/members/${user}/portfolio/previews/${photo['img']['path'].replace('.pdf', '.png')}`
-            }
-            else {
-              path = photo['img']['path']
-            }
-    
-            var capt = photo['capt']
-            while (capt.includes('<a target="_blank" href="/')) {
-              capt = capt.replace('<a target="_blank" href="/', '<a href="/')
-            }
-    
-            var desc = photo['desc']
-            while (desc.includes('<a target="_blank" href="/')) {
-              desc = desc.replace('<a target="_blank" href="/', '<a href="/')
-            }
-    
-            var name = photo['img']['path']
-    
-            var img = document.createElement('img')
-            if (path === 'YouTube') {
-              name = `https://www.youtube-nocookie.com/embed/${photo['img']['vid_id']}?rel=0`
-              img.src = `https://img.youtube.com/vi/${photo['img']['vid_id']}/maxresdefault.jpg`
-            }
-            else {
-              img.src = path
-            }
-            var tElement = document.querySelector('[tElement]')
-            tElement.innerHTML = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
-            img.setAttribute('title', tElement.innerText)
-            li.appendChild(img)
-            img.addEventListener('click', function(e) {
-              showItem(name, element, capt, desc, 'p')
-            })
-          })
-          //      document.querySelector('[tElemment]').innerHTML = ''
-      </section>
+    </section>
   </main>
   <script is:inline>
     var isBeta = !!localStorage.getItem('isBeta')
