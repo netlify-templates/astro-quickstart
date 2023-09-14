@@ -140,7 +140,7 @@ import '../../styles/photos.scss'
   <section id="content"></section>
   <main id="profile" class="profile">
     <section>
-      <span id="pfp" style={`background-image: url('${userData.pfp.url}')`}></span>
+      <span id="pfp" style={`background-image: url(${userData.pfp.url})`}></span>
       <h1 id="name">{userData.nameNoTitle}</h1>
       <a id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
       <a id="location" href={userData.location.mapLink}>
