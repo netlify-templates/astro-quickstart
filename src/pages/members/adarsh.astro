@@ -214,10 +214,7 @@ userData.portfolio.forEach(function(photo, i) {
   
   if (path === 'YouTube') {
     name = `https://www.youtube-nocookie.com/embed/${photo['img']['vid_id']}?rel=0`
-    img.src = `https://img.youtube.com/vi/${photo['img']['vid_id']}/maxresdefault.jpg`
-  }
-  else {
-    img.src = path
+    path = `https://img.youtube.com/vi/${photo['img']['vid_id']}/maxresdefault.jpg`
   }
   title = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
   title = title.split('<')
