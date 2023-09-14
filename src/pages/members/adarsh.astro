@@ -191,10 +191,10 @@ userData.portfolio.forEach(function(photo, i) {
   var path = ''
   var element = photo['img']['element']
   if (element !== 'iframe') {
-    path = `/assets/members/${user}/portfolio/previews/${photo['img']['path'].replace('.svg', '.png')}`
+    path = `/assets/members/${userData.username}/portfolio/previews/${photo['img']['path'].replace('.svg', '.png')}`
   }
   else if (photo['img']['path'].endsWith('.pdf')) {
-    path = `/assets/members/${user}/portfolio/previews/${photo['img']['path'].replace('.pdf', '.png')}`
+    path = `/assets/members/${userData.username}/portfolio/previews/${photo['img']['path'].replace('.pdf', '.png')}`
   }
   else {
     path = photo['img']['path']
