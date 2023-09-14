@@ -3,9 +3,11 @@ import '../../styles/globals.scss'
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title="Enroll | Website Beta">
-  <h1>Website Features Beta Program</h1>
-  <button id="enroll">Enroll</button>
-  <button id="unenroll">UnEnroll</button>
+  <main id="content">
+    <h1 style="width: fit-content;">Website Features Beta Program</h1>
+    <button id="enroll">Enroll</button>
+    <button id="unenroll">UnEnroll</button>
+  </main>
   <script>
     enroll.addEventListener('click', function() {
       localStorage.setItem('isBeta', true)
