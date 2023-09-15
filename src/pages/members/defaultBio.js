@@ -1,5 +1,4 @@
 function defaultBio(name, w1, w2, role) {
-  return name
   if (!!w1 === false) {
     w1 = 'a'
   }
