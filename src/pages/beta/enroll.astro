@@ -15,10 +15,12 @@ import Layout from '../../layouts/Layout.astro'
     button.addEventListener('click', function() {
       if (!!localStorage.getItem(lStorName) === false) {
         localStorage.setItem(lStorName, true)
+        button.textContent = 'UnEnroll'
         alert(`Enrolled you in the beta program.`)
       }
       if (!!localStorage.getItem(lStorName)) {
         localStorage.removeItem(lStorName)
+        button.textContent = 'Enroll'
         alert(`UnEnrolled you from the beta program.`)
       }
     })
