@@ -1,6 +1,6 @@
 ---
 import defaultBio from './defaultBio.js'
-const userData = {
+var userData = {
   username: 'shikha', 
   name: 'Shikha Iyer <span id="tag">(Club President)</span>',
   pronunciation: false, //'Uh-da-r-sh',
@@ -185,7 +185,7 @@ userData.portfolio.forEach(function(photo, i) {
     }
   })
   title = title.join('')
-  let onclickVal = `showItem('` + name + `', '` + element + `', '` + capt + `', '` + desc + `', ` + 'p' + `)"
+  let onclickVal = `showItem('` + name + `', '` + element + `', '` + capt + `', '` + desc + `', ` + 'p' + `)`
   userData.portfolio[i].html = '<img src="' + path + '" title="' + title + '"' + ` onclick='${onclickVal}'/>`
 })
 
