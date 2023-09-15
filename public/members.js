@@ -794,7 +794,7 @@ if (!!leftMembers[user] === false && !!user) {
 //document.querySelectorAll('footer')[
 //  document.querySelectorAll('footer').length - 1
 //].remove()
-if ((!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) && !!hasAddedMemberInfo === false) {
+if ((!!user && (!!leftMembers[user] || !!MEMBER_DATA[user])) && !!hasAddedMemberInfo === false) {
   var contentEle = document.createElement('section')
   contentEle.id = 'content'
   document.body.appendChild(contentEle)
@@ -878,15 +878,17 @@ if ((!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) && !!hasAdd
     setMember()
   }
 }
-else if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
-  if (!!socials.innerHTML === false) {
-    socials.remove()
-  }
-  if (photos.innerHTML === false) {
-    let possPortH2 = profile.querySelector('section > h2')
-    if (possPortH2.textContent.toLowerCase() = 'portfolio') {
-      possPortH2.remove()
+else if (!!user && (!!MEMBER_DATA[user])) {
+  if (!!MEMBER_DATA[user]['name']) {
+    if (!!socials.innerHTML === false) {
+      socials.remove()
     }
-    photos.remove()
+    if (photos.innerHTML === false) {
+      let possPortH2 = profile.querySelector('section > h2')
+      if (possPortH2.textContent.toLowerCase() = 'portfolio') {
+        possPortH2.remove()
+      }
+      photos.remove()
+    }
   }
 }
