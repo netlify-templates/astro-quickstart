@@ -40,18 +40,12 @@ ul#photos {
     list-style: none;
     padding: 0;
     width: 100%;
-  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
     & > li {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-  
-        & > div {
-            flex: 1;
-            height: auto;
-        }
-  
+        height: auto;
         & img {
             width: 100%;
             border-radius: 15px;

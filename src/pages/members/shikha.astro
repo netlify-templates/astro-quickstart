@@ -112,11 +112,9 @@ import '../../styles/photos.scss'
       <p id="bio" set:html={userData.bio.result}></p>
       <h2>Portfolio</h2>
       <ul id="photos" style="height: auto; gap: 25px;">
-        <li>
-          {userData.portfolio.map((photo) => (
-            <div set:html={photo.html}></div>
-          ))}
-        </li>
+        {userData.portfolio.map((photo) => (
+          <li set:html={photo.html}></li>
+        ))}
       </ul>
     </section>
   </main>

@@ -1069,3 +1069,8 @@ if ((!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) && !!hasAdd
     setMember()
   }
 }
+else if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
+  if (!!socials.innerHTML === false) {
+    socials.remove()
+  }
+}
