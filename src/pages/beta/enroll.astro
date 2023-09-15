@@ -5,18 +5,18 @@ import Layout from '../../layouts/Layout.astro'
 <Layout title="Enroll | Website Beta">
   <main id="content" class="enroll__beta">
     <h1 style="width: fit-content;">Website Features Beta Program</h1>
-    <button id="enroll">Enroll</button>
-    <button id="unenroll">UnEnroll</button>
+    <button id="button">Enroll</button>
   </main>
   <script>
     var lStorName = 'isBeta'
-    enroll.addEventListener('click', function() {
+    if (!!localStorage.getItem(lStorName)) {
+      button.textContent = 'UnEnroll'
+    }
+    button.addEventListener('click', function() {
       if (!!localStorage.getItem(lStorName) === false) {
         localStorage.setItem(lStorName, true)
         alert(`Enrolled you in the beta program.`)
       }
-    })
-    unenroll.addEventListener('click', function() {
       if (!!localStorage.getItem(lStorName)) {
         localStorage.removeItem(lStorName)
         alert(`UnEnrolled you from the beta program.`)
