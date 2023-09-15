@@ -711,7 +711,7 @@ if (!!membersRedirect[user]) {
   location.href = `/members/${membersRedirect[user]}`
 }
 
-if (!!leftMembers[user] === false && !!user) {
+if (!!user && (!!leftMembers[user] === false && !!MEMBER_DATA[user])) {
   var pfpI = 0
   if (!!MEMBER_DATA[user]['pfp']) {
     if (!!MEMBER_DATA[user]['pfp']['g4g']) {
