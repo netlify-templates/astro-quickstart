@@ -16,13 +16,14 @@
   color: white;
 
   --scroll-bar-width: 10px;
+  scroll-behavior: smooth;
 
   --shadow-color: white;
   --shadow-size: 10px;
 
   font-family: var(--font, 'Dekko', sans-serif);
   background-color: var(--bg-color, --orig-bg-color);
-  color: white
+  color: white;
 }
 
 *:not(.hero *:not(.text, #menu, .missiontext), .hero, body, html) {
