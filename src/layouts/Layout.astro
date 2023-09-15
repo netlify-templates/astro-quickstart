@@ -12,7 +12,7 @@ export interface Props {
 const { title } = Astro.props as Props;
 
 let dTitle = `${title} | Graphics for Good`
-if (dTitle.startsWith(' | ')) dTitle = dTitle.replace(' | ', '')
+if (dTitle.startsWith(' | ')) dTitle = dTitle.split(' | ')[1]
 
 ---
 
@@ -33,6 +33,7 @@ if (dTitle.startsWith(' | ')) dTitle = dTitle.replace(' | ', '')
   <body>
     <Header />
     <slot />
+    <InfoBox />
     <span style="display: none;" class="hidden" hidden tElement></span>
     <script>
       if (!!document.querySelector('.hero') === false) {
@@ -42,7 +43,6 @@ if (dTitle.startsWith(' | ')) dTitle = dTitle.replace(' | ', '')
     <script is:inline src="/script.js"></script>
     <script is:inline src="/header.js"></script>
     <script is:inline src="/footer.js"></script>
-    <script is:inline src="/eruda.js"></script>
-    <InfoBox />
+    <!-- <script is:inline src="/eruda.js"></script> -->
   </body>
 </html>

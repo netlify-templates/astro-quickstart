@@ -234,7 +234,7 @@ function showItem(img, c, element=false, capt=false, desc=false, user=false) {
   showModal(element, path, capt, desc)
 }
 
-document.querySelectorAll('.carousel')[0].querySelector('ul').querySelectorAll('li').forEach(e => {
+document.querySelector('.carousel').querySelector('ul').querySelectorAll('li').forEach(e => {
   e = e.querySelector('img')
   if (e.src.endsWith('/blank.png') === false) {
     let fname = e.src.split(`${location.host}/assets/members/`)[1].split('/')[3].split('.')[0]
