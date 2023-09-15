@@ -10,7 +10,7 @@ function updateUserData(userData) {
     userData.pfp.url = `/assets/members/${userData.username}/pfps/pfp-${userData.pfp.g4g.sizes[0].name}.${userData.pfp.g4g.sizes[0].ext}`.replace('-full', '')
   }
   else {
-    userData.pfp.url = `https://lh3.googleusercontent.com/a-/${userData.pfp.google}=s128`
+    userData.pfp.url = `https://lh3.googleusercontent.com/a/${userData.pfp.google}=s128`
   }
   
   if (!!userData.email.g4g) {
