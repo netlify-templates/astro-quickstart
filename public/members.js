@@ -359,9 +359,11 @@ function defaultBio(w1, w2, role) {
 
 var pfpI = 0
 if (!!membersRedirect[user] === false && !!leftMembers[user] === false) {
-  if (!!user && !!MEMBER_DATA[user]['name']) {
-    if (!!MEMBER_DATA[user]['pfp']['g4g']) {
-      MEMBER_DATA[user]['pfp']['g4g']['size'] = MEMBER_DATA[user]['pfp']['g4g']['sizes'][0]//Math.floor(Math.random() * MEMBER_DATA[user]['pfp']['g4g']['sizes'].length)]
+  if (!!user && !!MEMBER_DATA[user]) {
+    if (!!MEMBER_DATA['name']) {
+      if (!!MEMBER_DATA[user]['pfp']['g4g']) {
+        MEMBER_DATA[user]['pfp']['g4g']['size'] = MEMBER_DATA[user]['pfp']['g4g']['sizes'][0]//Math.floor(Math.random() * MEMBER_DATA[user]['pfp']['g4g']['sizes'].length)]
+      }
     }
   }
 }
@@ -879,5 +881,12 @@ if ((!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) && !!hasAdd
 else if (!!user && (!!MEMBER_DATA[user]['name']) || !!leftMembers[user]) {
   if (!!socials.innerHTML === false) {
     socials.remove()
+  }
+  if (photos.innerHTML === false) {
+    let possPortH2 = profile.querySelector('section > h2')
+    if (possPortH2.textContent.toLowerCase() = 'portfolio') {
+      possPortH2.remove()
+    }
+    photos.remove()
   }
 }
