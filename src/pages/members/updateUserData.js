@@ -10,7 +10,10 @@ function updateUserData(userData) {
     userData.pfp.url = `/assets/members/${userData.username}/pfps/pfp-${userData.pfp.g4g.sizes[0].name}.${userData.pfp.g4g.sizes[0].ext}`.replace('-full', '')
   }
   else {
-    userData.pfp.url = `https://lh3.googleusercontent.com/a/${userData.pfp.google}=s128`
+    if (!!userData.pfp.google.a === false) {
+      userData.pfp.google.a = 'a'
+    }
+    userData.pfp.url = `https://lh3.googleusercontent.com/${userData.pfp.google.a}/${userData.pfp.google.url}=s128`
   }
   
   if (!!userData.email.g4g) {
