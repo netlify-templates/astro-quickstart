@@ -1,3 +1,5 @@
+import defaultBio from './defaultBio.js'
+
 function updateUserData(userData) {
   userData.nameNoTitle = userData.name
   if (userData.nameNoTitle.includes('<')) {
