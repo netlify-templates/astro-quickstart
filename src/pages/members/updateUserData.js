@@ -1,7 +1,6 @@
 import defaultBio from './defaultBio.js'
 
 function updateUserData(userData) {
-  return userData
   userData.nameNoTitle = userData.name
   if (userData.nameNoTitle.includes('<')) {
     userData.nameNoTitle = userData.nameNoTitle.split('<')[0]
@@ -112,4 +111,4 @@ function updateUserData(userData) {
   return userData
 }
   
-export default defaultBio  
+export default updateUserData
