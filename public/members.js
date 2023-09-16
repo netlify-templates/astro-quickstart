@@ -876,17 +876,15 @@ if ((!!user && (!!leftMembers[user] || !!MEMBER_DATA[user])) && !!hasAddedMember
     setMember()
   }
 }
-else if (!!user && (!!MEMBER_DATA[user])) {
-  if (!!MEMBER_DATA[user]['name']) {
-    if (!!socials.innerHTML === false) {
-      socials.remove()
+else if (!!user) {
+  if (!!socials.innerHTML === false) {
+    socials.remove()
+  }
+  if (photos.innerHTML === false) {
+    let possPortH2 = profile.querySelector('section > h2')
+    if (possPortH2.textContent.toLowerCase() = 'portfolio') {
+      possPortH2.remove()
     }
-    if (photos.innerHTML === false) {
-      let possPortH2 = profile.querySelector('section > h2')
-      if (possPortH2.textContent.toLowerCase() = 'portfolio') {
-        possPortH2.remove()
-      }
-      photos.remove()
-    }
+    photos.remove()
   }
 }
