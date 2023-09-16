@@ -358,12 +358,10 @@ function defaultBio(w1, w2, role) {
 }
 
 var pfpI = 0
-if (!!membersRedirect[user] === false && !!leftMembers[user] === false) {
-  if (!!user && !!MEMBER_DATA[user]) {
-    if (!!MEMBER_DATA['name']) {
-      if (!!MEMBER_DATA[user]['pfp']['g4g']) {
-        MEMBER_DATA[user]['pfp']['g4g']['size'] = MEMBER_DATA[user]['pfp']['g4g']['sizes'][0]//Math.floor(Math.random() * MEMBER_DATA[user]['pfp']['g4g']['sizes'].length)]
-      }
+if (!!user && !!MEMBER_DATA[user] && (!!membersRedirect[user] === false && !!leftMembers[user] === false)) {
+  if (!!MEMBER_DATA['name']) {
+    if (!!MEMBER_DATA[user]['pfp']['g4g']) {
+      MEMBER_DATA[user]['pfp']['g4g']['size'] = MEMBER_DATA[user]['pfp']['g4g']['sizes'][0]//Math.floor(Math.random() * MEMBER_DATA[user]['pfp']['g4g']['sizes'].length)]
     }
   }
 }
@@ -711,7 +709,7 @@ if (!!membersRedirect[user]) {
   location.href = `/members/${membersRedirect[user]}`
 }
 
-if (!!user && (!!leftMembers[user] === false && !!MEMBER_DATA[user])) {
+if (!!user && !!MEMBER_DATA[user] && !!leftMembers[user] === false) {
   var pfpI = 0
   if (!!MEMBER_DATA[user]['pfp']) {
     if (!!MEMBER_DATA[user]['pfp']['g4g']) {
