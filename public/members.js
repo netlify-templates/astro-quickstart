@@ -883,7 +883,7 @@ else if (!!user) {
   }
   if (photos.innerHTML === memberItemExistsWithNoInnerHTML) {
     let possPortH2 = profile.querySelector('section > h2')
-    if (possPortH2.textContent.toLowerCase() = 'portfolio') {
+    if (possPortH2.textContent.toLowerCase() === 'portfolio') {
       possPortH2.remove()
     }
     photos.remove()
