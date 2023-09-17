@@ -51,10 +51,9 @@ a#go2content[href="javascript:scrollToNum()"] {
       max-height: 125px;
       border-radius: 100%;
       transition: 0.25s ease-in-out;
-      border: solid 1px white;
-      --bg-color: black;
+      border: solid 1px black;
 
-      :hover {
+      &:hover {
         border-radius: 37.5px;
       }
     }
