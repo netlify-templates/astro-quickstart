@@ -18,8 +18,9 @@
   --scroll-bar-width: 10px;
   scroll-behavior: smooth;
 
-  --shadow-color: white;
+  --shadow-color: black;
   --shadow-size: 10px;
+  --main-shadow: var(--shadow-color, var(--orig-bg-color)) 0 0 var(--shadow-size);
 
   font-family: var(--font, 'Dekko', sans-serif);
   background-color: var(--bg-color, --orig-bg-color);
@@ -193,7 +194,7 @@ section {
     width: calc(500px - 150px);
     text-align: center;
     background-color: white;
-    box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
+    box-shadow: var(--main-shadow);
     --bg-color: white;
     color: black;
     border-radius: 25px;
@@ -230,7 +231,7 @@ main {
     flex-direction: column;
   }
   &:not(#mission, .photos, #portal, .profile, .enroll__beta) {
-    box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
+    box-shadow: var(--main-shadow);
     border-radius: 25px;
     transition: 500ms ease-in-out;
     &:hover {
@@ -239,7 +240,7 @@ main {
   }
   &:is(#mission, .photos, .profile) {
     & section {
-      box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
+      box-shadow: var(--main-shadow);
       border-radius: 25px;
       transition: 500ms ease-in-out;
       &:hover {
@@ -253,15 +254,11 @@ main {
   --bg-color: white;
   color: black;
   
-  box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
-  border-radius: 25px;
-  transition: 500ms ease-in-out;
-
   margin: 0;
   padding-left: 0;
-  box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
+
   width: auto/*400px*/;
-  
+
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
@@ -271,6 +268,11 @@ main {
   align-items: center;
   gap: 15px;
   
+  box-shadow: var(--main-shadow);
+  border-radius: 25px;
+
+  transition: 500ms ease-in-out;
+
   &:hover {
     border-radius: 10px;
   }

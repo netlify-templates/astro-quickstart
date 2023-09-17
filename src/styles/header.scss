@@ -51,7 +51,7 @@ a#go2content[href="javascript:scrollToNum()"] {
       max-height: 125px;
       border-radius: 100%;
       transition: 0.25s ease-in-out;
-      box-shadow: var(--shadow-color, var(--orig-bg-color)) 0 0 calc(var(--shadow-size)/2);
+      box-shadow: var(--main-shadow);
 
       &:hover {
         border-radius: 37.5px;

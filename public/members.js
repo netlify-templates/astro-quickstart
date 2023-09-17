@@ -26,14 +26,11 @@ var membersRedirect = {
 }
 
 var MEMBERS = [
-  'shikha', 
   'sayuri', 
   'adarsh', 
   'isabelle', 
-  'hanlin', 
   'rien', 
   'samantha', 
-  'chloe', 
 ]
 
 var MEMBER_DATA = {
@@ -101,79 +98,6 @@ var MEMBER_DATA = {
         capt: `A scenescape of a frog chilling out that I made.`,
         desc: `Made by: <a href="/members/isabelle">Isabelle</a>`,
       },
-    ],
-  }, 
-  hanlin: {
-    name: 'Hanlin Su',
-    pronunciation: false, //'Han-lin', 
-    email: {
-      g4g: true,
-      dtech: {
-        year: 25,
-      },
-    }, 
-    pfp: {
-      g4g: {
-        sizes: [
-          {
-            ext: 'png',
-            name: 'full', 
-          }, 
-           {
-             ext: 'svg',
-             name: 'full', 
-           }, 
-        ],
-      },
-      google: 'AD5-WCnt_DoEt5klDUvrrysH-A3qw-DjgTdhqj5iPoUj',
-    },
-    location: {
-      city: 'Bay Area', 
-      state: '', 
-    }, 
-    bio: {
-      custom: `Hanlin{pronouciation} also known to his online community as <a href="https://roblox.fandom.com/wiki/Community:JavaCreates">JavaCreates</a> (previously I_lovejava) is an animator and digital art creator as well as ${defaultBio().replace(`Hanlin{pronouciation} is `, '')} You can find his work on his <a href="https://youtube.com/JavaCreates">YouTube Channel</a>!`, 
-    },
-    socials: [
-      {
-        handle: 'JavaCreates',
-        platforms: [
-          'Website',
-          'YouTube',
-          'Twitter',
-          'Instagram',
-          'TikTok',
-          // 'Discord', 
-        ],
-        // discord: {
-        //   id: '924832680607092777', 
-        // }
-      },
-      {
-        handle: 'HedgeHogHanlin',
-        platforms: [
-          'Instagram',
-        ],
-      },
-      // {
-      //   handle: 'hedgehog888', 
-      //   platforms: [
-      //     'Discord', 
-      //   ], 
-      //   discord: {
-      //     id: '924832680607092777',
-      //   }, 
-      // }, 
-    ],
-    portfolio: [
-//      {
-//        img: {
-//          element: 'img',
-//          path: 'G4G-Ad.svg',
-//        },
-//        capt: 'An Ad for <a href="/">Graphics for Good</a> made by <a href="/members/hanlin">Hanlin</a>!',
-//        desc: 'Made by: <a href="/members/hanlin">Hanlin</a>',
-//      },
     ],
   }, 
   rien: {

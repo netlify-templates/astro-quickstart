@@ -325,7 +325,8 @@ if (location.pathname === '/') {
       let capt = `${CLUB_PHOTOS[fname]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
       let tElement = document.querySelector('[tElement]')
       tElement.innerHTML = capt
-      e.setAttribute('title', tElement.innerText)
+      e.title = tElement.innerText
+      e.alt = tElement.innerText
       e.addEventListener('click', function(e) {
         showItem(fname, 'club_photos')
       })
@@ -341,7 +342,8 @@ document.querySelectorAll('.carousel')[mCVal].querySelector('ul').querySelectorA
     let capt = `${MEMBER_WORK[fname]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
     let tElement = document.querySelector('[tElement]')
     tElement.innerHTML = capt
-    e.setAttribute('title', tElement.innerText)
+    e.title = tElement.innerText
+    e.alt = tElement.innerText
     e.addEventListener('click', function(e) {
       showItem(fname, 'user_portfolios')
     })
