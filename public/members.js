@@ -28,7 +28,6 @@ var membersRedirect = {
 var MEMBERS = [
   'sayuri', 
   'adarsh', 
-  'isabelle', 
   'rien', 
   'samantha', 
 ]
@@ -60,45 +59,6 @@ var MEMBER_DATA = {
     bio: {
       w1: 'the',
     }, 
-  }, 
-  isabelle: {
-    name: 'Isabelle Anderson <span id="tag">(Website Designer)</span>',
-    pronunciation: false, 
-    email: {
-      g4g: false,
-      dtech: {
-        year: 25,
-      },
-    },
-    pfp: {
-      google: 'AD5-WCnPy-2RCIBm3xW24x52NHYd1QawRjgezLuj1Pu2',
-    },
-    location: {
-      city: 'Bay Area', 
-      state: '', 
-    }, 
-    bio: {
-      w1: false, 
-      w2: 'for',
-    }, 
-    portfolio: [
-      {
-        img: {
-          element: 'img',
-          path: "DON'T-EAT-FROGS.svg",
-        },
-        capt: `A poster that I made demanding that you not eat frogs.`,
-        desc: `Made by: <a href="/members/isabelle">Isabelle</a>`,
-      },
-      {
-        img: {
-          element: 'img',
-          path: 'Untitled-(800-x-1000-px).svg',
-        },
-        capt: `A scenescape of a frog chilling out that I made.`,
-        desc: `Made by: <a href="/members/isabelle">Isabelle</a>`,
-      },
-    ],
   }, 
   rien: {
     name: 'Rien (Rick) Gupta',

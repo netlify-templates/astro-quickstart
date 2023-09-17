@@ -3,19 +3,18 @@ import defaultBio from './defaultBio.js'
 import updateUserData from './updateUserData.js'
 
 var userData = {
-  username: 'chloe', 
-  name: 'Chloe Mercado',
-  pronunciation: false, //'Uh-da-r-sh',
+  username: 'isabelle', 
+  name: 'Isabelle Anderson <span id="tag">(Website Designer)</span>',
+  pronunciation: false, 
   email: {
     g4g: false,
     dtech: {
-      year: 24,
+      year: 25,
     },
   }, 
   pfp: {
     google: {
-      url: 'ACB-R5R3uvqh3F5n8t4297Rm1M57q55OBM2PCQUxJ4qD065ycwSkULmW4CdIb4m5E-qD',
-      a: 'a-',
+      url: 'AD5-WCnPy-2RCIBm3xW24x52NHYd1QawRjgezLuj1Pu2',
     }, 
   },
   location: {
@@ -23,9 +22,28 @@ var userData = {
     state: '',
   }, 
   bio: {
+    w1: false, 
+    w2: 'for',
   }, 
   socials: [],
-  portfolio: [],
+  portfolio: [
+    {
+      img: {
+        element: 'img',
+        path: "DON'T-EAT-FROGS.svg",
+      },
+      capt: `A poster that I made demanding that you not eat frogs.`,
+      desc: `Made by: <a href="/members/isabelle">Isabelle</a>`,
+    },
+    {
+      img: {
+        element: 'img',
+        path: 'Untitled-(800-x-1000-px).svg',
+      },
+      capt: `A scenescape of a frog chilling out that I made.`,
+      desc: `Made by: <a href="/members/isabelle">Isabelle</a>`,
+    },
+  ],
 }
 
 userData = updateUserData(userData)
