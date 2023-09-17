@@ -25,73 +25,9 @@ var membersRedirect = {
 }
 
 var MEMBERS = [
-  'sayuri', 
 ]
 
 var MEMBER_DATA = {
-  sayuri: {
-    name: 'Sayuri Rodrigo <span id="tag">(Club Vice-President)</span>',
-    pronunciation: false, //'Sai-oo-ri',
-    email: {
-      g4g: false,
-      dtech: {
-        year: 25,
-      },
-    }, 
-    pfp: {
-      g4g: {
-        sizes: [
-          {
-            ext: 'png',
-            name: 'full', 
-          }, 
-        ],
-      },
-    },
-    location: {
-      city: 'Bay Area', 
-      state: '', 
-    }, 
-    bio: {
-      w1: 'the',
-    }, 
-  }, 
-  samantha: {
-    portfolio: [
-      {
-        img: {
-          element: 'img',
-          path: 'Help-save-the-oceans_1.svg',
-        },
-        capt: `One out of four posters made by me to promote saving the oceans.`,
-        desc: `Made by: <a href="/members/sam">Sam</a>`,
-      },
-      {
-        img: {
-          element: 'img',
-          path: 'Help-save-the-oceans_2.svg',
-        },
-        capt: `Two out of four posters made by me to promote saving the oceans.`,
-        desc: `Made by: <a href="/members/sam">Sam</a>`,
-      },
-      {
-        img: {
-          element: 'img',
-          path: 'Help-save-the-oceans_3.svg',
-        },
-        capt: `Three out of four posters made by me to promote saving the oceans.`,
-        desc: `Made by: <a href="/members/sam">Sam</a>`,
-      },
-      {
-        img: {
-          element: 'img',
-          path: 'Help-save-the-oceans_4.svg',
-        },
-        capt: `Four out of four posters made by me to promote saving the oceans.`,
-        desc: `Made by: <a href="/members/sam">Sam</a>`,
-      },
-    ],
-  }, 
   juhi: {
     portfolio: [
       {
