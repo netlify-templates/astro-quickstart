@@ -108,7 +108,7 @@ function updateUserData(userData) {
     })
     title = title.join('')
     let onclickVal = `showItem('` + name + `', '` + element + `', '` + capt + `', '` + desc + `', ` + 'p' + `)`
-    userData.portfolio[i].html = '<img src="' + path + '" title="' + title + '"' + ` onclick='${onclickVal}'/>`
+    userData.portfolio[i].html = '<img src="' + path + '" title="' + title + '"' + ` onclick="${onclickVal}"/>`
   })
 
   return userData
