@@ -21,12 +21,6 @@ if (urlPath.split('/').length >= 3) {
 }
 else user = urlParams.get('m')
 
-var membersRedirect = {
-}
-
-var MEMBERS = [
-]
-
 var MEMBER_DATA = {
   juhi: {
     portfolio: [
@@ -67,17 +61,15 @@ var MEMBER_DATA = {
 }
 
 var leftMembers = {
-  juhi: {date: '04/07/2023'}, 
-  yajaira: {date: 'a date in the month of march'},
-  lorelai: {date: '04/25/2023 and graduated'},
-  sam: {date: 'the start of 2023'}, 
-  ryan: {date: 'an unknown date in 2022'},
-  mychelle: {date: 'an unknown date in 2022'},
-  olivia: {date: 'an unknown date in 2022'},
-  michael: {date: 'an unknown date in 2022'},
-  vivi: {date: 'an unknown date in 2022'},
-  elliot: {date: 'an unknown date'},
-  gwen: {date: 'an unknown date'},
+  juhi: {
+    date: '04/07/2023'
+  }, 
+  sam: {
+    date: 'the start of 2023'
+  }, 
+  gwen: {
+    date: 'an unknown date'
+  },
 }
 
 var mname = ''
@@ -123,7 +115,7 @@ function defaultBio(w1, w2, role) {
 }
 
 var pfpI = 0
-if (!!user && !!MEMBER_DATA[user] && (!!membersRedirect[user] === false && !!leftMembers[user] === false)) {
+if (!!user && !!MEMBER_DATA[user] && !!leftMembers[user] === false) {
   if (!!MEMBER_DATA[user]['name']) {
     if (!!MEMBER_DATA[user]['pfp']['g4g']) {
       MEMBER_DATA[user]['pfp']['g4g']['size'] = MEMBER_DATA[user]['pfp']['g4g']['sizes'][0]//Math.floor(Math.random() * MEMBER_DATA[user]['pfp']['g4g']['sizes'].length)]
@@ -470,9 +462,6 @@ function showItem(img, element, capt, desc, c) {
   showModal(element, path, capt, desc)
 }
 
-if (!!membersRedirect[user]) {
-  location.href = `/members/${membersRedirect[user]}`
-}
 
 if (!!user && !!MEMBER_DATA[user] && !!leftMembers[user] === false) {
   var pfpI = 0
