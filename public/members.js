@@ -22,12 +22,10 @@ if (urlPath.split('/').length >= 3) {
 else user = urlParams.get('m')
 
 var membersRedirect = {
-  sam: 'samantha'
 }
 
 var MEMBERS = [
   'sayuri', 
-  'samantha', 
 ]
 
 var MEMBER_DATA = {
@@ -59,21 +57,6 @@ var MEMBER_DATA = {
     }, 
   }, 
   samantha: {
-    name: 'Samantha (Sam) Wolff',
-    pronunciation: false,
-    email: {
-      g4g: false,
-      dtech: {
-        year: 25,
-      },
-    },
-    pfp: {
-      google: 'AD5-WCnnmJnIpvLyc4r-7-dAAE4rSc8HOVtSXsuDb_xv',
-    },
-    location: {
-      city: 'Bay Area', 
-      state: '', 
-    }, 
     portfolio: [
       {
         img: {
