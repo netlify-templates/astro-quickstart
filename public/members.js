@@ -27,8 +27,6 @@ var membersRedirect = {
 
 var MEMBERS = [
   'sayuri', 
-  'adarsh', 
-  'rien', 
   'samantha', 
 ]
 
@@ -59,43 +57,6 @@ var MEMBER_DATA = {
     bio: {
       w1: 'the',
     }, 
-  }, 
-  rien: {
-    name: 'Rien (Rick) Gupta',
-    pronunciation: false, //'The same as Ryan or just Rick',
-    email: {
-      g4g: false,
-      dtech: {
-        year: 25,
-      },
-    }, 
-    pfp: {
-      g4g: {
-        sizes: [
-          {
-            ext: 'png',
-            name: 'full', 
-          }, 
-          // {
-          //   ext: 'svg',
-          //   name: 'full', 
-          // }, 
-        ],
-      },
-      google: 'AD5-WCk60XAYpME73oo8YLGZipFe9UtecC1erzLWnLrfCA',
-    },
-    location: {
-      city: 'Bay Area', 
-      state: '', 
-    }, 
-    socials: [
-      {
-        handle: 'the-only-rien-gupta',
-        platforms: [
-          'Linkedin'
-        ]
-      },
-    ],
   }, 
   samantha: {
     name: 'Samantha (Sam) Wolff',
