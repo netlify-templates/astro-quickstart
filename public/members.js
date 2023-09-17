@@ -1,3 +1,4 @@
+var memberItemExistsWithNoInnerHTML = '\n        \n      '
 var setMETA = true
 
 var wWorks = []
@@ -877,10 +878,10 @@ if ((!!user && (!!leftMembers[user] || !!MEMBER_DATA[user])) && !!hasAddedMember
   }
 }
 else if (!!user) {
-  if (!!socials.innerHTML === false) {
+  if (socials.innerHTML === memberItemExistsWithNoInnerHTML) {
     socials.remove()
   }
-  if (photos.innerHTML === false) {
+  if (photos.innerHTML === memberItemExistsWithNoInnerHTML) {
     let possPortH2 = profile.querySelector('section > h2')
     if (possPortH2.textContent.toLowerCase() = 'portfolio') {
       possPortH2.remove()
