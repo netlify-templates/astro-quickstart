@@ -18,7 +18,7 @@ import '../../styles/pages/members.scss'
   <main id="profile" class="profile">
     <section>
       <h1 id="name">{userData.name}</h1>
-      <p id="bio" set:html={userData.bio.result}></p>
+      <p id="bio" set:html={userData.bio}></p>
     </section>
   </main>
   <script is:inline>
