@@ -1,10 +1,10 @@
 import defaultBio from './defaultBio.js'
 
 function updateLeftMemberData(userData) {
-  let dateObjFromDate = new Date(userDate.date)
+  let dateObjFromDate = new Date(userData.date)
   if (!!dateObjFromDate) {
     dateObjFromDate = dateObjFromDate.toDateString()
-    userDate.date = dateObjFromDate
+    userData.date = dateObjFromDate
   }
 
   let leftDefaultBio = defaultBio()
