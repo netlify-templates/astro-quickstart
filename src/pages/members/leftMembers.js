@@ -17,6 +17,8 @@ function updateLeftMemberData(userData) {
     bioText = `${bioText} They graduated in ${userData.graduated.year}`
   }
   userData.bio = bioText
+
+  return userData
 }
   
 export default updateLeftMemberData  
