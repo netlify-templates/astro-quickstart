@@ -1,13 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import leftMembers from './leftMembers.js'
+
+var userData = {
+  username: 'sam', 
+  name: 'Sam Cheng', 
+  date: 'the start of 2023', 
+  graduated: false;
+}
+
+userData = leftMembers(userData)
 
 import '../../styles/pages/members.scss'
-import '../../styles/photos.scss'
 ---
-<Layout title="Members">
+<Layout title={userData.name}>
+  <section id="content"></section>
+  <main id="profile" class="profile">
+    <section>
+      <h1 id="name">{userData.name}</h1>
+      <p id="bio" set:html={userData.bio.result}></p>
+    </section>
+  </main>
   <script is:inline>
-    var hasAddedMemberInfo = false
+    var hasAddedMemberInfo = true
   </script>
-  <script is:inline src="/members.js"></script>
-  <script is:inline src="/modal.js"></script>
 </Layout>

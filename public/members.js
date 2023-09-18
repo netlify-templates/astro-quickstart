@@ -1,12 +1,5 @@
 var memberItemExistsWithNoInnerHTML = '\n        \n      '
-var setMETA = true
 
-var wWorks = []
-if (!!dTitle == false) {
-  var dTitle = document.title
-}
-
-var imageSize
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 
@@ -60,69 +53,10 @@ var MEMBER_DATA = {
   },  
 }
 
-var leftMembers = {
-  juhi: {
-    date: '04/07/2023'
-  }, 
-  sam: {
-    date: 'the start of 2023'
-  }, 
-  gwen: {
-    date: 'an unknown date'
-  },
-}
-
 var mname = ''
-var oUName = ''
-if (!!leftMembers[user]) {
-  mname = `${user.split('')[0].toUpperCase()}${user.substring(1)}`
-  oUName = `${user.split('')[0].toUpperCase()}${user.substring(1)}`
-}
-else if (!!MEMBER_DATA[user]) {
+if (!!MEMBER_DATA[user]) {
   mname = MEMBER_DATA[user]['name']
-  oUName = MEMBER_DATA[user]['name']
 }
-
-function defaultBio(w1, w2, role) {
-  if (!!w1 === false) {
-    w1 = 'a'
-  }
-  if (!!w2 === false) {
-    w2 = 'of'
-  }
-  if (!!user) {
-    if (!!mname === false) {
-      mname = ''
-    }
-    var uName = mname
-    if (uName.includes(' <span id="tag">') || !!role) {
-      if (!!role === false) {
-        role = uName.split(' <span id="tag">(')[1].split(')</span>')[0].replace(',', '')
-      }
-      return `${uName.split(' <span id="tag">')[0].split(' ')[0]}{pronouciation} is ${w1} ${role} ${w2} the Graphics for Good club at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City.`
-    }
-    else {
-      if (uName.includes('(') && uName.includes(')')) {
-        uName = uName.split('(')[1].split(')')[0]
-      }
-      role = 'Member'
-      return `${uName.split(' ')[0]}{pronouciation} is ${w1} ${role} ${w2} the Graphics for Good club at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City.`
-    }
-  }
-  else {
-    return ''
-  }
-}
-
-var pfpI = 0
-if (!!user && !!MEMBER_DATA[user] && !!leftMembers[user] === false) {
-  if (!!MEMBER_DATA[user]['name']) {
-    if (!!MEMBER_DATA[user]['pfp']['g4g']) {
-      MEMBER_DATA[user]['pfp']['g4g']['size'] = MEMBER_DATA[user]['pfp']['g4g']['sizes'][0]//Math.floor(Math.random() * MEMBER_DATA[user]['pfp']['g4g']['sizes'].length)]
-    }
-  }
-}
-
 
 function showItem(img, element, capt, desc, c) {
   var cLink = document.querySelector("#cSpan").parentNode
@@ -168,41 +102,7 @@ function showItem(img, element, capt, desc, c) {
 //document.querySelectorAll('footer')[
 //  document.querySelectorAll('footer').length - 1
 //].remove()
-if ((!!user && !!leftMembers[user]) && !!hasAddedMemberInfo === false) {
-  var contentEle = document.createElement('section')
-  contentEle.id = 'content'
-  document.body.appendChild(contentEle)
-
-  document.getElementsByTagName('header')[0].setAttribute('bBorder', '')
-
-  var main = document.createElement('main')
-  main.id = 'profile'
-  main.className = 'profile'
-  document.body.appendChild(main)
-  
-  var section = document.createElement('section')
-  main.appendChild(section)
-
-  var bio = document.createElement('p')
-  bio.id = 'bio'
-  let leftDefaultBio = defaultBio().replace('{pronouciation}', '').replace(' is ', ' was ')
-  leftDefaultBio.substring(0, leftDefaultBio.split('').length - 1)
-  var bioText = `${leftDefaultBio} until ${leftMembers[user]['date']}.`
-  bio.innerHTML = bioText
-  section.appendChild(bio)
-//  var fElement = document.createElement('footer')
-//  fElement.innerHTML = footerHTML
-//  document.body.appendChild(fElement)
-
-  var tEle = document.createElement('span')
-  tEle.style.display = 'none'
-  tEle.id = 'hidden'
-  tEle.className = 'hidden'
-  tEle.setAttribute('hidden', '')
-  tEle.setAttribute('tElement', '')
-  document.body.appendChild(tEle)
-}
-else if (!!user) {
+if (!!user) {
   if (socials.innerHTML === memberItemExistsWithNoInnerHTML) {
     socials.remove()
   }
