@@ -7,7 +7,7 @@ function updateLeftMemberData(userData) {
     userData.date = dateObjFromDate
   }
 
-  let leftDefaultBio = defaultBio()
+  let leftDefaultBio = defaultBio(userData.name)
     .replace('{pronouciation}', '')
     .replace(' is ', ' was ')
   leftDefaultBio.substr(0, leftDefaultBio.length - 1)
