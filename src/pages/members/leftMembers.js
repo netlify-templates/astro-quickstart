@@ -10,7 +10,7 @@ function updateLeftMemberData(userData) {
   let leftDefaultBio = defaultBio(userData.name)
     .replace('{pronunciation}', '')
     .replace(' is ', ' was ')
-  leftDefaultBio.substr(0, leftDefaultBio.length - 2)
+  leftDefaultBio = leftDefaultBio.substr(0, leftDefaultBio.length - 1)
   var bioText = `${leftDefaultBio} until ${userData.date}.`
   
   if (typeof userData.graduated === 'object' && !!userData.graduated[0] === false) {

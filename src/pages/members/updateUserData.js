@@ -25,7 +25,15 @@ function updateUserData(userData) {
       uName = uName.split('<')[0]
     }
     uName = uName.split(' ')
-    userData.email.address = `${uName[0].split('')[0]}${uName[1]}${userData.email.dtech.year}`.toLowerCase() + '@dtechhs.org'
+    let eUserName = `${uName[0].split('')[0]}${uName[1]}`
+    if (!!userData.email) {
+      if (!!userData.email.dtech) {
+        if (!!userData.email.dtech.email) {
+          eUserName = userData.email.dtech.email
+        }
+      }
+    }
+    userData.email.address = `${eUserName}${userData.email.dtech.year}`.toLowerCase() + '@dtechhs.org'
   }
   
   userData.location.combined = `${userData.location.city}, ${userData.location.state}<BLAHBLAH>`
