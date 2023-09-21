@@ -281,13 +281,13 @@ main.split {
     flex-direction: column;
     align-items: center;
     gap: var(--padding);
-    padding-block: var(--padding);
+    margin-block: var(--padding);
 
     &:first-child {
-      padding-inline-start: var(--padding);
+      margin-inline-start: var(--padding);
     }
     &:last-child {
-      padding-inline-start: var(--padding);
+      margin-inline-start: var(--padding);
     }
   
     &#contact {
