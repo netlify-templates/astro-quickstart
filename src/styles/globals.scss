@@ -269,6 +269,7 @@ main.split {
   
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: var(--padding);
   
   & > section {
