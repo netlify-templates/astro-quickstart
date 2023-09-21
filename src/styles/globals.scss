@@ -282,6 +282,7 @@ main.split {
     align-items: center;
     gap: var(--padding);
     margin-block: var(--padding);
+    padding: var(--padding);
 
     &:first-child {
       margin-inline-start: var(--padding);
