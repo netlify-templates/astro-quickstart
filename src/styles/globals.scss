@@ -300,15 +300,8 @@ main.split {
   
     & > div:not([hHr]) {
       min-height: calc(50% - 50px);
-  
-      &:not(div.carousel) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--padding);
-      }
     }
-        
+
     & h1 {
       text-align: center;
     }
