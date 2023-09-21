@@ -1,12 +1,11 @@
 main#mission
-  & > section  {
-    & > div:not([hHr]):not(div.carousel) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--padding);
-    }
+  & > section > div:not([hHr]):not(div.carousel) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--padding);
   }
+  
   .missiontext  {
   margin: 0;
   padding: 0;
