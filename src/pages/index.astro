@@ -14,35 +14,33 @@ import '../styles/photos.scss'
     </div>
   </Hero>
   <main id="mission" class="split">
-    <div class="container">
-      <section id="mSection">
-        <h1>Our Mission</h1>
-        <div class="missiontext">
-          <p class="text" centered displayFlex style="--f-direction: column; --gap: 8px;">
-            <span style="text-align: justify;">"Our mission is to help create change in the world through design. We strive to provide free design help for nonprofits that support a wide range of causes."</span>
-            <span displayFlex style="--f-direction: row; justify-content: right;"> - Shikha Iyer, Club Founder</span>
-          </p>
-          <a style="margin-left: auto;" href="/mission" class="btn">Read More</a>
-        </div>
-      </section>
-      <span class="vHr"></span>
-      <section id="contact">
-        <h2 style="font-size: 2.25rem;">Interested in partnering with us?</h2>
-        <h1>Contact Us</h1>
-        <div id="contactDone" style="display: none;">
-          <h3 align="center" style="font-size: 25px; display: none; margin: 0;">Thank You For Submitting!</h2>
-        </div>
-        <form class="contact" action="https://docs.google.com/forms/d/e/1FAIpQLSc4qjrt9QFOiGU4DHHjagYlVsYdS77KiXqwo967oeGySAVMnQ/formResponse" method="POST">
-          <input type="text" name="entry.264713401" placeholder="Full Name" top required>
-          <input type="email" name="entry.2027702877" placeholder="Email Address" required>
-          <textarea type="text" name="entry.656122872" placeholder="Message" required></textarea>
-          <input type="hidden" name="entry.1445095683" value="true" />
-          <!-- add hidden Honeypot input to prevent spams -->
-          <input type="hidden" name="_gotcha" style="display:none!important">
-          <button type="submit" onclick="sendMessage()">Send</button>
-        </form>
-      </section>
-    </div>
+    <section id="mSection">
+      <h1>Our Mission</h1>
+      <div class="missiontext">
+        <p class="text" centered displayFlex style="--f-direction: column; --gap: 8px;">
+          <span style="text-align: justify;">"Our mission is to help create change in the world through design. We strive to provide free design help for nonprofits that support a wide range of causes."</span>
+          <span displayFlex style="--f-direction: row; justify-content: right;"> - Shikha Iyer, Club Founder</span>
+        </p>
+        <a style="margin-left: auto;" href="/mission" class="btn">Read More</a>
+      </div>
+    </section>
+    <span class="vHr"></span>
+    <section id="contact">
+      <h2 style="font-size: 2.25rem;">Interested in partnering with us?</h2>
+      <h1>Contact Us</h1>
+      <div id="contactDone" style="display: none;">
+        <h3 align="center" style="font-size: 25px; display: none; margin: 0;">Thank You For Submitting!</h2>
+      </div>
+      <form class="contact" action="https://docs.google.com/forms/d/e/1FAIpQLSc4qjrt9QFOiGU4DHHjagYlVsYdS77KiXqwo967oeGySAVMnQ/formResponse" method="POST">
+        <input type="text" name="entry.264713401" placeholder="Full Name" top required>
+        <input type="email" name="entry.2027702877" placeholder="Email Address" required>
+        <textarea type="text" name="entry.656122872" placeholder="Message" required></textarea>
+        <input type="hidden" name="entry.1445095683" value="true" />
+        <!-- add hidden Honeypot input to prevent spams -->
+        <input type="hidden" name="_gotcha" style="display:none!important">
+        <button type="submit" onclick="sendMessage()">Send</button>
+      </form>
+    </section>
   </main>
   <div hHr></div>
   <main id="mwork" class="photos">
