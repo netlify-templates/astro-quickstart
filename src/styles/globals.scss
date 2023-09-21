@@ -224,13 +224,13 @@ main {
     font-size: 2.5rem;
   }
 
-  &:not(#portal, #mission) {
+  &:not(#portal, .split) {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  &:not(#mission, .photos, #portal, .profile, .enroll__beta) {
+  &:not(.split, .photos, #portal, .profile, .enroll__beta) {
     box-shadow: var(--main-shadow);
     border-radius: 25px;
     transition: 500ms ease-in-out;
@@ -238,7 +238,7 @@ main {
       border-radius: 10px;
     }
   }
-  &:is(#mission, .photos, .profile) {
+  &:is(.split, .photos, .profile) {
     & section {
       box-shadow: var(--main-shadow);
       border-radius: 25px;
