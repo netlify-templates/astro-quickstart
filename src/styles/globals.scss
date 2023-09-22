@@ -162,7 +162,7 @@ section {
 
     color: black;
   }
-  &:not(.primary):hover {
+  &:not(.primary):is(:hover, :focus-visible) {
     --bg-color: black;
     --border-color: white;
 
@@ -174,7 +174,7 @@ section {
 
     color: white !important;
   }
-  &.primary:hover {
+  &.primary:is(:hover, :focus-visible) {
     --bg-color: white !important;
     --border-color: black;
 
@@ -208,7 +208,7 @@ section {
     border-radius: 25px;
     transition: 500ms ease-in;
 
-    &:hover {
+    &:hover, &:is(:focus-within, :has(:focus-visible)) {
       border-radius: 10px;
       transition: 500ms ease-out;
     }
@@ -242,7 +242,7 @@ section {
     box-shadow: var(--main-shadow);
     border-radius: 25px;
     transition: 500ms ease-in-out;
-    &:hover {
+    &:hover, &:is(:focus-within, :has(:focus-visible)) {
       border-radius: 10px;
     }
   }
@@ -251,7 +251,7 @@ section {
       box-shadow: var(--main-shadow);
       border-radius: 25px;
       transition: 500ms ease-in-out;
-      &:hover {
+      &:hover, &:is(:focus-within, :has(:focus-visible)) {
         border-radius: 10px;
       }
     }
@@ -358,7 +358,7 @@ section.split {
 
   transition: 500ms ease-in-out;
 
-  &:hover {
+  &:hover, &:is(:focus-within, :has(:focus-visible)) {
     border-radius: 10px;
   }
 
