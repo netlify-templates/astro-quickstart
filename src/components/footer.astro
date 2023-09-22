@@ -34,13 +34,13 @@ siteUpdatedDateStrS[1] = siteUpdatedDateStrS[1]
 if (siteUpdatedDateStrS[2].startsWith('0')) {
   siteUpdatedDateStrS[2] = siteUpdatedDateStrS[2].substring(1)
 }
-if (siteUpdatedDateStrS[2].endsWith('1') && siteUpdatedDateStr[2] !== '11') {
+if (siteUpdatedDateStrS[2].endsWith('1') && siteUpdatedDateStrs[2] !== '11') {
   siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}st`
 }
-else if (siteUpdatedDateStrS[2].endsWith('2') && siteUpdatedDateStr[2] !== '12') {
+else if (siteUpdatedDateStrS[2].endsWith('2') && siteUpdatedDateStrs[2] !== '12') {
   siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}nd`
 }
-else if (siteUpdatedDateStrS[2].endsWith('3') && siteUpdatedDateStr[2] !== '13') {
+else if (siteUpdatedDateStrS[2].endsWith('3') && siteUpdatedDateStrs[2] !== '13') {
   siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}rd`
 }
 else {
