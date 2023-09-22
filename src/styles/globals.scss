@@ -238,7 +238,7 @@ section {
     align-items: center;
     flex-direction: column;
   }
-  &:not(.split, .photos, #portal, .profile, .enroll__beta) {
+  &:not(.hero, .split, .photos, #portal, .profile, .enroll__beta) {
     box-shadow: var(--main-shadow);
     border-radius: 25px;
     transition: 500ms ease-in-out;
