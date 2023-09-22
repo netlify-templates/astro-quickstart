@@ -1,0 +1,9 @@
+.projects {
+    & > section {
+        & > section {
+            & > div {
+                text-align: center;
+            }
+        }
+    }
+}
