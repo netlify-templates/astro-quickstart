@@ -104,44 +104,23 @@ if (pathName.endsWith('/')) {
   pathName = pathName.substring(0, pathName.split('').length - 1)
 }
 
-let csI = 0
-let csINT = false
-checkSetFHeight()
-if (location.pathname.startsWith('/members') && location.pathname.endsWith('/members') === false) {
-  csINT = setInterval(checkSetFHeight, 10)
-}
-function checkSetFHeight() {
-  setTimeout(function() {
-    if (document.body.clientHeight <= window.innerHeight) {
-      document.documentElement.classList.add('fullHeight')
-      let hasHero = false
-      document.documentElement.querySelectorAll('body > *').forEach(function(e) {
-        if (e.className.includes('hero')) hasHero = true
-      })
-      if (hasHero === false) {
-        document.body.classList.add('fullHeight')
-      }
-      if (!!document.querySelector('main')) {
-        if (document.querySelectorAll('main').length === 1) {
-          document.querySelector('main').style.flex = 1
-        }
-      }
-    }
-    else {
-      document.documentElement.classList.remove('fullHeight')
-      document.body.classList.remove('fullHeight')
-    }
-    csI++
-    if (csI >= 1000 && !!csINT) {
-      clearInterval(csINT)
-    }
-  }, 0)
-}
-
 let isTall = false
 if (document.body.clientHeight < window.innerHeight) {
   isTall === true
+  document.documentElement.classList.add('fullHeight')
   if (!!document.getElementsByClassName('hero')[0]) {
-    document.getElementsByClassName('hero')[0].style.flex = '1'
+    document.getElementsByClassName('hero')[0].style.height = '100%'
   }
+  else {
+    document.body.classList.add('fullHeight')
+  }
+  if (!!document.querySelector('main')) {
+    if (document.querySelectorAll('main').length === 1) {
+      document.querySelector('main').style.flex = 1
+    }
+  }
+}
+else {
+  document.documentElement.classList.remove('fullHeight')
+  document.body.classList.remove('fullHeight')
 }
