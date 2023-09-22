@@ -108,16 +108,18 @@ let isTall = false
 if (document.body.clientHeight < window.innerHeight) {
   isTall === true
   document.documentElement.classList.add('fullHeight')
+  if (!!document.getElementsByTagName('main')[0]) {
+    if (document.getElementsByTagName('main').length === 1) {
+      document.getElementsByTagName('main')[0].style.flex = 1
+    }
+  }
   if (!!document.getElementsByClassName('hero')[0]) {
-    document.getElementsByClassName('hero')[0].style.height = '100%'
+    document.getElementsByTagName('main')[0].style.display = 'flex'
+    document.getElementsByTagName('main')[0].style.flexDirection = 'column'
+    document.getElementsByClassName('hero')[0].style.flex = '1'
   }
   else {
     document.body.classList.add('fullHeight')
-  }
-  if (!!document.querySelector('main')) {
-    if (document.querySelectorAll('main').length === 1) {
-      document.querySelector('main').style.flex = 1
-    }
   }
 }
 else {
