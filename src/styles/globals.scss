@@ -230,7 +230,7 @@ main {
 }
 
 section {
-  main.profile, &:not(#portal, .split) {
+  &:not(#portal, .split) {
     display: flex;
     justify-content: center;
     align-items: center;
