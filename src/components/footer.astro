@@ -1,0 +1,57 @@
+---
+import '../styles/footer.scss'
+
+var siteUpdatedDate = '09/13/2023'
+var uMember = 'adarsh'
+var uMemberName = `${uMember[0].toUpperCase()}${uMember.substring(1)}`
+var fWord = 'Site'
+
+var unixSiteUpdated = new Date(siteUpdatedDate).getTime()/1000
+var newSiteUpdatedDate = (new Date(siteUpdatedDate))
+var finalDate = String(newSiteUpdatedDate).substring(0, 15)
+var siteUpdatedDateStrS = finalDate.split(' ')
+
+siteUpdatedDateStrS[0] = siteUpdatedDateStrS[0]
+  .replace('Tueday', 'Tuesday')
+  .replace('Wedday', 'Wednesday')
+  .replace('Thuday', 'Thursday')
+  .replace('Satday', 'Saturday')
+
+siteUpdatedDateStrS[1] = siteUpdatedDateStrS[1]
+  .replace('Jan', 'January')
+  .replace('Feb', 'February')
+  .replace('Mar', 'March')
+  .replace('Apr', 'April')
+  .replace('May', 'May')
+  .replace('Jun', 'June')
+  .replace('Jul', 'July')
+  .replace('Aug', 'August')
+  .replace('Sep', 'September')
+  .replace('Oct', 'October')
+  .replace('Nov', 'November')
+  .replace('Dec', 'December')
+
+if (siteUpdatedDateStrS[2].startsWith('0')) {
+  siteUpdatedDateStrS[2] = siteUpdatedDateStrS[2].substring(1)
+}
+if (siteUpdatedDateStrS[2].endsWith('1') && siteUpdatedDateStr[2] !== '11') {
+  siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}st`
+}
+else if (siteUpdatedDateStrS[2].endsWith('2') && siteUpdatedDateStr[2] !== '12') {
+  siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}nd`
+}
+else if (siteUpdatedDateStrS[2].endsWith('3') && siteUpdatedDateStr[2] !== '13') {
+  siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}rd`
+}
+else {
+  siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}th`
+}
+finalDate = `${siteUpdatedDateStrS[0]} ${siteUpdatedDateStrS[1]} ${siteUpdatedDateStrS[2]} ${siteUpdatedDateStrS[3]}`
+
+---
+<footer>
+    <span>
+        Site Updated on {finalDate} by <a href={`/members/${uMember}`}>{uMemberName}</a> | 
+        Check Status at <a href="/status">/status</a>.
+    </span>
+</footer>

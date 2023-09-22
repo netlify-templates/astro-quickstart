@@ -1,5 +1,6 @@
 ---
 import Header from '../components/header.astro'
+import Footer from '../components/footer.astro'
 import InfoBox from '../components/infobox.astro'
 
 import '../styles/globals.scss'
@@ -33,6 +34,7 @@ if (dTitle.startsWith(' | ')) dTitle = dTitle.split(' | ')[1]
   <body>
     <Header />
     <slot />
+    <Footer />
     <InfoBox />
     <span style="display: none;" class="hidden" hidden tElement></span>
     <script>
