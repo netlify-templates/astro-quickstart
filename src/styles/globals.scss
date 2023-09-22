@@ -123,20 +123,6 @@ h1, h2, h3, h4, h5, h6 {
   background-image: linear-gradient(var(--grad-start, var(--orig-bg-color)), var(--grad-end, #6c78e5)) !important;
 }
 
-section {
-  &:not(.profile > section) h1 {
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 200;
-    font-size: 3rem;
-  }
-  &:not(.profile > section) h2 {
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 400;
-  }
-}
-
 .btn {
   min-height: 30px;
   max-height: 50px;
@@ -225,28 +211,13 @@ section {
   margin: 0;
 }
 
-section {
+main {
   &:not(#profile) h2 {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 2.5rem;
   }
-
-  &:not(#portal, .split) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  &:not(.hero, .split, .photos, #portal, .profile, .enroll__beta) {
-    box-shadow: var(--main-shadow);
-    border-radius: 25px;
-    transition: 500ms ease-in-out;
-    &:hover, &:is(:focus-within, :has(:focus-visible)) {
-      border-radius: 10px;
-    }
-  }
-  &:is(.split, .photos, .profile) {
+  &.profile {
     & section {
       box-shadow: var(--main-shadow);
       border-radius: 25px;
@@ -255,6 +226,44 @@ section {
         border-radius: 10px;
       }
     }
+  }
+}
+
+section {
+  &:not(#portal, .split) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &:not(.hero, .split, .photos, #portal, .enroll__beta) {
+    box-shadow: var(--main-shadow);
+    border-radius: 25px;
+    transition: 500ms ease-in-out;
+    &:hover, &:is(:focus-within, :has(:focus-visible)) {
+      border-radius: 10px;
+    }
+  }
+  &:is(.split, .photos) {
+    & section {
+      box-shadow: var(--main-shadow);
+      border-radius: 25px;
+      transition: 500ms ease-in-out;
+      &:hover, &:is(:focus-within, :has(:focus-visible)) {
+        border-radius: 10px;
+      }
+    }
+  }
+  &:not(.profile > section) h1 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 3rem;
+  }
+  &:not(.profile > section) h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
   }
 }
 
