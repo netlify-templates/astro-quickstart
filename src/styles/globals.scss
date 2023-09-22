@@ -190,7 +190,7 @@ section {
     max-width: 500px;
   }
 
-  &:not(main#mission section .missiontext) {
+  &:not(section#mission section .missiontext) {
     --bg-color: white;
 
     display: flex;
@@ -225,7 +225,7 @@ section {
   margin: 0;
 }
 
-main {
+section {
   &:not(#profile) h2 {
     text-transform: uppercase;
     font-weight: 400;
@@ -258,7 +258,7 @@ main {
   }
 }
 
-main.split {
+section.split {
   --padding: 25px;
 
   color: black;
@@ -300,6 +300,7 @@ main.split {
   
     & > div:not([hHr]) {
       min-height: calc(50% - 50px);
+      width: 100%;
     }
 
     & h1 {
@@ -313,7 +314,7 @@ main.split {
 }
   
 @media (width < 1006px) {
-    main.split {
+  section.split {
       & > .vHr {
         width: var(--height);
         height: 2px;
@@ -357,7 +358,7 @@ main.split {
     border-radius: 10px;
   }
 
-  &:not(main#portal > &) {
+  &:not(section#portal > &) {
     max-width: 375px;
     
     margin: 32px;
@@ -589,12 +590,12 @@ form[action] * {
 }
 
 h1, h2, h3, h4, h5, h6, img, a.btn {
-  &[onclick]:not(main &) {
+  &[onclick]:not(section &) {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
   }
-  main :is(img, a.btn) {
+  section :is(img, a.btn) {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */

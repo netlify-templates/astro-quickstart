@@ -1,4 +1,4 @@
-main.photos {
+section.photos {
     flex: 1;
     width: 100%;
 
@@ -28,7 +28,7 @@ main.photos {
 }
 
 @media (width < 750px) {
-    main.photos {
+    section.photos {
         & > section {
             width: calc(100% - 100px) !important;
         }

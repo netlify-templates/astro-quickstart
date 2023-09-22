@@ -7,87 +7,89 @@ import '../styles/pages/index.scss'
 import '../styles/photos.scss'
 ---
 <Layout title="">
-  <Hero idName="content">
-    <div>
-      <h1>Graphics for Good</h1>
-      <h2>Empowering Non-Profits Through the Power of Design!</h1>
-    </div>
-  </Hero>
-  <main id="mission" class="split">
-    <section id="mSection">
-      <h1>Our Mission</h1>
-      <div class="missiontext">
-        <p class="text" centered displayFlex style="--f-direction: column; --gap: 8px;">
-          <span style="text-align: justify;">"Our mission is to help create change in the world through design. We strive to provide free design help for nonprofits that support a wide range of causes."</span>
-          <span displayFlex style="--f-direction: row; justify-content: right;"> - Shikha Iyer, Club Founder</span>
-        </p>
-        <a style="margin-left: auto;" href="/mission" class="btn">Read More</a>
+  <main id="content">
+    <Hero>
+      <div>
+        <h1>Graphics for Good</h1>
+        <h2>Empowering Non-Profits Through the Power of Design!</h1>
       </div>
+    </Hero>
+    <section id="mission" class="split">
+      <section id="mSection">
+        <h1>Our Mission</h1>
+        <div class="missiontext">
+          <p class="text" centered displayFlex style="--f-direction: column; --gap: 8px;">
+            <span style="text-align: justify;">"Our mission is to help create change in the world through design. We strive to provide free design help for nonprofits that support a wide range of causes."</span>
+            <span displayFlex style="--f-direction: row; justify-content: right;"> - Shikha Iyer, Club Founder</span>
+          </p>
+          <a style="margin-left: auto;" href="/mission" class="btn">Read More</a>
+        </div>
+      </section>
+      <span class="vHr"></span>
+      <section id="contact">
+        <h2 style="font-size: 2.25rem;">Interested in partnering with us?</h2>
+        <h1>Contact Us</h1>
+        <div id="contactDone" style="display: none;">
+          <h3 align="center" style="font-size: 25px; display: none; margin: 0;">Thank You For Submitting!</h2>
+        </div>
+        <form class="contact" action="https://docs.google.com/forms/d/e/1FAIpQLSc4qjrt9QFOiGU4DHHjagYlVsYdS77KiXqwo967oeGySAVMnQ/formResponse" method="POST">
+          <input type="text" name="entry.264713401" placeholder="Full Name" top required>
+          <input type="email" name="entry.2027702877" placeholder="Email Address" required>
+          <textarea type="text" name="entry.656122872" placeholder="Message" required></textarea>
+          <input type="hidden" name="entry.1445095683" value="true" />
+          <!-- add hidden Honeypot input to prevent spams -->
+          <input type="hidden" name="_gotcha" style="display:none!important">
+          <button type="submit" onclick="sendMessage()">Send</button>
+        </form>
+      </section>
     </section>
-    <span class="vHr"></span>
-    <section id="contact">
-      <h2 style="font-size: 2.25rem;">Interested in partnering with us?</h2>
-      <h1>Contact Us</h1>
-      <div id="contactDone" style="display: none;">
-        <h3 align="center" style="font-size: 25px; display: none; margin: 0;">Thank You For Submitting!</h2>
-      </div>
-      <form class="contact" action="https://docs.google.com/forms/d/e/1FAIpQLSc4qjrt9QFOiGU4DHHjagYlVsYdS77KiXqwo967oeGySAVMnQ/formResponse" method="POST">
-        <input type="text" name="entry.264713401" placeholder="Full Name" top required>
-        <input type="email" name="entry.2027702877" placeholder="Email Address" required>
-        <textarea type="text" name="entry.656122872" placeholder="Message" required></textarea>
-        <input type="hidden" name="entry.1445095683" value="true" />
-        <!-- add hidden Honeypot input to prevent spams -->
-        <input type="hidden" name="_gotcha" style="display:none!important">
-        <button type="submit" onclick="sendMessage()">Send</button>
-      </form>
-    </section>
-  </main>
-  <div hHr></div>
-  <main id="mwork" class="photos">
-    <section align="center">
-      <h1 style="--text-color: blue; cursor: pointer;" onclick="location.href = '/work?magic=true'" title="Click here to convert to list!">Member Work</h1>
-      <Carousel carouselIndex="0">
-        <img class="left" src="/assets/members/isabelle/portfolio/previews/Birds-are-essential-for-our-environment!.png" draggable="false">
-        <img class="active" src="/assets/members/shikha/portfolio/previews/Did-you-know.png" draggable="false">
-        <img class="right" src="/assets/members/shikha/portfolio/previews/Women's-History-Month!.png" draggable="false">
-        <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_4.png" draggable="false">
-        <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_5.png" draggable="false">
-        <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_6.png" draggable="false">
-        <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_7.png" draggable="false">
-        <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_1.png" draggable="false">
-        <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_2.png" draggable="false">
-        <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_3.png" draggable="false">
-        <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_4.png" draggable="false">
-        <img src="/assets/members/isabelle/portfolio/previews/DON'T-EAT-FROGS.png" draggable="false">
-        <img src="/assets/members/isabelle/portfolio/previews/Untitled-(800-x-1000-px).png" draggable="false">
-        <img src="/assets/members/shikha/portfolio/previews/Elarra.jpg" draggable="false">
-        <img src="/assets/members/shikha/portfolio/previews/Fairy.jpg" draggable="false">
-        <img src="/assets/members/shikha/portfolio/previews/c3.jpg" draggable="false">
-        <img src="assets/members/shikha/portfolio/previews/Rapunzel.jpg" draggable="false">
-        <!--<img src="/assets/members/hanlin/portfolio/previews/G4G-Ad.png" draggable="false">-->
-      </Carousel>
-    </section>
-    <div hHr style="--width: 850px;"></div>
-    <section align="center">
-      <h1 id="cphotos">Club Photos</h1>
-      <Carousel carouselIndex="1">
-        <img src="/assets/club_photos/previews/IMG_0496.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0497.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0498.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0499.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0500.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0504.jpg" draggable="false">
-        <img class="left" src="/assets/club_photos/previews/IMG_0505.jpg" draggable="false">
-        <img class="active" src="/assets/club_photos/previews/IMG_0506.jpg" draggable="false">
-        <img class="right" src="/assets/club_photos/previews/IMG_0507.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0508.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0509.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0510.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0513.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0514.jpg" draggable="false">
-        <img src="/assets/club_photos/previews/IMG_0515.jpg" draggable="false">
-      </Carousel>
+    <div hHr></div>
+    <section id="mwork" class="photos">
+      <section align="center">
+        <h1 style="--text-color: blue; cursor: pointer;" onclick="location.href = '/work?magic=true'" title="Click here to convert to list!">Member Work</h1>
+        <Carousel carouselIndex="0">
+          <img class="left" src="/assets/members/isabelle/portfolio/previews/Birds-are-essential-for-our-environment!.png" draggable="false">
+          <img class="active" src="/assets/members/shikha/portfolio/previews/Did-you-know.png" draggable="false">
+          <img class="right" src="/assets/members/shikha/portfolio/previews/Women's-History-Month!.png" draggable="false">
+          <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_4.png" draggable="false">
+          <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_5.png" draggable="false">
+          <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_6.png" draggable="false">
+          <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_7.png" draggable="false">
+          <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_1.png" draggable="false">
+          <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_2.png" draggable="false">
+          <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_3.png" draggable="false">
+          <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_4.png" draggable="false">
+          <img src="/assets/members/isabelle/portfolio/previews/DON'T-EAT-FROGS.png" draggable="false">
+          <img src="/assets/members/isabelle/portfolio/previews/Untitled-(800-x-1000-px).png" draggable="false">
+          <img src="/assets/members/shikha/portfolio/previews/Elarra.jpg" draggable="false">
+          <img src="/assets/members/shikha/portfolio/previews/Fairy.jpg" draggable="false">
+          <img src="/assets/members/shikha/portfolio/previews/c3.jpg" draggable="false">
+          <img src="assets/members/shikha/portfolio/previews/Rapunzel.jpg" draggable="false">
+          <!--<img src="/assets/members/hanlin/portfolio/previews/G4G-Ad.png" draggable="false">-->
+        </Carousel>
+      </section>
+      <div hHr style="--width: 850px;"></div>
+      <section align="center">
+        <h1 id="cphotos">Club Photos</h1>
+        <Carousel carouselIndex="1">
+          <img src="/assets/club_photos/previews/IMG_0496.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0497.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0498.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0499.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0500.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0504.jpg" draggable="false">
+          <img class="left" src="/assets/club_photos/previews/IMG_0505.jpg" draggable="false">
+          <img class="active" src="/assets/club_photos/previews/IMG_0506.jpg" draggable="false">
+          <img class="right" src="/assets/club_photos/previews/IMG_0507.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0508.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0509.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0510.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0513.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0514.jpg" draggable="false">
+          <img src="/assets/club_photos/previews/IMG_0515.jpg" draggable="false">
+        </Carousel>
+      </section>
     </section>
   </main>
   <script is:inline src="contact.js"></script>
