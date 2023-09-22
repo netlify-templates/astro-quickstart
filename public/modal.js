@@ -108,8 +108,6 @@ modal.addEventListener('mouseout', function(e) {
 
 
 function showModal(element, path, capt, desc) {
-  //  document.querySelector('header').style.display = 'none'
-  //  document.querySelector('main').style.display = 'none'
   var modal = document.getElementById('modal')
   var content = modal.getElementsByTagName('content')[0]
   // selecting the modal iframe and setting the src attribute to the "url" param
@@ -151,12 +149,6 @@ function showModal(element, path, capt, desc) {
 }
 
 function hideModal(element='div') {
-  //  document.querySelector('header').style.display = ''
-  //  document.querySelector('main').style.display = ''
-  // document.querySelector('header').style.display = ''
-  // document.querySelectorAll('main').forEach(e => {
-  //   e.style.display = ''
-  // })
   var modal = document.getElementById('modal')
   var content = modal.getElementsByTagName('content')[0]
   modal.close()

@@ -43,19 +43,12 @@ function getCookie(cname) {
   return "";
 }
 
-// var hasVisited = !!getCookie('hasVisited')
-// setCookie('hasVisited', 'areYouHere', ((1/24)/60))
-// if (!!getCookie('hasVisited') === 'areYouHere') {
-//   if (!!getCookie('hasVisited') === false) {
-//     hasVisited = !!localStorage.getItem('hasVisited')
-//   }
-//   setCookie('hasVisited', hasVisited, ((1/24)/60))
-// }
+// var hasVisited = localStorage.getItem('hasVisited')
 
 let overflow = urlParams.get('o')
-let parentC = parent.location.host.split('.')[1] !== 'id'
+let parentC = parent.location.host.split('.')[1] !== 'id' && (!parent.location.href.includes('--') && !location.href.includes('--'))
 let domain = location.host.includes('graphics-for-good')
-// if ((hasVisited === false && parentC) && (domain && overflow !== 'n')) {
+// if ((hasVisited === 'FALSE' && parentC) && (domain && overflow !== 'n')) {
 //   var path = location.pathname
 //   if (path === '/') {
 //     path = `/index${location.search}`
@@ -65,6 +58,7 @@ let domain = location.host.includes('graphics-for-good')
 //   }
 //   localStorage.clear()
 //   location.href = `/welcome?p=${path}`
+//   localStorage.setItem('hasVisited', 'TRUE')
 // }
 
 if (overflow === 'n') {
@@ -126,6 +120,11 @@ function checkSetFHeight() {
       })
       if (hasHero === false) {
         document.body.classList.add('fullHeight')
+      }
+      if (!!document.querySelector('main')) {
+        if (document.querySelectorAll('main').length === 1) {
+          document.querySelector('main').style.flex = 1
+        }
       }
     }
     else {
