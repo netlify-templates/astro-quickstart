@@ -9,15 +9,15 @@ var fWord = 'Site'
 var unixSiteUpdated = new Date(siteUpdatedDate).getTime()/1000
 var newSiteUpdatedDate = (new Date(siteUpdatedDate))
 var finalDate = String(newSiteUpdatedDate).substring(0, 15)
-var siteUpdatedDateStrS = finalDate.split(' ')
+var finalDateS = finalDate.split(' ')
 
-siteUpdatedDateStrS[0] = siteUpdatedDateStrS[0]
+finalDateS[0] = finalDateS[0]
   .replace('Tueday', 'Tuesday')
   .replace('Wedday', 'Wednesday')
   .replace('Thuday', 'Thursday')
   .replace('Satday', 'Saturday')
 
-siteUpdatedDateStrS[1] = siteUpdatedDateStrS[1]
+finalDateS[1] = finalDateS[1]
   .replace('Jan', 'January')
   .replace('Feb', 'February')
   .replace('Mar', 'March')
@@ -31,22 +31,22 @@ siteUpdatedDateStrS[1] = siteUpdatedDateStrS[1]
   .replace('Nov', 'November')
   .replace('Dec', 'December')
 
-if (siteUpdatedDateStrS[2].startsWith('0')) {
-  siteUpdatedDateStrS[2] = siteUpdatedDateStrS[2].substring(1)
+if (finalDateS[2].startsWith('0')) {
+  finalDateS[2] = finalDateS[2].substring(1)
 }
-if (siteUpdatedDateStrS[2].endsWith('1') && siteUpdatedDateStrs[2] !== '11') {
-  siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}st`
+if (finalDateS[2].endsWith('1') && finalDateS[2] !== '11') {
+  finalDateS[2] = `${finalDateS[2]}st`
 }
-else if (siteUpdatedDateStrS[2].endsWith('2') && siteUpdatedDateStrs[2] !== '12') {
-  siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}nd`
+else if (finalDateS[2].endsWith('2') && finalDateS[2] !== '12') {
+  finalDateS[2] = `${finalDateS[2]}nd`
 }
-else if (siteUpdatedDateStrS[2].endsWith('3') && siteUpdatedDateStrs[2] !== '13') {
-  siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}rd`
+else if (finalDateS[2].endsWith('3') && finalDateS[2] !== '13') {
+  finalDateS[2] = `${finalDateS[2]}rd`
 }
 else {
-  siteUpdatedDateStrS[2] = `${siteUpdatedDateStrS[2]}th`
+  finalDateS[2] = `${finalDateS[2]}th`
 }
-finalDate = `${siteUpdatedDateStrS[0]} ${siteUpdatedDateStrS[1]} ${siteUpdatedDateStrS[2]} ${siteUpdatedDateStrS[3]}`
+finalDate = `${finalDateS[0]} ${finalDateS[1]} ${finalDateS[2]} ${finalDateS[3]}`
 
 ---
 <footer>
