@@ -230,7 +230,7 @@ main {
 }
 
 section {
-  &:not(#portal, .split, .profile &) {
+  &:not(#portal, .split, .projects & &) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,13 +254,13 @@ section {
       }
     }
   }
-  &:not(.profile > section) h1 {
+  &:not(.profile > &) h1 {
     margin: 0;
     text-transform: uppercase;
     font-weight: 200;
     font-size: 3rem;
   }
-  &:not(.profile > section) h2 {
+  &:not(.profile > &) h2 {
     margin: 0;
     text-transform: uppercase;
     font-weight: 400;
