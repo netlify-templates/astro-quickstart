@@ -51,7 +51,24 @@ finalDate = `${siteUpdatedDateStrS[0]} ${siteUpdatedDateStrS[1]} ${siteUpdatedDa
 ---
 <footer>
     <span>
-        Site Updated on {finalDate} by <a href={`/members/${uMember}`}>{uMemberName}</a> | 
+        <span class="fWord">Site</span> Updated on <span class="date">{finalDate}</span> by <a href={`/members/${uMember}`} class="member">{uMemberName}</a> | 
         Check Status at <a href="/status">/status</a>.
     </span>
 </footer>
+<script is:inline>
+var pageDates = {
+  // members: '04/27/2023'
+}
+
+var page = location.pathname.substring(1)
+if (!!page === false) {
+  page = 'index'
+  // page = 'members'
+}
+if (!!pageDates[page]) {
+  siteUpdatedDate = pageDates[page]
+  var fWord = 'Page'
+  document.querySelector('footer > .fWord').textContent = fWord
+  document.querySelector('footer > .date').textContent = pageDates[page]
+}
+</script>
