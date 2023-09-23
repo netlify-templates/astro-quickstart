@@ -217,7 +217,7 @@ main {
 section {
   &:not(#portal, .split, .projects & &) {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     flex-direction: column;
   }
