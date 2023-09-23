@@ -100,7 +100,8 @@ section.split.tiny {
                 top: 50%;
                 left: 50%;
                 translate: -50% -50%;
-                object-fit: cover;
+                max-width: 100%;
+                height: auto;
             }
         }
         
