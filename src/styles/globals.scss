@@ -398,6 +398,10 @@ section.split {
       transition: all 500ms ease-out;
       text-align: center;
 
+      #tag {
+        line-height: 1;
+      }
+
       &:hover {
         color: blue;
         transition: all 500ms ease-in;
