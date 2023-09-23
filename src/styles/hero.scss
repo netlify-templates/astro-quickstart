@@ -58,6 +58,11 @@
         font-size: 1.2rem;
         max-width: 56.59ch;
     }
+
+    & > section {
+        --bg-color: white;
+        color: black;
+    }
   }
     
   

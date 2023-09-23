@@ -169,35 +169,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .missiontext {
-  --bg-color: white;
-  color: black;
   & > .text  {
     text-align: justify;
     max-width: 500px;
   }
 
   &:not(section#mission section .missiontext) {
-    --bg-color: white;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    margin: 25px;
     padding: 50px;
     min-width: 500px;
     width: calc(500px - 150px);
     text-align: center;
-    background-color: white;
-    box-shadow: var(--main-shadow);
-    color: black;
-    border-radius: 25px;
-    transition: 500ms ease-in;
-
-    &:hover, &:is(:focus-within, :has(:focus-visible)) {
-      border-radius: 10px;
-      transition: 500ms ease-out;
-    }
   }
 }
 
