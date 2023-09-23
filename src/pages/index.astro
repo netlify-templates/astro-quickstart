@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
+import Split from '../components/split.astro'
 import Carousel from '../components/carousel.astro'
 
 import '../styles/pages/index.scss'
@@ -14,7 +15,7 @@ import '../styles/photos.scss'
         <h2>Empowering Non-Profits Through the Power of Design!</h1>
       </div>
     </Hero>
-    <section id="mission" class="split">
+    <Splir idName="mission">
       <section id="mSection">
         <h1>Our Mission</h1>
         <div class="missiontext">
@@ -42,7 +43,7 @@ import '../styles/photos.scss'
           <button type="submit" onclick="sendMessage()">Send</button>
         </form>
       </section>
-    </section>
+    </Split>
     <div hHr></div>
     <section id="mwork" class="photos">
       <section align="center">

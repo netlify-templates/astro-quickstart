@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Split from '../components/split.astro'
 import Carousel from '../components/carousel.astro'
 
 import '../styles/pages/projects.scss'
@@ -7,7 +8,7 @@ import '../styles/photos.scss'
 ---
 <Layout title="Projects">
   <main id="content" class="projects">
-    <section class="split">
+    <Split>
       <section>
         <h1>Amphibian Foundation</h1>
         <div>
@@ -21,9 +22,9 @@ import '../styles/photos.scss'
           They'd like to update it a little to make it more “fresh,” though they like the current logo IDEA and the purple.
         </div>
       </section>
-    </section>
+    </Split>
     <div hHr></div>
-    <section class="split">
+    <Split>
       <section>
         <h1>S.A.V.E Foundation</h1>
         <div>
@@ -37,9 +38,9 @@ import '../styles/photos.scss'
           We are currently working with Vanni Aid to re-do their website! Adarsh and one other peoson are working on this .
         </div>
       </section>
-    </section>
+    </Split>
     <div hHr></div>
-    <section class="split">
+    <Split>
       <span class="vHr"></span>
       <section>
         <h1>CORA</h1>
@@ -54,9 +55,9 @@ import '../styles/photos.scss'
           things things
         </div>
       </section> -->
-    </section>
+    </Split>
     <div hHr></div>
-    <!-- <section class="split">
+    <!-- <Split>
       <section>
         <h1>Project Title</h1>
         <div>
@@ -70,7 +71,7 @@ import '../styles/photos.scss'
           things things
         </div>
       </section>
-    </section> -->
+    </Split> -->
   </main>
   <script is:inline src="/modal.js"></script>
 </Layout>
