@@ -169,12 +169,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .missiontext {
+  width: fit-content;
   & > .text  {
     text-align: justify;
     max-width: 500px;
   }
 
-  &:not(section#mission section .missiontext) {
+  &:not(section#mission section &) {
     display: flex;
     flex-direction: column;
     align-items: center;
