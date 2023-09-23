@@ -230,7 +230,7 @@ section {
     }
   }
   &:is(.split, .photos) {
-    & section {
+    & section:not(.split.tiny) {
       box-shadow: var(--main-shadow);
       border-radius: 25px;
       transition: 500ms ease-in-out;
