@@ -1,9 +1,7 @@
-section.split {
+section.split:not(.tiny) {
     --padding: 25px;
   
     color: black;
-  
-    position: relative;
   
     width: 100%;
     
@@ -13,66 +11,115 @@ section.split {
     gap: var(--padding);
     
     & > section {
-      --bg-color: white;
-      color: black;
-  
-      flex: 1;
-  
-      box-sizing: border-box;
-      margin-block: var(--padding);
-      padding: var(--padding);
-  
-      max-width: 50%;
-      
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--padding);
-      
-      &:first-child {
-        margin-inline-start: var(--padding);
-      }
-      &:last-child {
-        margin-inline-end: var(--padding);
-      }
+        --bg-color: white;
+        color: black;
     
-      &#contact {
-        & h2 {
-          margin-block: 0;
+        flex: 1;
+    
+        box-sizing: border-box;
+        margin-block: var(--padding);
+        padding: var(--padding);
+    
+        max-width: 50%;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--padding);
+        
+        &:first-child {
+            margin-inline-start: var(--padding);
         }
-      }
+        &:last-child {
+            margin-inline-end: var(--padding);
+        }
+        
+        &#contact {
+            & h2 {
+                margin-block: 0;
+            }
+        }
+        
+        & > div:not([hHr]) {
+            min-height: calc(50% - 50px);
+            width: 100%;
+        }
     
-      & > div:not([hHr]) {
-        min-height: calc(50% - 50px);
-        width: 100%;
-      }
-  
-      & h1 {
-        text-align: center;
-      }
-    
-      &#contact form *:not(button) {
-        width: calc(100% - 20px);
-      }
+        & h1 {
+            text-align: center;
+        }
+        
+        &#contact form *:not(button) {
+            width: calc(100% - 20px);
+        }
     }
-  }
+}
     
-  @media (width < 1006px) {
+@media (width < 1006px) {
     section.split {
         & > .vHr {
-          width: var(--height);
-          height: 2px;
+            width: var(--height);
+            height: 2px;
         }
         
         & > .container {
-          flex-direction: column;
-          max-width: 750px;
-    
-          & > section {
-            max-width: calc(100% - 50px);
-          }
+            flex-direction: column;
+            max-width: 750px;
+        
+            & > section {
+                max-width: calc(100% - 50px);
+            }
         }
-      }
-  }
+    }
+}
   
+section.split.tiny {
+    --padding: 25px;
   
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: calc(var(--padding)/2);
+    
+    & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: calc(var(--padding)/2);
+        
+        &:first-child {
+            margin-inline-start: var(--padding);
+        }
+        &:last-child {
+            margin-inline-end: var(--padding);
+        }
+        
+        &#contact {
+            & h2 {
+                margin-block: 0;
+            }
+        }
+        
+        & > div:not([hHr]) {
+            min-height: calc(50% - 50px);
+            width: 100%;
+        }
+    
+        & h1 {
+            text-align: center;
+        }
+        
+        &#contact form *:not(button) {
+            width: calc(100% - 20px);
+        }
+    }
+}
+    
+@media (width < 490.5px) {
+    section.split.tiny {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
