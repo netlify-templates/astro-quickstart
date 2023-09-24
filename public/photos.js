@@ -1,9 +1,3 @@
-let interval = false
-
-if (!!dTitle === false) {
-  var dTitle = document.title
-}
-let i = 0
 let CLUB_PHOTOS = {
   path: 'club_photos', 
   IMG_0496: {
@@ -264,11 +258,11 @@ var MEMBER_WORK = {
 
 //alert(Math.ceil((MEMBER_WORK.length)/3))
 function showItem(img, c, element=false, capt=false, desc=false, user=false) {
-  let path = `/assets/${null}/${null}`
+  let path = `/assets`
   if (element===false&&capt===false&&desc===false) {
     if (c !== 'user_portfolios') {
       c = CLUB_PHOTOS
-      path = `/assets/${c['path']}/${c[img]['path']}`
+      path = `${path}/${c['path']}/${c[img]['path']}`
       element = 'img'
       capt = c[img]['capt']
       desc = c[img]['desc']
@@ -276,7 +270,7 @@ function showItem(img, c, element=false, capt=false, desc=false, user=false) {
     else {
       c = MEMBER_WORK
       user = c[img]['user']
-      path = `/assets/members/${user}/portfolio/${c[img]['img']['path']}`
+      path = `${path}/members/${user}/portfolio/${c[img]['img']['path']}`
       element = c[img]['img']['element']
       let cLink = document.querySelector("#cSpan").parentNode
       cLink.href = `javascript:hideModal('${element.replace('img', 'div')}')`
@@ -318,8 +312,7 @@ function showItem(img, c, element=false, capt=false, desc=false, user=false) {
 }
 
 if (location.pathname === '/') {
-  document.querySelectorAll('.carousel')[1].querySelector('ul').querySelectorAll('li').forEach(e => {
-    e = e.querySelector('img')
+  document.querySelectorAll('.carousel')[1].querySelectorAll('ul img').forEach(e => {
     if (e.src.split(`${location.host}/assets/members`)[1] !== '/blank.png' && e.src.includes('/club_photos/')) {
       let fname = e.src.split(`${location.host}/assets/club_photos/previews/`)[1].split('.')[0]
       let capt = `${CLUB_PHOTOS[fname]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
@@ -327,16 +320,15 @@ if (location.pathname === '/') {
       tElement.innerHTML = capt
       e.title = tElement.innerText
       e.alt = tElement.innerText
-      e.addEventListener('click', function(e) {
-        showItem(fname, 'club_photos')
+      e.addEventListener('click', function(event) {
+        showItem(fname, CLUB_PHOTOS['path'], element=false, capt=false, desc=false, user=false, event)
       })
     }
   })
 }
 
 let mCVal = 0
-document.querySelectorAll('.carousel')[mCVal].querySelector('ul').querySelectorAll('li').forEach(e => {
-  e = e.querySelector('img')
+document.querySelectorAll('.carousel')[mCVal].querySelectorAll('ul img').forEach(e => {
   if (e.src.endsWith('/blank.png') === false) {
     let fname = e.src.split(`${location.host}/assets/members/`)[1].split('/')[3].split('.')[0]
     let capt = `${MEMBER_WORK[fname]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
@@ -344,8 +336,8 @@ document.querySelectorAll('.carousel')[mCVal].querySelector('ul').querySelectorA
     tElement.innerHTML = capt
     e.title = tElement.innerText
     e.alt = tElement.innerText
-    e.addEventListener('click', function(e) {
-      showItem(fname, 'user_portfolios')
+    e.addEventListener('click', function(event) {
+      showItem(fname, MEMBER_WORK['path'], element=false, capt=false, desc=false, user=false, event)
     })
   }
 })
