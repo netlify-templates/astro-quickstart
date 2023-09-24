@@ -94,6 +94,7 @@ section.split.tiny {
 
         &.img-parent {
             position: relative;
+            overflow: hidden;
 
             img {
                 position: absolute;
@@ -101,7 +102,10 @@ section.split.tiny {
                 left: 50%;
                 translate: -50% -50%;
                 max-width: 100%;
-                max-height: 100%;
+
+                &:not(.large &) {
+                    max-height: 100%;
+                }
             }
         }
         
