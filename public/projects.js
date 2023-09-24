@@ -1,12 +1,3 @@
-let CLUB_PHOTOS = {
-  path: 'club_photos', 
-  IMG_0496: {
-    path: 'IMG_0496.jpg', 
-    capt: 'A photo of the members of the club!', 
-    desc: '<a href="/members/juhi">Juhi</a>, <a href="/members/sayuri">Sayuri</a>, <a href="/members/adarsh">Adarsh</a>, <a href="/members/isabelle">Isabelle</a>, and <a href="/members/shikha">Shikha</a> are pictured.',
-  }, 
-}
-//alert(Math.ceil((MEMBER_WORK.length)/3))
 function showItem(path, c, element='img', capt=false, desc=false, user=false) {
   let path = `/assets/${null}/${null}`
   if (element === 'img') {
