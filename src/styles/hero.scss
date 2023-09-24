@@ -59,7 +59,7 @@
         max-width: 56.59ch;
     }
 
-    & > section {
+    &:not(.error) > section {
         --bg: white;
         color: black;
     }
