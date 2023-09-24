@@ -24,6 +24,7 @@
 
   font-family: var(--font, 'Dekko', sans-serif);
   background-color: var(--bg-color, --orig-bg-color);
+  background: var(--bg);
   color: white;
 }
 
@@ -216,13 +217,13 @@ main {
 }
 
 section {
-  &:not(#portal, .split, .projects & &) {
+  &:not(#portal, .split, .projects & & .error &) {
     display: flex;
     // justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  &:not(.hero, .split, .photos, #portal, .enroll__beta) {
+  &:not(.hero, .split, .photos, #portal, .enroll__beta, .error &) {
     box-shadow: var(--main-shadow);
     border-radius: 25px;
     transition: 500ms ease-in-out;

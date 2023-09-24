@@ -48,7 +48,9 @@ a#go2content[href="javascript:scrollToNum()"] {
     align-items: center;
 
     .logo {
-      max-height: 125px;
+      --shadow-color: black;
+
+      height: 125px;
       border-radius: 100%;
       transition: 0.25s ease-in-out;
       box-shadow: var(--main-shadow);
