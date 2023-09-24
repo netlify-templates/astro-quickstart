@@ -102,8 +102,9 @@ section.split.tiny {
                 left: 50%;
                 translate: -50% -50%;
                 max-width: 100%;
-
-                &:not(.large &) {
+            }
+            &:not(.large) {
+                img {
                     max-height: 100%;
                 }
             }
