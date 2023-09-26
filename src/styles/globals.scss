@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
 @import url('https://fonts.cdnfonts.com/css/brittany-signature');
 @import url('https://fonts.cdnfonts.com/css/buffalo');
@@ -11,18 +13,10 @@
 }
 
 :root {
-  --orig-bg-color: #1a4276;
- --bg-color: var(--orig-bg-color) ;
-  color: white;
-
-  --scroll-bar-width: 10px;
   scroll-behavior: smooth;
 
-  --shadow-color: black;
-  --shadow-size: 10px;
-  --main-shadow: var(--shadow-color, var(--orig-bg-color)) 0 0 var(--shadow-size);
-
   font-family: var(--font, 'Dekko', sans-serif);
+
   background-color: var(--bg-color, --orig-bg-color);
   background: var(--bg);
   color: white;
