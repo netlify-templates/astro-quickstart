@@ -95,12 +95,13 @@ section.split.tiny {
         &.img-parent {
             position: relative;
             overflow: hidden;
+            min-height: var(--min-height, var(--tiny-split-image-min-height));
 
             img {
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                translate: -50% -50%;
+                translate: -50% calc(calc(-50% + var(--translate-x)) + var(--translate-y));
                 max-width: 100%;
             }
             &:not(.large) {
