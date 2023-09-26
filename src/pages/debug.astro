@@ -16,5 +16,67 @@
     </head>
     <body>
         <iframe src="/" />
+        <script>
+            let buffer = [];
+            let expected = ['control', 'l']
+            let corrects = []
+
+            document.addEventListener('keydown', function(e) {
+                const key = event.key.toLowerCase();
+
+                // we are only interested in alphanumeric keys
+                if (!!parseInt(key) || parseInt(key) === 0) return;
+
+                if (buffer.length > 1) buffer = []
+                buffer.push(key);
+
+                expected.forEach(function(e, i) {
+                    if (buffer[i] === e) {
+                        corrects.push(true)
+                    }
+                    else {
+                        corrects.push(false)
+                    }
+                })
+
+                let isCorrect = true
+                corrects.forEach(function(c, i) {
+                    if (c === false) isCorrect = false
+                })
+                corrects = []
+
+                if (isCorrect) {
+                    e.preventDefault()
+                    let url = prompt('Where do you want to go?')
+                    let isGood = true
+                    let checkUrl = url
+                    if (url.includes('://')) {
+                        checkUrl = checkUrl.split('://')[1]
+                        if (checkUrl.includes('/')) {
+                            checkUrl = url.split('/')
+                            if (!!checkUrl[0]) {
+                                checkUrl = checkUrl[0]
+                            }
+                        }
+                        if (checkUrl !== location.host) isCorrect = false
+                    }
+                    while (isCorrect === false) {
+                        url = prompt(`That url didn't fit the parameters. Where do you want to go?`)
+                        isGood = true
+                        checkUrl = url
+                        if (url.includes('://')) {
+                            checkUrl = checkUrl.split('://')[1]
+                            if (checkUrl.includes('/')) {
+                                checkUrl = url.split('/')
+                                if (!!checkUrl[0]) {
+                                    checkUrl = checkUrl[0]
+                                }
+                            }
+                            if (checkUrl !== location.host) isCorrect = false
+                        }
+                    }
+                }
+            });
+        </script>
     </body>
 </html>
