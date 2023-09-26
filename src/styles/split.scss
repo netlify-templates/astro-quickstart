@@ -101,7 +101,7 @@ section.split.tiny {
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                translate: calc(-50% + var(--translate-x)) calc(-50% + var(--translate-y));
+                translate: calc(-50% + var(--translate-x, 0px)) calc(-50% + var(--translate-y, 0px));
                 max-width: 100%;
             }
             &:not(.large) {
