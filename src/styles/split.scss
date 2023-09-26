@@ -103,6 +103,7 @@ section.split.tiny {
                 left: 50%;
                 translate: calc(-50% + var(--translate-x, 0px)) calc(-50% + var(--translate-y, 0px));
                 max-width: 100%;
+                min-height: var(--min-height);
             }
             &:not(.large) {
                 img {
