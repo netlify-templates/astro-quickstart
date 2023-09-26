@@ -1,4 +1,4 @@
-if (location.pathname === '/scraper') {
+if (location.pathname.startsWith('/scraper')) {
   var queryString = window.location.search;
   var urlParams = new URLSearchParams(queryString);
   var pr = urlParams.get('url')
