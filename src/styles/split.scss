@@ -106,7 +106,7 @@ section.split.tiny {
             }
             &:not(.large) {
                 img {
-                    max-height: 100%;
+                    max-height: var(--max-height, 100%);
                 }
             }
         }
