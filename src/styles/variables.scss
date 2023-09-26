@@ -8,14 +8,14 @@ $shadow-size: 10px;
 $main-shadow: var(--shadow-color, var(--orig-bg-color)) 0 0 var(--shadow-size);
 
 :root {
-    --orig-bg-color: $orig-bg-color;
+    --orig-bg-color: #{$orig-bg-color};
     --bg-color: var(--orig-bg-color);
   
-    --scroll-bar-width: $scroll-bar-width;
+    --scroll-bar-width: #{$scroll-bar-width};
   
-    --shadow-color: $shadow-color;
-    --shadow-size: $shadow-size;
-    --main-shadow: $main-shadow;
+    --shadow-color: #{$shadow-color};
+    --shadow-size: #{$shadow-size};
+    --main-shadow: #{$main-shadow};
 
-    --tiny-split-image-min-height: $tiny-split-image-min-height
+    --tiny-split-image-min-height: #{$tiny-split-image-min-height}
   }  
