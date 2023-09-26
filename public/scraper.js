@@ -27,6 +27,12 @@ function scrapeActions() {
     innerHTML = innerHTML
       .split(`${innerHTML.split('>')[0]}>`)[1]
     document.documentElement.innerHTML = innerHTML
+    let aS = docuemnt.querySelectorAll('a')
+    aS.forEach(function(a, i) {
+      if (!!a.href) {
+        a.href = `https://graphics-for-good.com/scraper/?url=${a.href}`
+      }
+    })
   }
   else location.href = p
 }
