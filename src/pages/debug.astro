@@ -27,8 +27,7 @@
 
             document.addEventListener('keydown', function(e) {
                 const key = event.key.toLowerCase();
-
-                // we are only interested in alphanumeric keys
+                // we are only interested in non numeric keys
                 if (!!parseInt(key) || parseInt(key) === 0) return;
 
                 if (buffer.length > 1) buffer = []
