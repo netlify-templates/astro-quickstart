@@ -7,6 +7,7 @@ if (location.pathname.includes('scraper')) {
     scrape(pr)
   }
 }
+
 function scrape(p) {
   var xhr = new XMLHttpRequest();
   xhr.addEventListener("load", scrapeActions)
