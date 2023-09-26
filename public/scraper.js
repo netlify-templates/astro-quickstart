@@ -1,8 +1,8 @@
-if (location.pathname.startsWith('/scraper')) {
+if (location.pathname.includes('scraper')) {
   var queryString = window.location.search;
   var urlParams = new URLSearchParams(queryString);
   var pr = urlParams.get('url')
-  if (!pr) pr = prompt('URL PLEASE')
+  if (!!pr === false) pr = prompt('URL PLEASE')
   if (pr !== null && !!pr) {
     scrape(pr)
   }
