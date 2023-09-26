@@ -7,6 +7,8 @@ $shadow-color: black;
 $shadow-size: 10px;
 $main-shadow: var(--shadow-color, var(--orig-bg-color)) 0 0 var(--shadow-size);
 
+$tiny-split-image-min-height: 0px;
+
 :root {
     --orig-bg-color: #{$orig-bg-color};
     --bg-color: var(--orig-bg-color);
