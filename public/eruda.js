@@ -4,12 +4,14 @@ if (!!window) {
         if (!!pLocation) {
             var pLocationPathname = pLocation.pathname
             if (!!pLocationPathname) {
-                if (!!pLocationPathname.includes('://')) {
+                if (pLocationPathname.includes('://')) {
                     pLocationPathname = pLocationPathname.split('://')[1]
                 }
-                if (!!pLocationPathname.includes('/')) {
+                if (pLocationPathname.includes('/')) {
                     pLocationPathname = pLocationPathname.split('/')
-                    alert(pLocation)
+                    if (pLocationPathname.endsWith('/')) {
+                        pLocationPathname.substring(0, pLocationPathname.split('').length)
+                    }
                     var canProceed = false
                     if (pLocationPathname.length < 1) {
                         if (pLocationPathname[1] === 'debug') canProceed = true
