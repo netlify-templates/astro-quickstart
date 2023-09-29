@@ -4,7 +4,7 @@ if (!!window) {
         if (!!pLocation) {
             var pLocationPathname = pLocation.pathname
             if (!!pLocationPathname) {
-                if (!!pLocationPathname.includes(':///')) {
+                if (!!pLocationPathname.includes('://')) {
                     pLocationPathname = pLocationPathname.split('://')[1]
                 }
                 if (!!pLocationPathname.includes('/')) {
