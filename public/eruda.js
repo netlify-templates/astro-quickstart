@@ -3,11 +3,11 @@ if (!!window) {
         var pLocation = parent.location
         if (!!pLocation) {
             var pLocationPathname = pLocation.pathname
-            alert(pLocation)
             if (!!pLocationPathname) {
                 if (!!pLocationPathname.includes('://')) {
                     pLocationPathname = pLocationPathname.split('://')[1]
                 }
+                alert(pLocation)
                 if (!!pLocationPathname.includes('/')) {
                     pLocationPathname = pLocationPathname.split('/')
                     var canProceed = false
