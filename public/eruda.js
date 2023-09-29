@@ -7,9 +7,9 @@ if (!!window) {
                 if (!!pLocationPathname.includes('://')) {
                     pLocationPathname = pLocationPathname.split('://')[1]
                 }
-                alert(pLocation)
                 if (!!pLocationPathname.includes('/')) {
                     pLocationPathname = pLocationPathname.split('/')
+                    alert(pLocation)
                     var canProceed = false
                     if (pLocationPathname.length < 1) {
                         if (pLocationPathname[1] === 'debug') canProceed = true
