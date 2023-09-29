@@ -1,5 +1,5 @@
 if (!!window) {
-    if (parent) {
+    if (!!parent) {
         var pLocation = parent.location
         if (!!pLocation) {
             var pLocationPathname = pLocation.pathname
