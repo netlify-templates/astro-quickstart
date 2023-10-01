@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
 import Split from '../components/split.astro'
+import Carousels from '../components/carousels.astro'
 import Carousel from '../components/carousel.astro'
 
 import '../styles/pages/index.scss'
@@ -46,51 +47,53 @@ import '../styles/photos.scss'
     </Split>
     <div hHr></div>
     <section id="mwork" class="photos">
-      <section align="center">
-        <h1 style="--text-color: blue; cursor: pointer;" onclick="location.href = '/work?magic=true'" title="Click here to convert to list!">Member Work</h1>
-        <Carousel carouselIndex="0">
-          <img class="left" src="/assets/members/isabelle/portfolio/previews/Birds-are-essential-for-our-environment!.png" draggable="false">
-          <img class="active" src="/assets/members/shikha/portfolio/previews/Did-you-know.png" draggable="false">
-          <img class="right" src="/assets/members/shikha/portfolio/previews/Women's-History-Month!.png" draggable="false">
-          <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_4.png" draggable="false">
-          <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_5.png" draggable="false">
-          <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_6.png" draggable="false">
-          <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_7.png" draggable="false">
-          <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_1.png" draggable="false">
-          <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_2.png" draggable="false">
-          <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_3.png" draggable="false">
-          <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_4.png" draggable="false">
-          <img src="/assets/members/isabelle/portfolio/previews/DON'T-EAT-FROGS.png" draggable="false">
-          <img src="/assets/members/isabelle/portfolio/previews/Untitled-(800-x-1000-px).png" draggable="false">
-          <img src="/assets/members/shikha/portfolio/previews/Elarra.jpg" draggable="false">
-          <img src="/assets/members/shikha/portfolio/previews/Fairy.jpg" draggable="false">
-          <img src="/assets/members/shikha/portfolio/previews/c3.jpg" draggable="false">
-          <img src="assets/members/shikha/portfolio/previews/Rapunzel.jpg" draggable="false">
-          <!--<img src="/assets/members/hanlin/portfolio/previews/G4G-Ad.png" draggable="false">-->
-        </Carousel>
-      </section>
-      <div hHr style="--width: 850px;"></div>
-      <section align="center">
-        <h1 id="cphotos">Club Photos</h1>
-        <Carousel carouselIndex="1">
-          <img src="/assets/club_photos/previews/IMG_0496.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0497.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0498.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0499.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0500.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0504.jpg" draggable="false">
-          <img class="left" src="/assets/club_photos/previews/IMG_0505.jpg" draggable="false">
-          <img class="active" src="/assets/club_photos/previews/IMG_0506.jpg" draggable="false">
-          <img class="right" src="/assets/club_photos/previews/IMG_0507.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0508.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0509.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0510.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0513.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0514.jpg" draggable="false">
-          <img src="/assets/club_photos/previews/IMG_0515.jpg" draggable="false">
-        </Carousel>
-      </section>
+      <Carousels>
+        <section align="center">
+          <h1 style="--text-color: blue; cursor: pointer;" onclick="location.href = '/work?magic=true'" title="Click here to convert to list!">Member Work</h1>
+          <Carousel carouselIndex="0">
+            <img class="left" src="/assets/members/isabelle/portfolio/previews/Birds-are-essential-for-our-environment!.png" draggable="false">
+            <img class="active" src="/assets/members/shikha/portfolio/previews/Did-you-know.png" draggable="false">
+            <img class="right" src="/assets/members/shikha/portfolio/previews/Women's-History-Month!.png" draggable="false">
+            <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_4.png" draggable="false">
+            <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_5.png" draggable="false">
+            <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_6.png" draggable="false">
+            <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_7.png" draggable="false">
+            <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_1.png" draggable="false">
+            <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_2.png" draggable="false">
+            <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_3.png" draggable="false">
+            <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_4.png" draggable="false">
+            <img src="/assets/members/isabelle/portfolio/previews/DON'T-EAT-FROGS.png" draggable="false">
+            <img src="/assets/members/isabelle/portfolio/previews/Untitled-(800-x-1000-px).png" draggable="false">
+            <img src="/assets/members/shikha/portfolio/previews/Elarra.jpg" draggable="false">
+            <img src="/assets/members/shikha/portfolio/previews/Fairy.jpg" draggable="false">
+            <img src="/assets/members/shikha/portfolio/previews/c3.jpg" draggable="false">
+            <img src="assets/members/shikha/portfolio/previews/Rapunzel.jpg" draggable="false">
+            <!--<img src="/assets/members/hanlin/portfolio/previews/G4G-Ad.png" draggable="false">-->
+          </Carousel>
+        </section>
+        <div hHr style="--width: 850px;"></div>
+        <section align="center">
+          <h1 id="cphotos">Club Photos</h1>
+          <Carousel carouselIndex="1">
+            <img src="/assets/club_photos/previews/IMG_0496.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0497.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0498.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0499.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0500.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0504.jpg" draggable="false">
+            <img class="left" src="/assets/club_photos/previews/IMG_0505.jpg" draggable="false">
+            <img class="active" src="/assets/club_photos/previews/IMG_0506.jpg" draggable="false">
+            <img class="right" src="/assets/club_photos/previews/IMG_0507.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0508.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0509.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0510.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0513.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0514.jpg" draggable="false">
+            <img src="/assets/club_photos/previews/IMG_0515.jpg" draggable="false">
+          </Carousel>
+        </section>
+      </Carousels>
     </section>
   </main>
   <script is:inline src="/contact.js"></script>
