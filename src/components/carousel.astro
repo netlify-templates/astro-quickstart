@@ -13,16 +13,6 @@ var forwFunction = `javascript:goBack(${carouselIndex});`
 var backFunction = `javascript:goForw(${carouselIndex});`
 
 ---
-<div class="carousel">
-    <a href={forwFunction}>
-      <img src="/assets/arrows/L.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Forward.`}>
-    </a>
-    <ul class="imgs">
-      <img src="/assets/blank.png" draggable="false">
-      <slot />
-      <img src="/assets/blank.png" draggable="false">
-    </ul>
-    <a href={backFunction}>
-      <img src="/assets/arrows/R.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Backward.`}>
-    </a>
+<div data-carousel data-index={carouselIndex}>
+  <slot />
 </div>

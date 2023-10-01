@@ -1,10 +1,82 @@
 <slot />
 <script is:inline>
-    var currImgS = [
-        2, 
-        8, 
-    ]
-  
+    var carouselsDatas = []
+
+    var datas = document.querySelectorAll('[data-carousel]')
+
+    datas.forEach(function(data, i) {
+        carouselsDatas.push({})
+        data.setAttribute('data-index', i)
+        data.querySelectorAll('img').forEach(function(img, i2) {
+            img.setAttribute('data-index', i2)
+        })
+
+        let leftIndex = parseInt(data.querySelector('.left').getAttribute('data-index'))
+        let activeIndex = parseInt(data.querySelector('.active').getAttribute('data-index'))
+        let rightIndex = parseInt(data.querySelector('.right').getAttribute('data-index'))
+
+        carouselsDatas[i] = {
+            left: leftIndex, 
+            active: activeIndex, 
+            right: rightIndex, 
+        }
+
+        let carousel = document.createElement('div')
+        carousel.classList.add('carousel')
+
+        let leftArrow = document.createElement('a')
+        leftArrow.href = `javascript:goBack(${i});`
+
+        let leftImg = document.createElement('img')
+        leftImg.src = '/assets/arrows/L.svg'
+        leftImg.classList.add('button')
+        leftImg.draggable = "false"
+        leftImg.alt = `Move Carousel ${i} Backward.`
+
+        let imgs = document.createElement('ul')
+        imgs.classList.add('imgs')
+
+        let rightArrow = document.createElement('a')
+        rightArrow.href = `javascript:goForw(${i});`
+
+        let rightImg = document.createElement('img')
+        rightImg.src = '/assets/arrows/R.svg'
+        rightImg.classList.add('button')
+        rightImg.draggable = "false"
+        rightImg.alt = `Move Carousel ${i} Forward.`
+
+        leftArrow.appendChild(leftImg)
+        leftArrow.appendChild(rightImg)
+
+        carousel.appendChild(leftArrow)
+        carousel.appendChild(imgs)
+        carousel.appendChild(rightArrow)
+
+        data.after(carousel)
+
+        data.querySelectorAll('img').forEach(function(img, i2) {
+            let newImg = img.cloneNode(true)
+            carousel.appendChild('img')
+        })
+
+    })
+/*
+<div class="carousel">
+    <a href={forwFunction}>
+      <img src="/assets/arrows/L.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Backward.`}>
+    </a>
+    <ul class="imgs">
+      <img src="/assets/blank.png" draggable="false">
+      <slot />
+      <img src="/assets/blank.png" draggable="false">
+    </ul>
+    <a href={backFunction}>
+      <img src="/assets/arrows/R.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Forward.`}>
+    </a>
+</div>
+*/
+</script>
+<script is:inline>
     function setImg(car=0) {
         let carousel = document.querySelectorAll('.carousel')[car]
         let ul = carousel.querySelector('ul.imgs')
@@ -20,7 +92,6 @@
         imgs[currImgS[car] - 1].className = 'left'
         imgs[currImgS[car] + 1].className = 'right'
     }
-    setImg()
     
     function goBack(car=0) {
         let carousel = document.querySelectorAll('.carousel')[car]
