@@ -316,6 +316,7 @@ if (location.pathname === '/') {
     if (e.src.split(`${location.host}/assets/members`)[1] !== '/blank.png' && e.src.includes('/club_photos/')) {
       let fname = e.src.split(`${location.host}/assets/club_photos/previews/`)[1].split('.')[0]
       let capt = `${CLUB_PHOTOS[fname]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
+      let tElement = document.getElementById('tElement')
       tElement.innerHTML = capt
       e.title = tElement.innerText
       e.alt = tElement.innerText
