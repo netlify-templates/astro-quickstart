@@ -8,7 +8,7 @@ if (!!window) {
                     pLocationPathname = pLocationPathname.split('://')[1]
                 }
                 if (pLocationPathname.includes('/')) {
-                    pLocationPathname = pLocationPathname.split('/')
+                    pLocationPathname = pLocationPathname.split('/')[1]
                     if (pLocationPathname.endsWith('/')) {
                         pLocationPathname.substring(0, pLocationPathname.split('').length)
                     }
