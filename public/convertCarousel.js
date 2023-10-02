@@ -5,8 +5,8 @@ if (!!isMagic) {
   isMagic = isMagic.replace('y', true).replace('1', true)
 }
 function magic(car=0) {
-  document.querySelector('nav').setAttribute('bBorder', '')
   let carousel = document.querySelectorAll('.carousel')[car]
+  let data = document.querySelectorAll('[data-carousel]')[car]
   let ul = carousel.querySelector('ul')
   carousel.querySelectorAll('img')[0].parentNode.style.display = 'none'
   carousel.querySelectorAll('img')[carousel.querySelectorAll('img').length - 1].parentNode.style.display = 'none'
@@ -14,17 +14,16 @@ function magic(car=0) {
     e.parentNode.style.display = 'none'
   })
   ul = carousel.querySelector('ul')
-  ul.removeAttribute('class')
+  ul.classList.remove('imgs')
   carousel.parentNode.style.maxWidth = '636px'
   ul.style.maxWidth = '636px'
   ul.id = 'photos'
   let newLi = document.createElement('li')
   let imgSCode = ''
-  ul.querySelectorAll('li').forEach(e => {
-    if (e.querySelector('img').src !== `${location.protocol}//${location.host}/assets/blank.png`) {
+  data.querySelectorAll('img').forEach(e => {
+    if (e.src !== `${location.protocol}//${location.host}/assets/blank.png`) {
       imgSCode = imgSCode + e.innerHTML
     }
-    e.style.display = 'none'
   })
   newLi.innerHTML = imgSCode
   newLi.id = 'newLi'
@@ -35,7 +34,6 @@ function magic(car=0) {
 }
 
 function undo() {
-  document.querySelector('nav').removeAttribute('bBorder')
   carousel = document.querySelector('.carousel')
   carousel.querySelectorAll('img')[0].parentNode.style.display = ''
   carousel.querySelectorAll('img')[carousel.querySelectorAll('img').length - 1].parentNode.style.display = ''
