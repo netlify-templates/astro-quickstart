@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
+
 import Carousels from '../components/carousels.astro'
-import Carousel from '../components/carousel.astro'
+import WorkCarousel from '../components/carousels/workCarousel.astro'
 
 import '../styles/photos.scss'
 ---
@@ -18,26 +19,7 @@ import '../styles/photos.scss'
             }
           </style>
           <h1 style="--text-color: blue; cursor: pointer;" onclick="magic()" title="Click here to convert to list!">Member Work</h1>
-          <Carousel carouselIndex="0">
-            <img class="left" src="/assets/members/isabelle/portfolio/previews/Birds-are-essential-for-our-environment!.png" draggable="false">
-            <img class="active" src="/assets/members/shikha/portfolio/previews/Did-you-know.png" draggable="false">
-            <img class="right" src="/assets/members/shikha/portfolio/previews/Women's-History-Month!.png" draggable="false">
-            <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_1.png" draggable="false">
-            <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_2.png" draggable="false">
-            <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_3.png" draggable="false">
-            <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_4.png" draggable="false">
-            <img src="/assets/members/isabelle/portfolio/previews/DON'T-EAT-FROGS.png" draggable="false">
-            <img src="/assets/members/isabelle/portfolio/previews/Untitled-(800-x-1000-px).png" draggable="false">
-            <img src="/assets/members/shikha/portfolio/previews/Elarra.jpg" draggable="false">
-            <img src="/assets/members/shikha/portfolio/previews/Fairy.jpg" draggable="false">
-            <img src="/assets/members/shikha/portfolio/previews/c3.jpg" draggable="false">
-            <img src="/assets/members/shikha/portfolio/previews/Rapunzel.jpg" draggable="false">
-            <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_4.png" draggable="false">
-            <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_5.png" draggable="false">
-            <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_6.png" draggable="false">
-            <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_7.png" draggable="false">
-            <!--<img src="/assets/members/hanlin/portfolio/previews/G4G-Ad.png" draggable="false">-->
-          </Carousel>
+          <WorkCarousel carouselIndex="0" />
         </section>
       </Carousels>
     </section>

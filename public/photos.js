@@ -257,9 +257,15 @@ var MEMBER_WORK = {
 }
 
 //alert(Math.ceil((MEMBER_WORK.length)/3))
-function showItem(img, c, element=false, capt=false, desc=false, user=false) {
+function showItem(img, c, element=false, capt=false, desc=false, user=false, event=false) {
+  let hasItems = false
+  let items = [element, capt, desc]
+  items.forEach(function(e) {
+    if (!!e) hasItems = true
+  })
+
   let path = `/assets`
-  if (element===false&&capt===false&&desc===false) {
+  if (!hasItems) {
     if (c !== 'user_portfolios') {
       c = CLUB_PHOTOS
       path = `${path}/${c['path']}/${c[img]['path']}`
@@ -311,32 +317,27 @@ function showItem(img, c, element=false, capt=false, desc=false, user=false) {
   showModal(element, path, capt, desc)
 }
 
-if (location.pathname === '/') {
-  document.querySelectorAll('.carousel')[1].querySelectorAll('ul img').forEach(e => {
-    if (e.src.split(`${location.host}/assets/members`)[1] !== '/blank.png' && e.src.includes('/club_photos/')) {
-      let fname = e.src.split(`${location.host}/assets/club_photos/previews/`)[1].split('.')[0]
-      let capt = `${CLUB_PHOTOS[fname]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
-      let tElement = document.getElementById('tElement')
+document.querySelectorAll('.carousel').forEach(function(e0, i0) {
+  e0.querySelectorAll('ul img').forEach(e => {
+    if (e.src.endsWith('/blank.png') === false) {
+      let fName = e.src
+      if (fName.includes('://')) {
+        fName = fName.split('://')[1]
+      }
+      if (fName.includes('?')) {
+        fName = fName.split('?')[0]
+      }
+      if (fName.includes('/')) {
+        fName = fName.split('/')
+        fName = fName[fName.length-1]
+      }
+      let capt = `${MEMBER_WORK[fName]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
       tElement.innerHTML = capt
       e.title = tElement.innerText
       e.alt = tElement.innerText
       e.addEventListener('click', function(event) {
-        showItem(fname, CLUB_PHOTOS['path'], element=false, capt=false, desc=false, user=false, event)
+        showItem(fName, MEMBER_WORK['path'], element=false, capt=false, desc=false, user=false, event)
       })
     }
   })
-}
-
-let mCVal = 0
-document.querySelectorAll('.carousel')[mCVal].querySelectorAll('ul img').forEach(e => {
-  if (e.src.endsWith('/blank.png') === false) {
-    let fname = e.src.split(`${location.host}/assets/members/`)[1].split('/')[3].split('.')[0]
-    let capt = `${MEMBER_WORK[fname]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
-    tElement.innerHTML = capt
-    e.title = tElement.innerText
-    e.alt = tElement.innerText
-    e.addEventListener('click', function(event) {
-      showItem(fname, MEMBER_WORK['path'], element=false, capt=false, desc=false, user=false, event)
-    })
-  }
 })
