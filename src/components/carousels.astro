@@ -75,10 +75,11 @@
     </a>
 </div> -->
 <script is:inline>
-    var currImgS = [
-        parseInt(document.querySelectorAll('[data-carousel]')[0].querySelector('.active').getAttribute('data-index')), 
-        parseInt(document.querySelectorAll('[data-carousel]')[1].querySelector('.active').getAttribute('data-index')), 
-    ]
+    var currImgS = []
+    var dCarousels = document.querySelectorAll('[data-carousel]')
+    dCarousels.forEach(function(c, i) {
+        currImgS.push(e.querySelector('.active').getAttribute('data-index'))
+    })
   
     function setImg(car=0) {
         let carousel = document.querySelectorAll('.carousel')[car]
