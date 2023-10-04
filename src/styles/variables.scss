@@ -1,3 +1,7 @@
+// scroll animation
+$scroll-animation-value: 25%;
+
+// site
 $orig-bg-color: #1a4276;
 $bg-color: var(--orig-bg-color) ;
 
@@ -10,6 +14,8 @@ $main-shadow: var(--shadow-color, var(--orig-bg-color)) 0 0 var(--shadow-size);
 $tiny-split-image-parent-min-height: 0px;
 
 :root {
+    --scroll-animation-value: #{$scroll-animation-value};
+
     --orig-bg-color: #{$orig-bg-color};
     --bg-color: var(--orig-bg-color);
   
