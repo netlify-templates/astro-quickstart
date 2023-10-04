@@ -317,27 +317,31 @@ function showItem(img, c, element=false, capt=false, desc=false, user=false, eve
   showModal(element, path, capt, desc)
 }
 
-document.querySelectorAll('.carousel').forEach(function(e0, i0) {
-  e0.querySelectorAll('ul img').forEach(e => {
-    if (e.src.endsWith('/blank.png') === false) {
-      let fName = e.src
-      if (fName.includes('://')) {
-        fName = fName.split('://')[1]
+function photosDomLoaded() {
+  document.querySelectorAll('.carousel').forEach(function(e0, i0) {
+    e0.querySelectorAll('ul img').forEach(e => {
+      if (e.src.endsWith('/blank.png') === false) {
+        let fName = e.src
+        if (fName.includes('://')) {
+          fName = fName.split('://')[1]
+        }
+        if (fName.includes('?')) {
+          fName = fName.split('?')[0]
+        }
+        if (fName.includes('/')) {
+          fName = fName.split('/')
+          fName = fName[fName.length-1]
+        }
+        let capt = `${MEMBER_WORK[fName]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
+        tElement.innerHTML = capt
+        e.title = tElement.innerText
+        e.alt = tElement.innerText
+        e.addEventListener('click', function(event) {
+          showItem(fName, MEMBER_WORK['path'], element=false, capt=false, desc=false, user=false, event)
+        })
       }
-      if (fName.includes('?')) {
-        fName = fName.split('?')[0]
-      }
-      if (fName.includes('/')) {
-        fName = fName.split('/')
-        fName = fName[fName.length-1]
-      }
-      let capt = `${MEMBER_WORK[fName]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
-      tElement.innerHTML = capt
-      e.title = tElement.innerText
-      e.alt = tElement.innerText
-      e.addEventListener('click', function(event) {
-        showItem(fName, MEMBER_WORK['path'], element=false, capt=false, desc=false, user=false, event)
-      })
-    }
+    })
   })
-})
+}
+
+window.addEventListener('DOMContentLoaded', photosDomLoaded)
