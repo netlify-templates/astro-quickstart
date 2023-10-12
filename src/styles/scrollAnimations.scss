@@ -7,7 +7,7 @@
 }
   
 
-main > section {
+main > * {
     &:not(:has( > section)) {
         @include animations;
     }
@@ -16,9 +16,9 @@ main > section {
     }
 }
 
-.vHr, .hHr {
-    @include animations;
-}
+// .vHr, .hHr {
+//     @include animations;
+// }
 
 @keyframes fade {
     from {
