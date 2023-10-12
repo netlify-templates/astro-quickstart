@@ -11,14 +11,14 @@ main > * {
     &:not(:has( > section)) {
         @include animations;
     }
-    & > section {
+    & > * {
         @include animations;
     }
 }
 
-// .vHr, .hHr {
-//     @include animations;
-// }
+.vHr, .hHr {
+    @include animations;
+}
 
 @keyframes fade {
     from {
