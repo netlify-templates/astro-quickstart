@@ -86,7 +86,7 @@ body {
   gap: var(--gap)
 }
 
-.vHr, [vHr] {
+.vHr {
   --bg-color: white;
 
   width: 2px;
@@ -94,7 +94,7 @@ body {
   border-radius: 25px;
 }
 
-.hHr, [hHr] {
+.hHr {
   --bg-color: var(--b-color, white);
 
   margin: var(--marg, 0);
