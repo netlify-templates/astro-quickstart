@@ -6,7 +6,7 @@ This is a bare-bones Astro project that has everything you need to quickly deplo
 
 Hate reading, here's a video: https://youtu.be/SknFflQVOys!
 
-Love reading, here's blog post: www.netlify.app/blog/deploy-your-astro-project-fast/!
+Love reading, here's blog post: https://netlify.app/blog/deploy-your-astro-project-fast!
 
 ## Table of Contents:
 
