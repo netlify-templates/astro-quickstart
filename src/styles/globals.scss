@@ -97,6 +97,7 @@ body {
 .hHr {
   --bg-color: var(--b-color, white);
 
+  display: block;
   margin: var(--marg, 0);
   width: var(--width, 100%);
   height: 2px;
