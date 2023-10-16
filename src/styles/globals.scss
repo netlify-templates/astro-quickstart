@@ -13,8 +13,6 @@
 }
 
 :root {
-  scroll-behavior: smooth;
-
   font-family: var(--font, 'Dekko', sans-serif);
 
   background-color: var(--bg-color, --orig-bg-color);
@@ -473,13 +471,13 @@ form[action] * {
 
   #cSpan {
     position: absolute;
-    background-image: url('/assets/icons/X.png') no-repeat fixed center !important;
-    background-size: 100% !important;
+    background-image: url('/assets/icons/X.png') no-repeat fixed center;
+    background-size: 100%;
     top: 12.5px;
     right: 12.5px;
   /*  margin: 12.5px;  */
     width: 25px !important;
-    aspect-ratio: 1 !important;
+    aspect-ratio: 1;
     cursor: pointer;
   }
 
