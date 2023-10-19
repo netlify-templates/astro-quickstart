@@ -21,8 +21,8 @@ function updateUserData(userData) {
   }
   else {
     let uName = userData.name
-    if (uName.includes('<')) {
-      uName = uName.split('<')[0]
+    if (uName.includes('<span id="tag">(')) {
+      uName = uName.split('<span id="tag">(')[0]
     }
     uName = uName.split(' ')
     let eUserName = `${uName[0].split('')[0]}${uName[uName.length-1]}`
