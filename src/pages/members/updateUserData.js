@@ -21,11 +21,10 @@ function updateUserData(userData) {
   }
   else {
     let uName = userData.name
-    if (uName.includes('<span id="tag">(')) {
-      uName = uName.split('<span id="tag">(')[0]
+    if (uName.includes(' <span id="tag">(')) {
+      uName = uName.split(' <span id="tag">(')[0]
     }
-    let eUserName = uName
-    // let eUserName = uName.split(' ')
+    let eUserName = uName.split(' ')
     // eUserName = `${eUserName[0].split('')[0]}${eUserName[eUserName.length-1]}`
     // if (!!userData.email) {
     //   if (!!userData.email.dtech) {
