@@ -24,15 +24,16 @@ function updateUserData(userData) {
     if (uName.includes('<span id="tag">(')) {
       uName = uName.split('<span id="tag">(')[0]
     }
-    uName = uName.split(' ')
-    let eUserName = `${uName[0].split('')[0]}${uName[uName.length-1]}`
-    if (!!userData.email) {
-      if (!!userData.email.dtech) {
-        if (!!userData.email.dtech.email) {
-          eUserName = userData.email.dtech.email
-        }
-      }
-    }
+    let eUserName = uName
+    // let eUserName = uName.split(' ')
+    // eUserName = `${eUserName[0].split('')[0]}${eUserName[eUserName.length-1]}`
+    // if (!!userData.email) {
+    //   if (!!userData.email.dtech) {
+    //     if (!!userData.email.dtech.email) {
+    //       eUserName = userData.email.dtech.email
+    //     }
+    //   }
+    // }
     userData.email.address = `${eUserName}${userData.email.dtech.year}`.toLowerCase() + '@dtechhs.org'
   }
   
