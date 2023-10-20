@@ -78,7 +78,7 @@ a#go2content[href="javascript:scrollToNum()"] {
     }
 
     & > .nav-btns {
-      &__inner {
+      & .nav-btns__inner {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -160,7 +160,7 @@ a#go2content[href="javascript:scrollToNum()"] {
 
         --bg-color: #0001;
 
-        &__inner {
+        & .nav-btns__inner {
           box-sizing: border-box;
           position: absolute;
           height: 100%;
