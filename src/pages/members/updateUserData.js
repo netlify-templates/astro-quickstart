@@ -50,7 +50,7 @@ function updateUserData(userData) {
   })
   
   let gradYear = userData.email.dtech.year
-  gradYear = parseInt(`20${grade}`)
+  gradYear = parseInt(`20${gradYear}`)
   let currentYear = new Date().getFullYear()
   let yearsLeft = gradYear - currentYear
 
