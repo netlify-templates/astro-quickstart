@@ -11,14 +11,14 @@ showEruda()
 if (!!parent) {
     if (!!parent.location) {
         if (!!parent.location.pathname) {
-            var location = parent.location.pathname
-            if (location.includes('://')) {
-                location = location.split('://')[1]
+            var pLocation = parent.location.pathname
+            if (pLocation.includes('://')) {
+                pLocation = pLocation.split('://')[1]
             }
-            if (location.endsWith('/')) {
-                location.substring(0, location.split('').length)
+            if (pLocation.endsWith('/')) {
+                pLocation.substring(0, pLocation.split('').length)
             }
-            if (!!location.endsWith('debug')) showEruda()
+            if (!!pLocation.endsWith('debug')) showEruda()
         }
     }
 }
