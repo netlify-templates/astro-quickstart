@@ -73,6 +73,10 @@ a#go2content[href="javascript:scrollToNum()"] {
     justify-content: flex-end;
     align-items: center;
 
+    #closeNav {
+      display: var(--display, none);
+    }
+
     & > div {
       display: flex;
       flex-wrap: wrap;
