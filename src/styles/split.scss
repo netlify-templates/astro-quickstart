@@ -134,3 +134,9 @@ section.split.tiny {
         grid-template-rows: 1fr 1fr;
     }
 }
+
+@media (width < 1010) {
+    section.split {
+        flex-direction: column;
+    }
+}
