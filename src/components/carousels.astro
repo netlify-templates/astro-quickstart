@@ -78,7 +78,7 @@
     var currImgS = []
     var dCarousels = document.querySelectorAll('[data-carousel]')
     dCarousels.forEach(function(c, i) {
-        currImgS.push(e.querySelector('.active').getAttribute('data-index'))
+        currImgS.push(c.querySelector('.active').getAttribute('data-index'))
     })
   
     function setImg(car=0) {
