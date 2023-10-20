@@ -8,21 +8,21 @@
   
 
 main:not(.profile) > * {
-    &:not(:has( > section)) > * {
+    &:not(:has( > section)) {
         @include animations;
     }
-    &:has( > section) > * > * {
+    &:has( > section) > * {
         @include animations;
     }
 }
 
-// .vHr, .hHr {
-//     @include animations;
-// }
+.vHr, .hHr {
+    @include animations;
+}
 
 @keyframes fade {
     from {
-        scale: 0.75;
+        scale: 0.9;
     }
     to {
         scale: 1;
