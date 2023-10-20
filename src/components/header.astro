@@ -8,11 +8,14 @@ import '../styles/header.scss'
   </div>
   <nav class="nav">
     <input type="checkbox" id="closeNav" style="--display: auto;" />
+    <label for="closeNav" class="nav-hbg">
+      <img class="icon" alt="Open Sidebar Navigation" src="/assets/icons/hamburger-large.svg" />
+    </label>
     <div>
       <div class="nav-info">
         <h3>Navigation</h3>
-        <label for="closeNav">
-          <img id="mob-nav-clse" class="icon mob-nav-clse" alt="Close Sidebar Navigation" src="/assets/icons/X.svg" />
+        <label for="closeNav" class="mob-nav-clse">
+          <img class="icon" alt="Close Sidebar Navigation" src="/assets/icons/X.svg" />
         </label>
       </div>
       <a href="/" class="btn">Home</a>
@@ -23,9 +26,6 @@ import '../styles/header.scss'
       <a href="https://go.graphics-for-good.com/Sign-Up" class="btn primary">Sign Up</a>
 <!--  <a href="/portal" class="btn">Portal</a>-->
     </div>
-    <label for="closeNav">
-      <img id="nav-hbg" class="nav-hbg" alt="Open Sidebar Navigation" src="/assets/icons/hamburger-large.svg" />
-    </label>
   </nav>
   <div class="social">
     <a href="https://instagram.com/4goodgraphics" id="instagram"></a>
