@@ -8,10 +8,10 @@
   
 
 main:not(.profile) > * {
-    &:not(:has( > section)) {
+    &:not(:has( > section)) > * {
         @include animations;
     }
-    &:has( > section) > * {
+    &:has( > section) > * > * {
         @include animations;
     }
 }
