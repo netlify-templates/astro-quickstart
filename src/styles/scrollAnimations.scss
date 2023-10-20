@@ -7,11 +7,11 @@
 }
   
 
-main > * {
+main:not(.profile) > * {
     &:not(:has( > section)) {
         @include animations;
     }
-    & > * {
+    &:has( > section) > * {
         @include animations;
     }
 }
