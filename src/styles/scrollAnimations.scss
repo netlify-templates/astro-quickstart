@@ -2,7 +2,7 @@
 
 @mixin animations {
     animation: fade linear both;
-    animation-timeline: view();
+    animation-timeline: scroll();
     animation-range: entry var(--scroll-animation-value) cover var(--scroll-animation-value);
 }
   
