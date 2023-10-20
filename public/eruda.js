@@ -10,8 +10,8 @@ showEruda()
 
 if (!!parent) {
     if (!!parent.location) {
-        if (!!parent.location.pathname) {
-            var pLocation = parent.location.pathname
+        var pLocation = parent.location.pathname
+        if (!!pLocation) {
             if (pLocation.includes('://')) {
                 pLocation = pLocation.split('://')[1]
             }
