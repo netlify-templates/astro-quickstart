@@ -77,15 +77,11 @@ a#go2content[href="javascript:scrollToNum()"] {
       display: var(--display, none);
     }
 
-    & > div {
+    & > .nav-btns {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: var(--padding);
-
-      &.ready {
-        transition: translate 1s ease;
-      }
     }
   }
   
@@ -153,25 +149,34 @@ a#go2content[href="javascript:scrollToNum()"] {
     .nav {
       overflow-x: hidden;
 
-      & > div {
-        z-index: 2;
-        box-sizing: border-box;
+      & > .nav-btns {
+        z-index: 999;
+
         position: fixed;
+        inset: 0;
         height: 100dvh;
-        top: 0;
-        right: 0;
-    
-        padding: var(--padding) var(--padding);
+        
+        background-color: #0001;
 
-        display: grid;
-        grid-template-columns: 0fr;
-        grid-template-rows: auto;
-        grid-auto-flow: column;
-        overflow-x: hidden;
-
-        transition: grid-template-columns 2.5s ease;
-    
-        box-shadow: 0px 0px 10px 0px var(--orig-bg-color);
+        &__inner {
+          box-sizing: border-box;
+          position: absolute;
+          height: 100%;
+          top: 0;
+          right: 0;
+      
+          padding: var(--padding) var(--padding);
+  
+          display: grid;
+          grid-template-columns: 0fr;
+          grid-template-rows: auto;
+          grid-auto-flow: column;
+          overflow-x: hidden;
+  
+          transition: grid-template-columns 2.5s ease;
+      
+          box-shadow: 0px 0px 10px 0px var(--orig-bg-color);
+        }
 
         .nav-info {
           display: flex;
