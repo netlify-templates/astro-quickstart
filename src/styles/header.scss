@@ -145,12 +145,12 @@ a#go2content[href="javascript:scrollToNum()"] {
         right: 0;
     
         padding: calc(159px + 89px + var(--padding)*2) var(--padding) var(--padding);
-        justify-content: left;
-    
-        flex-direction: column;
 
         display: grid;
         grid-template-columns: 0fr;
+        grid-template-rows: auto;
+
+        transition: grid-template-columns 2.5s ease;
     
         box-shadow: 0px 0px 10px 0px var(--orig-bg-color);
 
@@ -176,6 +176,9 @@ a#go2content[href="javascript:scrollToNum()"] {
           }
         }
       }
+    }
+    #closeNav:checked + .nav-items {
+      grid-template-columns: 1fr;
     }
   }
 }
