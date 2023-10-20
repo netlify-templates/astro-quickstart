@@ -49,6 +49,12 @@ function updateUserData(userData) {
     userData.socials[i].icon = `/assets/icons/${social.name.toLowerCase()}.svg`
   })
   
+  let gradYear = userData.email.dtech.year
+  gradYear = parseInt(`20${grade}`)
+  let currentYear = new Date().getFullYear()
+  let yearsLeft = gradYear - currentYear
+  
+
   if (!!userData.bio === false) {
     userData.bio = {}
   }
