@@ -78,10 +78,12 @@ a#go2content[href="javascript:scrollToNum()"] {
     }
 
     & > .nav-btns {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--padding);
+      &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--padding);
+      }
     }
   }
   
