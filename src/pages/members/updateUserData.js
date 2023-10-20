@@ -53,7 +53,7 @@ function updateUserData(userData) {
     userData.bio = {}
   }
   if (!!userData.bio.custom) {
-    userData.bio.result = userData.bio.custom
+    userData.bio.result = userData.bio.custom.replace('{pronouciation}', '')
   }
   else {
     if (!!userData.bio.w1 && !!userData.bio.w2) {
