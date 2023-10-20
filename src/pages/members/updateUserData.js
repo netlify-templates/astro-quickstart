@@ -53,7 +53,25 @@ function updateUserData(userData) {
   gradYear = parseInt(`20${grade}`)
   let currentYear = new Date().getFullYear()
   let yearsLeft = gradYear - currentYear
-  
+
+  let currentMonth = new Date().getMonth()++
+  if (month === 1 || month === 2 || month === 3 || month === 4 || month === 5) {
+    yearsLeft--
+  }
+
+  let grade = ''
+  if (yearsLeft === 1) {
+    grade = 'Senior'
+  }
+  else if (yearsLeft === 2) {
+    grade = 'Junior'
+  }
+  else if (yearsLeft === 3) {
+    grade = 'Sophmore'
+  }
+  else if (yearsLeft === 4) {
+    grade = 'Freshman'
+  }
 
   if (!!userData.bio === false) {
     userData.bio = {}
@@ -63,16 +81,16 @@ function updateUserData(userData) {
   }
   else {
     if (!!userData.bio.w1 && !!userData.bio.w2) {
-      userData.bio.result = defaultBio(userData.name, userData.bio.w1, userData.bio.w2)
+      userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1, userData.bio.w2)
     }
     else if (!!userData.bio.w1) {
-      userData.bio.result = defaultBio(userData.name, userData.bio.w1)
+      userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1)
     }
     else if (!!userData.bio.w2) {
-      userData.bio.result = defaultBio(userData.name, false, userData.bio.w2)
+      userData.bio.result = defaultBio(userData.name, grade, false, userData.bio.w2)
     }
     else {
-      userData.bio.result = defaultBio(userData.name)
+      userData.bio.result = defaultBio(userData.name, grade)
     }
   }
 
