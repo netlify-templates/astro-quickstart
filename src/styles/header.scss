@@ -154,7 +154,8 @@ a#go2content[href="javascript:scrollToNum()"] {
       overflow-x: hidden;
 
       & > div {
-        z-index: -1;
+        z-index: 2;
+        box-sizing: border-box;
         position: fixed;
         height: 100dvh;
         top: 0;
