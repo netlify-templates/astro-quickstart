@@ -54,7 +54,8 @@ function updateUserData(userData) {
   let currentYear = new Date().getFullYear()
   let yearsLeft = gradYear - currentYear
 
-  let currentMonth = new Date().getMonth()++
+  let currentMonth = new Date().getMonth()
+  currentMonth++
   if (month === 1 || month === 2 || month === 3 || month === 4 || month === 5) {
     yearsLeft--
   }
