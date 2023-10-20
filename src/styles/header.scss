@@ -168,6 +168,7 @@ a#go2content[href="javascript:scrollToNum()"] {
           padding: var(--padding) var(--padding);
   
           display: grid;
+          align-items: start;
           grid-template-columns: 0fr;
           grid-template-rows: auto;
           grid-auto-flow: column;
