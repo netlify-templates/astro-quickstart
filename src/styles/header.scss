@@ -158,9 +158,11 @@ a#go2content[href="javascript:scrollToNum()"] {
         inset: 0;
         height: 100dvh;
 
-        --bg-color: #0005;
+        --bg-color: rgba(0, 0, 0, 0.25);
 
         & .nav-btns__inner {
+          --bg-color: var(--orig-bg-color);
+
           box-sizing: border-box;
           position: absolute;
           height: 100%;
@@ -172,7 +174,7 @@ a#go2content[href="javascript:scrollToNum()"] {
           display: grid;
           grid-template-columns: 0fr;
           grid-template-rows: auto;
-          grid-auto-flow: column;
+          grid-auto-flow: row;
 
           justify-content: flex-start;
           align-content: start;
