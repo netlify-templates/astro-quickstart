@@ -49,7 +49,13 @@ function updateUserData(userData) {
     userData.socials[i].icon = `/assets/icons/${social.name.toLowerCase()}.svg`
   })
   
-  if (!!userData.bio) {
+  if (!!userData.bio === false) {
+    userData.bio = {}
+  }
+  if (!!userData.bio.custom) {
+    userData.bio.result = userData.bio.custom
+  }
+  else {
     if (!!userData.bio.w1 && !!userData.bio.w2) {
       userData.bio.result = defaultBio(userData.name, userData.bio.w1, userData.bio.w2)
     }
@@ -63,11 +69,7 @@ function updateUserData(userData) {
       userData.bio.result = defaultBio(userData.name)
     }
   }
-  else {
-    userData.bio = {}
-    userData.bio.result = defaultBio(userData.name)
-  }
-  
+
   if (userData.bio.result.includes('{pronunciation}')) {
     // if (!!userData.pronunciation) {
     //   userData.bio.result = userData.bio.result.replace('{pronunciation}', userData.pronunciation)
