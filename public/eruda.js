@@ -6,7 +6,7 @@ function showEruda() {
         eruda.init()
     };
 }
-// showEruda()
+showEruda()
 
 // if (!!parent) {
 //     if (!!parent.location) {
