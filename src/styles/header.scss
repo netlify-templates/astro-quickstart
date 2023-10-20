@@ -149,6 +149,7 @@ a#go2content[href="javascript:scrollToNum()"] {
         display: grid;
         grid-template-columns: 0fr;
         grid-template-rows: auto;
+        overflow-x: hidden;
 
         transition: grid-template-columns 2.5s ease;
     
