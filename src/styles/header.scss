@@ -160,7 +160,7 @@ a#go2content[href="javascript:scrollToNum()"] {
         top: 0;
         right: 0;
     
-        padding: calc(159px + 89px + var(--padding)*2) var(--padding) var(--padding);
+        padding: calc(159px + 89px + var(--padding)) var(--padding) var(--padding);
 
         display: grid;
         grid-template-columns: 0fr;
