@@ -114,7 +114,7 @@ a#go2content[href="javascript:scrollToNum()"] {
   }
 }
 
-@media (width >= 624px) {
+@media (width > 625px) {
   .header {
     .nav-hbg {
       display: none;
@@ -127,7 +127,7 @@ a#go2content[href="javascript:scrollToNum()"] {
   }
 }
 
-@media (width < 624px) {
+@media (width <= 625px) {
   .header {
     .nav-hbg {
       --bg-color: white;
@@ -155,7 +155,7 @@ a#go2content[href="javascript:scrollToNum()"] {
         position: fixed;
         inset: 0;
         height: 100dvh;
-        
+
         background-color: #0001;
 
         &__inner {
