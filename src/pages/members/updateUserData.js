@@ -56,7 +56,7 @@ function updateUserData(userData) {
 
   let currentMonth = new Date().getMonth()
   currentMonth++
-  if (month === 1 || month === 2 || month === 3 || month === 4 || month === 5) {
+  if (currentMonth === 1 || currentMonth === 2 || currentMonth === 3 || currentMonth === 4 || currentMonth === 5) {
     yearsLeft--
   }
 
