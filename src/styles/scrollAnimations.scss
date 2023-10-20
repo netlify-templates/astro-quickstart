@@ -16,9 +16,9 @@ main:not(.profile) > * {
     }
 }
 
-.vHr, .hHr {
-    @include animations;
-}
+// .vHr, .hHr {
+//     @include animations;
+// }
 
 @keyframes fade {
     from {
