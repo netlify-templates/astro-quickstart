@@ -36,3 +36,4 @@ function showEruda() {
         eruda.init()
     };
 }
+showEruda()
