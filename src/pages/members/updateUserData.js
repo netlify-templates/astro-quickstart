@@ -81,18 +81,10 @@ function updateUserData(userData) {
     userData.bio.result = userData.bio.custom.replace('{pronunciation}', '')
   }
   else {
-    if (!!userData.bio.w1 && !!userData.bio.w2) {
-      userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1, userData.bio.w2)
-    }
-    else if (!!userData.bio.w1) {
-      userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1)
-    }
-    else if (!!userData.bio.w2) {
-      userData.bio.result = defaultBio(userData.name, grade, false, userData.bio.w2)
-    }
-    else {
-      userData.bio.result = defaultBio(userData.name, grade)
-    }
+    if (!!userData.bio.w1 === false) userData.bio.w1 = false
+    if (!!userData.bio.w2 === false) userData.bio.w2 = false
+    if (!!userData.bio.removeAnd === false) userData.bio.removeAnd = false
+    userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1, userData.bio.w2)
   }
 
   if (userData.bio.result.includes('{pronunciation}')) {
