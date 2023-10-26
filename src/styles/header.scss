@@ -151,6 +151,10 @@ a#go2content[href="javascript:scrollToNum()"] {
     .nav {
       overflow-x: hidden;
 
+      #closeNav {
+        --display: auto;
+      }
+  
       & > .nav-btns {
         z-index: 999;
 
