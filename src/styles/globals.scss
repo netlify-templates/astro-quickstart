@@ -163,7 +163,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .missiontext {
+--bg-color: white;
+  margin: 25px;
   width: fit-content;
+
   & > .text  {
     text-align: justify;
     max-width: 500px;
