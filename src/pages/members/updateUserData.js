@@ -2,10 +2,14 @@ import defaultBio from './defaultBio.js'
 
 function updateUserData(userData) {
   userData.nameNoTitle = userData.name
-  if (userData.nameNoTitle.includes('<')) {
-    userData.nameNoTitle = userData.nameNoTitle.split('<')[0]
+
+  if (!!userData.role === false) userData.role = {}
+  if (!!userData.role.name === false) {
+    userData.role.name = 'Member'
+    userData.role.hide = true
   }
-  
+  if (!!userData.role.hide === false) userData.role.hide = false
+
   if (!!userData.pfp.g4g) {
     userData.pfp.url = `/assets/members/${userData.username}/pfps/pfp-${userData.pfp.g4g.sizes[0].name}.${userData.pfp.g4g.sizes[0].ext}`.replace('-full', '')
   }
@@ -21,11 +25,6 @@ function updateUserData(userData) {
   }
   else {
     let uName = userData.name
-    if (uName.includes(' <span id="tag">(')) {
-      uName = uName.split(' <span id="tag">(')[0]
-    }
-
-    if (!!userData.role === false) userData.role = 'Member'
 
     let eUserName = uName.split(' ')
     eUserName = `${eUserName[0].split('')[0]}${eUserName[eUserName.length-1]}`
