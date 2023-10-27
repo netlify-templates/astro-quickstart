@@ -219,22 +219,12 @@ section {
     align-items: center;
     flex-direction: column;
   }
-  &:not(.hero, .split, .photos, #portal, .enroll__beta, .error &) {
+  &:not(.hero, .split .photos, #portal, .enroll__beta, .error &) {
     box-shadow: var(--main-shadow);
     border-radius: 25px;
     transition: 500ms ease-in-out;
     &:hover, &:is(:focus-within, :has(:focus-visible)) {
       border-radius: 10px;
-    }
-  }
-  &:is(.split, .photos) {
-    & section:not(.split.tiny) {
-      box-shadow: var(--main-shadow);
-      border-radius: 25px;
-      transition: 500ms ease-in-out;
-      &:hover, &:is(:focus-within, :has(:focus-visible)) {
-        border-radius: 10px;
-      }
     }
   }
   &:not(.profile > &) h1 {
