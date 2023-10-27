@@ -62,6 +62,7 @@ section.split:not(.tiny) {
 
 @media (width < 1006px) {
     section.split {
+        margin-inline: auto;
         flex-direction: column;
         max-width: 750px;
         
