@@ -65,7 +65,14 @@ section.split:not(.tiny) {
         }
         
         & > section {
-            margin: 25px;
+            &:first-child {
+                margin-inline-end: var(--padding);
+                margin-block-end: 0;
+            }
+            &:last-child {
+                margin-inline-start: var(--padding);
+                margin-block-start: 0;
+            }
         }
     }
 }
