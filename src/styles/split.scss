@@ -18,9 +18,7 @@ section.split:not(.tiny) {
         box-sizing: border-box;
         margin-block: var(--padding);
         padding: var(--padding);
-    
-        max-width: 50%;
-        
+            
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -53,7 +51,15 @@ section.split:not(.tiny) {
         }
     }
 }
-    
+
+@media (width >= 1006px) {
+    section.split:not(.tiny) {
+        & > section {
+            max-width: 50%;
+        }
+    }
+}
+
 @media (width < 1006px) {
     section.split {
         flex-direction: column;
