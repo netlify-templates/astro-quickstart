@@ -213,7 +213,7 @@ main {
 }
 
 section {
-  &:not(#portal, .split, .projects & &, .error &) {
+  &:not(#portal, .split, .split &, .projects & &, .error &) {
     display: flex;
     // justify-content: center;
     align-items: center;
