@@ -65,7 +65,7 @@ section.split:not(.tiny) {
         }
         
         & > section {
-            max-width: calc(100% - 50px);
+            margin: 25px;
         }
     }
 }
