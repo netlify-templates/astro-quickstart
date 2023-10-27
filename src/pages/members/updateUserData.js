@@ -86,7 +86,7 @@ function updateUserData(userData) {
     if (!!userData.bio.w1 === false) userData.bio.w1 = false
     if (!!userData.bio.w2 === false) userData.bio.w2 = false
     if (!!userData.bio.removeAnd === false) userData.bio.removeAnd = false
-    userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1, userData.bio.w2, userData.role, userData.bio.removeAnd)
+    userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1, userData.bio.w2, userData.role.name, userData.bio.removeAnd)
     if (!!userData.bio.end) {
       if (userData.bio.result.endsWith(' ') === false) {
         userData.bio.result = `${userData.bio.result} `
