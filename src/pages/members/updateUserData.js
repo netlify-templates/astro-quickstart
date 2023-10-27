@@ -24,6 +24,9 @@ function updateUserData(userData) {
     if (uName.includes(' <span id="tag">(')) {
       uName = uName.split(' <span id="tag">(')[0]
     }
+
+    if (!!userData.role === false) userData.role = 'Member'
+
     let eUserName = uName.split(' ')
     eUserName = `${eUserName[0].split('')[0]}${eUserName[eUserName.length-1]}`
     // if (!!userData.email) {
@@ -83,9 +86,8 @@ function updateUserData(userData) {
   else {
     if (!!userData.bio.w1 === false) userData.bio.w1 = false
     if (!!userData.bio.w2 === false) userData.bio.w2 = false
-    if (!!userData.bio.role === false) userData.bio.role = false
     if (!!userData.bio.removeAnd === false) userData.bio.removeAnd = false
-    userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1, userData.bio.w2, userData.bio.role, userData.bio.removeAnd)
+    userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1, userData.bio.w2, userData.role, userData.bio.removeAnd)
     if (!!userData.bio.end) {
       if (userData.bio.result.endsWith(' ') === false) {
         userData.bio.result = `${userData.bio.result} `
