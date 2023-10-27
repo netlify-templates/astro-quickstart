@@ -86,6 +86,12 @@ function updateUserData(userData) {
     if (!!userData.bio.role === false) userData.bio.role = false
     if (!!userData.bio.removeAnd === false) userData.bio.removeAnd = false
     userData.bio.result = defaultBio(userData.name, grade, userData.bio.w1, userData.bio.w2, userData.bio.role, userData.bio.removeAnd)
+    if (!!userData.bio.end) {
+      if (userData.bio.result.endsWith(' ') === false) {
+        userData.bio.result = `${userData.bio.result} `
+      }
+      userData.bio.result = `${userData.bio.result}${userData.bio.end}`
+    }
   }
 
   if (userData.bio.result.includes('{pronunciation}')) {
