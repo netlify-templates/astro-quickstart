@@ -73,10 +73,6 @@ a#go2content[href="javascript:scrollToNum()"] {
     justify-content: flex-end;
     align-items: center;
 
-    #closeNav {
-      display: var(--display, none);
-    }
-
     & > .nav-btns {
       & .nav-btns__inner {
         display: flex;
@@ -122,6 +118,10 @@ a#go2content[href="javascript:scrollToNum()"] {
       display: none;
     }
     .nav {
+      #closeNav {
+        display: none;
+      }
+  
       .nav-info {
         display: none;
       }
@@ -151,10 +151,6 @@ a#go2content[href="javascript:scrollToNum()"] {
     .nav {
       overflow-x: hidden;
 
-      #closeNav {
-        --display: auto;
-      }
-  
       & > .nav-btns {
         z-index: 999;
 
