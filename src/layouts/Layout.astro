@@ -1,6 +1,7 @@
 ---
 import Header from '../components/header.astro'
 import Footer from '../components/footer.astro'
+import Modal from '../components/modal.astro'
 import InfoBox from '../components/infobox.astro'
 
 import '../styles/globals.scss'
@@ -38,6 +39,7 @@ if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.sp
     <slot />
     <Footer />
     <InfoBox />
+    <Modal />
     <span style="display: none;" hidden tElement id="tElement"></span>
     <script>
       if (!!document.querySelector('.hero') === false) {
