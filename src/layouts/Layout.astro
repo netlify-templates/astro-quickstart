@@ -4,6 +4,7 @@ import Footer from '../components/footer.astro'
 import InfoBox from '../components/infobox.astro'
 
 import '../styles/globals.scss'
+import '../styles/icons.scss'
 import '../styles/scrollAnimations.scss'
 import '../styles/footer.scss'
 
@@ -14,7 +15,7 @@ export interface Props {
 const { title } = Astro.props as Props;
 
 let dTitle = `${title} | Graphics for Good`
-if (dTitle.startsWith(' | ')) dTitle = dTitle.split(' | ')[1]
+if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.split(' | ')[1]
 
 ---
 

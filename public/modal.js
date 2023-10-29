@@ -14,11 +14,10 @@ closeA.href = 'javascript:hideModal()'
 closeA.setAttribute('draggable', 'false')
 inner.appendChild(closeA)
 
-let closeImg = document.createElement('img')
-closeImg.src = '/assets/icons/X.svg'
-closeImg.id = 'cSpan'
-closeImg.setAttribute('draggable', 'false')
-closeA.appendChild(closeImg)
+let closeSpan = document.createElement('span')
+closeSpan.classList.add('material-symbols-outlined')
+closeSpan.innerHTML = 'close'
+closeA.appendChild(closeSpan)
 
 // let closeSpan = document.createElement('div')
 // closeSpan.id = 'cSpan'
