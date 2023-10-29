@@ -333,7 +333,7 @@ function photosDomLoaded() {
           fName = fName[fName.length-1]
         }
         console.log(fName)
-        let capt = `${MEMBER_WORK[fName]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace('..', '.').replace('!. ', '! ').replace('!.', '!')
+        let capt = `${MEMBER_WORK[fName]['capt']}. Click to enlarge!`.replace('.. ', '. ').replace(',.', '. ').replace('!. ', '! ').replace('?.', '? ')
         tElement.innerHTML = capt
         e.title = tElement.innerText
         e.alt = tElement.innerText
