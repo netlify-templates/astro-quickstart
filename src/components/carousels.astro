@@ -61,24 +61,13 @@
 
     })
 </script>
-<!-- <div class="carousel">
-    <a href={forwFunction}>
-      <img src="/assets/arrows/L.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Backward.`}>
-    </a>
-    <ul class="imgs">
-      <img src="/assets/blank.png" draggable="false">
-      <slot />
-      <img src="/assets/blank.png" draggable="false">
-    </ul>
-    <a href={backFunction}>
-      <img src="/assets/arrows/R.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Forward.`}>
-    </a>
-</div> -->
 <script is:inline>
     var currImgS = []
     var dCarousels = document.querySelectorAll('[data-carousel]')
     dCarousels.forEach(function(c, i) {
-        currImgS.push(c.querySelector('.active').getAttribute('data-index'))
+        if (!!c.querySelector('.active')) {
+            currImgS.push(c.querySelector('.active').getAttribute('data-index'))
+        }
     })
   
     function setImg(car=0) {
