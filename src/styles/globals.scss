@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 10px;
   width: 100%;
   content: '';
-  background-image: linear-gradient(var(--grad-start, var(--orig-bg-color)), var(--grad-end, #6c78e5)) !important;
+  --bg: linear-gradient(var(--grad-start, var(--orig-bg-color)), var(--grad-end, #6c78e5));
 }
 
 .btn {
@@ -140,26 +140,24 @@ h1, h2, h3, h4, h5, h6 {
   &:not(.primary) {
     --bg-color: white;
     --border-color: black;
-
     color: black;
-  }
-  &:not(.primary):is(:hover, :focus-visible) {
-    --bg-color: black;
-    --border-color: white;
 
-    color: white;
+    &:is(:hover, :focus-visible) {
+      --bg-color: black;
+      --border-color: white;
+      color: white;
+    }
   }
   &.primary {
-    --bg-color: black !important;
+    --bg-color: black;
     --border-color: white;
+    color: white;
 
-    color: white !important;
-  }
-  &.primary:is(:hover, :focus-visible) {
-    --bg-color: white !important;
-    --border-color: black;
-
-    color: black !important;
+    &:is(:hover, :focus-visible) {
+      --bg-color: white;
+      --border-color: black;  
+      color: black;
+    }
   }
 }
 
