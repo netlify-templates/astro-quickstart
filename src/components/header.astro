@@ -46,7 +46,7 @@ import '../styles/header.scss'
     var domain = ''
     if (link.includes('/')) domain = link.split('/')[0]
     if (link.startsWith(domain)) {
-      link = link.split(domain)
+      link = link.split(domain)[1]
       alert(link)
     }
   })
