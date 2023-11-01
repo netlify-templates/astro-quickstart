@@ -40,6 +40,7 @@ import '../styles/header.scss'
 </header>
 <script>
   var path = location.pathname
+  if (path.endsWith('/')) path = path.substring(0, path.split('').length-1)
   document.querySelectorAll('header nav .nav-btns a:not(.nav-info a)').forEach(function(a, i) {
     var link = a.href
     if (link.includes('://')) link = link.split('://')[1]
@@ -50,5 +51,4 @@ import '../styles/header.scss'
       alert(link)
     }
   })
-  alert(location.pathname)
 </script>
