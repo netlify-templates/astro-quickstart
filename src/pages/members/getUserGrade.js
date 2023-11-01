@@ -22,7 +22,7 @@ function getUserGrade(gradYear) {
     else if (yearsLeft === 4) {
         grade = 'Freshman'
     }
-  
+    return grade
 }
 
 export default getUserGrade
