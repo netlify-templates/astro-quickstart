@@ -1,4 +1,5 @@
 var closeFunction = hideModal//modal.close()
+var dTitle = document.title
 
 function checkIfOuterModal(e) {
   const dimensions = modal.getBoundingClientRect()
