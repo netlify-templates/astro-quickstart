@@ -38,3 +38,10 @@ import '../styles/header.scss'
     <a href="mailto:hello@graphics-for-good.com" id="email" target="_blank"></a>
   </div>
 </header>
+<script>
+  var path = location.pathname
+  document.querySelectorAll('header nav nav-btns a:not(.nav-info a)').forEach(function(a, i) {
+    var link = a.href
+    alert(link)
+  })
+</script>
