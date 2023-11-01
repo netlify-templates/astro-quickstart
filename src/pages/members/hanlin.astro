@@ -1,5 +1,6 @@
 ---
 import defaultBio from './defaultBio.js'
+import getUserGrade from './getUserGrade.js'
 import updateUserData from './updateUserData.js'
 
 var userData = {
@@ -37,7 +38,6 @@ var userData = {
     state: '',
   }, 
   bio: {
-    custom: `Hanlin{pronunciation} also known to his online community as <a href="https://roblox.fandom.com/wiki/Community:JavaCreates">JavaCreates</a>, is an animator and digital art creator and ${defaultBio().replace(`Hanlin{pronunciation} is `, '')} You can find his work on his <a href="https://youtube.com/JavaCreates">YouTube Channel</a>!`, 
   }, 
   socials: [
     {
@@ -84,6 +84,17 @@ var userData = {
     // },
   ],
 }
+
+let grade = getUserGrade(userData.email.dtech.year)
+
+let w1 = userData.bio.w1
+if (!!w1 === false) w1 = false
+let w2 = userData.bio.w2
+if (!!w2 === false) w2 = false
+let removeAnd = userData.bio.removeAnd
+if (!!removeAnd === false) removeAnd = false
+
+userData.bio.custom = `${userData.name.split(' ')[0]}{pronunciation} also known to his online community as <a href="https://roblox.fandom.com/wiki/Community:JavaCreates">JavaCreates</a>, is an animator and digital art creator and ${defaultBio(userData.name, grade, w1, w2, userData.role.name, removeAnd).replace(`${userData.name.split(' ')[0]}{pronunciation} is `, '')} You can find his work on his <a href="https://youtube.com/JavaCreates">YouTube Channel</a>!`, 
 
 userData = updateUserData(userData)
 
