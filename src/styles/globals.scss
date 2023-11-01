@@ -461,10 +461,10 @@ form[action] * {
     }
   }
 
-  #cSpan {
+  .cSpan {
     position: absolute;
     // background-image: url('/assets/icons/X.png') no-repeat fixed center;
-    background-size: 100%;
+    // background-size: 100%;
     top: 12.5px;
     right: 12.5px;
   /*  margin: 12.5px;  */
