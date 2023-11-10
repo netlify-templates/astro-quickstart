@@ -9,10 +9,10 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^1.0.0",
-    "prettier-plugin-astro": "^0.12.0"
+    "astro": "^3.5.1",
+    "prettier-plugin-astro": "^0.12.1"
   },
   "dependencies": {
-    "cypress": "^10.0.3"
+    "cypress": "^13.5.0"
   }
 }
