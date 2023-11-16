@@ -30,8 +30,14 @@
         let imgs = document.createElement('ul')
         imgs.classList.add('imgs')
 
-        carousel.appendChild(leftArrow)
-        carousel.appendChild(imgs)
+        var images = carousel.querySelectorAll('img')
+        images.forEach(function(img, i) {
+            var newImg = img.cloneNode(true)
+            imgs.appendChild(newImg)
+            img.remove()
+        })
+
+        carousel.prepend(leftArrow)
         carousel.appendChild(rightArrow)
     })
 </script>
