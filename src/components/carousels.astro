@@ -1,28 +1,10 @@
 <slot />
 <script is:inline>
-    var carouselsDatas = []
-
-    var datas = document.querySelectorAll('[data-carousel]')
-
-    datas.forEach(function(data, i) {
-        carouselsDatas.push({})
-        data.setAttribute('data-index', i)
-        data.querySelectorAll('img').forEach(function(img, i2) {
-            img.setAttribute('data-index', i2)
-        })
-
-        let leftIndex = parseInt(data.querySelector('.left').getAttribute('data-index'))
-        let activeIndex = parseInt(data.querySelector('.active').getAttribute('data-index'))
-        let rightIndex = parseInt(data.querySelector('.right').getAttribute('data-index'))
-
-        carouselsDatas[i] = {
-            left: leftIndex, 
-            active: activeIndex, 
-            right: rightIndex, 
-        }
-
-        let carousel = document.createElement('div')
-        carousel.classList.add('carousel')
+    let carousels = document.querySelectorAll('div')
+    carousels.forEach(function(carousel, i) {
+        i = String(!!carousel.getAttribute('data-index')
+            .replace('true', carousel.getAttribute('data-index'))
+            .replace('false', i))
 
         let leftArrow = document.createElement('a')
         leftArrow.href = `javascript:goBack(${i});`
@@ -32,9 +14,6 @@
         leftImg.classList.add('button')
         leftImg.draggable = "false"
         leftImg.alt = `Move Carousel ${i} Backward.`
-
-        let imgs = document.createElement('ul')
-        imgs.classList.add('imgs')
 
         let rightArrow = document.createElement('a')
         rightArrow.href = `javascript:goForw(${i});`
@@ -48,17 +27,12 @@
         leftArrow.appendChild(leftImg)
         rightArrow.appendChild(rightImg)
 
+        let imgs = document.createElement('ul')
+        imgs.classList.add('imgs')
+
         carousel.appendChild(leftArrow)
         carousel.appendChild(imgs)
         carousel.appendChild(rightArrow)
-
-        data.after(carousel)
-
-        data.querySelectorAll('img').forEach(function(img, i2) {
-            let newImg = img.cloneNode(true)
-            imgs.appendChild(img)
-        })
-
     })
 </script>
 <script is:inline>
