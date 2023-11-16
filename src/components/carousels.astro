@@ -1,6 +1,7 @@
 <slot />
 <script is:inline>
     let carousels = document.querySelectorAll('.carousel')
+    console.log(carousel)
     carousels.forEach(function(carousel, i) {
         i = String(!!carousel.getAttribute('data-index')
             .replace('true', carousel.getAttribute('data-index'))
