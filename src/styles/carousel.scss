@@ -63,6 +63,10 @@
         }
 
         & img {
+            &:not(.left, .active, .right) {
+                display: none;
+            }
+
             --bg-color: var(--orig-bg-color);
             flex: 1;
             max-width: 100%;
