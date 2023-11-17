@@ -23,7 +23,7 @@
     & > .imgs {
         flex: 1;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 1fr 2fr 1fr;
         align-items: center;
         list-style: none;
         padding: 0;
@@ -33,7 +33,6 @@
       
         & .active {
             z-index: 2;
-            grid-area: span 1 / span 2;
         }
   
         & .left {
