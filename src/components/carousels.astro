@@ -5,9 +5,9 @@ import '../styles/carousel.scss'
 <script is:inline>
     let carousels = document.querySelectorAll('.carousel')
     carousels.forEach(function(carousel, i) {
-        i = String(!!carousel.getAttribute('data-index')
+        i = String(!!carousel.getAttribute('data-index'))
             .replace('true', carousel.getAttribute('data-index'))
-            .replace('false', i))
+            .replace('false', i)
 
         let leftArrow = document.createElement('a')
         leftArrow.href = `javascript:goBack(${i});`
