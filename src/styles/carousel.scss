@@ -36,7 +36,6 @@
         }
   
         & .left {
-            align-items: flex-end;
             z-index: 1;
             border-top-right-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
@@ -44,7 +43,6 @@
         }
   
         & .right {
-            align-items: flex-start;
             z-index: 1;
             border-top-left-radius: 0 !important;
             border-bottom-left-radius: 0 !important;
