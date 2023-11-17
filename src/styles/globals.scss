@@ -345,15 +345,15 @@ form[method="POST"] {
     margin-top: 0;
   }
 
-  & > *:not(button) {
+  & > *:not(.btn) {
     --bg-color: white;
   }
 
-  & button {
-    font-size: calc(11pt + 3px);
-    padding: 9px;
-    margin: 0 0 0 auto;
-  }
+  // & button {
+  //   font-size: calc(11pt + 3px);
+  //   padding: 9px;
+  //   margin: 0 0 0 auto;
+  // }
 
   & > :first-child {
     margin-top: 0;
@@ -390,13 +390,13 @@ form[action] * {
   max-width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, img, a.btn {
+h1, h2, h3, h4, h5, h6, img, .btn {
   &[onclick]:not(section &) {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
   }
-  section :is(img, a.btn) {
+  section :is(img, .btn) {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
