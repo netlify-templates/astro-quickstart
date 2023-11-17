@@ -345,7 +345,7 @@ form[method="POST"] {
     margin-top: 0;
   }
 
-  & > *:not(.btn) {
+  & > *:not(.btn, button) {
     --bg-color: white;
   }
 
@@ -390,13 +390,13 @@ form[action] * {
   max-width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, img, .btn {
+h1, h2, h3, h4, h5, h6, img, .btn, button {
   &[onclick]:not(section &) {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
   }
-  section :is(img, .btn) {
+  section :is(img, .btn, button) {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
