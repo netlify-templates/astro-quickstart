@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
   --bg: linear-gradient(var(--grad-start, var(--orig-bg-color)), var(--grad-end, #6c78e5));
 }
 
-.btn {
+.btn, button {
   min-height: 30px;
   max-height: 50px;
 
@@ -305,18 +305,6 @@ section {
   }
 }
 
-button {
-  --bg-color: #2e2e2e;
-
-  width: 170px;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
- 
-}
 input[type=text], input[type=email], select, textarea {
   width: 350px;
   padding: 10px;
