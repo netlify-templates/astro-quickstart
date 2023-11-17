@@ -5,6 +5,7 @@ a#go2content[href="javascript:scrollToNum()"] {
   padding: 8px;
   opacity: 0;
   z-index: -999;
+  color: white;
   
   &:focus {
     opacity: 100;
