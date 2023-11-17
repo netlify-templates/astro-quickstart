@@ -52,7 +52,7 @@ main#profile {
             line-height: 1;
             transition: all 100ms ease;
             color: black;
-            &:hover {
+            &:is(:hover, :focus) {
                 color: blue;
                 &:visited {
                     color: purple;
