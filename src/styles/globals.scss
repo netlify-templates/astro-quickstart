@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
   --bg: linear-gradient(var(--grad-start, var(--orig-bg-color)), var(--grad-end, #6c78e5));
 }
 
-button {
+button, [type="submit"], [type="button"] {
   margin: inherit;
   padding: inherit;
   border: inherit;
@@ -128,7 +128,7 @@ button {
   font-weight: inherit;
 }
 
-.btn, button {
+.btn, button, [type="submit"], [type="button"] {
   // min-height: 30px;
   // max-height: 50px;
 
@@ -322,7 +322,7 @@ input[type=text], input[type=email], select, textarea {
   border-radius: 4px;
 }
 
-a[onclick], button[onclick], img[onclick] {
+a[onclick], :is(button, [type="submit"], [type="button"])[onclick], img[onclick] {
   cursor: pointer;
 }
 
@@ -355,11 +355,11 @@ form[method="POST"] {
     margin-top: 0;
   }
 
-  & > *:not(.btn, button) {
+  & > *:not(.btn, :is(button, [type="submit"], [type="button"])) {
     --bg-color: white;
   }
 
-  & :is(.btn, button) {
+  & :is(.btn, :is(button, [type="submit"], [type="button"])) {
     width: fit-content;
     margin-inline-start: auto;
     // font-size: calc(11pt + 3px);
@@ -401,19 +401,19 @@ form[action] * {
   max-width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, img, .btn, button {
+h1, h2, h3, h4, h5, h6, img, .btn, :is(button, [type="submit"], [type="button"]) {
   &[onclick]:not(section &) {
     -webkit-user-select: none; // Safari
     -ms-user-select: none; // IE 10 and IE 11
     user-select: none; // Standard syntax
   }
-  section :is(img, .btn, button) {
+  section :is(img, .btn, :is(button, [type="submit"], [type="button"])) {
     -webkit-user-select: none; // Safari
     -ms-user-select: none; // IE 10 and IE 11
     user-select: none; // Standard syntax
   }
 }
 
-a, button {
+a, :is(button, [type="submit"], [type="button"]) {
   line-height: 1;
 }
