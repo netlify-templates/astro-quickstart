@@ -363,7 +363,7 @@ form[method="POST"] {
     width: fit-content;
     margin-inline-start: auto;
     // font-size: calc(11pt + 3px);
-    padding-block: 0;
+    padding-block: 1rem;
   }
 
   & > :first-child {
