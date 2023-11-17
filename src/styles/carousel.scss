@@ -52,7 +52,7 @@
             border-bottom-left-radius: 0 !important;
             // box-shadow-left: none;
         }
-        &:not(.left, .active, .right) {
+        & :not(.left, .active, .right) {
             display: none;
         }
 
