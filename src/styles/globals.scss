@@ -118,6 +118,16 @@ h1, h2, h3, h4, h5, h6 {
   --bg: linear-gradient(var(--grad-start, var(--orig-bg-color)), var(--grad-end, #6c78e5));
 }
 
+button {
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 .btn, button {
   // min-height: 30px;
   // max-height: 50px;
