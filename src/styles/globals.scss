@@ -362,9 +362,8 @@ form[method="POST"] {
   & :is(.btn, button) {
     width: fit-content;
     margin-inline-start: auto;
-  //   font-size: calc(11pt + 3px);
-  //   padding: 9px;
-  //   margin: 0 0 0 auto;
+    // font-size: calc(11pt + 3px);
+    padding-block: 0;
   }
 
   & > :first-child {
