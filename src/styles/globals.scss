@@ -349,11 +349,12 @@ form[method="POST"] {
     --bg-color: white;
   }
 
-  // & button {
+  & button {
+    width: fit-content;
   //   font-size: calc(11pt + 3px);
   //   padding: 9px;
   //   margin: 0 0 0 auto;
-  // }
+  }
 
   & > :first-child {
     margin-top: 0;
