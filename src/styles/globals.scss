@@ -25,27 +25,27 @@
   background-color: var(--bg-color, --orig-bg-color);
 }
 
-/*  Custom Scrollbar  */
+// Custom Scrollbar
 ::-webkit-scrollbar {
   width: var(--scroll-bar-width);
   height: 100%;
   transition: all 500ms ease-in-out;
-/*  border-radius: 25px;  */
+  // border-radius: 25px;
 }
  
-/* Track */
+// Track
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
- 
-/* Handle */
+
+// Handle
 ::-webkit-scrollbar-thumb {
   background: #999; 
   border-radius: 25px;
   transition: background-color 500ms ease-in;
 }
 
-/* Handle on hover */
+// Handle on hover
 ::-webkit-scrollbar-thumb:hover {
   background-color: #bbb;
   transition: background-color 500ms ease-out;
@@ -64,11 +64,11 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  margin: /*10*/0;
+  margin: 0;//10;
   width: 100%;
   min-height: 100%;
-  /* display: flex;
-  flex-direction: column; */
+  // display: flex;
+  // flex-direction: column;
 }
 
 [conicSans] {
@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient {
-  /* For browsers that do not support gradients */
+  // For browsers that do not support gradients
   --bg-color: transparent;
 
   height: 10px;
@@ -256,11 +256,11 @@ section {
   margin: 0;
   padding-left: 0;
 
-  width: auto/*400px*/;
+  width: auto;//400px;
 
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
+  // to stop flickering of text in safari
   
   display: flex;
   flex-direction: column;
@@ -382,9 +382,9 @@ form[method="POST"] {
 }
 
 form[action] * {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; // Safari
+  -ms-user-select: none; // IE 10 and IE 11
+  user-select: none; // Standard syntax
 }
 
 @media (width < 450px) {
@@ -403,17 +403,17 @@ form[action] * {
 
 h1, h2, h3, h4, h5, h6, img, .btn, button {
   &[onclick]:not(section &) {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; // Safari
+    -ms-user-select: none; // IE 10 and IE 11
+    user-select: none; // Standard syntax
   }
   section :is(img, .btn, button) {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; // Safari
+    -ms-user-select: none; // IE 10 and IE 11
+    user-select: none; // Standard syntax
   }
 }
 
-a {
+a, button {
   line-height: 1;
 }
