@@ -34,8 +34,8 @@ import '../styles/header.scss'
     </div>
   </nav>
   <div class="social">
-    <a href="https://instagram.com/4goodgraphics" id="instagram"></a>
-    <a href="mailto:hello@graphics-for-good.com" id="email" target="_blank"></a>
+    <a href="https://instagram.com/4goodgraphics" title="Our Instagram" id="instagram"></a>
+    <a href="mailto:hello@graphics-for-good.com" title="Email Us" id="email" target="_blank"></a>
   </div>
 </header>
 <script>
@@ -43,12 +43,11 @@ import '../styles/header.scss'
   if (path.endsWith('/') && path !== '/') path = path.substring(0, path.split('').length-1)
   document.querySelectorAll('header nav .nav-btns a:not(.nav-info a)').forEach(function(a, i) {
     var link = a.href
-    if (link.includes('://')) link = link.split('://')[1]
-    var domain = ''
-    if (link.includes('/')) domain = link.split('/')[0]
-    if (link.startsWith(domain)) {
-      link = link.split(domain)[1]
-      // alert(link)
+    var domain = location.host
+    if (link.includes(`://${domain}/`)) {
+      link = link.split(`://${domain}/`)[1]
+      if (link === '') link = '/'
     }
+    if (link === path) a.classList.add('primary')
   })
 </script>
