@@ -1,3 +1,4 @@
+var infoboxTransitionTime = '500ms'
 var msg = 'Hello, do you copy?'
 var infoboxEnabled = false
 
@@ -7,6 +8,8 @@ var infoboxEnabled = false
 if (!!infoboxEnabled) ifEnabled()
 function ifEnabled() {
     var infobox = document.getElementById('infobox')
+    infobox.style.setProperty('--transition-time', infoboxTransitionTime)
+
     var inner = infobox.querySelector('.infobox-inner')
     
     
@@ -31,11 +34,28 @@ function ifEnabled() {
     if (loadedInfobox === 'false') {
         setTimeout(function() {
             inner.innerHTML = msg
-            infobox.show()
+            showInfobox()
             setDim()
     
             localStorage.setItem('loadedInfobox', true)
             localStorage.setItem('infoboxMsgHTML', msg)
         }, 1000)
     }
+}
+
+function showInfobox() {
+    infobox.show()
+    infobox.style.opacity = 1
+}
+function closeInfobox() {
+    infobox.style.opacity = 0
+    var tTime = infoboxTransitionTime
+    var valLen = 1
+    var multAmt = 1
+    if (tTime.endsWith('ms')) valLen++
+    else multAmt = 1000
+    tTime = parseFloat(tTime.substring(0, tTime.length-valLen))
+    setTimeout(function() {
+        infobox.close()
+    }, tTime*multAmt)
 }
