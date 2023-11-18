@@ -45,10 +45,6 @@ section.split:not(.tiny) {
         & :is(h1, h2, h3, h4, h5, h6) {
             text-align: center;
         }
-        
-        &#contact form *:not(button) {
-            width: calc(100% - 20px);
-        }
     }
 }
 
@@ -132,10 +128,6 @@ section.split.tiny {
 
         & :is(h1, h2, h3, h4, h5, h6) {
             text-align: center;
-        }
-        
-        &#contact form *:not(button) {
-            width: calc(100% - 20px);
         }
     }
 }
