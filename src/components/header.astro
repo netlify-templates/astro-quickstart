@@ -44,8 +44,8 @@ import '../styles/header.scss'
   document.querySelectorAll('header nav .nav-btns a:not(.nav-info a)').forEach(function(a, i) {
     var link = a.href
     var domain = location.host
-    if (link.includes(`://${domain}/`)) {
-      link = link.split(`://${domain}/`)[1]
+    if (link.includes(`://${domain}`)) {
+      link = link.split(`://${domain}`)[1]
       if (link.endsWith('/')) {
         link = link.substring(0, link.length-1)
       }
