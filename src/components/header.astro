@@ -46,6 +46,9 @@ import '../styles/header.scss'
     var domain = location.host
     if (link.includes(`://${domain}/`)) {
       link = link.split(`://${domain}/`)[1]
+      if (link.endsWith('/')) {
+        link = link.substring(0, link.length-1)
+      }
       if (link === '') link = '/'
     }
     if (link === path) a.classList.add('primary')
