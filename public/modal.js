@@ -23,6 +23,8 @@ function checkIfInnerModal(e) {
   else return false
 }
 
+var modal = document.querySelector('.modal')
+
 modal.addEventListener("click", function(e) {
   if (checkIfOuterModal(e)) {
     hideModal()
