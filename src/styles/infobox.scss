@@ -17,7 +17,7 @@
 
     box-shadow: var(--main-shadow);
 
-    transition: opacity var(--transition-time, 1s) ease;
+    transition: opacity var(--transition-time, 500ms) ease;
     opacity: 0;
   
     &[open] {
