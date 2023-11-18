@@ -37,7 +37,6 @@ import '../styles/carousel.scss'
         var images = carousel.querySelectorAll('img')
         images.forEach(function(img, i) {
             var newImg = img.cloneNode(true)
-            console.log(newImg)
             imgs.appendChild(newImg)
             img.remove()
         })
