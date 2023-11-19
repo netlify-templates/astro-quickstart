@@ -21,7 +21,7 @@
 
         }
         &:is(:focus, :active) {
-            outline: solid black;
+            outline: solid black 2px;
         }
     }
   
