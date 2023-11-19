@@ -45,6 +45,9 @@ if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.sp
       if (!!document.querySelector('.hero') === false) {
         document.querySelector('.header').setAttribute('bBorder', '')
       }
+      document.querySelectorAll('.btn, button, [type="submit"], [type="button"]').forEach(function(btn, i) {
+        btn.setAttribute('transition', '')
+      })
     </script>
     <script is:inline src="/script.js"></script>
     <script is:inline>
