@@ -17,6 +17,10 @@
         & > img {
             max-height: 100%;
             max-width: 100%;
+
+            &:focus {
+                outline: solid black;
+            }
         }
     }
   
