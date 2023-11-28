@@ -319,9 +319,9 @@ function photosDomLoaded() {
       tElement.innerHTML = capt
       e.title = tElement.innerText
       e.alt = tElement.innerText
-      e.addEventListener('click', function(event) {
+      e.onclick = function(event) {
         showItem(fName, MEMBER_WORK['path'], element=false, capt=false, desc=false, user=false, event)
-      })
+      }
     }
   })
 }
