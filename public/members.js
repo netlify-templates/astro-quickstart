@@ -19,7 +19,6 @@ var MEMBER_DATA = {
     portfolio: [
       {
         img: {
-          element: 'img',
           path: 'Little-Wishes-Hospital-Gown-Feb-2023_4.png',
         },
         capt: `An inspirational hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>`,
@@ -27,7 +26,6 @@ var MEMBER_DATA = {
       },
       {
         img: {
-          element: 'img',
           path: 'Little-Wishes-Hospital-Gown-Feb-2023_5.png',
         },
         capt: `An uplifting hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>`,
@@ -35,7 +33,6 @@ var MEMBER_DATA = {
       },
       {
         img: {
-          element: 'img',
           path: 'Little-Wishes-Hospital-Gown-Feb-2023_6.png',
         },
         capt: `A facinating hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>`,
@@ -43,7 +40,6 @@ var MEMBER_DATA = {
       },
       {
         img: {
-          element: 'img',
           path: 'Little-Wishes-Hospital-Gown-Feb-2023_7.png',
         },
         capt: `An empowering hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>`,
@@ -73,10 +69,8 @@ function showItem(img, element, capt, desc, c) {
   while (desc.includes('<a target="_blank" href="/')) {
     desc = desc.replace('<a target="_blank" href="/', '<a href="/')
   }
+  if (!!element === false) element = 'object'
 
-  if (element === 'img') {
-    element = 'div'
-  }
   var tElement = document.querySelector('[tElement]')
   tElement.innerHTML = capt
   var path = ''
@@ -91,7 +85,7 @@ function showItem(img, element, capt, desc, c) {
   else {
     path = img
   }
-  showModal(element, path, capt, desc)
+  showModal(`${element}#photo`, path, capt, desc)
 }
 
 

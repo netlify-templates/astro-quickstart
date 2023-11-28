@@ -86,7 +86,6 @@ var MEMBER_WORK = {
   IMG_4052: {
     user: 'adarsh', 
     img: {
-      element: 'img', 
       path: 'IMG_4052.png'
     }, 
     capt: '<a href="https://parks.RockGamerAK.com">A website</a> that <a href="/members/adarsh">Adarsh</a> made promoting saving parks!', 
@@ -95,7 +94,6 @@ var MEMBER_WORK = {
   'G4G-Ad': {
     user: 'hanlin', 
     img: {
-      element: 'img', 
       path: 'G4G-Ad.svg',
     }, 
     capt: 'An Ad for <a href="/">Graphics for Good</a> made by <a href="/members/hanlin">Hanlin</a>!', 
@@ -104,7 +102,6 @@ var MEMBER_WORK = {
   'Little-Wishes-Hospital-Gown-Feb-2023_4': {
     user: 'juhi', 
     img: {
-      element: 'img', 
       path: 'Little-Wishes-Hospital-Gown-Feb-2023_4.png',
     }, 
     capt: 'An inspirational hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>', 
@@ -113,7 +110,6 @@ var MEMBER_WORK = {
   'Little-Wishes-Hospital-Gown-Feb-2023_5': {
     user: 'juhi', 
     img: {
-      element: 'img', 
       path: 'Little-Wishes-Hospital-Gown-Feb-2023_5.png',
     }, 
     capt: 'An uplifting hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>', 
@@ -122,7 +118,6 @@ var MEMBER_WORK = {
   'Little-Wishes-Hospital-Gown-Feb-2023_6': {
     user: 'juhi', 
     img: {
-      element: 'img', 
       path: 'Little-Wishes-Hospital-Gown-Feb-2023_6.png',
     }, 
     capt: 'A facinating hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>', 
@@ -131,7 +126,6 @@ var MEMBER_WORK = {
   'Little-Wishes-Hospital-Gown-Feb-2023_7': {
     user: 'juhi', 
     img: {
-      element: 'img', 
       path: 'Little-Wishes-Hospital-Gown-Feb-2023_7.png',
     }, 
     capt: 'An empowering hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>', 
@@ -140,7 +134,6 @@ var MEMBER_WORK = {
   'Help-save-the-oceans_1': {
     user: 'samantha', 
     img: {
-      element: 'img', 
       path: 'Help-save-the-oceans_1.svg',
     }, 
     capt: `One out of four posters made by <a href="/members/samantha">Samantha</a> to promote saving the oceans.`, 
@@ -149,7 +142,6 @@ var MEMBER_WORK = {
   'Help-save-the-oceans_2': {
     user: 'samantha', 
     img: {
-      element: 'img', 
       path: 'Help-save-the-oceans_2.svg',
     }, 
     capt: `Two out of four posters made by <a href="/members/samantha">Samantha</a> to promote saving the oceans.`, 
@@ -158,7 +150,6 @@ var MEMBER_WORK = {
   'Help-save-the-oceans_3': {
     user: 'samantha', 
     img: {
-      element: 'img', 
       path: 'Help-save-the-oceans_3.svg',
     }, 
     capt: `Three out of four posters made by <a href="/members/samantha">Samantha</a> to promote saving the oceans.`, 
@@ -167,7 +158,6 @@ var MEMBER_WORK = {
   'Help-save-the-oceans_4': {
     user: 'samantha', 
     img: {
-      element: 'img', 
       path: 'Help-save-the-oceans_4.svg',
     }, 
     capt: `Four out of four posters made by <a href="/members/samantha">Samantha</a> to promote saving the oceans.`, 
@@ -176,7 +166,6 @@ var MEMBER_WORK = {
   "DON'T-EAT-FROGS": {
     user: 'isabelle', 
     img: {
-      element: 'img', 
       path: "DON'T-EAT-FROGS.svg",
     }, 
     capt: `A poster made by <a href="/members/isabelle">Isabelle</a> demanding that you not eat frogs.`, 
@@ -185,7 +174,6 @@ var MEMBER_WORK = {
   'Untitled-(800-x-1000-px)': {
     user: 'isabelle', 
     img: {
-      element: 'img', 
       path: 'Untitled-(800-x-1000-px).svg',
     }, 
     capt: `A scenescape of a frog chilling out made by <a href="/members/isabelle">Isabelle</a>.`, 
@@ -194,7 +182,6 @@ var MEMBER_WORK = {
   Elarra: {
     user: 'shikha', 
     img: {
-      element: 'img', 
       path: 'Elarra.png',
     }, 
     capt: `Elarra made by <a href="/members/shikha">Shikha</a>.`, 
@@ -203,7 +190,6 @@ var MEMBER_WORK = {
   Fairy: {
     user: 'shikha', 
     img: {
-      element: 'img', 
       path: 'Fairy.png',
     }, 
     capt: `Fairy made by <a href="/members/shikha">Shikha</a>.`, 
@@ -212,7 +198,6 @@ var MEMBER_WORK = {
   c3: {
     user: 'shikha', 
     img: {
-      element: 'img', 
       path: 'c3.png',
     }, 
     capt: `A charecter made by <a href="/members/shikha">Shikha</a>.`, 
@@ -221,7 +206,6 @@ var MEMBER_WORK = {
   Rapunzel: {
     user: 'shikha', 
     img: {
-      element: 'img', 
       path: 'Rapunzel.png',
     }, 
     capt: `Rapunzel made by <a href="/members/shikha">Shikha</a>.`, 
@@ -230,7 +214,6 @@ var MEMBER_WORK = {
   'Did-you-know': {
     user: 'shikha', 
     img: {
-      element: 'img', 
       path: 'Did-you-know.svg',
     }, 
     capt: `A post made by <a href="/members/shikha">Shikha</a> for <a href="https://instagram.com/4goodgraphics">Our Instagram</a> to educate you about climate change.`, 
@@ -239,7 +222,6 @@ var MEMBER_WORK = {
   "Women's-History-Month!": {
     user: 'shikha', 
     img: {
-      element: 'iframe', 
       path: "Women's-History-Month!.pdf",
     }, 
     capt: `A post made by <a href="/members/shikha">Shikha</a> for <a href="https://instagram.com/4goodgraphics">Our Instagram</a> to talk to you about womans rights.`, 
@@ -248,7 +230,6 @@ var MEMBER_WORK = {
   'Birds-are-essential-for-our-environment!': {
     user: 'isabelle', 
     img: {
-      element: 'img', 
       path: 'Birds-are-essential-for-our-environment!.svg',
     }, 
     capt: `A post made by <a href="/members/isabelle">Isabelle</a> for <a href="https://instagram.com/4goodgraphics">Our Instagram</a> to educate you about how birds are essential for our environment!.`, 
@@ -278,6 +259,7 @@ function showItem(img, c, element=false, capt=false, desc=false, user=false, eve
       user = c[img]['user']
       path = `${path}/members/${user}/portfolio/${c[img]['img']['path']}`
       element = c[img]['img']['element']
+      if (!!element === false) element = 'object'
       let cLink = document.querySelector("#cSpan").parentNode
       cLink.href = `javascript:hideModal('${element.replace('img', 'div')}')`
       capt = c[img]['capt']
@@ -305,16 +287,13 @@ function showItem(img, c, element=false, capt=false, desc=false, user=false, eve
       }
     }
   }
-  if (element === 'img') {
-    element = 'div'
-  }
-  if (element === 'iframe' && img.includes('://')) {
+  if (img.includes('://')) {
     path = img
   }
   else if (c['path'] === 'user_portfolios') {
     path = `/assets/members/${user}/portfolio/${img}`
   }
-  showModal(element, path, capt, desc)
+  showModal(`${element}#photo`, path, capt, desc)
 }
 
 function photosDomLoaded() {

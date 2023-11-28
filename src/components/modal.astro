@@ -12,6 +12,7 @@ import '../styles/modal.scss'
 
         </div>
         <div class="imgParent">
+            <object id="photo" style="display: none;" />
             <img id="photo" draggable="false" style="display: none;" />
             <div id="photo" style="display: none;"></div>
             <iframe id="photo" style="display: none;"></iframe>
@@ -69,26 +70,26 @@ import '../styles/modal.scss'
     })
 
 
-    function showModal(element, path, capt, desc) {
+    function showModal(selector, path, capt, desc) {
         var modal = document.getElementById('modal')
         var content = modal.getElementsByTagName('content')[0]
         // selecting the modal iframe and setting the src attribute to the "url" param
-        var iElement = content.querySelector(`${element}#photo`)
+        var element = content.querySelector(selector)
         if (window.innerWidth < window.innerHeight) {
-            iElement.className = 'h'
+            element.className = 'h'
         }
         if (window.innerHeight < window.innerWidth) {
-            iElement.className = 'w'
+            element.className = 'w'
         }
-        iElement.style.display = ''
-        if (element === 'div') {
-            iElement.style.background = `url('${path}')`
-            iElement.style.backgroundRepeat = 'no-repeat'
-            iElement.style.backgroundSize = 'contain'
-            iElement.style.backgroundPositionX = 'center'
+        element.style.display = ''
+        if (selector === 'div') {
+            element.style.background = `url('${path}')`
+            element.style.backgroundRepeat = 'no-repeat'
+            element.style.backgroundSize = 'contain'
+            element.style.backgroundPositionX = 'center'
         }
         else {
-            iElement.src = path
+            element.src = path
         }
         // selecting the modal and setting the style to ''
         modal.showModal()

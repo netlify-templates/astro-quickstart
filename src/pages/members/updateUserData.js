@@ -84,15 +84,16 @@ function updateUserData(userData) {
   
   userData.portfolio.forEach(function(photo, i) {
     var path = ''
-    var element = photo['img']['element']
-    if (element !== 'iframe') {
-      path = `/assets/members/${userData.username}/portfolio/previews/${photo['img']['path'].replace('.svg', '.png')}`
+    var element = photo.img.element
+    if (!!element === false) element = 'object'
+    if (!photo.img.path.includes('://')) {
+      path = `/assets/members/${userData.username}/portfolio/previews/${photo.img.path.replace('.svg', '.png')}`
     }
-    else if (photo['img']['path'].endsWith('.pdf')) {
-      path = `/assets/members/${userData.username}/portfolio/previews/${photo['img']['path'].replace('.pdf', '.png')}`
+    else if (photo.img.path.endsWith('.pdf')) {
+      path = `/assets/members/${userData.username}/portfolio/previews/${photo.img.path.replace('.pdf', '.png')}`
     }
     else {
-      path = photo['img']['path']
+      path = photo.img.path
     }
                   
     var capt = photo['capt']
@@ -105,11 +106,11 @@ function updateUserData(userData) {
       desc = desc.replace('<a target="_blank" href="/', '<a href="/')
     }
                   
-    var name = photo['img']['path']
+    var name = photo.img.path
     
     if (path === 'YouTube') {
-      name = `https://www.youtube-nocookie.com/embed/${photo['img']['vid_id']}?rel=0`
-      path = `https://img.youtube.com/vi/${photo['img']['vid_id']}/maxresdefault.jpg`
+      name = `https://www.youtube-nocookie.com/embed/${photo.img['vid_id']}?rel=0`
+      path = `https://img.youtube.com/vi/${photo.img['vid_id']}/maxresdefault.jpg`
     }
     var title = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
     title = title.split('<')
