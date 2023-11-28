@@ -86,11 +86,11 @@ function updateUserData(userData) {
     var path = ''
     var element = photo.img.element
     if (!!element === false) element = 'object'
+    if (photo.img.path.endsWith('.pdf')) {
+      path = `/assets/members/${userData.username}/portfolio/previews/${photo.img.path.replace('.pdf', '.png')}`
+    }
     if (!photo.img.path.includes('://')) {
       path = `/assets/members/${userData.username}/portfolio/previews/${photo.img.path.replace('.svg', '.png')}`
-    }
-    else if (photo.img.path.endsWith('.pdf')) {
-      path = `/assets/members/${userData.username}/portfolio/previews/${photo.img.path.replace('.pdf', '.png')}`
     }
     else {
       path = photo.img.path
