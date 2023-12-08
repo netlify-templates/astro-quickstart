@@ -74,14 +74,6 @@ var userData = {
       url: 'https://discord.com/users/768273827549282305', 
       name: 'Discord'
     }, 
-    // {
-    //   url: 'https://instagram.com/W.Web.Wizards', 
-    //   name: 'Instagram', 
-    // }, 
-    // {
-    //   url: 'W_Web_Wizards', 
-    //   name: 'Twitter', 
-    // }, 
     {
       url: 'https://instagram.com/akumarrws', 
       name: 'Instagram', 
@@ -116,13 +108,13 @@ var userData = {
     }, 
   ],
   portfolio: [
-    {
-      img: {
-        path: 'IMG_4052.png'
-      },
-      capt: '<a href="https://parks.RockGamerAK.com">A website</a> that I made promoting saving parks!',
-      desc: `Made by: <a href="/members/adarsh">Adarsh</a>`,
-    },
+    // {
+    //   img: {
+    //     path: 'IMG_4052.png'
+    //   },
+    //   capt: '<a href="https://parks.RockGamerAK.com">A website</a> that I made promoting saving parks!',
+    //   desc: `Made by: <a href="/members/adarsh">Adarsh</a>`,
+    // },
   ],
 }
 
@@ -152,7 +144,11 @@ import '../../styles/photos.scss'
         ))}
       </ul>
       <p id="bio" set:html={userData.bio.result}></p>
-      <h2>Portfolio</h2>
+      {
+        if (!!userData.portfolio) if (userData.portfolio.length !== 0) {
+          <h2>Portfolio</h2>
+        }
+      }
       <ul id="photos" style="height: auto; gap: 25px;">
         {userData.portfolio.map((photo) => (
           <li>
