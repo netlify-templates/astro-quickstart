@@ -40,8 +40,7 @@ import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 ---
 <Layout title={userData.nameNoTitle}>
-  <section id="content"></section>
-  <main id="profile" class="profile">
+  <main id="content" class="profile">
     <section>
       <span id="pfp" style={`background-image: url(${userData.pfp.url})`}></span>
       <h1 id="name">{userData.nameNoTitle}</h1>
@@ -50,7 +49,7 @@ import '../../styles/photos.scss'
         <div></div>
         <span>{userData.location.combined}</span>
       </a>
-      <ul id="socials">
+      <ul class="socials">
         {userData.socials.map((social) => (
           <li>
             <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>

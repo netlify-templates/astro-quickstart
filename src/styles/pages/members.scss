@@ -1,4 +1,4 @@
-main#profile {
+main.profile {
     --pfp-size: 128px;
     flex: 1;
     width: 100%; 
@@ -102,7 +102,7 @@ main#profile {
     }
 }
   
-ul#socials {
+ul.socials {
     margin: 0;
     padding-left: 0;
     list-style: none;
