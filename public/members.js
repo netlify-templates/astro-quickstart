@@ -1,8 +1,6 @@
 var socials = document.querySelector('.socials')
 var photos = document.querySelector('.photos')
 
-var memberItemExistsWithNoInnerHTML = '\n        \n      '
-
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 
@@ -100,10 +98,18 @@ function showItem(img, element, capt, desc, c) {
 //  document.querySelectorAll('footer').length - 1
 //].remove()
 if (!!user) {
-  if (socials.innerHTML === memberItemExistsWithNoInnerHTML) {
+  var sHTML = socials.innerHTML
+  while (sHTML.includes('\n')) sHTML = sHTML.replace('\n', '')
+  while (sHTML.startsWith(' ')) sHTML = sHTML.substring(1)
+
+  var pHTML = photos.innerHTML
+  while (pHTML.includes('\n')) pHTML = pHTML.replace('\n', '')
+  while (pHTML.startsWith(' ')) pHTML = pHTML.substring(1)
+
+  if (!!socials.innerHTML === false) {
     socials.remove()
   }
-  if (photos.innerHTML === memberItemExistsWithNoInnerHTML) {
+  if (!!photos.innerHTML === false) {
     let possPortH2 = profile.querySelector('section > h2:has( + .photos)')
     if (!!possPortH2 === false) possPortH2 = document.querySelector('section > h2')
     if (possPortH2.textContent.toLowerCase() === 'portfolio') {
