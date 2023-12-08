@@ -1,3 +1,6 @@
+var socials = document.querySelector('.socials')
+var photos = document.querySelector('.photos')
+
 var memberItemExistsWithNoInnerHTML = '\n        \n      '
 
 var queryString = window.location.search;
@@ -101,7 +104,8 @@ if (!!user) {
     socials.remove()
   }
   if (photos.innerHTML === memberItemExistsWithNoInnerHTML) {
-    let possPortH2 = profile.querySelector('section > h2')
+    let possPortH2 = profile.querySelector('section > h2:has( + .photos)')
+    if (!!possPortH2 === false) possPortH2 = document.querySelector('section > h2')
     if (possPortH2.textContent.toLowerCase() === 'portfolio') {
       possPortH2.remove()
     }
