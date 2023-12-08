@@ -145,9 +145,11 @@ import '../../styles/photos.scss'
       </ul>
       <p id="bio" set:html={userData.bio.result}></p>
       {
-        if (!!userData.portfolio) if (userData.portfolio.length !== 0) {
-          <h2>Portfolio</h2>
-        }
+        if (!!userData.portfolio) (
+          if (userData.portfolio.length !== 0) (
+            <h2>Portfolio</h2>
+          )
+        )
       }
       <ul id="photos" style="height: auto; gap: 25px;">
         {userData.portfolio.map((photo) => (
