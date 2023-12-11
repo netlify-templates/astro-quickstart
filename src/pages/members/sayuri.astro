@@ -66,7 +66,7 @@ import '../../styles/photos.scss'
       </ul>
       <p id="bio" set:html={userData.bio.result}></p>
       <h2>Portfolio</h2>
-      <ul id="photos" style="height: auto; gap: 25px;">
+      <ul class="photos" style="height: auto; gap: 25px;">
         {userData.portfolio.map((photo) => (
           <li>
             <img src={photo.src} title={photo.title} onclick={photo.onclick} />
