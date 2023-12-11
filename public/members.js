@@ -66,10 +66,10 @@ if (!!user) {
   while (pHTML.includes('\n')) pHTML = pHTML.replace('\n', '')
   while (pHTML.startsWith(' ')) pHTML = pHTML.substring(1)
 
-  if (!!socials.innerHTML === false) {
+  if (!!sHTML === false) {
     socials.remove()
   }
-  if (!!photos.innerHTML === false) {
+  if (!!pHTML === false) {
     let possPortH2 = profile.querySelector('section > h2:has( + .photos)')
     if (!!possPortH2 === false) possPortH2 = document.querySelector('section > h2')
     if (possPortH2.textContent.toLowerCase() === 'portfolio') {
