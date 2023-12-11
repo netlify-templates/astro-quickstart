@@ -1,5 +1,6 @@
 var socials = document.querySelector('.socials')
 var photos = document.querySelector('.photos')
+var profile = document.querySelector('.profile')
 
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
@@ -65,8 +66,6 @@ if (!!user) {
   var pHTML = photos.innerHTML
   while (pHTML.includes('\n')) pHTML = pHTML.replace('\n', '')
   while (pHTML.startsWith(' ')) pHTML = pHTML.substring(1)
-
-  console.log(sHTML, pHTML)
 
   if (!!sHTML === false) {
     socials.remove()
