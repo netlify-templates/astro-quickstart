@@ -84,61 +84,59 @@ function updateUserData(userData) {
   
   userData.portfolio.forEach(function(photo, i) {
     var path = ''
-    if (!!photo.img) {
-      var pImg = photo.img
-      var element = pImg.element
-      if (!!element === false) element = 'object'
+    var pImg = photo.img
+    var element = pImg.element
+    if (!!element === false) element = 'object'
       
-      var pPath = photo.image.path
-      var pName = pPath.split('.')
-      var pExt = pName.pop()
-      if (pName.length === 3) {
-        pExt = `${pName.pop()}.${pExt}`
-      }
-      pName = pPath.join('.')
-  
-      if (pExt.endsWith('pdf') || pExt.endsWith('svg')) {
-        if (pExt.includes('.')) pExt = pExt.split('.')
-        else pExt = [pExt]
-        pExt.pop()
-        pExt = `${pExt.join('.')}png`
-      }
-  
-      if (!pPath.includes('://')) {
-        path = `/assets/members/${userData.username}/portfolio/previews/${pName}.${pExt}`
-      }
-      else {
-        path = pPath
-      }
-                    
-      var capt = photo['capt']
-      while (capt.includes('<a target="_blank" href="/')) {
-        capt = capt.replace('<a target="_blank" href="/', '<a href="/')
-      }
-                    
-      var desc = photo['desc']
-      while (desc.includes('<a target="_blank" href="/')) {
-        desc = desc.replace('<a target="_blank" href="/', '<a href="/')
-      }
-  
-      if (pPath === 'YouTube') {
-        pPath = `https://www.youtube-nocookie.com/embed/${pImg['vid_id']}?rel=0`
-        path = `https://img.youtube.com/vi/${pImg['vid_id']}/maxresdefault.jpg`
-      }
-      var title = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
-      title = title.split('<')
-      title.forEach(function(t, i) {
-        if (t.includes('>')) {
-          t = t.split('>')[1]
-          title[i] = t
-        }
-      })
-      title = title.join('')
-      let onclickVal = "showItem('" + pPath + "', '" + element + "', '" + capt + "', '" + desc + "', 'p'"  + ")"
-      userData.portfolio[i].src = path
-      userData.portfolio[i].title = title
-      userData.portfolio[i].onclick = onclickVal
+    var pPath = pImg.path
+    var pName = pPath.split('.')
+    var pExt = pName.pop()
+    if (pName.length === 3) {
+      pExt = `${pName.pop()}.${pExt}`
     }
+    pName = pPath.join('.')
+
+    if (pExt.endsWith('pdf') || pExt.endsWith('svg')) {
+      if (pExt.includes('.')) pExt = pExt.split('.')
+      else pExt = [pExt]
+      pExt.pop()
+      pExt = `${pExt.join('.')}png`
+    }
+  
+    if (!pPath.includes('://')) {
+      path = `/assets/members/${userData.username}/portfolio/previews/${pName}.${pExt}`
+    }
+    else {
+      path = pPath
+    }
+                    
+    var capt = photo['capt']
+    while (capt.includes('<a target="_blank" href="/')) {
+      capt = capt.replace('<a target="_blank" href="/', '<a href="/')
+    }
+                    
+    var desc = photo['desc']
+    while (desc.includes('<a target="_blank" href="/')) {
+      desc = desc.replace('<a target="_blank" href="/', '<a href="/')
+    }
+  
+    if (pPath === 'YouTube') {
+      pPath = `https://www.youtube-nocookie.com/embed/${pImg['vid_id']}?rel=0`
+      path = `https://img.youtube.com/vi/${pImg['vid_id']}/maxresdefault.jpg`
+    }
+    var title = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
+    title = title.split('<')
+    title.forEach(function(t, i) {
+      if (t.includes('>')) {
+        t = t.split('>')[1]
+        title[i] = t
+      }
+    })
+    title = title.join('')
+    let onclickVal = "showItem('" + pPath + "', '" + element + "', '" + capt + "', '" + desc + "', 'p'"  + ")"
+    userData.portfolio[i].src = path
+    userData.portfolio[i].title = title
+    userData.portfolio[i].onclick = onclickVal
   })
 
   return userData
