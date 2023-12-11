@@ -32,7 +32,7 @@ section.photos {
     }
 }
 
-ul#photos {
+ul:is(#photos, .photos) {
     margin: 0;
     list-style: none;
     padding: 0;
