@@ -15,46 +15,6 @@ if (urlPath.split('/').length >= 3) {
 }
 else user = urlParams.get('m')
 
-var MEMBER_DATA = {
-  juhi: {
-    portfolio: [
-      {
-        img: {
-          path: 'Little-Wishes-Hospital-Gown-Feb-2023_4.png',
-        },
-        capt: `An inspirational hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>`,
-        desc: `Made by: <a href="/members/juhi">Juhi</a>`,
-      },
-      {
-        img: {
-          path: 'Little-Wishes-Hospital-Gown-Feb-2023_5.png',
-        },
-        capt: `An uplifting hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>`,
-        desc: `Made by: <a href="/members/juhi">Juhi</a>`,
-      },
-      {
-        img: {
-          path: 'Little-Wishes-Hospital-Gown-Feb-2023_6.png',
-        },
-        capt: `A facinating hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>`,
-        desc: `Made by: <a href="/members/juhi">Juhi</a>`,
-      },
-      {
-        img: {
-          path: 'Little-Wishes-Hospital-Gown-Feb-2023_7.png',
-        },
-        capt: `An empowering hospital gown made for <a target="_blank" href="https://littlewishes.org">Little Wishes</a> by <a href="/members/juhi">Juhi</a>`,
-        desc: `Made by: <a href="/members/juhi">Juhi</a>`,
-      },
-    ],
-  },  
-}
-
-var mname = ''
-if (!!MEMBER_DATA[user]) {
-  mname = MEMBER_DATA[user]['name']
-}
-
 function showItem(img, element, capt, desc, c) {
   var cLink = document.querySelector("#cSpan").parentNode
   cLink.href = `javascript:hideModal('${element.replace('img', 'div')}')`
