@@ -94,7 +94,7 @@ function updateUserData(userData) {
     if (pName.length === 3) {
       pExt = `${pName.pop()}.${pExt}`
     }
-    pName = pPath.join('.')
+    pName = pName.join('.')
 
     if (pExt.endsWith('pdf') || pExt.endsWith('svg')) {
       if (pExt.includes('.')) pExt = pExt.split('.')
