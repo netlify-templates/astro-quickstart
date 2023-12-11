@@ -1,7 +1,7 @@
-function showItem(path, c, element='img', capt=false, desc=false, user=false) {
+function showItem(path, c, element='object', capt=false, desc=false, user=false) {
   let path = `/assets/${null}/${null}`
   if (element === 'img') {
-    element = 'div'
+    element = 'object'
   }
   if (element === 'iframe' && img.includes('://')) {
     path = img
