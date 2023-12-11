@@ -33,21 +33,20 @@ section.photos {
 }
 
 ul:is(#photos, .photos) {
+    --cols: 3;
+
     margin: 0;
     list-style: none;
     padding: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-columns: repeat(calc(var(--cols)*2), 1fr);
     gap: 25px;
 
     & > li {
         height: auto;
+        grid-column: span 2;
 
-        &:nth-child(3n-1) {
-            grid-column: span 2;
-        }
-        
         & img {
             width: 100%;
             border-radius: 15px;
