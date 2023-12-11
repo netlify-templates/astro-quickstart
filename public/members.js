@@ -66,7 +66,7 @@ if (!!user) {
   while (pHTML.includes('\n')) pHTML = pHTML.replace('\n', '')
   while (pHTML.startsWith(' ')) pHTML = pHTML.substring(1)
 
-  console.log(sHMTL, pHTML)
+  console.log(sHTML, pHTML)
 
   if (!!sHTML === false) {
     socials.remove()
