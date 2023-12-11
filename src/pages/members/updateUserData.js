@@ -86,14 +86,27 @@ function updateUserData(userData) {
     var path = ''
     var element = photo.img.element
     if (!!element === false) element = 'object'
-    if (photo.img.path.endsWith('.pdf')) {
-      path = `/assets/members/${userData.username}/portfolio/previews/${photo.img.path.replace('.pdf', '.png')}`
+    
+    var pPath = photo.image.path
+    var pName = pPath.split('.')
+    var pExt = pName.pop()
+    if (pName.length === 3) {
+      pExt = `${pName.pop()}.${pExt}`
     }
-    if (!photo.img.path.includes('://')) {
-      path = `/assets/members/${userData.username}/portfolio/previews/${photo.img.path.replace('.svg', '.png')}`
+    pName = pPath.join('.')
+
+    if (pExt.endsWith('pdf') || pExt.endsWith('svg')) {
+      if (pExt.includes('.')) pExt = pExt.split('.')
+      else pExt = [pExt]
+      pExt.pop()
+      pExt = `${pExt.join('.')}png`
+    }
+
+    if (!pPath.includes('://')) {
+      path = `/assets/members/${userData.username}/portfolio/previews/${pName}.${pExt}`
     }
     else {
-      path = photo.img.path
+      path = pPath
     }
                   
     var capt = photo['capt']
