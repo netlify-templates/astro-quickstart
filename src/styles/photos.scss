@@ -53,6 +53,8 @@ ul:is(#photos, .photos) {
         }
         &:not(:has( + li + li)):has( + li) {
             grid-column-start: 2;
+            grid-column: span 2;
+            
             & + li {
                 grid-column-end: -2;
             }
