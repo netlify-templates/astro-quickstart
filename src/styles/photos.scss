@@ -38,17 +38,14 @@ ul:is(#photos, .photos) {
     padding: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 2fr 1fr 1fr 2fr;
     gap: 25px;
 
     & > li {
         height: auto;
 
-        &:not(:has( + li)) {
-            grid-column: 2 / -2;
-        }
-        &:not(:has( + li + li)) + :not(:has( + li)) {
-            grid-column: -2 / -1;
+        &:nth-child(3n-1) {
+            grid-column: span 2;
         }
         
         & img {
