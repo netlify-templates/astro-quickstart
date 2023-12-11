@@ -118,11 +118,9 @@ function updateUserData(userData) {
     while (desc.includes('<a target="_blank" href="/')) {
       desc = desc.replace('<a target="_blank" href="/', '<a href="/')
     }
-                  
-    var name = photo.img.path
-    
-    if (path === 'YouTube') {
-      name = `https://www.youtube-nocookie.com/embed/${photo.img['vid_id']}?rel=0`
+
+    if (pPath === 'YouTube') {
+      pPath = `https://www.youtube-nocookie.com/embed/${photo.img['vid_id']}?rel=0`
       path = `https://img.youtube.com/vi/${photo.img['vid_id']}/maxresdefault.jpg`
     }
     var title = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
@@ -134,7 +132,7 @@ function updateUserData(userData) {
       }
     })
     title = title.join('')
-    let onclickVal = "showItem('" + name + "', '" + element + "', '" + capt + "', '" + desc + "', 'p'"  + ")"
+    let onclickVal = "showItem('" + pPath + "', '" + element + "', '" + capt + "', '" + desc + "', 'p'"  + ")"
     userData.portfolio[i].src = path
     userData.portfolio[i].title = title
     userData.portfolio[i].onclick = onclickVal
