@@ -43,6 +43,14 @@ ul:is(#photos, .photos) {
 
     & > li {
         height: auto;
+
+        &:not(:has( + li)) {
+            grid-column: 2 / -2;
+        }
+        &:not(:has( + li + li)) + li {
+            grid-column: -2 / -1;
+        }
+        
         & img {
             width: 100%;
             border-radius: 15px;
@@ -50,13 +58,12 @@ ul:is(#photos, .photos) {
             cursor: pointer;
   
             &:hover {
-            border-radius: 10px;
-            transition: 500ms ease-in-out;
+                border-radius: 10px;
+                transition: 500ms ease-in-out;
             }
         }
   
         & > img:not(& > div > img) {
-            flex: 1;
             max-width: 100%;
             height: auto;
             border-radius: 15px;
@@ -64,8 +71,8 @@ ul:is(#photos, .photos) {
             margin: auto 0;
   
             &:hover {
-            border-radius: 10px;
-            transition: 500ms ease-in-out;
+                border-radius: 10px;
+                transition: 500ms ease-in-out;
             }
         }
     }
