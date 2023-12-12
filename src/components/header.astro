@@ -50,7 +50,7 @@ import '../styles/components/header.scss'
       if (link.endsWith('/') && link !== '/') {
         link = link.substring(0, link.length-1)
       }
-      if (link !== '/' && link.includes('/')) {
+      if (!link.startsWith('/') && link.includes('/')) {
         link = `/${link.split('/')[0]}`
       }
       alert(`${link} ?= ${path}`)
