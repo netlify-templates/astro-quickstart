@@ -9,7 +9,12 @@
 
 main:not(.profile) > * {
     &:not(:has( > section)) {
-        @include animations;
+        &:not(.split) {
+            @include animations;
+        }
+        .split > * {
+            @include animations;
+        }
     }
     &:has( > section) > * {
         @include animations;
