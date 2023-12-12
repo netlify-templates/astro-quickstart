@@ -40,16 +40,19 @@ import '../styles/components/header.scss'
 </header>
 <script>
   var path = location.pathname
-  if (path.endsWith('/') && path !== '/') path = path.substring(0, path.split('').length-1)
+  if (path.endsWith('/') && path !== '/') path = path.substring(0, path.length-1)
   document.querySelectorAll('header nav .nav-btns a:not(.nav-info a)').forEach(function(a, i) {
     var link = a.href
+    var lPath
     var domain = location.host
     if (link.includes(`://${domain}`)) {
       link = link.split(`://${domain}`)[1]
-      if (link.endsWith('/')) {
+      if (link.endsWith('/') && link !== '/') {
         link = link.substring(0, link.length-1)
       }
-      if (link === '') link = '/'
+      if (link !== '/' && link.includes('/')) {
+        link = `/${link.split('/')[0]}`
+      }
     }
     if (link === path) a.classList.add('primary')
   })
