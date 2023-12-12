@@ -57,6 +57,7 @@ ul:is(#photos, .photos) {
             
             & + li {
                 grid-column-end: -2;
+                grid-column-start: span 2;
             }
         }
 
