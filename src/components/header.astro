@@ -41,6 +41,11 @@ import '../styles/components/header.scss'
 <script>
   var path = location.pathname
   if (path.endsWith('/') && path !== '/') path = path.substring(0, path.length-1)
+  let pI = 0
+  if (path.startsWith('/')) pI++
+  if (path.includes('/')) {
+    path = `/${path.split('/')[pI]}`
+  }
   document.querySelectorAll('header nav .nav-btns a:not(.nav-info a)').forEach(function(a, i) {
     var link = a.href
     var lPath
@@ -50,12 +55,6 @@ import '../styles/components/header.scss'
       if (link.endsWith('/') && link !== '/') {
         link = link.substring(0, link.length-1)
       }
-      alert(`${link} ?= ${path}`)
-    }
-    let pI = 0
-    if (path.startsWith('/')) pI++
-    if (path.includes('/')) {
-      path = `/${path.split('/')[pI]}`
     }
     if (link === path) a.classList.add('primary')
   })
