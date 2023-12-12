@@ -6,13 +6,13 @@ export interface Props {
   classItems: string;
 }
 
-const { idName, classItems } = Astro.props as Props;
+const { idName, classItems, inlineStyles } = Astro.props as Props;
 let className = 'hero'
 if (!!classItems) { 
   className = `${className} ${classItems}`
 }
 
 ---
-<section class={className} id={idName}>
+<section class={className} id={idName} style={inlineStyles}>
   <slot />
 </section>
