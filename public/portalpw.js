@@ -12,11 +12,12 @@ else {
 
 var xhr = new XMLHttpRequest()
 xhr.open('GET', `/portal/landing/`)
-xhr.addEventListener('load', xhrAct())
+xhr.addEventListener('load', xhrAct)
 xhr.send()
 
 function xhrAct() {
-  var HTML = atob(this.responseText)
+  var HTML = this.responseText.replace('<!DOCTYPE html>', '')
+  HTML = atob(HTML)
   if (user_password === correct) {
     document.body.innerHTML += HTML
   
