@@ -52,14 +52,14 @@ ul:is(#photos, .photos) {
             // grid-column: span 2;
             grid-column-end: -3;
         }
-        // &:not(:has( + li + li)):has( + li) {
-        //     grid-column-start: 2;
+        &:not(:has( + li + li)):has( + li):nth-child(3n-2) {
+            grid-column-start: 2;
         //     grid-column: span 2;
             
-        //     & + li {
-        //         grid-column-end: -2;
-        //     }
-        // }
+            & + li {
+                grid-column-end: -2;
+            }
+        }
 
         & img {
             width: 100%;
