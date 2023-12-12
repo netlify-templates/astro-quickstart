@@ -32,6 +32,10 @@ a#go2content[href="javascript:scrollToNum()"] {
 
   z-index: 2;
 
+  &[bBorder] {
+    box-shadow: none;
+  }
+
   & > :first-child {
     padding-left: var(--padding);
   }
