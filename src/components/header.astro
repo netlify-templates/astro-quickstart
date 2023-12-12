@@ -53,6 +53,7 @@ import '../styles/components/header.scss'
       if (link !== '/' && link.includes('/')) {
         link = `/${link.split('/')[0]}`
       }
+      alert(`${link} ?= ${path}`)
     }
     if (link === path) a.classList.add('primary')
   })
