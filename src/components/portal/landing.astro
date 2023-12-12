@@ -1,7 +1,12 @@
 ---
 import Hero from '../hero.astro'
----
-<Hero inlineStyles="min-height: 100px !important; display: flex; align-items: center;">
+
+var HTML = `
+<section class="hero" id="content" style="min-height: 100px !important; display: flex; align-items: center;">
     <h1>Member Portal</h1>
-</Hero>
-<main id="portal"></main>
+</section>
+<main id="portal"></main>`
+
+var encoded = btoa(HTML)
+---
+{encoded}
