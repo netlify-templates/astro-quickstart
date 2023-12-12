@@ -27,8 +27,8 @@ else {
 }
 
 function addItems() {
-  document.querySelector('main').style.display = 'none'
-  let element = document.getElementById('portal')
+  let element = document.querySelector('#portal .hero')
+  element.style.display = 'none'
   let ul = document.createElement('ul')
   ul.id = 'menu'
   element.appendChild(ul)
@@ -44,7 +44,7 @@ function addItems() {
     a.appendChild(li)
     li.innerHTML = iname
   })
-  document.querySelector('main').style.display = ''
+  element.style.display = ''
 }
 
 function setItem() {

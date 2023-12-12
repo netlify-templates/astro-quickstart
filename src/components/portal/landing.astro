@@ -2,10 +2,11 @@
 import Hero from '../hero.astro'
 
 var HTML = `
-<section class="hero" id="content" style="min-height: 100px !important; display: flex; align-items: center;">
-    <h1>Member Portal</h1>
-</section>
-<main id="portal"></main>`
+<main id="portal">
+    <section class="hero" id="portal" style="min-height: 100px !important; display: flex; align-items: center;">
+        <h1>Member Portal</h1>
+    </section>
+</main>`
 
 var encoded = btoa(HTML)
 ---
