@@ -15,7 +15,7 @@ main:not(.profile) > * {
         &:not(.split) > *:not(.hHr) {
             @include animations;
         }
-        .hHr:not( ~ .split) {
+        .hHr:not(:has( ~ .split)) {
             @include animations;
         }
         &.split > *:not(.vHr) {
