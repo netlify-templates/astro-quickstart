@@ -47,7 +47,7 @@ ul:is(#photos, .photos) {
         height: auto;
         grid-column: span 2;
 
-        &:not(:has( + li)):not(li:has( + li + li) + li) {
+        &:not(:has( + li)):not(li:has( + li + li) + li):nth-child(3n-2) {
             grid-column-start: 3;
             // grid-column: span 2;
             grid-column-end: -3;
