@@ -12,7 +12,7 @@ main:not(.profile) > * {
         @include animations;
     }
     &:has( > section) {
-        :not(.split) > *:not(.hHr) {
+        &:not(.split) > *:not(.hHr) {
             @include animations;
         }
         .hHr:not( ~ .split) {
