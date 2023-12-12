@@ -3,19 +3,15 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
 import '../styles/pages/error.scss'
 
-var error = {
-  code: 404, 
-  name: 'Not Found', 
-  desc: `
-<h2>Unfortunatly our website doen not have the page that you were looking for.</h1>
-<h3>Either we never created this page to begin with or we have deleted it.</h3>
-<h3>Contact <a href="/members/adarsh">The Webmaster</a> to learn more!</h2>
-`, 
-}
+var errorCode = 404
+var errorName = 'Not Found'
+var errorDesc = '<h2>Unfortunatly our website doen not have the page that you were looking for.</h1><h3>Either we never created this page to begin with or we have deleted it.</h3><h3>Contact <a href="/members/adarsh">The Webmaster</a> to learn more!</h2>'
 
-var errorCode = error.code
-var errorName = error.name
-var errorDesc = error.desc
+var error = {
+  code: errorCode, 
+  name: errorName, 
+  desc: errorDesc, 
+}
 
 ---
 <Layout title="404">
@@ -23,8 +19,8 @@ var errorDesc = error.desc
     <Hero classItems="error">
       <section>
         <div>
-          <h1>{errorCode} {errorName}</h1>
-          <div set:html={errorDesc} />
+          <h1>{error.code} {error.name}</h1>
+          <div set:html={error.desc} />
         </div>
       </section>
     </Hero>
