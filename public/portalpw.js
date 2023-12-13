@@ -23,7 +23,7 @@ function xhrAct() {
     var portal = document.getElementById('portal')
     var footer = document.querySelector('footer')
     var newPortal = portal.cloneNode(true)
-    portal.remove()
+    // portal.remove()
     newPortal.parentNode.insertBefore(newPortal, footer)
   
     let script = document.createElement('script')
