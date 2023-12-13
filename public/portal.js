@@ -27,7 +27,7 @@ else {
 }
 
 function addItems() {
-  let element = document.querySelector('#portal .hero ul')
+  let element = document.getElementById('menu')
   ITEMS.forEach(item => {
     let iName = NAMES[item]
     
