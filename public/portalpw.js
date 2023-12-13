@@ -20,6 +20,11 @@ function xhrAct() {
   HTML = atob(HTML)
   if (user_password === correct) {
     document.body.innerHTML += HTML
+    var portal = document.getElementById('portal')
+    var footer = document.querySelector('footer')
+    var newPortal = portal.cloneNode(true)
+    portal.remove()
+    footer.insertAdjacentElement('afterend', newPortal)
   
     let script = document.createElement('script')
     script.src = '/portal.js'
