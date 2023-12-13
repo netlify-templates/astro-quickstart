@@ -2,6 +2,74 @@
 import Hero from '../hero.astro'
 
 var HTML = `
+<style>
+    .hero {
+        padding: 0 10vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: calc(100% - 20vw);
+        --bg-color: #6c78e5;
+        background-image: url('/assets/header.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        color: white;
+    
+        &:not(&.fullHeight) {
+            min-height: 37.5vw;
+        }
+        
+        &.fullHeight {
+            min-height: calc(100% - 210px);
+            flex: 1;
+            align-items: center;
+        }
+    
+        & > div {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 100%;
+
+            & > * {
+                max-width: fit-content;
+            }
+        }
+    
+        & h1:not(#menu > h1):not(#whymakethisclub), & h2, & h3 {
+            --shadow-color: #0a0a52;
+            --shadow-size: 10px;
+            text-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
+        }
+    
+        & h1:not(#menu > h1):not(#whymakethisclub) {
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 4.5rem;
+            max-width: 12.89ch;
+        }
+        & h2 {
+            margin: 0;
+            font-weight: 400;
+            font-size: 2.4rem;
+            max-width: 30.39ch;
+        }
+        & h3 {
+            margin: 0;
+            font-weight: 400;
+            font-size: 1.2rem;
+            max-width: 56.59ch;
+        }
+
+        &:not(.error) > section {
+            --bg: white;
+            color: black;
+        }
+    }
+</style>
 <main id="portal">
     <section class="hero" id="portal" style="min-height: 100px !important; display: flex; align-items: center;">
         <h1>Member Portal</h1>
