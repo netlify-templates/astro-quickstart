@@ -41,6 +41,11 @@ function addItems() {
     element.appendChild(a)
     localStorage.setItem('p', correct)
   })
+
+  var footer = document.querySelector('footer')
+  var newFooter = footer.cloneNode(true)
+  footer.remove()
+  document.getElementById('footer').insertAfter(footer)
 }
 
 function setItem() {
