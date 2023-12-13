@@ -29,14 +29,14 @@ else {
 function addItems() {
   let element = document.querySelector('#portal .hero ul')
   ITEMS.forEach(item => {
-    let iname = NAMES[item]
+    let iName = NAMES[item]
     
     let a = document.createElement('a')
     a.href = `/portal?i=${item}`
     
     let li = document.createElement('li')
     a.appendChild(li)
-    li.innerHTML = iname
+    li.innerHTML = iName
 
     element.appendChild(a)
     localStorage.setItem('p', correct)
