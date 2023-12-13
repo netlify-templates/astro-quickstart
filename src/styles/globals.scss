@@ -256,10 +256,11 @@ section {
   --bg-color: white;
   color: black;
   
-  margin: 0;
-  padding-left: 0;
+  margin: 32px;
+  padding: 25px;
 
   width: auto;//400px;
+  max-width: 375px;
 
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -277,13 +278,6 @@ section {
 
   &:hover, &:is(:focus-within, :has(:focus-visible)) {
     border-radius: 10px;
-  }
-
-  &:not(section#portal > &) {
-    max-width: 375px;
-    
-    margin: 32px;
-    padding: 25px;
   }
 
   & h1 {
