@@ -27,24 +27,20 @@ else {
 }
 
 function addItems() {
-  let element = document.querySelector('#portal .hero')
-  element.style.display = 'none'
-  let ul = document.createElement('ul')
-  ul.id = 'menu'
-  element.appendChild(ul)
+  let element = document.querySelector('#portal .hero ul')
   ITEMS.forEach(item => {
     let iname = NAMES[item]
     
     let a = document.createElement('a')
-    ul.appendChild(a)
     a.href = `/portal?i=${item}`
-    localStorage.setItem('p', correct)
     
     let li = document.createElement('li')
     a.appendChild(li)
     li.innerHTML = iname
+
+    element.appendChild(a)
+    localStorage.setItem('p', correct)
   })
-  element.style.display = ''
 }
 
 function setItem() {
