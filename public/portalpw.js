@@ -19,12 +19,7 @@ function xhrAct() {
   var HTML = this.responseText.replace('<!DOCTYPE html>', '')
   HTML = atob(HTML)
   if (user_password === correct) {
-    document.body.innerHTML += HTML
-    var portal = document.getElementById('portal')
-    var footer = document.querySelector('footer')
-    var newPortal = portal.cloneNode(true)
-    // portal.remove()
-    newPortal.parentNode.insertBefore(newPortal, footer)
+    document.body.innerHTML = HTML + document.body.innerHTML
   
     let script = document.createElement('script')
     script.src = '/portal.js'
