@@ -41,12 +41,7 @@ if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.sp
     <Modal />
     <span style="display: none;" hidden tElement id="tElement"></span>
     <script>
-      if (location.pathname.startsWith('/portal')) {
-        setTimeout(function() {
-          document.querySelector('.header').setAttribute('bBorder', '')
-        }, 1000)
-      }
-      else if (!!document.querySelector('.hero') === false) {
+      if (!!document.querySelector('.hero') === false && !location.pathname === '/portal/') {
         document.querySelector('.header').setAttribute('bBorder', '')
       }
       document.querySelectorAll('.btn, button, [type="submit"], [type="button"]').forEach(function(btn, i) {
