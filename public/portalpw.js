@@ -20,7 +20,7 @@ function xhrAct() {
   if (user_password === correct) {
     HTML = atob(HTML)
     var footer = document.querySelector('footer')
-    footer.remove
+    footer.remove()
     var fHTML = footer.outerHTML
     document.body.innerHTML += HTML + fHTML
   
