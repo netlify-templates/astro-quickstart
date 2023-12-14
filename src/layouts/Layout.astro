@@ -44,7 +44,7 @@ if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.sp
       if (location.pathname.startsWith('/portal')) {
         setTimeout(function() {
           document.querySelector('.header').setAttribute('bBorder', '')
-        }, 1)
+        }, 1000)
       }
       else if (!!document.querySelector('.hero') === false) {
         document.querySelector('.header').setAttribute('bBorder', '')
