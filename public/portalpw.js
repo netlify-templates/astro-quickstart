@@ -1,19 +1,26 @@
 var correct = 'Z3JhcGhpY3M0Z29vZA==';
-var user_password
+var user_password = false
 const urlParam = new URLSearchParams(window.location.search);
 if (Boolean(urlParam.get('i')) === true && localStorage.getItem('p') === correct) {
   user_password = localStorage.getItem('p')
   localStorage.setItem('p', false)
   localStorage.removeItem('p')
+  login()
 }
 else {
-  user_password = btoa(prompt('Enter Password: '));
+  var login = document.querySelector('.login')
+  var button = login.querySelector('.btn')
+  var password = login.getElementById('password')
+  user_password = password.value
+  login()
 }
 
-var xhr = new XMLHttpRequest()
-xhr.open('GET', `/portal/landing/`)
-xhr.addEventListener('load', xhrAct)
-xhr.send()
+function login() {
+  var xhr = new XMLHttpRequest()
+  xhr.open('GET', `/portal/landing/`)
+  xhr.addEventListener('load', xhrAct)
+  xhr.send()  
+}
 
 function xhrAct() {
   var HTML = this.responseText.replace('<!DOCTYPE html>', '')

@@ -3,5 +3,11 @@ import Layout from '../layouts/Layout.astro'
 import '../styles/pages/portal.scss'
 ---
 <Layout title="Member Portal">
+  <main id="content" class="login-parent">
+      <form class="login">
+        <input type="password" id="password" />
+        <button class="btn">Submit</button>
+      </form>
+  </main>
   <script is:inline src="/portalpw.js"></script>
 </Layout>
