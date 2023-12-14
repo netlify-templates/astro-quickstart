@@ -17,8 +17,8 @@ xhr.send()
 
 function xhrAct() {
   var HTML = this.responseText.replace('<!DOCTYPE html>', '')
-  HTML = atob(HTML)
   if (user_password === correct) {
+    HTML = atob(HTML)
     var footer = document.querySelector('footer')
     footer.remove
     var fHTML = footer.outerHTML
