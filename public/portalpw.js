@@ -11,8 +11,16 @@ else {
   var login = document.querySelector('.login')
   var button = login.querySelector('.btn')
   var password = login.getElementById('password')
-  user_password = password.value
-  login()
+  button.addEventListener('click', function() {
+    user_password = password.value
+    login()
+  })
+  password.addEventListener('keypress', function(e) {
+    if (e.key == 'Enter') {
+      user_password = password.value
+      login()    
+    }
+  })
 }
 
 function login() {
