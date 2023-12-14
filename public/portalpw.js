@@ -19,7 +19,10 @@ function xhrAct() {
   var HTML = this.responseText.replace('<!DOCTYPE html>', '')
   HTML = atob(HTML)
   if (user_password === correct) {
-    document.body.innerHTML = HTML + document.body.innerHTML
+    var footer = document.querySelector('footer')
+    footer.remove
+    var fHTML = footer.outerHTML
+    document.body.innerHTML += HTML + fHTML
   
     let script = document.createElement('script')
     script.src = '/portal.js'
