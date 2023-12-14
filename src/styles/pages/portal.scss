@@ -1,4 +1,4 @@
-main#portal {
+main:is(.portal, #portal) {
     display: flex;
     flex-direction: column;
     justify-content: center;
