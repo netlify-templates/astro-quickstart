@@ -21,7 +21,7 @@
   color: white;
 }
 
-*:not(.hero *:not(.text, #menu, .missiontext), .hero, body, html) {
+*:not(.hero *:not(.text, #menu, .menu, .missiontext), .hero, body, html) {
   background-color: var(--bg-color, --orig-bg-color);
 }
 
@@ -256,7 +256,7 @@ section.login {
   --bg-color: white;
 }
 
-#menu {
+#menu, .menu {
   --bg-color: white;
   color: black;
   
