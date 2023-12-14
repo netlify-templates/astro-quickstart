@@ -41,7 +41,7 @@ if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.sp
     <Modal />
     <span style="display: none;" hidden tElement id="tElement"></span>
     <script>
-      if (!!document.querySelector('.hero') === false) {
+      if (!!document.querySelector('.hero') === false && (!location.pathname.startsWith('/portal') && location.pathname.split('/').length <= 3)) {
         document.querySelector('.header').setAttribute('bBorder', '')
       }
       document.querySelectorAll('.btn, button, [type="submit"], [type="button"]').forEach(function(btn, i) {
