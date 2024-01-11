@@ -8,18 +8,19 @@ function getUserGrade(gradYear) {
         yearsLeft++
     }
   
+    let gradesObj = [
+        'Senior', 
+        'Junior', 
+        'Sophmore', 
+        'Freshman'
+    ]
     let grade = ''
-    if (yearsLeft === 1) {
-        grade = 'Senior'
+    yearsLeft--
+    if (yearsLeft >=0 && yearsLeft < 5) {
+        grade = gradesObj[yearsLeft]
     }
-    else if (yearsLeft === 2) {
-        grade = 'Junior'
-    }
-    else if (yearsLeft === 3) {
-        grade = 'Sophmore'
-    }
-    else if (yearsLeft === 4) {
-        grade = 'Freshman'
+    else {
+        grade = 'Unknown'
     }
     return grade
 }
