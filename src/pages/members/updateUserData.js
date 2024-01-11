@@ -31,7 +31,7 @@ function updateUserData(userData) {
     let lName = eUserName[eUserName.length-1]
     if (lName.includes('-')) {
       lName = lName.split('-')
-      lName = lName.join()
+      lName = lName.join('')
     }
     eUserName = `${eUserName[0].split('')[0]}${lName}`
     // if (!!userData.email) {
