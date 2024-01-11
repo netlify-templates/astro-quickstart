@@ -28,7 +28,12 @@ function updateUserData(userData) {
     let uName = userData.name
 
     let eUserName = uName.split(' ')
-    eUserName = `${eUserName[0].split('')[0]}${eUserName[eUserName.length-1]}`
+    let lName = eUserName[eUserName.length-1]
+    if (lName.includes('-')) {
+      lName = lName.split('-')
+      lName = lName.join()
+    }
+    eUserName = `${eUserName[0].split('')[0]}${lName}`
     // if (!!userData.email) {
     //   if (!!userData.email.dtech) {
     //     if (!!userData.email.dtech.email) {
