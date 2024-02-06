@@ -28,7 +28,7 @@
     & > .imgs {
         flex: 1;
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         align-items: center;
         list-style: none;
         padding: 0;
@@ -37,18 +37,20 @@
   
       
         & .active {
+            scale: 2;
             z-index: 2;
+        }
+        & :not(.active) {
+            z-index: 1;
         }
   
         & .left {
-            z-index: 1;
             border-top-right-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
             // box-shadow-right: none;
         }
   
         & .right {
-            z-index: 1;
             border-top-left-radius: 0 !important;
             border-bottom-left-radius: 0 !important;
             // box-shadow-left: none;
