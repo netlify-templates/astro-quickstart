@@ -26,9 +26,11 @@
     }
   
     & > .imgs {
+        margin-block: 55px;
         flex: 1;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        column-gap: 80px;
         align-items: center;
         list-style: none;
         padding: 0;
@@ -37,7 +39,7 @@
   
       
         & .active {
-            scale: 2;
+            scale: 1.5;
             z-index: 2;
         }
         & :not(.active) {
