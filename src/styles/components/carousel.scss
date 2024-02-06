@@ -70,9 +70,9 @@
             box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
             border-radius: 25px;
             cursor: pointer;
+            transition: 250ms ease-in-out;
   
             &:hover {
-                transition: 250ms ease-in-out;
                 border-radius: 10px;
             }
         }
