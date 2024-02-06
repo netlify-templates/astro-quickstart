@@ -310,8 +310,18 @@ function photosDomLoaded() {
         fName = fName.split('/')
         fName = fName[fName.length-1]
       }
-      console.log(fName)
+      if (fName.includes('.')) {
+        fName = fName.split('.')
+        fName.pop()
+        fName = fName.join('.')
+      }
       var obj = MEMBER_WORK[fName]
+      if (fName.includes('.')) {
+        fName = fName.split('.')
+        fName.pop()
+        fName = fName.join('.')
+        obj = MEMBER_WORK[fName]
+      }
       console.log(obj)
       let capt = `${obj['capt']}. Click to enlarge!`
         .replace('.. ', '. ')
