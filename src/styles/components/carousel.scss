@@ -28,7 +28,8 @@
     & > .imgs {
         // margin-block: 55px;
         flex: 1;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
         // column-gap: 80px;
         align-items: center;
         list-style: none;
@@ -38,12 +39,9 @@
         height: fit-content;
   
         & .active {
-            // scale: 2;
-            flex: 2;
             z-index: 2;
         }
         & :not(.active) {
-            flex: 1;
             z-index: 1;
         }
   
