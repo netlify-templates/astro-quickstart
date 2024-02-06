@@ -311,7 +311,9 @@ function photosDomLoaded() {
         fName = fName[fName.length-1]
       }
       console.log(fName)
-      let capt = `${MEMBER_WORK[fName]['capt']}. Click to enlarge!`
+      var obj = MEMBER_WORK[fName]
+      console.log(obj)
+      let capt = `${obj['capt']}. Click to enlarge!`
         .replace('.. ', '. ')
         .replace(',.', '. ')
         .replace('!. ', '! ')
