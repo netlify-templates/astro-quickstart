@@ -69,11 +69,13 @@
             box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
             border-radius: 25px;
             cursor: pointer;
-            transition: var(--time) ease-in;
   
-            &:hover {
-                transition: var(--time) ease-out;
-                border-radius: 10px;
+            &.hover-in {
+                transition: var(--time) ease-in;
+                &.hover {
+                    transition: var(--time) ease-out;
+                    border-radius: 10px;
+                }
             }
         }
     }
