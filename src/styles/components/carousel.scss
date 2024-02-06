@@ -28,20 +28,22 @@
     & > .imgs {
         // margin-block: 55px;
         flex: 1;
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        display: flex;
         // column-gap: 80px;
         align-items: center;
         list-style: none;
         padding: 0;
         margin: 0;
         isolation: isolate;
+        height: fit-content;
   
         & .active {
-            // scale: 1.5;
+            // scale: 2;
+            flex: 2;
             z-index: 2;
         }
         & :not(.active) {
+            flex: 1;
             z-index: 1;
         }
   
