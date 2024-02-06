@@ -37,13 +37,13 @@ import '../styles/components/carousel.scss'
         var images = carousel.querySelectorAll('img')
         images.forEach(function(img, i) {
             var newImg = img.cloneNode(true)
-            newImg.onmouseover, function(e) {
+            newImg.onmouseover = function(e) {
                 e.target.setAttribute('hover-in', '')
                 setTimeout(function() {
                     e.target.setAttribute('hover', '')
                 }, 1);
             }
-            newImg.onmouseout, function(e) {
+            newImg.onmouseout = function(e) {
                 e.target.removeAttribute('hover')
                 setTimeout(function(e) {
                     e.target.removeAttribute('hover-in')
