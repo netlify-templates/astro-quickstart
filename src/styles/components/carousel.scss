@@ -63,6 +63,7 @@
         }
 
         & img {
+            --time: 250ms;
             --bg-color: var(--orig-bg-color);
             max-width: 100%;
             --shadow-size: 25px;
@@ -70,9 +71,10 @@
             box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
             border-radius: 25px;
             cursor: pointer;
-            transition: 250ms ease-in-out;
+            transition: var(--time) ease-in;
   
             &:hover {
+                transition: var(--time) ease-out;
                 border-radius: 10px;
             }
         }
