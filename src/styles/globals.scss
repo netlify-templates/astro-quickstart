@@ -2,7 +2,6 @@
 
 // Import Fonts
 @import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap');
 @import url('https://fonts.cdnfonts.com/css/brittany-signature');
 @import url('https://fonts.cdnfonts.com/css/buffalo');
 
@@ -71,10 +70,6 @@ body {
   // flex-direction: column;
 }
 
-[conicSans] {
-  font-family: 'Shantell Sans', sans-serif
-}
-
 [bBorder] {
   border-bottom: solid 2px var(--b-color, white);
 }
@@ -83,6 +78,10 @@ body {
   display: flex;
   flex-direction: var(--f-direction);
   gap: var(--gap)
+}
+
+input, textarea, select {
+  font-family: inherit;
 }
 
 .vHr {
