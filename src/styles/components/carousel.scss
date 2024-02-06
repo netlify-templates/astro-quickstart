@@ -27,10 +27,9 @@
   
     & > .imgs {
         // margin-block: 55px;
-        --single-column: 1fr;
         flex: 1;
         display: grid;
-        grid-template-columns: var(--single-column) calc(var(--single-column)*2) var(--single-column);
+        grid-template-columns: 1fr 2fr 1fr;
         // column-gap: 80px;
         align-items: center;
         list-style: none;
