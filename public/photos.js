@@ -322,7 +322,7 @@ function photosDomLoaded() {
         fName = fName.join('.')
         obj = MEMBER_WORK[fName]
       }
-      console.log(obj)
+      if (!!obj == false) console.log(fName)
       let capt = `${obj['capt']}. Click to enlarge!`
         .replace('.. ', '. ')
         .replace(',.', '. ')
