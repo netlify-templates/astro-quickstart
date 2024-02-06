@@ -66,11 +66,11 @@
             --shadow-size: 25px;
             --shadow-color: var(--orig-bg-color);  
             box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
-            transition: 250ms ease-in-out;
             border-radius: 25px;
             cursor: pointer;
   
             &:hover {
+                transition: 250ms ease-in-out;
                 border-radius: 10px;
             }
         }
