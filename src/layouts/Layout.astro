@@ -12,9 +12,15 @@ export interface Props {
 	title: string;
 }
 
+var sTitle = 'Graphics for Good'
+var description = 'Our mission is to help create change in the world through design. We strive to provide free design help for nonprofits that support a wide range of causes.'
+var sUrl = 'https://graphics-for-good.com'
+var pImg = '/assets/preview.svg'
+var largeFavicon = '/favicon.png'
+
 const { title } = Astro.props as Props;
 
-let dTitle = `${title} | Graphics for Good`
+let dTitle = `${title} | ${sTitle}`
 if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.split(' | ')[1]
 
 ---
@@ -25,12 +31,16 @@ if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.sp
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="image" content="/assets/logo.svg">
-    <meta property="og:image" content="/assets/logo.svg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="description" content="Our mission is to help create change in the world through design. We strive to provide free design help for nonprofits that support a wide range of causes.">
-    <meta property="og:description" content="Our mission is to help create change in the world through design. We strive to provide free design help for nonprofits that support a wide range of causes.">
-    <link href="/favicon.png" rel="icon" type="image/png" />
+    <meta property="image" content={pImg}>
+    <meta property="description" content={decription}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={pImg}>
+    <meta property="og:url" content={sUrl}> 
+    <meta name="twitter:card" content="summary_large_image"> 
+    <meta name="twitter:title" content={dTitle}> 
+    <meta name="twitter:description" content={description}> 
+    <meta name="twitter:image" content={pImg}> 
+    <link href={largeFavicon} rel="icon" type="image/png" />
     <title>{dTitle}</title>
   </head>
   <body>
