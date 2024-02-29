@@ -24,7 +24,7 @@ main.profile {
         }
     }
 
-    #pfp[style] {
+    .pfp[src] {
         cursor: pointer;
         border-radius: 100%;
         transition: 500ms ease-in-out;
@@ -48,7 +48,7 @@ main.profile {
         margin: 0;
         text-decoration: none;
 
-        &:is(#email, #location) {
+        &:is(.email, .location) {
             line-height: 1;
             transition: all 100ms ease;
             color: black;
@@ -60,7 +60,7 @@ main.profile {
             }
         }
 
-        &#location {
+        &.location {
             min-height: 16px;
             min-width: 16px;
 
@@ -76,12 +76,12 @@ main.profile {
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
-
-                #location:hover > & {
-                    background-image: url('/assets/icons/location-blue.svg');
-                }
             }
     
+            &:hover > div {
+                background-image: url('/assets/icons/location-blue.svg');
+            }
+
             & > span {
                 line-height: 1;
                 position: relative;
@@ -90,12 +90,12 @@ main.profile {
         }
     }
 
-    #name {
+    .name {
         margin: 0;
         text-align: center;
         font-size: 1.75rem;
     }
-    #bio {
+    .bio {
         max-width: 500px;
         text-align: center;
         margin: 0;
