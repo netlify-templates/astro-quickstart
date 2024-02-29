@@ -1,5 +1,8 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /assets/arrows/
+Disallow: /assets/fonts/
+Disallow: /assets/icons/
 
 User-agent: *
 Allow: /
