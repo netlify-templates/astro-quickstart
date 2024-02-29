@@ -1,9 +1,13 @@
-.projects {
-    & > section {
-        & > section {
-            & > div {
-                text-align: center;
-            }
-        }
-    }
+// .projects {
+//     & > section {
+//         & > section {
+//             & > div {
+//                 text-align: center;
+//             }
+//         }
+//     }
+// }
+
+.projects > section > section > div {
+    text-align: center;
 }

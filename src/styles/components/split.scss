@@ -10,10 +10,10 @@ section.split:not(.tiny) {
     gap: var(--padding);
     
     & > section {
-        --bg-color: white;
-        color: black;
-    
         flex: 1;
+
+        background-color: white;
+        color: black;
     
         box-sizing: border-box;
         margin-block: var(--padding);

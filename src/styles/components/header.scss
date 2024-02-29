@@ -2,21 +2,25 @@ a#go2content[href="javascript:scrollToNum()"] {
   position: absolute;
   top: 0;
   left: 0;
+
   padding: 8px;
-  opacity: 0;
-  z-index: -999;
+
   color: white;
+  opacity: 0;
+
+  z-index: -999;
   
   &:focus {
-    opacity: 100;
+    opacity: 1;
     z-index: 999;
   }
 }
   
 .header {
-  --bg-color: var(--orig-bg-color);
-  color: white;
   --padding: 1rem /* 16px */;
+
+  background-color: var(--orig-bg-color);
+  color: white;
 
   margin: 0;
 
@@ -46,8 +50,10 @@ a#go2content[href="javascript:scrollToNum()"] {
   
   .logo-parent {
     padding: var(--padding) 0 var(--padding) var(--padding);
+
     max-width: 125px;
     height: calc(100% - calc(var(--padding)*2));
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,9 +62,12 @@ a#go2content[href="javascript:scrollToNum()"] {
       --shadow-color: black;
 
       height: 125px;
+
       border-radius: 100%;
-      transition: 0.25s ease-in-out;
+
       box-shadow: var(--main-shadow);
+
+      transition: 0.25s ease-in-out;
 
       &:hover {
         border-radius: 37.5px;
@@ -68,12 +77,16 @@ a#go2content[href="javascript:scrollToNum()"] {
   
   & h2 {
   /*  margin: 0;  */
+
     color: black;
   }
   .nav {
-    height: calc(100% - calc(var(--padding)*2));
     flex: 1;
+
     padding: var(--padding) 0;
+
+    height: calc(100% - calc(var(--padding)*2));
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -90,6 +103,7 @@ a#go2content[href="javascript:scrollToNum()"] {
   
   .social {
     padding: var(--padding) var(--padding) var(--padding) 0;
+
     display: flex;
     flex-direction: row;
     gap: var(--padding);
@@ -97,13 +111,16 @@ a#go2content[href="javascript:scrollToNum()"] {
     & > a {
       width: 25px;
       aspect-ratio: 1;
-      display: flex;
-      border-radius: 5px;
+
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      /* --bg-color: white; */
+      /* background-color: white; */
       color: black;
+
+      border-radius: 5px;
+
+      display: block;
 
       &#instagram {
         border-radius: 8px;
@@ -137,15 +154,20 @@ a#go2content[href="javascript:scrollToNum()"] {
 @media (width <= 625px) {
   .header {
     .nav-hbg {
-      --bg-color: white;
-      outline: solid 1px black;
-      border-radius: 5px;
-      overflow: hidden;
-      
       display: block;
+
       width: 25px;
       aspect-ratio: 1;
+
+      background-color: white;
+
+      border-radius: 5px;
+
+      outline: solid 1px black;
+
       cursor: pointer;
+      
+      overflow: hidden;
       
       & img {
         width: 100%;
@@ -161,23 +183,25 @@ a#go2content[href="javascript:scrollToNum()"] {
 
         position: fixed;
         inset: 0;
+
         height: 100dvh;
+
+        background-color: rgba(0, 0, 0, 0.25);
 
         display: none;
 
-        --bg-color: rgba(0, 0, 0, 0.25);
-
         & .nav-btns__inner {
-          --bg-color: var(--orig-bg-color);
-
-          box-sizing: border-box;
           position: absolute;
-          height: 100%;
           top: 0;
           right: 0;
+
+          height: 100%;
       
+          box-sizing: border-box;
           padding: var(--padding) var(--padding);
   
+          background-color: var(--orig-bg-color);
+
           display: grid;
           grid-template-columns: 0fr;
           grid-template-rows: auto;
@@ -186,11 +210,12 @@ a#go2content[href="javascript:scrollToNum()"] {
           justify-content: flex-start;
           align-content: start;
           gap: var(--padding);
+
           overflow-x: hidden;
   
-          transition: grid-template-columns 2.5s ease;
-      
           box-shadow: 0px 0px 10px 0px var(--orig-bg-color);
+
+          transition: grid-template-columns 2.5s ease;
         }
 
         .nav-info {
@@ -204,15 +229,20 @@ a#go2content[href="javascript:scrollToNum()"] {
           }
 
           .mob-nav-clse {
-            --bg-color: white;
-            outline: solid 1px black;
-            border-radius: 5px;
-            overflow: hidden;
-    
             display: block;
+
             width: 25px;
             aspect-ratio: 1;
+
+            background-color: white;
+
+            border-radius: 5px;
+
+            outline: solid 1px black;
+
             cursor: pointer;
+
+            overflow: hidden;
 
             & img {
               width: 100%;

@@ -1,7 +1,7 @@
 body {
   height: 100%;
   display: block;
-  --bg-color: white;
+  background-color: white;
   color: black;
 }
   
@@ -20,7 +20,7 @@ iframe {
   
 #welcome-bg {
   z-index: 2;
-  --bg-color: white;
+  background-color: white;
   opacity: 50%;
   height: 100%;
   width: 100%;
@@ -32,7 +32,7 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  --bg-color: transparent;
+  background-color: transparent;
 }
   
 #welcome > div {
@@ -44,7 +44,7 @@ iframe {
   border-radius: 25px;
   padding: 25px;
   opacity: 200%;
-  --bg-color: #1a4276;
+  background-color: #1a4276;
   color: white;
   max-width: 750px;
   max-height: 750px;
@@ -78,7 +78,7 @@ iframe {
 }
   
 #welcome .btn:not(.primary) {
-  --bg-color: white;
+  background-color: white;
 }
 #welcome .btn.primary {
   border-color: black !important;

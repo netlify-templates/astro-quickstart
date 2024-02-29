@@ -13,23 +13,20 @@
 }
 
 :root {
-  font-family: var(--font, 'Dekko', sans-serif);
-
-  background-color: var(--bg-color, --orig-bg-color);
-  background: var(--bg);
+  background-color: var(--orig-bg-color);
   color: white;
-}
 
-*:not(.hero *:not(.text, #menu, .menu, .missiontext), .hero, body, html) {
-  background-color: var(--bg-color, --orig-bg-color);
+  font-family: var(--font, 'Dekko', sans-serif);
 }
 
 // Custom Scrollbar
 ::-webkit-scrollbar {
   width: var(--scroll-bar-width);
   height: 100%;
-  transition: all 500ms ease-in-out;
+
   // border-radius: 25px;
+
+  transition: all 500ms ease-in-out;
 }
  
 // Track
@@ -40,7 +37,9 @@
 // Handle
 ::-webkit-scrollbar-thumb {
   background: #999; 
+
   border-radius: 25px;
+
   transition: background-color 500ms ease-in;
 }
 
@@ -85,7 +84,7 @@ input, textarea, select {
 }
 
 .vHr {
-  --bg-color: white;
+  background-color: white;
 
   width: 2px;
   height: var(--height);
@@ -93,7 +92,7 @@ input, textarea, select {
 }
 
 .hHr {
-  --bg-color: var(--b-color, white);
+  background-color: var(--b-color, white);
 
   display: block;
   margin: var(--marg, 0);
@@ -109,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .gradient {
   // For browsers that do not support gradients
-  --bg-color: transparent;
+  background-color: transparent;
 
   height: 10px;
   width: 100%;
@@ -149,23 +148,23 @@ button, [type="submit"], [type="button"] {
   align-items: center;
 
   &:not(.primary) {
-    --bg-color: white;
+    background-color: white;
     --border-color: black;
     color: black;
 
     &:is(:hover, :focus-visible) {
-      --bg-color: black;
+      background-color: black;
       --border-color: white;
       color: white;
     }
   }
   &.primary {
-    --bg-color: black;
+    background-color: black;
     --border-color: white;
     color: white;
 
     &:is(:hover, :focus-visible) {
-      --bg-color: white;
+      background-color: white;
       --border-color: black;  
       color: black;
     }
@@ -173,7 +172,7 @@ button, [type="submit"], [type="button"] {
 }
 
 .missiontext {
---bg-color: white;
+background-color: white;
   margin: 25px;
   width: -moz-fit-content;
   width: fit-content;
@@ -252,11 +251,11 @@ section {
 }
 
 section.login-parent {
-  --bg-color: white;
+  background-color: white;
 }
 
 #menu, .menu {
-  --bg-color: white;
+  background-color: white;
   color: black;
   
   margin: 32px;
@@ -297,7 +296,7 @@ section.login-parent {
     text-decoration: none;
 
     & > li {
-      --bg-color: white;
+      background-color: white;
 
       font-size: 22px;
       transition: all 500ms ease-out;
@@ -337,7 +336,7 @@ form[method="POST"] {
   max-width: 100% !important;
 
   &:not(section > &) {
-    --bg-color: white;
+    background-color: white;
 
     margin: 25px;
     padding: 25px;
@@ -356,7 +355,7 @@ form[method="POST"] {
   }
 
   & > *:not(.btn, :is(button, [type="submit"], [type="button"])) {
-    --bg-color: white;
+    background-color: white;
   }
 
   & :is(.btn, :is(button, [type="submit"], [type="button"])) {
@@ -372,7 +371,7 @@ form[method="POST"] {
 
   & > :is(input, textarea, select) {
     &::selection {
-      --bg-color: var(--orig-bg-color);
+      background-color: var(--orig-bg-color);
 
       border-radius: 25px;
       

@@ -1,9 +1,8 @@
 #infobox {
-    --bg-color: white;
     --b-r: 25px;
     --width: calc(300px - 4px);
     
-    position: sticky;
+    position: fixed;
     top: calc(100% - var(--h, 0) - var(--b-r));
     left: calc(100% - var(--w, 0) - var(--b-r));
     
@@ -12,13 +11,16 @@
     width: var(--width);
     aspect-ratio: 2 / 1;
   
+    background-color: white;
+
     border-color: var(--orig-bg-color);
     border-radius: 5px;
+
+    opacity: 0;
 
     box-shadow: var(--main-shadow);
 
     transition: opacity var(--transition-time, 500ms) ease;
-    opacity: 0;
   
     &[open] {
         display: inline-flex;

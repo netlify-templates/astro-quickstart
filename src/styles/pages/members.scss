@@ -9,38 +9,44 @@ main.profile {
 
     
     & > section {
-        max-width: 500px;
         margin: 25px;
         padding: 25px;
-        gap: 12.5px;
-        --bg-color: white;
+
+        max-width: 500px;
+
+        background-color: white;
         color: black;
+
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 12.5px;
 
-        h2 {
+        & h2 {
             margin-block: 0;
         }
     }
 
     .pfp[src] {
-        cursor: pointer;
-        border-radius: 100%;
-        transition: 500ms ease-in-out;
         max-width: var(--pfp-size);
         max-height: var(--pfp-size);
         width: 100%;
         aspect-ratio: 1;
-        border: none;
-        outline: none;
+
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
 
-        &:hover {
-        border-radius: 25%;
+        border: none;
+        border-radius: 100%;
+        outline: none;
+
         transition: 500ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            border-radius: 25%;
+            transition: 500ms ease-in-out;
         }
     }
 
@@ -49,9 +55,10 @@ main.profile {
         text-decoration: none;
 
         &:is(.email, .location) {
-            line-height: 1;
-            transition: all 100ms ease;
             color: black;
+            line-height: 1;
+
+            transition: all 100ms ease;
             &:is(:hover, :focus) {
                 color: blue;
                 &:visited {
@@ -83,59 +90,68 @@ main.profile {
             }
 
             & > span {
-                line-height: 1;
                 position: relative;
                 top: -3px;
+
+                line-height: 1;
             }
         }
     }
 
     .name {
         margin: 0;
-        text-align: center;
+
         font-size: 1.75rem;
+        text-align: center;
     }
     .bio {
-        max-width: 500px;
-        text-align: center;
         margin: 0;
+        max-width: 500px;
+
+        text-align: center;
     }
 }
   
 ul.socials {
     margin: 0;
     padding-left: 0;
-    list-style: none;
+    
     display: flex;
-    gap: 10px;
     justify-content: center;
+    gap: 10px;
     flex-wrap: wrap;
+
+    list-style: none;
   
     & > li {
         height: 25px;
         aspect-ratio: 1;
+
         display: flex;
         justify-content: center;
         align-items: center;
     
         & > a {
-            cursor: pointer;
-            display: flex;
             height: 100%;
             width: 100%;
         
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+
+            display: flex;
+
+            cursor: pointer;
     
             & > img {
+                margin: auto 0 auto 0;
+
                 width: 25px;
                 height: auto;
-                margin: auto 0 auto 0;
         
-                -webkit-user-select: none; /* Safari */
-                -ms-user-select: none; /* IE 10 and IE 11 */
-                user-select: none; /* Standard syntax */
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
             }
         }
     }

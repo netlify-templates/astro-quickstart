@@ -9,7 +9,7 @@ var urlParams = new URLSearchParams(queryString);
 let contactSubmit = !!urlParams.get('ty')
 if (contactSubmit) {
   let element = document.querySelector('form[method="POST"]')
-  element.parentNode.querySelector('div').querySelector('h3').style.display = ''
+  element.parentNode.querySelector('div h3').style.display = ''
   element.style.display = 'none'
 }
 

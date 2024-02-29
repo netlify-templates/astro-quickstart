@@ -17,7 +17,7 @@ $tiny-split-image-parent-min-height: 0px;
     --scroll-animation-value: #{$scroll-animation-value};
 
     --orig-bg-color: #{$orig-bg-color};
-    --bg-color: var(--orig-bg-color);
+    background-color: var(--orig-bg-color);
   
     --scroll-bar-width: #{$scroll-bar-width};
   

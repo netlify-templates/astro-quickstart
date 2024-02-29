@@ -3,24 +3,25 @@ section.photos {
     width: 100%;
 
     & > section {
-        --bg-color: white;
-        color: black;
-
+        margin: 25px;
+        padding: 25px;
+        
         width: 750px;
         max-width: 100%;
         height: auto;
 
-        margin: 25px;
-        padding: 25px;
-        
+        background-color: white;
+        color: black;
+
         gap: 25px;
     }
 
     & h1 {
         margin: 0;
-        text-transform: uppercase;
-        font-weight: 200;
+
         font-size: 3rem;
+        font-weight: 200;
+        text-transform: uppercase;
     }
 }
 
@@ -36,15 +37,19 @@ ul:is(#photos, .photos) {
     --cols: 3;
 
     margin: 0;
-    list-style: none;
     padding: 0;
+
+    list-style: none;
+
     width: 100%;
+
     display: grid;
     grid-template-columns: repeat(calc(var(--cols)*2), 1fr);
     gap: 25px;
 
     & > li {
         height: auto;
+
         grid-column: span 2;
 
         &:not(:has( + li)):not(li:has( + li + li) + li):nth-child(3n-2) {
@@ -63,22 +68,28 @@ ul:is(#photos, .photos) {
 
         & img {
             width: 100%;
+
             border-radius: 15px;
-            transition: 500ms ease-in-out;
+
             cursor: pointer;
+
+            transition: 500ms ease-in-out;
   
             &:hover {
                 border-radius: 10px;
+
                 transition: 500ms ease-in-out;
             }
         }
   
         & > img:not(& > div > img) {
+            margin: auto 0;
+
             max-width: 100%;
             height: auto;
+
             border-radius: 15px;
             transition: 500ms ease-in-out;
-            margin: auto 0;
   
             &:hover {
                 border-radius: 10px;
