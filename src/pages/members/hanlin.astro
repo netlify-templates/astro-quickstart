@@ -1,7 +1,8 @@
 ---
 import defaultBio from './defaultBio.js'
-import getUserGrade from './getUserGrade.js'
 import updateUserData from './updateUserData.js'
+
+import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 
 var userData = {
   username: 'hanlin', 
@@ -38,6 +39,7 @@ var userData = {
     state: '',
   }, 
   bio: {
+    end: 'He is also known to his online community as <a href="https://roblox.fandom.com/wiki/Community:JavaCreates">JavaCreates</a>. You can find his animation work on his <a href="https://youtube.com/JavaCreates">YouTube Channel</a>!'
   }, 
   socials: [
     {
@@ -84,17 +86,6 @@ var userData = {
   ],
 }
 
-let grade = getUserGrade(userData.email.dtech.year)
-
-let w1 = userData.bio.w1
-if (!!w1 === false) w1 = false
-let w2 = userData.bio.w2
-if (!!w2 === false) w2 = false
-let removeAnd = userData.bio.removeAnd
-if (!!removeAnd === false) removeAnd = false
-
-userData.bio.custom = `${userData.name}{pronunciation} also known to his online community as <a href="https://roblox.fandom.com/wiki/Community:JavaCreates">JavaCreates</a>, is an animator, digital art creator, ${defaultBio(userData.name, grade, w1, w2, userData.role.name, removeAnd).replace(`${userData.name}{pronunciation} is `, '')} You can find his animation work on his <a href="https://youtube.com/JavaCreates">YouTube Channel</a>!`, 
-
 userData = updateUserData(userData)
 
 import Layout from '../../layouts/Layout.astro'
@@ -102,34 +93,4 @@ import Layout from '../../layouts/Layout.astro'
 import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 ---
-<Layout title={userData.nameNoTitle}>
-  <main id="content" class="profile">
-    <section>
-      <span id="pfp" style={`background-image: url('${userData.pfp.url}')`}></span>
-      <h1 id="name">{userData.nameNoTitle}</h1>
-      <a id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
-      <a id="location" href={userData.location.mapLink}>
-        <div></div>
-        <span>{userData.location.combined}</span>
-      </a>
-      <ul class="socials">
-        {userData.socials.map((social) => (
-          <li>
-            <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
-          </li>
-        ))}
-      </ul>
-      <p id="bio" set:html={userData.bio.result}></p>
-      <h2>Portfolio</h2>
-      <ul class="photos" style="height: auto; gap: 25px;">
-        {userData.portfolio.map((photo) => (
-          <li>
-            <img src={photo.src} title={photo.title} onclick={photo.onclick} />
-          </li>
-        ))}
-      </ul>
-    </section>
-  </main>
-  <script is:inline src="/members.js"></script>
-  <script is:inline src="/modal.js"></script>
-</Layout>
+<MemberPageTemplate userData={userData} />

@@ -2,6 +2,8 @@
 import defaultBio from './defaultBio.js'
 import updateUserData from './updateUserData.js'
 
+import MemberPageTemplate from '../../components/memberPageTemplate.astro'
+
 var userData = {
   username: 'jeremy', 
   name: 'Jeremy Hasan',
@@ -35,34 +37,4 @@ import Layout from '../../layouts/Layout.astro'
 import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 ---
-<Layout title={userData.nameNoTitle}>
-  <main id="content" class="profile">
-    <section>
-      <span id="pfp" style={`background-image: url(${userData.pfp.url})`}></span>
-      <h1 id="name">{userData.nameNoTitle}</h1>
-      <a id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
-      <a id="location" href={userData.location.mapLink}>
-        <div></div>
-        <span>{userData.location.combined}</span>
-      </a>
-      <ul class="socials">
-        {userData.socials.map((social) => (
-          <li>
-            <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
-          </li>
-        ))}
-      </ul>
-      <p id="bio" set:html={userData.bio.result}></p>
-      <h2>Portfolio</h2>
-      <ul class="photos" style="height: auto; gap: 25px;">
-        {userData.portfolio.map((photo) => (
-          <li>
-            <img src={photo.src} title={photo.title} onclick={photo.onclick} />
-          </li>
-        ))}
-      </ul>
-    </section>
-  </main>
-  <script is:inline src="/members.js"></script>
-  <script is:inline src="/modal.js"></script>
-</Layout>
+<MemberPageTemplate userData={userData} />
