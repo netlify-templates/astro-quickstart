@@ -7,4 +7,4 @@ Disallow: /assets/icons/
 User-agent: *
 Allow: /
 
-Sitemap: https://www.graphics-for-good.com/sitemap.xml
+Sitemap: https://graphics-for-good.com/sitemap.xml
