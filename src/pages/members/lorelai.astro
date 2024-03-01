@@ -1,0 +1,41 @@
+---
+import defaultBio from './defaultBio.js'
+import updateUserData from './updateUserData.js'
+
+import MemberPageTemplate from '../../components/memberPageTemplate.astro'
+
+var userData = {
+  username: 'lorelai', 
+  name: 'Lorelai Hartman',
+  pronunciation: false, //'Uh-da-r-sh',
+  email: {
+    g4g: false,
+    dtech: {
+      year: 26,
+    },
+  }, 
+  pfp: {
+    google: {
+      url: 'ACg8ocKl9usBmfvWgfEwz0G10bj1280kSafRn9tyCIUbb6PLpw',
+    }, 
+  },
+  location: {
+    city: 'Bay Area', 
+    state: '',
+  }, 
+  bio: {
+    w1: 'an', 
+    end: "You'll often see her spending her free time playing video games or struggling with art.", 
+  }, 
+  socials: [],
+  portfolio: [],
+}
+
+userData = updateUserData(userData)
+
+import Layout from '../../layouts/Layout.astro'
+
+import '../../styles/pages/members.scss'
+import '../../styles/photos.scss'
+---
+<MemberPageTemplate userData={userData} />
