@@ -21,7 +21,7 @@ const { userData } = Astro.props
             </li>
           ))}
         </ul>
-        <p id="bio" set:html={userData.bio.result}></p>
+        <p class="bio" id="bio" set:html={userData.bio.result}></p>
         <h2>Portfolio</h2>
         <ul class="photos" style="height: auto; gap: 25px;">
           {userData.portfolio.map((photo) => (
