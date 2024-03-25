@@ -60,7 +60,7 @@ var pageDates = {
   members: '03/25/2024'
 }
 
-var page = location.pathname.slice(1)
+var page = location.pathname.substring(1)
 if (!!page === false) {
   page = 'index'
   // page = 'members'
