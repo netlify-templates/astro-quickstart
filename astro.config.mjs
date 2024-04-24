@@ -4,5 +4,6 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     redirects: {
         '/sign-up': 'https://go.graphics-for-good.com/Sign-Up',
-    }
+    }, 
+    trailingSlash: "ignore"
 });
