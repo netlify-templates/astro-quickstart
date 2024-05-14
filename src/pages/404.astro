@@ -11,6 +11,7 @@ var error = {
   `, 
 }
 
+var path = Astro.url.pathname
 var redirects = [
   {
     slug: '/sign-up', 
@@ -23,7 +24,6 @@ var redirects = [
 ]
 
 redirects.forEach(function(redirect, i) {
-  var path = Astro.url.pathname
   if (path === redirect.slug) {
     Astro.redirect(redirect.dest)
   }
@@ -37,6 +37,7 @@ redirects.forEach(function(redirect, i) {
         <div>
           <h1>{error.code} {error.name}</h1>
           <div set:html={error.desc} />
+          {path}
         </div>
       </section>
     </Hero>
