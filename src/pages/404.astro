@@ -11,17 +11,6 @@ var error = {
   `, 
 }
 
-var redirects = [
-  {
-    slug: '/sign-up', 
-    dest: 'https://go.graphics-for-good.com/Sign-Up', 
-  }, 
-  {
-    slug: '/status', 
-    dest: 'https://go.graphics-for-good.com/Status', 
-  }
-]
-
 Astro.response.status = error.code;
 Astro.response.statusText = error.name;
 ---
@@ -37,8 +26,18 @@ Astro.response.statusText = error.name;
     </Hero>
   </main>
   <script>
-    var redirectObj = {redirects}
-    redirectObj.forEach(function(redirect, i) {
+    var redirects = [
+      {
+        slug: '/sign-up', 
+        dest: 'https://go.graphics-for-good.com/Sign-Up', 
+      }, 
+      {
+        slug: '/status', 
+        dest: 'https://go.graphics-for-good.com/Status', 
+      }
+    ]
+
+    redirects.forEach(function(redirect, i) {
       if (location.pathname === redirect.slug) {
         location.href = redirect.dest
       }
