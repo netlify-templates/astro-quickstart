@@ -2,15 +2,16 @@
 
 @mixin animations {
     animation-timeline: view();
-    animation-range: entry var(--scroll-animation-value) cover var(--scroll-animation-value);
 }
   
 @mixin fadeAnimations {
     animation: fade linear both;
+    animation-range: entry var(--fade-animation-value) cover var(--fade-animation-value);
 }
 
 @mixin splitAnimations {
     animation: split linear both;
+    animation-range: entry var(--split-animation-value) cover var(--split-animation-value);
 }
   
 
@@ -58,7 +59,7 @@ main:not(.profile) > * {
 
 @keyframes split {
     from {
-        translate: calc(var(--dir)*100%);
+        translate: calc((var(--dir)*100%) + 50px);
     }
     to {
         translate: 0;
