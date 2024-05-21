@@ -59,7 +59,7 @@ main:not(.profile) > * {
 
 @keyframes split {
     from {
-        translate: calc(var(--dir)*100% + 50px);
+        translate: calc(var(--dir)*(100% + 50px));
     }
     to {
         translate: 0;
