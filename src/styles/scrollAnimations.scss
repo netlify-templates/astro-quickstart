@@ -1,25 +1,43 @@
 @import './variables.scss';
 
 @mixin animations {
-    animation: fade linear both;
     animation-timeline: view();
     animation-range: entry var(--scroll-animation-value) cover var(--scroll-animation-value);
+}
+  
+@mixin fadeAnimations {
+    animation: fade linear both;
+}
+
+@mixin splitAnimations {
+    animation: split linear both;
 }
   
 
 main:not(.profile) > * {
     &:not(:has( > section)) {
+        @include fadeAnimations;
         @include animations;
     }
     &:has( > section) {
         &:not(.split) > *:not(.hHr) {
+            @include fadeAnimations;
             @include animations;
         }
         .hHr:not(:has( ~ .split)) {
+            @include fadeAnimations;
             @include animations;
         }
         &.split > *:not(.vHr) {
+            --dir: 0;
+            @include splitAnimations;
             @include animations;
+            &:first-child {
+                --dir: -1;
+            }
+            &:last-child {
+                --dir:  1;
+            }
         }
 
     }
@@ -35,5 +53,14 @@ main:not(.profile) > * {
     }
     to {
         scale: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        translate: calc(var(--dir)*100%);
+    }
+    to {
+        translate: 0;
     }
 }
