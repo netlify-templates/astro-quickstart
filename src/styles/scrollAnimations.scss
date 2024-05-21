@@ -56,7 +56,7 @@ main:not(.profile) > * {
     }
 }
 
-@keyframes fade {
+@keyframes split {
     from {
         translate: calc(var(--dir)*100%);
     }
