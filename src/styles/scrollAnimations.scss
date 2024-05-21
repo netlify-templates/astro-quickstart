@@ -11,7 +11,7 @@
 
 @mixin splitAnimations {
     animation: split linear both;
-    animation-range: entry var(--split-animation-value) cover var(--split-animation-value);
+    animation-range: contain var(--split-animation-value) cover var(--split-animation-value);
 }
   
 
