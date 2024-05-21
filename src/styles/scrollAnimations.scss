@@ -33,6 +33,7 @@ main:not(.profile) > * {
             --dir: 0;
             @include splitAnimations;
             @include animations;
+            overflow-x: hidden;
             &:first-child {
                 --dir: -1;
             }
