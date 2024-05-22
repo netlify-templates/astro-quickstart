@@ -4,8 +4,8 @@
     animation-timeline: view();
 }
   
-@mixin fadeAnimations {
-    animation: fade linear both;
+@mixin scaleAnimations {
+    animation: scale linear both;
     animation-range: entry var(--fade-animation-value) cover var(--fade-animation-value);
 }
 
@@ -17,16 +17,16 @@
 
 main:not(.profile) > * {
     &:not(:has( > section)) {
-        @include fadeAnimations;
+        @include scaleAnimations;
         @include animations;
     }
     &:has( > section) {
         &:not(.split) > *:not(.hHr) {
-            @include fadeAnimations;
+            @include splitAnimations;
             @include animations;
         }
         .hHr:not(:has( ~ .split)) {
-            @include fadeAnimations;
+            @include scaleAnimations;
             @include animations;
         }
         &.split {
@@ -50,7 +50,7 @@ main:not(.profile) > * {
     @include animations;
 }
 
-@keyframes fade {
+@keyframes scale {
     from {
         scale: 0.95;
     }
