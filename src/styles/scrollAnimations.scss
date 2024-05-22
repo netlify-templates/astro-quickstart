@@ -40,7 +40,7 @@
   
 
 main:not(.profile) > * {
-    &:not(:has( > section)) {
+    &:not(.hero, :has( > section)) {
         @include scaleAnimations(both);
         @include animations;
     }
