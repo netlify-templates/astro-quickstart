@@ -4,9 +4,19 @@
     animation-timeline: view();
 }
   
-@mixin scaleAnimations {
+@mixin scaleAnimations($axis) {
     animation: scale linear both;
     animation-range: entry var(--fade-animation-value) cover var(--fade-animation-value);
+
+    @keyframes scale {
+        from {
+            scale: $axis 0;
+        }
+        to {
+            scale: $axis 1;
+        }
+    }
+    
 }
 
 @mixin splitAnimations {
@@ -37,14 +47,12 @@ main:not(.profile) > * {
             }
         }
         .vHr {
-            --axis: y;
             transform-origin: top;
-            @include scaleAnimations;
+            @include scaleAnimations(y);
             @include animations;
         }
         .hHr {
-            --axis: x;
-            @include scaleAnimations;
+            @include scaleAnimations(x);
             @include animations;
         }
     }
@@ -52,15 +60,6 @@ main:not(.profile) > * {
 
 .vHr, .hHr {
     @include animations;
-}
-
-@keyframes scale {
-    from {
-        scale: var(--axis) 0;
-    }
-    to {
-        scale: var(--axis) 1;
-    }
 }
 
 @keyframes split {
