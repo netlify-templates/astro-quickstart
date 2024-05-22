@@ -37,13 +37,13 @@ main:not(.profile) > * {
             }
         }
         .vHr {
-            --dir: y;
+            --axis: y;
             transform-origin: top;
             @include scaleAnimations;
             @include animations;
         }
         .hHr {
-            --dir: x;
+            --axis: x;
             @include scaleAnimations;
             @include animations;
         }
@@ -56,10 +56,10 @@ main:not(.profile) > * {
 
 @keyframes scale {
     from {
-        scale: $dir 0;
+        scale: var(--axis) 0;
     }
     to {
-        scale: $dir 1;
+        scale: var(--axis) 1;
     }
 }
 
