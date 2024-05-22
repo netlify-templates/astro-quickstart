@@ -5,10 +5,25 @@
 }
   
 @mixin scaleAnimations($axis) {
-    animation: scale linear both;
     animation-range: entry var(--fade-animation-value) cover var(--fade-animation-value);
+    
+    @if $axis == both {
+        animation: scaleBoth linear both;
+    }
+    @else {
+        animation: scaleOne linear both;
+    }
+    
 
-    @keyframes scale {
+    @keyframes scaleBoth {
+        from {
+            scale: 0;
+        }
+        to {
+            scale: 1;
+        }
+    }
+    @keyframes scaleOne {
         from {
             scale: #{$axis} 0;
         }
@@ -16,7 +31,6 @@
             scale: #{$axis} 1;
         }
     }
-    
 }
 
 @mixin splitAnimations {
@@ -27,7 +41,7 @@
 
 main:not(.profile) > * {
     &:not(:has( > section)) {
-        @include scaleAnimations;
+        @include scaleAnimations(both);
         @include animations;
     }
     &:has( > section) {
@@ -48,11 +62,11 @@ main:not(.profile) > * {
         }
         .vHr {
             transform-origin: top;
-            @include scaleAnimations('y');
+            @include scaleAnimations(y);
             @include animations;
         }
         .hHr {
-            @include scaleAnimations('x');
+            @include scaleAnimations(x);
             @include animations;
         }
     }
