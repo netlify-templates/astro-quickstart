@@ -30,7 +30,7 @@ main:not(.profile) > * {
             @include animations;
         }
         &.split {
-            overflow-x: hidden;
+            overflow-x: clip;
             > *:not(.vHr) {
                 --dir: 0;
                 @include splitAnimations;
