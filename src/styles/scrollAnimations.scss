@@ -5,16 +5,15 @@
 }
   
 @mixin scaleAnimations($axis) {
+    $animationProps: linear both;
     animation-range: entry var(--fade-animation-value) cover var(--fade-animation-value);
     
     @if $axis == both {
-        $animationName: scaleBoth;
+        animation: scaleBoth #{$animationProps};
     }
     @else {
-        $animationName: scaleOne;
+        animation: scaleOne #{$animationProps};
     }
-
-    animation: #{$animationName} linear both;
     
 
     @keyframes scaleBoth {
