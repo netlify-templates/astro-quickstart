@@ -21,18 +21,16 @@ main:not(.profile) > * {
         @include animations;
     }
     &:has( > section) {
-        & > *:not(.hHr) {
-            overflow-x: clip;
-            > *:not(.vHr) {
-                --dir: 0;
-                @include splitAnimations;
-                @include animations;
-                &:first-child {
-                    --dir: -1;
-                }
-                &:last-child {
-                    --dir:  1;
-                }
+        overflow-x: clip;
+        > *:not(.vHr) {
+            --dir: 0;
+            @include splitAnimations;
+            @include animations;
+            &:first-child {
+                --dir: -1;
+            }
+            &:last-child {
+                --dir:  1;
             }
         }
         .hHr:not(:has( ~ .split)) {
