@@ -60,15 +60,15 @@ main:not(.profile) > * {
                 --dir:  1;
             }
         }
-        .vHr {
-            transform-origin: top;
-            @include scaleAnimations(y);
-            @include animations;
-        }
-        .hHr {
-            @include scaleAnimations(x);
-            @include animations;
-        }
+    }
+    .vHr {
+        transform-origin: top;
+        @include scaleAnimations(y);
+        @include animations;
+    }
+    .hHr {
+        @include scaleAnimations(x);
+        @include animations;
     }
 }
 
