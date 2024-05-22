@@ -10,10 +10,10 @@
 
     @keyframes scale {
         from {
-            scale: $axis 0;
+            scale: #{$axis} 0;
         }
         to {
-            scale: $axis 1;
+            scale: #{$axis} 1;
         }
     }
     
@@ -48,11 +48,11 @@ main:not(.profile) > * {
         }
         .vHr {
             transform-origin: top;
-            @include scaleAnimations(y);
+            @include scaleAnimations('y');
             @include animations;
         }
         .hHr {
-            @include scaleAnimations(x);
+            @include scaleAnimations('x');
             @include animations;
         }
     }
