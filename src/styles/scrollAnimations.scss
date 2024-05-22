@@ -11,7 +11,7 @@
 
 @mixin splitAnimations {
     animation: split linear both;
-    animation-range: cover calc(var(--split-animation-value)/1.5) contain (var(--split-animation-value)*2);
+    animation-range: cover calc(var(--split-animation-value)/1.5) contain calc(var(--split-animation-value)*2);
 }
   
 
