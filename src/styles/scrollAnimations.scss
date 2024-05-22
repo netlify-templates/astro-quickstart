@@ -36,7 +36,14 @@ main:not(.profile) > * {
                 --dir:  1;
             }
         }
-        .hHr:not(:has( ~ .split)) {
+        .vHr {
+            --dir: y;
+            transform-origin: top;
+            @include scaleAnimations;
+            @include animations;
+        }
+        .hHr {
+            --dir: x;
             @include scaleAnimations;
             @include animations;
         }
@@ -49,10 +56,10 @@ main:not(.profile) > * {
 
 @keyframes scale {
     from {
-        scale: 0;
+        scale: $dir 0;
     }
     to {
-        scale: 1;
+        scale: $dir 1;
     }
 }
 
