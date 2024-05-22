@@ -29,19 +29,20 @@ main:not(.profile) > * {
             @include fadeAnimations;
             @include animations;
         }
-        &.split > *:not(.vHr) {
-            --dir: 0;
-            @include splitAnimations;
-            @include animations;
+        &.split {
             overflow-x: hidden;
-            &:first-child {
-                --dir: -1;
-            }
-            &:last-child {
-                --dir:  1;
+            > *:not(.vHr) {
+                --dir: 0;
+                @include splitAnimations;
+                @include animations;
+                &:first-child {
+                    --dir: -1;
+                }
+                &:last-child {
+                    --dir:  1;
+                }
             }
         }
-
     }
 }
 
