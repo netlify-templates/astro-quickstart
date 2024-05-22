@@ -21,6 +21,9 @@ main:not(.profile) > * {
         @include animations;
     }
     &:has( > section) {
+        &:not(.split) {
+            --fac: 2;
+        }
         overflow-x: clip;
         > *:not(.vHr, .hHr) {
             --dir: 0;
@@ -55,7 +58,7 @@ main:not(.profile) > * {
 
 @keyframes split {
     from {
-        translate: calc(var(--dir)*(100% + 50px)) -100%;
+        translate: calc(var(--dir)*((100%*var(--fac, 1)) + 50px)) -100%;
     }
     to {
         translate: 0 0;
