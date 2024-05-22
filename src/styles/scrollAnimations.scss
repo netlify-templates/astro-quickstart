@@ -22,14 +22,14 @@ main:not(.profile) > * {
     }
     &:has( > section) {
         overflow-x: clip;
-        > *:not(.vHr) {
+        > *:not(.vHr, .hHr) {
             --dir: 0;
             @include splitAnimations;
             @include animations;
-            &:first-child {
+            &:first-of-type {
                 --dir: -1;
             }
-            &:last-child {
+            &:last-of-type {
                 --dir:  1;
             }
         }
