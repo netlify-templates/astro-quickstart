@@ -22,7 +22,7 @@ main:not(.profile) > * {
     }
     &:has( > section) {
         &:not(.split) {
-            --fac: 2;
+            --amt: calc((var(--dWidth)/2) - 50%);
         }
         overflow-x: clip;
         > *:not(.vHr, .hHr) {
@@ -58,7 +58,7 @@ main:not(.profile) > * {
 
 @keyframes split {
     from {
-        translate: calc(var(--dir)*((100%*var(--fac, 1)) + 50px)) -100%;
+        translate: calc(var(--dir)*((var(--amt, 100%)) + 50px)) 0;//-100%;
     }
     to {
         translate: 0 0;
