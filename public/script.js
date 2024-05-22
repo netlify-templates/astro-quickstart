@@ -1,3 +1,9 @@
+setHeight({target: window})
+window.addEventListener('resize', setHeight)
+function setHeight(e) {
+  document.documentElement.style.setProperty('--dHeight', window.innerHeight)
+}
+
 setTimeout(function() {
   document.body.removeAttribute('data-new-gr-c-s-check-loaded')
   document.body.removeAttribute('data-gr-ext-installed')
