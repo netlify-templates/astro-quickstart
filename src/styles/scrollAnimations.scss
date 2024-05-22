@@ -8,11 +8,13 @@
     animation-range: entry var(--fade-animation-value) cover var(--fade-animation-value);
     
     @if $axis == both {
-        animation: scaleBoth linear both;
+        $animationName: scaleBoth;
     }
     @else {
-        animation: scaleOne linear both;
+        $animationName: scaleOne;
     }
+
+    animation: #{$animationName} linear both;
     
 
     @keyframes scaleBoth {
