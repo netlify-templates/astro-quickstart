@@ -1,25 +1,65 @@
 ---
 const members = [
-  'Shikha Iyer <span id="tag">(President and Founder)</span>', 
-  'Sayuri Rodrigo <span id="tag">(Vice-President)</span>', 
-  'Adarsh Kumar <span id="tag">(Website Manager)</span>', 
-  'Isabelle Anderson <span id="tag">(Website Assistant)</span>', 
-  'Amelia Chang', 
-  'Luce Dittrich', 
-  'Cedrus Fink', 
-  // 'Rien (Rick) Gupta', 
-  // 'Maya Heiss', 
-  'Jeremy Hasan', 
-  'Lorelai Hartman', 
-  'Beatriz Meneses', 
-  'Chloe Mercado', 
-  'Esha Mittal', 
-  'Robin Solis-Rodriguez', 
-  'Hanlin Su', 
-  'Mia Tucker', 
-  'Samantha Wolff', 
-  'Bridget Won', 
-  // 'Isaac Wood', 
+  {
+    name: 'Shikha Iyer <span id="tag">(President and Founder)</span>', 
+  }, 
+  {
+    name: 'Sayuri Rodrigo <span id="tag">(Vice-President)</span>', 
+  }, 
+  {
+    name: 'Adarsh Kumar <span id="tag">(Website Manager)</span>', 
+  }, 
+  {
+    name: 'Isabelle Anderson <span id="tag">(Website Assistant)</span>', 
+  }, 
+  {
+    name: 'Amelia Chang', 
+  }, 
+  {
+    name: 'Luce Dittrich', 
+  }, 
+  {
+    name: 'Cedrus Fink', 
+  }, 
+  {
+    name: // 'Rien (Rick) Gupta', 
+  }, 
+  {
+    // name: 'Maya Heiss', 
+  }, 
+  {
+    name: 'Jeremy Hasan', 
+  }, 
+  {
+    name: 'Lorelai Hartman', 
+  }, 
+  {
+    name: 'Beatriz Meneses', 
+  }, 
+  {
+    name: 'Chloe Mercado', 
+  }, 
+  {
+    name: 'Esha Mittal', 
+  }, 
+  {
+    name: 'Robin Solis-Rodriguez', 
+  }, 
+  {
+    name: 'Hanlin Su', 
+  }, 
+  {
+    name: 'Mia Tucker', 
+  }, 
+  {
+    name: 'Samantha Wolff', 
+  }, 
+  {
+    name: 'Bridget Won', 
+  }, 
+  {
+    // name: 'Isaac Wood', 
+  }, 
 ]
 
 
@@ -34,7 +74,16 @@ import '../styles/photos.scss'
     <Hero classItems="fullHeight">
       <ul id="menu">
         <h1>Club Members</h1>
-        {members.map((member) => ( <a href={`/members/${member.split(' ')[0].toLowerCase()}`}><li set:html={member}></li></a> ))}
+        {
+          members.map((member) => {
+            var username = member.name.split(' ')[0].toLowerCase()
+            return (
+              <a href={`/${!!member.versionPath ? member.versionPath : 'members'}/${username}`}>
+                <li set:html={member.name}></li>
+              </a>
+            )
+          })
+        }
       </ul>
     </section>
   </main>
