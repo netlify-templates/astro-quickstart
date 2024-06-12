@@ -1,16 +1,20 @@
 ---
 const members = [
   {
-    name: 'Shikha Iyer <span id="tag">(President and Founder)</span>', 
+    name: 'Shikha Iyer', 
+    role: 'President and Founder', 
   }, 
   {
-    name: 'Sayuri Rodrigo <span id="tag">(Vice-President)</span>', 
+    name: 'Sayuri Rodrigo', 
+    role: 'Vice-President', 
   }, 
   {
-    name: 'Adarsh Kumar <span id="tag">(Website Manager)</span>', 
+    name: 'Adarsh Kumar', 
+    role: 'Website Manager', 
   }, 
   {
-    name: 'Isabelle Anderson <span id="tag">(Website Assistant)</span>', 
+    name: 'Isabelle Anderson', 
+    role: 'Website Assistant', 
   }, 
   {
     name: 'Amelia Chang', 
@@ -78,8 +82,17 @@ import '../styles/photos.scss'
           members.map((member) => {
             var username = member.name.split(' ')[0].toLowerCase()
             return (
-              <a href={`/${!!member.versionPath ? member.versionPath : 'members'}/${username}`}>
-                <li set:html={member.name}></li>
+              <a href={
+                `/${!!member.versionPath ? member.versionPath : 'members'}/${username}`
+              }>
+                <li>
+                  {member.name}
+                  {
+                    !!member.role ? 
+                      <span id="tag">({member.role})</span>
+                     : ''
+                  }
+                </li>
               </a>
             )
           })
