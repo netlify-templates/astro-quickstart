@@ -1,10 +1,12 @@
 ---
-var members = []
+var membersObj = []
 
 await fetch(`https://database.graphics-for-good.com/getAllMembers`)
     .then(res => res.json())
-    .then(json => members = JSON.parse(json.response))
+    .then(json => membersObj = json.response)
 
+var members = []
+membersObj.forEach(m => members.push(m))
 
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
