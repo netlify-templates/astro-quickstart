@@ -1,12 +1,12 @@
 ---
 export function getStaticPaths() {
   return [
-    {params: {username: 'adarsh'}},
-    {params: {username: undefined}},
+    {params: {path: 'adarsh'}},
+    {params: {path: undefined}},
   ];
 }
 
-const { username } = Astro.params;
+const { path } = Astro.params;
 
 import defaultBio from './defaultBio.js'
 import updateUserData from './updateUserData.js'
