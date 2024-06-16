@@ -31,13 +31,13 @@ a#go2content[href="javascript:scrollToNum()"] {
   gap: var(--padding);
   /* flex-basis: 150px; */
   
-
-  box-shadow: 0px 0px 10px 0px var(--orig-bg-color);
+  border-bottom: solid 1px white;
 
   z-index: 2;
 
-  &[bBorder] {
-    box-shadow: none;
+  &.noBorder {
+    border: none;
+    box-shadow: 0px 0px 10px 0px var(--orig-bg-color);
   }
 
   & > :first-child {
