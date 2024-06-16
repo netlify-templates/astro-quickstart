@@ -1,10 +1,17 @@
 ---
+var usernames = []
+
+await fetch(`https://database.graphics-for-good.com/getUsernames`)
+    .then(res => res.json())
+    .then(json => usernames = json.response)
+
+var paths = []
+usernames.forEach(function(u, i) {
+    paths.push({params: {username: u}})
+})
+
 export function getStaticPaths() {
-  return [
-    {params: {username: 'admin'}},
-    // {params: {username: 'rover'}},
-    // {params: {username: 'spot'}},
-  ];
+    return paths;
 }
 
 const { username } = Astro.params;
@@ -14,8 +21,8 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 var userData = {}
 
 await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
-  .then(res => res.json())
-  .then(json => userData = json.response)
+    .then(res => res.json())
+    .then(json => userData = json.response)
 
 import Layout from '../../layouts/Layout.astro'
 
