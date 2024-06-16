@@ -18,6 +18,9 @@ import '../styles/photos.scss'
             <ul id="menu">
                 <h1>Club Members</h1>
                 {
+                    JSON.stringify(members, null, 4)
+                }
+                <!-- {
                     members.map((member) => {
                         var username = member.username
                         return (
@@ -35,7 +38,7 @@ import '../styles/photos.scss'
                             </a>
                         )
                     })
-                }
+                } -->
             </ul>
         </Hero>
     </main>
