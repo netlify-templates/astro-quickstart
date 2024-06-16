@@ -1,70 +1,9 @@
 ---
-const members = [
-  {
-    name: 'Shikha Iyer', 
-    role: 'President and Founder', 
-  }, 
-  {
-    name: 'Sayuri Rodrigo', 
-    role: 'Vice-President', 
-  }, 
-  {
-    name: 'Adarsh Kumar', 
-    role: 'Website Manager', 
-  }, 
-  {
-    name: 'Isabelle Anderson', 
-    role: 'Website Assistant', 
-  }, 
-  {
-    name: 'Amelia Chang', 
-  }, 
-  {
-    name: 'Luce Dittrich', 
-  }, 
-  {
-    name: 'Cedrus Fink', 
-  }, 
-  // {
-  //   name: 'Rien (Rick) Gupta', 
-  // }, 
-  // {
-  //   name: 'Maya Heiss', 
-  // }, 
-  {
-    name: 'Jeremy Hasan', 
-  }, 
-  {
-    name: 'Lorelai Hartman', 
-  }, 
-  {
-    name: 'Beatriz Meneses', 
-  }, 
-  {
-    name: 'Chloe Mercado', 
-  }, 
-  {
-    name: 'Esha Mittal', 
-  }, 
-  {
-    name: 'Robin Solis-Rodriguez', 
-  }, 
-  {
-    name: 'Hanlin Su', 
-  }, 
-  {
-    name: 'Mia Tucker', 
-  }, 
-  {
-    name: 'Samantha Wolff', 
-  }, 
-  {
-    name: 'Bridget Won', 
-  }, 
-  // {
-  //   name: 'Isaac Wood', 
-  // }, 
-]
+var members = []
+
+await fetch(`https://database.graphics-for-good.com/getUsernames`)
+    .then(res => res.json())
+    .then(json => usernames = json.response)
 
 
 import Layout from '../layouts/Layout.astro'
@@ -74,31 +13,31 @@ import '../styles/pages/members.scss'
 import '../styles/photos.scss'
 ---
 <Layout title="Members">
-  <main id="content">
-    <Hero classItems="fullHeight">
-      <ul id="menu">
-        <h1>Club Members</h1>
-        {
-          members.map((member) => {
-            var username = member.name.split(' ')[0].toLowerCase()
-            return (
-              <a href={
-                `/${!!member.versionPath ? member.versionPath : 'members'}/${username}`
-              }>
-                <li>
-                  {member.name}
-                  {
-                    !!member.role ? 
-                      <span id="tag">({member.role})</span>
-                     : ''
-                  }
-                </li>
-              </a>
-            )
-          })
-        }
-      </ul>
-    </section>
-  </main>
-  <script is:inline src="/members.js"></script>
+    <main id="content">
+        <Hero classItems="fullHeight">
+            <ul id="menu">
+                <h1>Club Members</h1>
+                {
+                    members.map((member) => {
+                        var username = member.username
+                        return (
+                            <a href={
+                                `/members/${username}`
+                            }>
+                                <li>
+                                    {member.name}
+                                    {
+                                        !!member.role ? 
+                                            <span id="tag">({member.role})</span>
+                                        : ''
+                                    }
+                                </li>
+                            </a>
+                        )
+                    })
+                }
+            </ul>
+        </Hero>
+    </main>
+    <script is:inline src="/members.js"></script>
 </Layout>

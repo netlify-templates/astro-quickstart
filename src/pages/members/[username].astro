@@ -11,7 +11,25 @@ usernames.forEach(function(u, i) {
 })
 
 export function getStaticPaths() {
-    return paths;
+    return [
+        {params: {username: 'adarsh'}}, 
+        {params: {username: 'amelia'}}, 
+        {params: {username: 'beatriz'}}, 
+        {params: {username: 'bridget'}}, 
+        {params: {username: 'cedrus'}}, 
+        {params: {username: 'chloe'}}, 
+        {params: {username: 'esha'}}, 
+        {params: {username: 'hanlin'}}, 
+        {params: {username: 'isabelle'}}, 
+        {params: {username: 'jeremy'}}, 
+        {params: {username: 'lorelai'}}, 
+        {params: {username: 'luce'}}, 
+        {params: {username: 'mia'}}, 
+        {params: {username: 'robin'}}, 
+        {params: {username: 'samantha'}}, 
+        {params: {username: 'sayuri'}}, 
+        {params: {username: 'shikha'}}, 
+    ];
 }
 
 const { username } = Astro.params;
