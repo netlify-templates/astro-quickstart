@@ -15,7 +15,7 @@ var userData = {}
 
 fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
   .then(res => res.json())
-  .then(json => userData = json)
+  .then(json => userData = json.response)
 
 import Layout from '../../layouts/Layout.astro'
 
