@@ -5,7 +5,6 @@ await fetch(`https://database.graphics-for-good.com/getAllMembers`)
     .then(res => res.json())
     .then(json => members = JSON.parse(json).response)
 
-
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
 
