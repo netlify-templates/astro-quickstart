@@ -50,7 +50,7 @@ main:not(.profile) > * {
             --amt: calc((var(--dWidth)/2) - 50%);
         }
         overflow-x: clip;
-        > *:not(.vHr, .hHr) {
+        > :is(section:has( ~ section), section ~ section) {
             --dir: 0;
             @include splitAnimations;
             @include animations;
