@@ -37,7 +37,8 @@ import '../styles/photos.scss'
                                     {member.name}
                                     {
                                         !!member.role ? 
-                                            <span id="tag">({member.role})</span>
+                                            !!member.role.hide ? '' : 
+                                                <span id="tag">({member.role.name})</span>
                                         : ''
                                     }
                                 </li>
