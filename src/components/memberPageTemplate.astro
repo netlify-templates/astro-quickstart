@@ -18,20 +18,26 @@ const { userData } = Astro.props
         <span>{userData.location.combined}</span>
       </a>
       <ul class="socials">
-        {userData.socials.map((social) => (
-          <li>
-            <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
-          </li>
-        ))}
+        {
+          !!userData.socials ? 
+          userData.socials.map((social) => (
+            <li>
+              <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
+            </li>
+          )) : ''
+        }
       </ul>
       <p class="bio" id="bio" set:html={userData.bio.result}></p>
       <h2>Portfolio</h2>
       <ul class="photos" style="height: auto; gap: 25px;">
-        {userData.portfolio.map((photo) => (
-          <li>
-            <img src={photo.src} title={photo.title} onclick={photo.onclick} />
-          </li>
-        ))}
+        {
+          !!userData.portfolio ? 
+          userData.portfolio.map((photo) => (
+            <li>
+              <img src={photo.src} title={photo.title} onclick={photo.onclick} />
+            </li>
+          )) : ''
+        }
       </ul>
     </section>
   </main>
