@@ -13,7 +13,7 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 
 var userData = {}
 
-fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
+await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
   .then(res => res.json())
   .then(json => userData = json.response)
 
