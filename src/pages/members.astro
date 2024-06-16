@@ -2,7 +2,7 @@
 var members = []
 
 await fetch(`https://database.graphics-for-good.com/getAllMembers`)
-    .then(res => res.json())
+    .then(res => res)
     .then(json => members = JSON.parse(json).response)
 
 import Layout from '../layouts/Layout.astro'
