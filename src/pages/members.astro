@@ -1,9 +1,19 @@
 ---
-var members = []
+var usernames = []
+
+await fetch(`https://database.graphics-for-good.com/getUsernames`)
+    .then(res => res.json())
+    .then(json => usernames = json.response)
+
+
+var membersObj = {}
 
 await fetch(`https://database.graphics-for-good.com/getAllMembers`)
-    .then(res => res.text())
-    .then(json => members = JSON.parse(json).response)
+    .then(res => res.json())
+    .then(json => membersObj = json.response)
+
+var members = []
+usernames.forEach(u => members.push(membersObj[u]))
 
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
