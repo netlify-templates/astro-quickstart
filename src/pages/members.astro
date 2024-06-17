@@ -5,7 +5,6 @@ await fetch(`https://database.graphics-for-good.com/getUsernames`)
     .then(res => res.json())
     .then(json => usernames = json.response)
 
-
 var membersObj = {}
 
 await fetch(`https://database.graphics-for-good.com/getAllMembers`)
