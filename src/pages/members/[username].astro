@@ -1,4 +1,9 @@
 ---
+import Layout from '../../layouts/Layout.astro'
+
+import '../../styles/pages/members.scss'
+import '../../styles/photos.scss'
+
 var usernames = []
 
 await fetch(`https://database.graphics-for-good.com/getUsernames`)
@@ -46,9 +51,41 @@ await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${use
     .then(res => res.json())
     .then(json => userData = json.response)
 
-import Layout from '../../layouts/Layout.astro'
-
-import '../../styles/pages/members.scss'
-import '../../styles/photos.scss'
 ---
-<MemberPageTemplate userData={userData} />
+<Layout title={userData.nameNoTitle}>
+  <main id="content" class="profile">
+    <section>
+      <img class="pfp" id="pfp" src={userData.pfp.url}></span>
+      <h1 class="name" id="name">{userData.nameNoTitle}</h1>
+      <a class="email" id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
+      <a class="location" id="location" href={userData.location.mapLink}>
+        <div></div>
+        <span>{userData.location.combined}</span>
+      </a>
+      <ul class="socials">
+        {
+          !!userData.socials ? 
+          userData.socials.map((social) => (
+            <li>
+              <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
+            </li>
+          )) : ''
+        }
+      </ul>
+      <p class="bio" id="bio" set:html={userData.bio.result}></p>
+      <h2>Portfolio</h2>
+      <ul class="photos" style="height: auto; gap: 25px;">
+        {
+          !!userData.portfolio ? 
+          userData.portfolio.map((photo) => (
+            <li>
+              <img src={photo.src} title={photo.title} onclick={photo.onclick} />
+            </li>
+          )) : ''
+        }
+      </ul>
+    </section>
+  </main>
+  <script is:inline src="/members.js"></script>
+  <script is:inline src="/modal.js"></script>
+</Layout>
