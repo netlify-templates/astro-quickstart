@@ -1,10 +1,3 @@
-var infoboxTransitionTime = '500ms'
-var msg = 'Hello, do you copy?'
-var infoboxEnabled = false
-
-
-// ======================== ALL CONFIGURATION IS ABOVE THIS LINE ========================
-
 if (!!infoboxEnabled) ifEnabled()
 function ifEnabled() {
     var infobox = document.getElementById('infobox')

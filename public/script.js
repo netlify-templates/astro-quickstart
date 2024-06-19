@@ -4,11 +4,6 @@ function setHeight(e) {
   document.documentElement.style.setProperty('--dHeight', window.innerHeight)
 }
 
-setTimeout(function() {
-  document.body.removeAttribute('data-new-gr-c-s-check-loaded')
-  document.body.removeAttribute('data-gr-ext-installed')
-}, 1000)
-
 var isBeta = !!localStorage.getItem('isBeta')
 if (isBeta) document.body.classList.add('isBeta')
 
@@ -72,10 +67,6 @@ if (overflow === 'n') {
 }
 
 
-document.querySelector('.logo').addEventListener('click', function(e) {
-  location.href = '/'
-})
-
 document.querySelectorAll('a').forEach(a => {
   if(!!a.target === false) {
     if (a.href.startsWith('/') === false) {
@@ -87,23 +78,6 @@ document.querySelectorAll('a').forEach(a => {
     }
   }
 })
-
-let globalHeight = document.querySelector('nav').clientHeight
-
-function scrollToNum(st=globalHeight) {
-  location.href = '#content'
-//  document.querySelector('a#go2content').style.display = 'none'
-//  document.querySelector('nav').querySelectorAll('a').forEach(e => {
-//    e.setAttribute('tabindex', -1)
-//  })
-//  document.documentElement.scrollTop = st
-//  setTimeout(function() {
-//    document.querySelector('a#go2content').style.display = ''
-//    document.querySelector('nav').querySelectorAll('a').forEach(e => {
-//      e.removeAttribute('tabindex')
-//    })
-//  }, 1)
-}
 
 let pathName = location.pathname
 if (pathName.endsWith('/')) {
