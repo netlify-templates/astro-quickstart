@@ -1,5 +1,34 @@
 ---
 import '../styles/components/header.scss'
+
+var links = [
+  {
+    name: 'Home', 
+  }, 
+  {
+    name: 'Mission', 
+  }, 
+  {
+    name: 'Projects', 
+  }, 
+  {
+    name: 'Members', 
+  }, 
+  {
+    name: 'Member Work', 
+    path: '/work', 
+  }, 
+  {
+    name: 'Sign Up', 
+    path: 'https://go.graphics-for-good.com/Sign'
+  }
+]
+
+
+var path = Astro.url.pathname
+var domain = Astro.url.origin
+if (path.startsWith('/') && path !== '/') path = path.slice(1)
+if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
 ---
 <a id="go2content" href="javascript:scrollToNum()">Skip to Content</a>
 <header class="header">
@@ -19,13 +48,20 @@ import '../styles/components/header.scss'
             <span class="material-symbols-outlined icon">close</span>
           </label>
         </div>
-        <a href="/" class="btn">Home</a>
-        <a href="/mission" class="btn">Mission</a>
-        <a href="/projects" class="btn">Projects</a>
-        <a href="/members" class="btn">Members</a>
-        <a href="/work" class="btn">Member Work</a>
-        <a href="https://go.graphics-for-good.com/Sign-Up" class="btn">Sign Up</a>
-  <!--  <a href="/portal" class="btn">Portal</a>-->
+        {
+          links.map(link => {
+            var lPath = link.path
+            if (!path) {
+              lPath = link.name.toLowerCase()
+              if (lPath.includes(' ')) lPath = lPath.split(' ')join('')
+            }
+
+          if (lPath === path) a.classList.add('primary')
+          path = `/${path}`
+
+          return <a href={lPath} class={`btn`}>{link.name}</a>
+          })
+        }
       </div>
     </div>
   </nav>
@@ -34,24 +70,3 @@ import '../styles/components/header.scss'
     <a href="mailto:hello@graphics-for-good.com" title="Email Us" id="email" target="_blank"></a>
   </div>
 </header>
-<script>
-  var path = location.pathname
-  if (path.endsWith('/') && path !== '/') path = path.substring(0, path.length-1)
-  let pI = 0
-  if (path.startsWith('/')) pI++
-  if (path.includes('/')) {
-    path = `/${path.split('/')[pI]}`
-  }
-  document.querySelectorAll('header nav .nav-btns a:not(.nav-info a)').forEach(function(a, i) {
-    var link = a.href
-    var lPath
-    var domain = location.host
-    if (link.includes(`://${domain}`)) {
-      link = link.split(`://${domain}`)[1]
-      if (link.endsWith('/') && link !== '/') {
-        link = link.substring(0, link.length-1)
-      }
-    }
-    if (link === path) a.classList.add('primary')
-  })
-</script>
