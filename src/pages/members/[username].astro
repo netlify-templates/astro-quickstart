@@ -70,7 +70,11 @@ await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${use
           !!userData.pfp ? userData.pfp.url : userData.pfp
         }></span>
         <h1 class="name" id="name">{userData.nameNoTitle}</h1>
-        <a class="email" id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
+        <a class="email" id="email" href={`mailto:${
+          !!userData.email ? userData.email.address : userData.email
+        }`}>{
+          !!userData.email ? userData.email.address : userData.email
+        }</a>
         <a class="location" id="location" href={userData.location.mapLink}>
           <div></div>
           <span>{userData.location.combined}</span>
