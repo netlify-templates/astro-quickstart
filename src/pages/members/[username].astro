@@ -79,7 +79,9 @@ await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${use
           !!userData.location ? userData.location.mapLink : userData.location
         }>
           <div></div>
-          <span>{userData.location.combined}</span>
+          <span>{
+            !!userData.location ? userData.location : userData.location.combined
+          }</span>
         </a>
         <ul class="socials">
           {
