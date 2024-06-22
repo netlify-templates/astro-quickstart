@@ -45,7 +45,7 @@ const { username } = Astro.params;
 import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 
 var userData = {}
-var code = 000
+var code = -1
 
 await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
     .then(res => res.json())
