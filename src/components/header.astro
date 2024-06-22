@@ -58,10 +58,10 @@ if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
               if (lPath.includes(' ')) lPath = lPath.split(' ').join('')
             }
 
-          if (lPath === path) extraClasses += ' primary'
-          lPath = `/${lPath}`
+            if (lPath === path) extraClasses += ' primary'
+            lPath = `/${lPath}`
 
-          return <a href={lPath} class={`btn${extraClasses}`}>{link.name}</a>
+            return <a href={lPath} class={`btn${extraClasses}`}>{link.name}</a>
           })
         }
       </div>
