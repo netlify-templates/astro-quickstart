@@ -28,6 +28,8 @@ import '../styles/photos.scss'
                 {
                     members.map((member) => {
                         var username = member.username
+                        var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
+
                         return (
                             <a href={
                                 `/members/${username}/`
@@ -35,9 +37,7 @@ import '../styles/photos.scss'
                                 <li>
                                     {member.name}
                                     {
-                                        !!member.role ? 
-                                            <span id="tag">({member.role.name})</span>
-                                        : ''
+                                        !!role ? <span id="tag">({role})</span> : ''
                                     }
                                 </li>
                             </a>
