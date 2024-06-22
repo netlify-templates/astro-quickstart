@@ -58,6 +58,7 @@ if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
               if (lPath.includes(' ')) lPath = lPath.split(' ').join('')
             }
 
+            if (lPath === 'home') lPath = '/'
             if (lPath === path) extraClasses += ' primary'
             lPath = `/${lPath}/`
 
