@@ -22,7 +22,6 @@ export function getStaticPaths() {
         {params: {username: 'beatriz'}}, 
         {params: {username: 'bridget'}}, 
         {params: {username: 'cedrus'}}, 
-        {params: {username: 'chloe'}}, 
         {params: {username: 'esha'}}, 
         {params: {username: 'hanlin'}}, 
         {params: {username: 'isabelle'}}, 
@@ -49,41 +48,45 @@ var userData = {}
 
 await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
     .then(res => res.json())
-    .then(json => {console.log(json); userData = json.response})
+    .then(json => {code = json.code; if (code === 200) userData = json.response; else userData = json})
 
 ---
 <Layout title={userData.name}>
   <main id="content" class="profile">
     <section>
-      <img class="pfp" id="pfp" src={userData.pfp.url}></span>
-      <h1 class="name" id="name">{userData.nameNoTitle}</h1>
-      <a class="email" id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
-      <a class="location" id="location" href={userData.location.mapLink}>
-        <div></div>
-        <span>{userData.location.combined}</span>
-      </a>
-      <ul class="socials">
-        {
-          !!userData.socials ? 
-          userData.socials.map((social) => (
-            <li>
-              <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
-            </li>
-          )) : ''
-        }
-      </ul>
-      <p class="bio" id="bio" set:html={userData.bio.result}></p>
-      <h2>Portfolio</h2>
-      <ul class="photos" style="height: auto; gap: 25px;">
-        {
-          !!userData.portfolio ? 
-          userData.portfolio.map((photo) => (
-            <li>
-              <img src={photo.src} title={photo.title} onclick={photo.onclick} />
-            </li>
-          )) : ''
-        }
-      </ul>
+      {
+        code === 200 ? 
+        <img class="pfp" id="pfp" src={userData.pfp.url}></span>
+        <h1 class="name" id="name">{userData.nameNoTitle}</h1>
+        <a class="email" id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a>
+        <a class="location" id="location" href={userData.location.mapLink}>
+          <div></div>
+          <span>{userData.location.combined}</span>
+        </a>
+        <ul class="socials">
+          {
+            !!userData.socials ? 
+            userData.socials.map((social) => (
+              <li>
+                <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
+              </li>
+            )) : ''
+          }
+        </ul>
+        <p class="bio" id="bio" set:html={userData.bio.result}></p>
+        <h2>Portfolio</h2>
+        <ul class="photos" style="height: auto; gap: 25px;">
+          {
+            !!userData.portfolio ? 
+            userData.portfolio.map((photo) => (
+              <li>
+                <img src={photo.src} title={photo.title} onclick={photo.onclick} />
+              </li>
+            )) : ''
+          }
+        </ul> : 
+        <pre>{userData}</pre>
+      }
     </section>
   </main>
   <script is:inline src="/members.js"></script>
