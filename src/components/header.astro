@@ -57,7 +57,7 @@ if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
             }
 
           if (lPath === path) a.classList.add('primary')
-          path = `/${path}`
+          lPath = `/${lPath}`
 
           return <a href={lPath} class={`btn`}>{link.name}</a>
           })
