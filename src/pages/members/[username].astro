@@ -52,7 +52,7 @@ await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${use
     .then(json => userData = json.response)
 
 ---
-<Layout title={userData.nameNoTitle}>
+<Layout title={userData.name}>
   <main id="content" class="profile">
     <section>
       <img class="pfp" id="pfp" src={userData.pfp.url}></span>
