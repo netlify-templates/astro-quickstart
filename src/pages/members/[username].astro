@@ -48,8 +48,8 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 var userData = {}
 
 await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
-    .then(res => {console.log(res);res.json()})
-    .then(json => userData = json.response)
+    .then(res => res.json())
+    .then(json => {console.log(json); userData = json.response})
 
 ---
 <Layout title={userData.name}>
