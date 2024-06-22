@@ -48,7 +48,7 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 var userData = {}
 
 await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
-    .then(res => res.json())
+    .then(res => console.log(res);res.json())
     .then(json => userData = json.response)
 
 ---
