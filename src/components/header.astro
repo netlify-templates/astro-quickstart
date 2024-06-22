@@ -51,15 +51,17 @@ if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
         {
           links.map(link => {
             var lPath = link.path
+            var extraClasses = ''
+
             if (!lPath) {
               lPath = link.name.toLowerCase()
               if (lPath.includes(' ')) lPath = lPath.split(' ').join('')
             }
 
-          if (lPath === path) a.classList.add('primary')
+          if (lPath === path) extraClasses += ' primary'
           lPath = `/${lPath}`
 
-          return <a href={lPath} class={`btn`}>{link.name}</a>
+          return <a href={lPath} class={`btn${extraClasses}`}>{link.name}</a>
           })
         }
       </div>
