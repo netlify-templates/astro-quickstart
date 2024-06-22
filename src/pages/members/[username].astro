@@ -48,7 +48,16 @@ var userData = {}
 
 await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
     .then(res => res.json())
-    .then(json => {code = json.code; if (code === 200) userData = json.response; else userData = json})
+    .then(json => {
+      code = json.code
+      if (code === 200) {
+        userData = json.response
+      }
+      else {
+        console.log(json)
+        userData = json
+      }
+    })
 
 ---
 <Layout title={userData.name}>
