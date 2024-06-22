@@ -51,7 +51,7 @@ if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
         {
           links.map(link => {
             var lPath = link.path
-            if (!path) {
+            if (!lPath) {
               lPath = link.name.toLowerCase()
               if (lPath.includes(' ')) lPath = lPath.split(' ').join('')
             }
