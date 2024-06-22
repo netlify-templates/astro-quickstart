@@ -75,7 +75,9 @@ await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${use
         }`}>{
           !!userData.email ? userData.email.address : userData.email
         }</a>
-        <a class="location" id="location" href={userData.location.mapLink}>
+        <a class="location" id="location" href={
+          !!userData.location ? userData.location.mapLink : userData.location
+        }>
           <div></div>
           <span>{userData.location.combined}</span>
         </a>
