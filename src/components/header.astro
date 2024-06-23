@@ -60,7 +60,7 @@ if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
 
             if (lPath === 'home') lPath = '/'
             if (lPath === path) extraClasses += ' primary'
-            lPath = `/${lPath}/`
+            if (!lPath.includes('://')) lPath = `/${lPath}/`
 
             if (lPath.endsWith('//')) lPath = lPath.slice(0, -1)
             if (lPath.startsWith('//')) lPath = lPath.slice(1)
