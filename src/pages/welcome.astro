@@ -60,7 +60,7 @@ import '../styles/welcome.scss'
       setCookie('hasVisited', true, (365/12))
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
-      const path = urlParams.get('p')
+      const path = urlParams.get('p') || '/'
       document.querySelector('iframe').src = `${path}?o=n`
   
       function goBack() {
