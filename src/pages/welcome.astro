@@ -35,8 +35,11 @@ import '../styles/welcome.scss'
     </main>
     <script is:inline>
       function closeWindow(w) {
-        if (w === window) w = window.open(location.href, '_self', '')
-        w.close()
+        if (w === window) {
+          window.open(location.href, '_self', '')
+          window.close()
+        }
+        else w.close()
       }
     </script>
     <script>
