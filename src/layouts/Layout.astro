@@ -21,7 +21,7 @@ var largeFavicon = '/favicon.png'
 const { title } = Astro.props as Props;
 
 let dTitle = `${title} | ${sTitle}`
-if (dTitle.startsWith(' | ') || dTitle.startsWith('Home | ')) dTitle = dTitle.split(' | ')[1]
+if (title === 'Home') dTitle = sTitle
 
 ---
 
