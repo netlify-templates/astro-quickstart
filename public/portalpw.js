@@ -10,7 +10,7 @@ if (Boolean(urlParam.get('i')) === true && localStorage.getItem('p') === correct
 else {
   var login = document.querySelector('.login')
   var button = login.querySelector('.btn')
-  var password = login.getElementById('password')
+  var password = login.querySelector('#password')
   button.addEventListener('click', function() {
     user_password = password.value
     login()
