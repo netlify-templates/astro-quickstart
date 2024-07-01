@@ -33,12 +33,13 @@ import '../styles/welcome.scss'
         </section>
       </div>
     </main>
-    <script>
+    <script is:inline>
       function closeWindow(w) {
         if (w === window) w = window.open(location.href, '_self', '')
         w.close()
       }
-
+    </script>
+    <script>
       function setCookie(cname,cvalue,exdays,cpath='/') {
         const d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
