@@ -36,8 +36,12 @@ import '../styles/welcome.scss'
     <script is:inline>
       function closeWindow(w) {
         if (w === window) {
-          window.open(location.href, '_self', '')
-          window.close()
+          try {
+            window.close()
+          } catch (err) {
+            window.open(location.href.substring(0, location.href.indexOf("?")).substring(0, location.href.indexOf("#")) + "#", "_self")
+            window.close()
+          }
         }
         else w.close()
       }
