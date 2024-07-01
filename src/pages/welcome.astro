@@ -46,7 +46,7 @@ import '../styles/welcome.scss'
       }
     </script>
     <script>
-      window.open(`${location.pathname}#`, '_self')
+      if (!location.href.includes('#')) window.open(`${location.pathname}#`, '_self')
 
       function setCookie(cname,cvalue,exdays,cpath='/') {
         const d = new Date();
