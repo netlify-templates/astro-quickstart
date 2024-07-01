@@ -34,6 +34,10 @@ import '../styles/welcome.scss'
       </div>
     </main>
     <script is:inline>
+      if (location.href.indexOf("#") == -1) {
+        window.open(`${location.href}#`, '_self')
+      }
+
       function closeWindow(w) {
         if (w === window) {
           try {
@@ -47,10 +51,6 @@ import '../styles/welcome.scss'
       }
     </script>
     <script>
-      if (location.href.indexOf("#") == -1) {
-          window.open(`${location.href}#`, '_self')
-      }
-
       function setCookie(cname,cvalue,exdays,cpath='/') {
         const d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
