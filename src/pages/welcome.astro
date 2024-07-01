@@ -29,13 +29,18 @@ import '../styles/welcome.scss'
         </section>
         <section bottom>
           <a href="/" class="back btn primary">Proceed</a>
-          <a onclick=" window.open(location.href, '_self', ''); window.close()" class="btn">Close</a>
+          <a onclick="closeWindow(window)" class="btn">Close</a>
         </section>
       </div>
     </main>
     <script>
+      function closeWindow(w) {
+        if (w === window) w = window.open(location.href, '_self', '')
+        w.close()
+      }
+
       function setCookie(cname,cvalue,exdays,cpath='/') {
-      const d = new Date();
+        const d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
         let expires = 'expires=' + d.toUTCString();
         document.cookie = `${cname}=${cvalue};${expires};path=${cpath}`;
