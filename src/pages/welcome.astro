@@ -11,7 +11,7 @@ import '../styles/welcome.scss'
     <title>Graphics for Good</title>
   </head>
   <body>
-    <iframe></iframe>
+    <iframe src="/?o=h"></iframe>
     <div class="welcome-bg"></div>
     <main class="welcome">
       <div>
@@ -28,8 +28,8 @@ import '../styles/welcome.scss'
           </p>
         </section>
         <section bottom>
-          <a onclick="goBack()" class="btn primary">Proceed</a>
-          <a onclick="window.close()" class="btn">Close</a>
+          <a href="/" class="back btn primary">Proceed</a>
+          <a onclick=" window.open(location.href, '_self', ''); window.close()" class="btn">Close</a>
         </section>
       </div>
     </main>
@@ -61,12 +61,9 @@ import '../styles/welcome.scss'
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
       const path = urlParams.get('p') || '/'
+
       document.querySelector('iframe').src = `${path}?o=n`
-  
-      function goBack() {
-        history.go(-1)
-        location.href = path.replace('/index.html', '/')
-      }
+      document.querySelector('.btn.back').href = path
     </script>
   <!--  <script src="eruda.js"></script>-->
   </body>
