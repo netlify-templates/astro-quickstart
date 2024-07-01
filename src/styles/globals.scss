@@ -394,12 +394,6 @@ form[action] * {
   }
 }
 
-#whymakethisclub {
-  color: black;
-
-  max-width: 100%;
-}
-
 h1, h2, h3, h4, h5, h6, img, .btn, :is(button, [type="submit"], [type="button"]) {
   &[onclick]:not(section &) {
     -webkit-user-select: none; // Safari
