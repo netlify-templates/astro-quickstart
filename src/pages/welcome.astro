@@ -39,6 +39,7 @@ import '../styles/welcome.scss'
           try {
             window.close()
           } catch (err) {
+            window.open(location.href.substring(0, location.href.indexOf("?")).substring(0, location.href.indexOf("#")) + "#", "_self")
             window.close()
           }
         }
@@ -46,7 +47,9 @@ import '../styles/welcome.scss'
       }
     </script>
     <script>
-      if (!location.href.includes('#')) window.open(`${location.pathname}#`, '_self')
+      if (location.href.indexOf("#") == -1) {
+          window.open(`${location.href}#`, '_self')
+      }
 
       function setCookie(cname,cvalue,exdays,cpath='/') {
         const d = new Date();
