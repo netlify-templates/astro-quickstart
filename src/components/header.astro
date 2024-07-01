@@ -1,34 +1,68 @@
 ---
 import '../styles/components/header.scss'
 
-var links = [
-  {
-    name: 'Home', 
-  }, 
-  {
-    name: 'Mission', 
-  }, 
-  {
-    name: 'Projects', 
-  }, 
-  {
-    name: 'Members', 
-  }, 
-  {
-    name: 'Member Work', 
-    path: '/work', 
-  }, 
-  {
-    name: 'Sign Up', 
-    path: 'https://go.graphics-for-good.com/Sign'
-  }
-]
-
-
 var path = Astro.url.pathname
 var domain = Astro.url.origin
 if (path.startsWith('/') && path !== '/') path = path.slice(1)
 if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
+
+var pages = await Astro.glob('../pages/*.astro')
+
+var links = []
+pages.map(page => {
+  var link = getLink(page)
+  if (link.name === 'Home') {
+    links.push(link)
+  }
+})
+pages.map(page => {
+  var link = getLink(page)
+  if (link.name !== 'Home') {
+    if (link.path) {
+      links.push(link)
+    }
+  }
+})
+
+function getLink(link) {
+  var lPath = link.url
+  var hasHome = false
+  
+  var fileName = lPath
+  if (fileName.startsWith('/')) fileName = fileName.slice(1)
+  if (fileName === '' && !hasHome) {
+    fileName = 'home'
+    hasHome = true
+  }
+  else if (fileName.startsWith('_')) return ''
+  else if (fileName.startsWith('[') && fileName.wndsWith(']')) return ''
+  else if (parseInt(fileName)) return ''
+
+  var nameParts = []
+  if (fileName.includes('-')) nameParts = fileName.split('-')
+  else nameParts = [fileName]
+
+  nameParts.forEach((p, i) => {
+    nameParts[i] = `${p.substring(0, 1).toUpperCase()}${p.slice(1)}`
+  })
+
+  var name = nameParts.join(' ')
+  var extraClasses = ''
+
+  if (lPath === 'home') lPath = '/'
+  if (lPath === path) extraClasses += ' primary'
+  if (!lPath.includes('://')) lPath = `/${lPath}/`
+
+  if (lPath.endsWith('//')) lPath = lPath.slice(0, -1)
+  if (lPath.startsWith('//')) lPath = lPath.slice(1)
+
+  return {
+    path: lPath,
+    extraClasses: extraClasses,
+    name: name
+  }
+}
+
 ---
 <a id="go2content" href="javascript:scrollToNum()">Skip to Content</a>
 <header class="header">
