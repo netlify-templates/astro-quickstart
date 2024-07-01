@@ -38,11 +38,11 @@ iframe {
   flex-direction: column;
   gap: 25px;
   justify-content: center;
-  box-shadow: 0px 0px 50px 50px #1a4276;
+  box-shadow: 0px 0px 50px 50px var(--orig-bg-color);
   border-radius: 25px;
   padding: 25px;
   opacity: 200%;
-  background-color: #1a4276;
+  background-color: var(--orig-bg-color);
   color: white;
   max-width: 750px;
   max-height: 750px;
