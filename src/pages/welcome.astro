@@ -39,7 +39,6 @@ import '../styles/welcome.scss'
           try {
             window.close()
           } catch (err) {
-            window.open(location.href.substring(0, location.href.indexOf("?")).substring(0, location.href.indexOf("#")) + "#", "_self")
             window.close()
           }
         }
@@ -47,6 +46,8 @@ import '../styles/welcome.scss'
       }
     </script>
     <script>
+      window.open(`${location.pathname}#`, '_self')
+
       function setCookie(cname,cvalue,exdays,cpath='/') {
         const d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
