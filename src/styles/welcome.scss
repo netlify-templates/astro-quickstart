@@ -12,20 +12,20 @@ iframe {
   width: 100%;
 }
 
-#welcome, #welcome-bg, iframe {
+.welcome, .welcome-bg, iframe {
   position: absolute;
   top: 0;
   left: 0;
 }
   
-#welcome-bg {
+.welcome-bg {
   z-index: 2;
   background-color: white;
   opacity: 50%;
   height: 100%;
   width: 100%;
 }
-#welcome {
+.welcome {
   z-index: 3;
   height: 100%;
   width: 100%;
@@ -35,7 +35,7 @@ iframe {
   background-color: transparent;
 }
   
-#welcome > div {
+.welcome > div {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -50,17 +50,12 @@ iframe {
   max-height: 750px;
 }
   
-#welcome section[top], section[middle], section[bottom] {
-  display: flex;
-  justify-content: center;
-}
-  
-#welcome section[top] > h1 {
+.welcome section[top] > h1 {
   font-weight: 400;
   text-align: center;
 }
   
-#welcome section[middle] {
+.welcome section[middle] {
   justify-content: left;
   align-items: center;
   gap: 25px;
@@ -68,18 +63,18 @@ iframe {
   flex: 1;
 }
   
-#welcome section[middle] > #whymakethisclub {
+.welcome section[middle] > .whymakethisclub {
   font-weight: 300;
   text-align: center;
 }
   
-#welcome section[bottom] {
+.welcome section[bottom] {
   gap: 100px;
 }
   
-#welcome .btn:not(.primary) {
+.welcome .btn:not(.primary) {
   background-color: white;
 }
-#welcome .btn.primary {
+.welcome .btn.primary {
   border-color: black !important;
 }
