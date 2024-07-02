@@ -1,4 +1,10 @@
-:is(.header, .footer):has(~ .tree) {
+:is(.header, .footer) {
+    &:has(~ tree), .tree ~ & {
+        display: none;
+    }
+}
+
+:is(.header, .footer):has(~ .tree), .tree ~ :is(.header, .footer) {
     display: none;
 }
 
