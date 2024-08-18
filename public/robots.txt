@@ -6,5 +6,6 @@ Disallow: /assets/icons/
 
 User-agent: *
 Allow: /
+Disallow: /members?m=*
 
 Sitemap: https://graphics-for-good.com/sitemap.xml
