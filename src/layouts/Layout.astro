@@ -24,7 +24,7 @@ let dTitle = `${title} | ${sTitle}`
 if (title === 'Home') dTitle = sTitle
 
 var currentPath = `/${Astro.url.pathname}`
-if (currentPage.includes('//')) currentPage = currentPath.split('//').join('/')
+if (currentPath.includes('//')) currentPath = currentPath.split('//').join('/')
 var currentPage = `${Astro.site}${currentPath}`
 ---
 <!DOCTYPE html>
