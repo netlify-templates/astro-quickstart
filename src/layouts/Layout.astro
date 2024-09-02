@@ -23,6 +23,9 @@ const { title } = Astro.props as Props;
 let dTitle = `${title} | ${sTitle}`
 if (title === 'Home') dTitle = sTitle
 
+var currentPath = `/${Astro.url.pathname}`
+if (currentPage.includes('//')) currentPage = currentPath.split('//').join('/')
+var currentPage = `${Astro.site}${currentPath}`
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +43,7 @@ if (title === 'Home') dTitle = sTitle
     <meta name="twitter:description" content={description}> 
     <meta name="twitter:image" content={pImg}> 
     <link href={largeFavicon} rel="icon" type="image/png" />
+    <link rel="canonical" href={currentPage} />
     <title>{dTitle}</title>
   </head>
   <body>
