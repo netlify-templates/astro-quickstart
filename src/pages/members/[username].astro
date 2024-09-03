@@ -47,7 +47,7 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 var userData = userDatas.find(data => data.username === username)
-if (!userData) userData = defaultData[0]
+if (!userData) defaultData.map(d => userData = d)
 
 ---
 <Layout title={userData.name}>
