@@ -51,7 +51,7 @@ var userData = userData.find(data=> data.file.includes(`/members/${username}/inf
   <main id="content" class="profile">
     <section>
       {
-        userData.username ? 
+        userData.status ? 
         <img class="pfp" id="pfp" src={
           !!userData.pfp ? userData.pfp.url : userData.pfp
         }></span>
