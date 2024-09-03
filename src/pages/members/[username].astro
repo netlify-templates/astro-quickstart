@@ -44,10 +44,10 @@ const { username } = Astro.params;
 
 import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 
-var defaultData = (await Astro.glob('../../../members/_admin/info.js'))[0]
+var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 var userData = userDatas.find(data => data.username === username)
-if (!userData) defaultData
+if (!userData) defaultData[0]
 
 ---
 <Layout title={userData.name}>
