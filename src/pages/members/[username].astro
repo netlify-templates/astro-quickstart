@@ -44,28 +44,14 @@ const { username } = Astro.params;
 
 import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 
-var userData = {}
-var code = -1
-
-await fetch(`https://database.graphics-for-good.com/getMemberInfo?username=${username}`)
-    .then(res => res.json())
-    .then(json => {
-      code = json.code
-      if (code === 200) {
-        userData = json.response
-      }
-      else {
-        console.log(json)
-        userData = json
-      }
-    })
-
+var userDatas = await Astro.glob('../../members/*/info.js')
+var userData = userData.find(data=> data.file.includes(`/members/${username}/info.js`))
 ---
 <Layout title={userData.name}>
   <main id="content" class="profile">
     <section>
       {
-        code === 200 ? 
+        userData.username ? 
         <img class="pfp" id="pfp" src={
           !!userData.pfp ? userData.pfp.url : userData.pfp
         }></span>
