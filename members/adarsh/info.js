@@ -1,4 +1,4 @@
-{
+var data = {
   "status": "active", 
   "order": 2, 
   "username": "adarsh", 
@@ -82,3 +82,5 @@
     }
   ]
 }
+
+export default data

@@ -1,4 +1,4 @@
-{
+var data = {
   "status": "active", 
   "username": "hanlin", 
   "name": "Hanlin Su",
@@ -61,3 +61,5 @@
   ],
   "portfolio": []
 }
+
+export default data

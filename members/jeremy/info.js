@@ -1,17 +1,17 @@
-{
+var data = {
   "status": "active", 
-  "username": "robin", 
-  "name": "Robin Solis-Rodriguez",
+  "username": "jeremy", 
+  "name": "Jeremy Hasan",
   "pronunciation": false,
   "email": {
     "g4g": false,
     "dtech": {
-      "year": 26
+      "year": 27
     }
   }, 
   "pfp": {
     "google": {
-      "url": "ALV-UjXgYaTTh_15i1iJoH2muZX3el1wBJApgop5Hs2ywsUHL74",
+      "url": "ALV-UjV03hlY3A7NKwOEtAv5ovYkYKYCsRf18X0hLoazzb_U4oA",
       "a": "a-"
     }
   },
@@ -25,3 +25,5 @@
   "socials": [],
   "portfolio": []
 }
+
+export default data

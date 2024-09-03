@@ -1,18 +1,12 @@
 ---
-var usernames = []
+import usernames from '../../members/usernames.js'
 
-await fetch(`https://database.graphics-for-good.com/getUsernames`)
-    .then(res => res.json())
-    .then(json => usernames = json.response)
+// usernames.forEach(u => {
+//     import data from 
+// })
 
-var membersObj = {}
-
-await fetch(`https://database.graphics-for-good.com/getAllMembers`)
-    .then(res => res.json())
-    .then(json => membersObj = json.response)
-
-var members = []
-usernames.forEach(u => members.push(membersObj[u]))
+var members = await Astro.glob('../../members/*/*.js')
+console.log(members[0])
 
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'

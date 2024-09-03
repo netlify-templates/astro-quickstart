@@ -1,7 +1,7 @@
-{
+var data = {
   "status": "active", 
-  "username": "jeremy", 
-  "name": "Jeremy Hasan",
+  "username": "cedrus", 
+  "name": "Cedrus Fink",
   "pronunciation": false,
   "email": {
     "g4g": false,
@@ -11,8 +11,7 @@
   }, 
   "pfp": {
     "google": {
-      "url": "ALV-UjV03hlY3A7NKwOEtAv5ovYkYKYCsRf18X0hLoazzb_U4oA",
-      "a": "a-"
+      "url": "ACg8ocLUqJIqGVQ1ld0MpYt1CQDE94Cxfw7RhxPUXZ_1RSTExH0"
     }
   },
   "location": {
@@ -25,3 +24,5 @@
   "socials": [],
   "portfolio": []
 }
+
+export default data

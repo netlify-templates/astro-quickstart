@@ -1,17 +1,18 @@
-{
+var data = {
   "status": "active", 
-  "username": "cedrus", 
-  "name": "Cedrus Fink",
+  "username": "robin", 
+  "name": "Robin Solis-Rodriguez",
   "pronunciation": false,
   "email": {
     "g4g": false,
     "dtech": {
-      "year": 27
+      "year": 26
     }
   }, 
   "pfp": {
     "google": {
-      "url": "ACg8ocLUqJIqGVQ1ld0MpYt1CQDE94Cxfw7RhxPUXZ_1RSTExH0"
+      "url": "ALV-UjXgYaTTh_15i1iJoH2muZX3el1wBJApgop5Hs2ywsUHL74",
+      "a": "a-"
     }
   },
   "location": {
@@ -24,3 +25,5 @@
   "socials": [],
   "portfolio": []
 }
+
+export default data
