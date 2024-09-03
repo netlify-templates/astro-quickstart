@@ -1,12 +1,5 @@
 ---
-import usernames from '../../members/usernames.js'
-
-// usernames.forEach(u => {
-//     import data from 
-// })
-
 var members = await Astro.glob('../../members/*/*.js')
-console.log(members[0])
 
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
@@ -21,6 +14,8 @@ import '../styles/photos.scss'
                 <h1>Club Members</h1>
                 {
                     members.map((member) => {
+                        member = member.default
+
                         var username = member.username
                         var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
 
