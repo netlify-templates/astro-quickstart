@@ -46,6 +46,8 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 
 var userDatas = await Astro.glob('../../../members/*/info.js')
 var userData = userDatas.find(data => data.username === username)
+
+console.log(userData)
 ---
 <Layout title={userData.name}>
   <main id="content" class="profile">
