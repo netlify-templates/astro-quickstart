@@ -16,21 +16,23 @@ import '../styles/photos.scss'
                     members.map((member) => {
                         member = member.default
 
-                        var username = member.username
-                        var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
+                        if (!member.username.startsWith('_') && member.status === 'active') {
+                            var username = member.username
+                            var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
 
-                        return (
-                            <a href={
-                                `/members/${username}/`
-                            }>
-                                <li>
-                                    {member.name}
-                                    {
-                                        !!role ? <span id="tag">({role})</span> : ''
-                                    }
-                                </li>
-                            </a>
-                        )
+                            return (
+                                <a href={
+                                    `/members/${username}/`
+                                }>
+                                    <li>
+                                        {member.name}
+                                        {
+                                            !!role ? <span id="tag">({role})</span> : ''
+                                        }
+                                    </li>
+                                </a>
+                            )
+                        }
                     })
                 }
             </ul>
