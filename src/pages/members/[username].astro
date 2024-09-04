@@ -62,7 +62,6 @@ userData = updateUserData(userData, defaultBio, updateLeftData, getUserGrade)
       {
         ['hi'].map(_ => {
           if (userData.status === 'active') return (
-            {
             {userData.pfp ? <img class="pfp" id="pfp" src={userData.pfp.url} /> : ''}
             // <h1 class="name" id="name">{userData.name}</h1>
             // {
