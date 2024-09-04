@@ -37,6 +37,7 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
     
             let eUserName = uName.split(' ')
             let lName = eUserName[eUserName.length-1]
+            console.log(lName)
             if (lName.includes('-')) {
             lName = lName.split('-')
             lName = lName.join('')
