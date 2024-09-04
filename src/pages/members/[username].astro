@@ -55,7 +55,8 @@ var userDatas = await Astro.glob('../../../members/*/info.js')
 
 var userData = {}
 // console.log(userDatas[0])
-userDatas.forEach(data => {
+userDatas.forEach((data, i) => {
+  console.log(i, userData.default)
   if (userData.default.username === username) userData = data
 })
 
