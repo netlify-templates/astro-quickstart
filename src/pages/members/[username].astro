@@ -53,11 +53,7 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 
-var userData = userDatas.find(data => userData.default.username === username)
-userDatas.forEach((data, i) => {
-  console.log(i, data)
-  if (userData.default.username === username) userData = data
-})
+var userData = userDatas.find(data => data.default.username === username)
 
 userData = updateMember(data, defaultBio, updateLeftMember, getUserGrade)
 
