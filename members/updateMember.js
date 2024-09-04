@@ -1,4 +1,5 @@
 function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
+    console.log(userData)
     var grade = 'Unknown'
     if (userData.email) {
         grade = getUserGrade(userData.email.dtech.year)
