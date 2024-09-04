@@ -4,22 +4,6 @@ import Layout from '../../layouts/Layout.astro'
 import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 
-import updateMember from '../../../members/updateMember.js'
-import defaultBio from '../../../members/defaultBio.js'
-import updateLeftMember from '../../../members/updateLeftMember.js'
-import getUserGrade from '../../../members/getUserGrade.js'
-
-var usernames = []
-
-await fetch(`https://database.graphics-for-good.com/getUsernames`)
-    .then(res => res.json())
-    .then(json => usernames = json.response)
-
-var paths = []
-usernames.forEach(function(u, i) {
-    paths.push({params: {username: u}})
-})
-
 export function getStaticPaths() {
     return [
         {params: {username: 'adarsh'}}, 
