@@ -63,10 +63,7 @@ userData = updateUserData(userData, defaultBio, updateLeftData, getUserGrade)
         ['hi'].map(_ => {
           if (userData.status === 'active') return (
             {
-              ['hi'].map(_ => if (userData.pfp) return <img class="pfp" id="pfp" src={userData.pfp.url} />)
-              
-              // else return ''
-            }
+            {userData.pfp ? <img class="pfp" id="pfp" src={userData.pfp.url} /> : ''}
             // <h1 class="name" id="name">{userData.name}</h1>
             // {
             //   !!userData.email ? {<a class="email" id="email" href={`mailto:${userData.email.address}`}></a>} : ''
