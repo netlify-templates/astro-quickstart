@@ -4,6 +4,11 @@ import Layout from '../../layouts/Layout.astro'
 import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 
+import updateMember from '../../../members/updateMember.js'
+import defaultBio from '../../../members/defaultBio.js'
+import updateLeftMember from '../../../members/updateLeftMember.js'
+import getUserGrade from '../../../members/getUserGrade.js'
+
 export function getStaticPaths() {
     return [
         {params: {username: 'adarsh'}}, 
