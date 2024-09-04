@@ -22,6 +22,7 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
   }
 
 
+  console.log(userData)
   if (!userData.email) userData.email = {}
   if (!!userData.email.g4g) {
     userData.email.address = `${userData.username}@graphics-for-good.com`
