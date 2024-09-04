@@ -9,7 +9,7 @@ var data = {
   "email": {
     "g4g": true,
     "dtech": {
-    "year": 25
+      "year": 25
     }
   },
   "pfp": {
