@@ -55,35 +55,36 @@ var userDatas = await Astro.glob('../../../members/*/info.js')
 
 var userData = userDatas.find(data => data.default.username === username)
 
-console.log(0)
-userData = updateMember(userData, defaultBio, updateLeftMember, getUserGrade)
+var data = userData
+data = updateMember(data, defaultBio, updateLeftMember, getUserGrade)
+console.log(1)
 
 ---
-<Layout title={userData.name}>
+<Layout title={data.name}>
   <main id="content" class="profile">
     {
-      userData.status ? 
+      data.status ? 
         <section>
           {
-            (userData.status === 'active' && userData.pfp) ? <img class="pfp" id="pfp" src={userData.pfp.url} /> : ''
+            (data.status === 'active' && data.pfp) ? <img class="pfp" id="pfp" src={data.pfp.url} /> : ''
           }
-          <h1 class="name" id="name">{userData.name}</h1>
+          <h1 class="name" id="name">{data.name}</h1>
           {
-            (userData.status === 'active' && userData.email) ? <a class="email" id="email" href={`mailto:${userData.email.address}`}></a> : ''
+            (data.status === 'active' && data.email) ? <a class="email" id="email" href={`mailto:${data.email.address}`}></a> : ''
           }
           {
-            (userData.status === 'active' && userData.location) ? 
-              <a class="location" id="location" href={userData.location.mapLink}>        
+            (data.status === 'active' && data.location) ? 
+              <a class="location" id="location" href={data.location.mapLink}>        
                 <div></div>
-                <span>{userData.location.combined}</span>
+                <span>{data.location.combined}</span>
               </a>
             : ''
           }
           {
-            (userData.status === 'active' && userData.socials) ? 
+            (data.status === 'active' && data.socials) ? 
               <ul class="socials">
                 {
-                  userData.socials.map((social) => (
+                  data.socials.map((social) => (
                     <li>
                       <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
                     </li>
@@ -92,13 +93,13 @@ userData = updateMember(userData, defaultBio, updateLeftMember, getUserGrade)
               </ul>
             : ''
           }
-          <p class="bio" id="bio" set:html={userData.bio.result}></p>
+          <p class="bio" id="bio" set:html={data.bio.result}></p>
           {
-            (userData.status === 'active' && userData.portfolio) ? 
+            (data.status === 'active' && data.portfolio) ? 
                 <h2>Portfolio</h2>
                 <ul class="photos" style="height: auto; gap: 25px;">
                 {
-                  userData.portfolio.map((photo) => {
+                  data.portfolio.map((photo) => {
                     <li>
                       <img src={photo.src} title={photo.title} onclick={photo.onclick} />
                     </li>
