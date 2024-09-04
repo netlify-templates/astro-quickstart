@@ -60,55 +60,58 @@ userData = updateUserData(userData, defaultBio, updateLeftData, getUserGrade)
   <main id="content" class="profile">
     <section>
       {
-        if (userData.status === 'active') return (
-          {
-            if (userData.pfp) return <img class="pfp" id="pfp" src={userData.pfp.url} />
-            // else return ''
-          }
-          // <h1 class="name" id="name">{userData.name}</h1>
-          // {
-          //   !!userData.email ? {<a class="email" id="email" href={`mailto:${userData.email.address}`}></a>} : ''
-          // }
-          // {
-          //   !!userData.location ? {
-          //     <a class="location" id="location" href={userData.location.mapLink}>        
-          //       <div></div>
-          //       <span>{userData.location.combined}</span>
-          //     </a>
-          //   } : ''
-          // }
-          // {
-          //   !!userData.socials ? 
-          //   {
-          //     <ul class="socials">
-          //       {
-          //         userData.socials.map((social) => (
-          //           <li>
-          //             <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
-          //           </li>
-          //         ))
-          //       }
-          //     </ul>
-          //   } : ''
-          // }
-          // <p class="bio" id="bio" set:html={userData.bio.result}></p>
-          // <h2>Portfolio</h2>
-          // {
-          //   !!userData.portfolio ? 
-          //   {
-          //     <ul class="photos" style="height: auto; gap: 25px;">
-          //       {
-          //         userData.portfolio.map((photo) => {
-          //           <li>
-          //             <img src={photo.src} title={photo.title} onclick={photo.onclick} />
-          //           </li>
-          //         })
-          //       }
-          //     </ul>
-          //   } : ''
-          // }
-        )
-        else return <pre>{userData}</pre>
+        ['hi'].map(_ => {
+          if (userData.status === 'active') return (
+            {
+              ['hi'].map(_ => if (userData.pfp) return <img class="pfp" id="pfp" src={userData.pfp.url} />)
+              
+              // else return ''
+            }
+            // <h1 class="name" id="name">{userData.name}</h1>
+            // {
+            //   !!userData.email ? {<a class="email" id="email" href={`mailto:${userData.email.address}`}></a>} : ''
+            // }
+            // {
+            //   !!userData.location ? {
+            //     <a class="location" id="location" href={userData.location.mapLink}>        
+            //       <div></div>
+            //       <span>{userData.location.combined}</span>
+            //     </a>
+            //   } : ''
+            // }
+            // {
+            //   !!userData.socials ? 
+            //   {
+            //     <ul class="socials">
+            //       {
+            //         userData.socials.map((social) => (
+            //           <li>
+            //             <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
+            //           </li>
+            //         ))
+            //       }
+            //     </ul>
+            //   } : ''
+            // }
+            // <p class="bio" id="bio" set:html={userData.bio.result}></p>
+            // <h2>Portfolio</h2>
+            // {
+            //   !!userData.portfolio ? 
+            //   {
+            //     <ul class="photos" style="height: auto; gap: 25px;">
+            //       {
+            //         userData.portfolio.map((photo) => {
+            //           <li>
+            //             <img src={photo.src} title={photo.title} onclick={photo.onclick} />
+            //           </li>
+            //         })
+            //       }
+            //     </ul>
+            //   } : ''
+            // }
+          )
+          else return <pre>{userData}</pre>
+        })
       }
     </section>
   </main>
