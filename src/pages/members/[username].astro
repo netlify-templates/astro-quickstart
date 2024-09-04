@@ -53,8 +53,8 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 
-var userData = userDatas.find(data => userData.default.username === username)
-console.log(userDatas[0])
+var userData = {}
+// console.log(userDatas[0])
 userDatas.forEach(data => {
   if (userData.default.username === username) userData = data
 })
