@@ -53,47 +53,54 @@ var userData = userDatas.find(data => data.username === username)
   <main id="content" class="profile">
     <section>
       {
-        userData.status ? 
-        <img class="pfp" id="pfp" src={
-          !!userData.pfp ? userData.pfp.url : userData.pfp
-        }></span>
-        <h1 class="name" id="name">{userData.name}</h1>
-        <a class="email" id="email" href={`mailto:${
-          !!userData.email ? userData.email.address : userData.email
-        }`}>{
-          !!userData.email ? userData.email.address : userData.email
-        }</a>
-        <a class="location" id="location" href={
-          !!userData.location ? userData.location.mapLink : userData.location
-        }>
-          <div></div>
-          <span>{
-            !!userData.location ? userData.location.combined : userData.location
-          }</span>
-        </a>
-        <ul class="socials">
+        userData.status === 'active' ? 
+        (
+          {
+            !!userData.pfp ? {<img class="pfp" id="pfp" src={userData.pfp.url} />} : ''
+          }
+          <h1 class="name" id="name">{userData.name}</h1>
+          {
+            !!userData.email ? {<a class="email" id="email" href={`mailto:${userData.email.address}`}></a>} : ''
+          }
+          {
+            !!userData.location ? {
+              <a class="location" id="location" href={userData.location.mapLink}>        
+                <div></div>
+                <span>{userData.location.combined}</span>
+              </a>
+            } : ''
+          }
           {
             !!userData.socials ? 
-            userData.socials.map((social) => (
-              <li>
-                <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
-              </li>
-            )) : ''
+            {
+              <ul class="socials">
+                {
+                  userData.socials.map((social) => (
+                    <li>
+                      <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
+                    </li>
+                  ))
+                }
+              </ul>
+            } : ''
           }
-        </ul>
-        <p class="bio" id="bio" set:html={userData.bio.result}></p>
-        <h2>Portfolio</h2>
-        <ul class="photos" style="height: auto; gap: 25px;">
+          <p class="bio" id="bio" set:html={userData.bio.result}></p>
+          <h2>Portfolio</h2>
           {
             !!userData.portfolio ? 
-            userData.portfolio.map((photo) => (
-              <li>
-                <img src={photo.src} title={photo.title} onclick={photo.onclick} />
-              </li>
-            )) : ''
+            {
+              <ul class="photos" style="height: auto; gap: 25px;">
+                {
+                  userData.portfolio.map((photo) => {
+                    <li>
+                      <img src={photo.src} title={photo.title} onclick={photo.onclick} />
+                    </li>
+                  })
+                }
+              </ul>
+            } : ''
           }
-        </ul> : 
-        <pre>{userData}</pre>
+        ) : <pre>{userData}</pre>
       }
     </section>
   </main>
