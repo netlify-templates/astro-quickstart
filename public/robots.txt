@@ -1,11 +1,11 @@
 User-agent: Googlebot
 Allow: /
-Disallow: /assets/arrows/
-Disallow: /assets/fonts/
-Disallow: /assets/icons/
+Disallow: /assets/arrows/*
+Disallow: /assets/fonts/*
+Disallow: /assets/icons/*
 
 User-agent: *
 Allow: /
 Disallow: /members?m=*
 
-Sitemap: https://graphics-for-good.com/sitemap.xml
+Sitemap: https://graphics-for-good.com/sitemap-index.xml

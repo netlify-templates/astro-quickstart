@@ -46,6 +46,7 @@ var currentPage = `${Astro.site}${currentPath}`
     <meta name="twitter:image" content={pImg}> 
     <link href={largeFavicon} rel="icon" type="image/png" />
     <link rel="canonical" href={currentPage} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{dTitle}</title>
   </head>
   <body>
@@ -56,7 +57,7 @@ var currentPage = `${Astro.site}${currentPath}`
     <Modal />
     <span style="display: none;" hidden tElement id="tElement"></span>
     <script>
-      if (!!document.querySelector('.hero') === false && !location.pathname === '/portal/') {
+      if (!!document.querySelector('.hero') === false && location.pathname !== '/portal/') {
         document.querySelector('.header').setAttribute('bBorder', '')
       }
       document.querySelectorAll('.btn, button, [type="submit"], [type="button"]').forEach(function(btn, i) {
