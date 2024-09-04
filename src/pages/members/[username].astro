@@ -59,7 +59,7 @@ userData = updateMember(userData, defaultBio, updateLeftMember, getUserGrade)
 <Layout title={userData.name}>
   <main id="content" class="profile">
     {
-      userData ? 
+      userData.status ? 
         <section>
           {
             (userData.status === 'active' && userData.pfp) ? <img class="pfp" id="pfp" src={userData.pfp.url} /> : ''
