@@ -4,9 +4,9 @@ import Layout from '../../layouts/Layout.astro'
 import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 
-import updateUserData from '../../../members/updateUserData.js'
+import updateMember from '../../../members/updateMember.js'
 import defaultBio from '../../../members/defaultBio.js'
-import updateLeftData from '../../../members/updateLeftData.js'
+import updateLeftMember from '../../../members/updateLeftMember.js'
 import getUserGrade from '../../../members/getUserGrade.js'
 
 var usernames = []
@@ -54,7 +54,7 @@ var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 
 var userData = userDatas.find(data => data.username === username)
-userData = updateUserData(userData, defaultBio, updateLeftData, getUserGrade)
+userData = updateMember(userData, defaultBio, updateLeftMember, getUserGrade)
 ---
 <Layout title={userData.name}>
   <main id="content" class="profile">
