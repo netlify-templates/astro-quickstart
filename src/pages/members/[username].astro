@@ -41,12 +41,13 @@ var userDatas = await Astro.glob('../../../members/*/info.js')
 var userData = userDatas.find(data => data.default.username === username)
 
 userData = updateMember(userData)
+console.log(userData)
 
 if (userData.status) {
   if (userData.status === 'activeGrad') userData.status = 'active'
 }
 else userData.status = 'inactive'
-console.log(userData.status)
+
 ---
 <Layout title={userData.name}>
   <main id="content" class="profile">
