@@ -65,7 +65,6 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
 
             if (userData.location.city || userData.location.state) {
                 userData.location.mapLink = userData.location.combined
-                console.log(69, userData.location.mapLink)
                 while (userData.location.mapLink.includes(' ')) {
                     userData.location.mapLink = userData.location.mapLink.split(' ').join('+')
                 }
