@@ -58,7 +58,7 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
         }
     
         if (userData.location) {
-            if (!Array.isArray(userData) && typeof userData !== 'object') userData.location = {}
+            if (!Array.isArray(userData.location) && typeof userData.location !== 'object') userData.location = {}
             if (userData.location.city && userData.location.state) userData.location.combined = `${userData.location.city}, ${userData.location.state}`
             else if (userData.location.city) userData.location.combined = userData.location.city
             else if (userData.location.state) userData.location.combined = userData.location.state
