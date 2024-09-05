@@ -6,7 +6,7 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
         if (userData.email) {
             grade = getUserGrade(userData.email.dtech.year)
         }
-        if (grade === 'Graduated') {
+        if (grade === 'Graduated' || userData.status === 'inactive') {
             userData = updateLeftData(userData)
             return
         }
@@ -126,9 +126,6 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
                 pExt = `${pExt.join('.')}png`
             }
     
-            if (userData.name === 'Juhi Bantwal') {
-                console.log(pPath)
-            }
             if (!pPath.includes('://')) {
                 path = `/assets/members/${userData.username}/portfolio/previews/${pName}.${pExt}`
             }
