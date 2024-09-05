@@ -5,9 +5,6 @@ import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 
 import updateMember from '../../../members/updateMember.js'
-import defaultBio from '../../../members/defaultBio.js'
-import updateLeftMember from '../../../members/updateLeftMember.js'
-import getUserGrade from '../../../members/getUserGrade.js'
 
 export function getStaticPaths() {
     return [
@@ -43,7 +40,7 @@ var userDatas = await Astro.glob('../../../members/*/info.js')
 
 var userData = userDatas.find(data => data.default.username === username)
 
-userData = updateMember(userData, defaultBio, updateLeftMember, getUserGrade)
+userData = updateMember(userData)
 
 if (userData.status) {
   if (userData.status === 'activeGrad') userData.status = 'active'

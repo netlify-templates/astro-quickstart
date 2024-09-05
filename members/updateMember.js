@@ -1,4 +1,4 @@
-function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
+function updateUserData(userData) {
     if (userData.default) {
         userData = userData.default
 
@@ -168,4 +168,83 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
     return userData
 }
 
+function updateLeftData(userData) {
+    let dateObjFromDate = new Date(userData.date)
+    if (!!dateObjFromDate) {
+      dateObjFromDate = dateObjFromDate.toDateString()
+      userData.date = dateObjFromDate
+    }
+  
+    let leftDefaultBio = defaultBio(userData.name)
+      .replace('{pronunciation}', '')
+      .replace(' is ', ' was ')
+    leftDefaultBio = leftDefaultBio.substr(0, leftDefaultBio.length - 1)
+    var bioText = `${leftDefaultBio} until ${userData.date}.`
+  
+    if (typeof userData.graduated === 'object' && !!userData.graduated[0] === false) {
+      bioText = `${bioText} They graduated in ${userData.graduated.year}`
+    }
+    userData.bio = bioText
+  
+    return userData
+  }
+  
+function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
+    if (!!w1 === false) {
+      w1 = 'a'
+    }
+    if (!!w2 === false) {
+      w2 = 'of'
+    }
+    if (!!name === false) {
+      name = ''
+    }
+    if (!removeAnd === false) {
+      removeAnd = ', '
+    }
+    else {
+      removeAnd = ' and '
+    }
+    if (name.includes('(') && name.includes(')')) {
+      name = name.split('(')[1].split(')')[0]
+    }
+    if (!!role === false) role = 'Member'
+    return `${name}${pronunciation || ''} is a ${grade} at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City${removeAnd}${w1} ${role} ${w2} the Graphics for Good club.`
+}
+
+function getUserGrade(gradYear) {
+    gradYear += 2000
+    let currentYear = new Date().getFullYear()
+    let yearsLeft = gradYear - currentYear
+  
+    let currentMonth = new Date().getMonth()+1
+    if (currentMonth < 6) {
+        yearsLeft++
+    }
+    
+    let currentDate = new Date().getDate()
+    if (currentMonth === 6 && currentDate <= 30/2) {
+        yearsLeft++
+    }
+  
+    let gradesObj = [
+        'Senior', 
+        'Junior', 
+        'Sophmore', 
+        'Freshman'
+    ]
+    let grade = ''
+    yearsLeft--
+    if (yearsLeft >=0 && yearsLeft < 5) {
+        grade = gradesObj[yearsLeft]
+    }
+    else if (yearsLeft < 1) {
+        grade = 'Graduated'
+    }
+    else {
+        grade = 'Unknown'
+    }
+    return grade
+}
+  
 export default updateUserData
