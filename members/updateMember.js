@@ -37,10 +37,9 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
     
             let eUserName = uName.split(' ')
             let lName = eUserName[eUserName.length-1]
-            console.log(lName)
             if (lName.includes('-')) {
-            lName = lName.split('-')
-            lName = lName.join('')
+                lName = lName.split('-')
+                lName = lName.join('')
             }
             eUserName = `${eUserName[0].split('')[0]}${lName}`.toLowerCase()
             // if (!!userData.email) {
@@ -54,16 +53,21 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             userData.email.address = `${eUserName}${userData.email.dtech.year}` + '@dtechhs.org'
         }
     
-        if (!userData.location) userData.location = {}
-        if (userData.location.city && userData.location.state) userData.location.combined = `${userData.location.city}, ${userData.location.state}`
-        else if (userData.location.city) userData.location.combined = userData.location.city
-        else if (userData.location.state) userData.location.combined = userData.location.state
-    
-        userData.location.mapLink = userData.location.combined
-        while (userData.location.mapLink.includes(' ')) {
-            userData.location.mapLink = userData.location.mapLink.split(' ').join('+')
+        if (userData.location) {
+            if (userData.name === 'Juhi Bantwal') {
+                console.log('hi')
+            }
+            if (Array.isArray(userData) || typeof userData) userData.location = {}
+            if (userData.location.city && userData.location.state) userData.location.combined = `${userData.location.city}, ${userData.location.state}`
+            else if (userData.location.city) userData.location.combined = userData.location.city
+            else if (userData.location.state) userData.location.combined = userData.location.state
+        
+            userData.location.mapLink = userData.location.combined
+            while (userData.location.mapLink.includes(' ')) {
+                userData.location.mapLink = userData.location.mapLink.split(' ').join('+')
+            }
+            userData.location.mapLink = `https://www.google.com/maps/place/${userData.location.mapLink}`
         }
-        userData.location.mapLink = `https://www.google.com/maps/place/${userData.location.mapLink}`
     
         if (userData.socials) {
             userData.socials.forEach(function(social, i) {
