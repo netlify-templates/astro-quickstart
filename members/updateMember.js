@@ -8,7 +8,7 @@ function updateUserData(userData) {
         }
         if ((grade === 'Graduated' && userData.status !== 'activeGrad') || userData.status === 'inactive') {
             userData = updateLeftData(userData)
-            return
+            return userData
         }
         
         if (!!userData.role === false) userData.role = {}
