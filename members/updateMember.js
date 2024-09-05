@@ -42,6 +42,7 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             }
             else eUserName = [eUserName]
             let lName = eUserName[eUserName.length-1]
+            console.log(lName)
             if (lName.includes('-')) {
                 lName = lName.split('-')
                 lName = lName.join('')
@@ -65,6 +66,7 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             else if (userData.location.state) userData.location.combined = userData.location.state
         
             userData.location.mapLink = userData.location.combined
+            console.log(userData.location.mapLink)
             while (userData.location.mapLink.includes(' ')) {
                 userData.location.mapLink = userData.location.mapLink.split(' ').join('+')
             }
@@ -121,12 +123,14 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             pName = pName.join('.')
     
             if (pExt.endsWith('pdf') || pExt.endsWith('svg')) {
+                console.log(pExt)
                 if (pExt.includes('.')) pExt = pExt.split('.')
                 else pExt = [pExt]
                 pExt.pop()
                 pExt = `${pExt.join('.')}png`
             }
     
+            console.log(pPath)
             if (!pPath.includes('://')) {
                 path = `/assets/members/${userData.username}/portfolio/previews/${pName}.${pExt}`
             }
@@ -134,23 +138,26 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
                 path = pPath
             }
     
-            var capt = photo['capt']
+            var capt = photo.capt
+            console.log(capt)
             while (capt.includes('<a target="_blank" href="/')) {
                 capt = capt.replace('<a target="_blank" href="/', '<a href="/')
             }
     
-            var desc = photo['desc']
+            var desc = photo.desc
+            console.log(desc)
             while (desc.includes('<a target="_blank" href="/')) {
                 desc = desc.replace('<a target="_blank" href="/', '<a href="/')
             }
     
             if (pPath === 'YouTube') {
-                pPath = `https://www.youtube-nocookie.com/embed/${pImg['vid_id']}?rel=0`
-                path = `https://img.youtube.com/vi/${pImg['vid_id']}/maxresdefault.jpg`
+                pPath = `https://www.youtube-nocookie.com/embed/${pImg.vid_id}?rel=0`
+                path = `https://img.youtube.com/vi/${pImg.vid_id}/maxresdefault.jpg`
             }
             var title = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
             title = title.split('<')
             title.forEach(function(t, i) {
+                console.log(t)
                 if (t.includes('>')) {
                 t = t.split('>')[1]
                 title[i] = t
