@@ -45,6 +45,10 @@ var userData = userDatas.find(data => data.default.username === username)
 
 userData = updateMember(userData, defaultBio, updateLeftMember, getUserGrade)
 
+if (userData.status) {
+  if (userData.status === 'activeGrad') userData.status = 'active'
+}
+
 ---
 <Layout title={userData.name}>
   <main id="content" class="profile">
