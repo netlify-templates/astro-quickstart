@@ -45,6 +45,7 @@ userData = updateMember(userData)
 if (userData.status) {
   if (userData.status === 'activeGrad') userData.status = 'active'
 }
+else userData.status = 'inactive'
 
 ---
 <Layout title={userData.name}>
