@@ -35,8 +35,15 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
         else {
             let uName = userData.name
     
-            let eUserName = uName.split(' ')
+            let eUserName = uName
+            if (eUserName.includes(' ')) {
+                eUserName = eUserName.split(' ')
+            }
+            else eUserName = [eUserName]
             let lName = eUserName[eUserName.length-1]
+            if (userData.name === 'Juhi Bantwal') {
+                console.log(lName)
+            }
             if (lName.includes('-')) {
                 lName = lName.split('-')
                 lName = lName.join('')
@@ -54,9 +61,6 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
         }
     
         if (userData.location) {
-            if (userData.name === 'Juhi Bantwal') {
-                console.log('hi')
-            }
             if (Array.isArray(userData) || typeof userData) userData.location = {}
             if (userData.location.city && userData.location.state) userData.location.combined = `${userData.location.city}, ${userData.location.state}`
             else if (userData.location.city) userData.location.combined = userData.location.city
