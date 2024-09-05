@@ -35,7 +35,6 @@ export function getStaticPaths() {
 
 const { username } = Astro.params;
 if (!username) username = '_admin'
-console.log(username)
 
 import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 
