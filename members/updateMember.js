@@ -6,7 +6,7 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
         if (userData.email) {
             grade = getUserGrade(userData.email.dtech.year)
         }
-        if (grade === 'Graduated' && userData.status !== 'activeGrad') {
+        if ((grade === 'Graduated' && userData.status !== 'activeGrad') || userData.status === 'inactive') {
             userData = updateLeftData(userData)
             return
         }
