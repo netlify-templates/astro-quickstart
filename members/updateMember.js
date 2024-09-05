@@ -120,15 +120,15 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             pName = pName.join('.')
     
             if (pExt.endsWith('pdf') || pExt.endsWith('svg')) {
-                if (userData.name === 'Juhi Bantwal') {
-                    console.log(pExt)
-                }
                 if (pExt.includes('.')) pExt = pExt.split('.')
                 else pExt = [pExt]
                 pExt.pop()
                 pExt = `${pExt.join('.')}png`
             }
     
+            if (userData.name === 'Juhi Bantwal') {
+                console.log(pPath)
+            }
             if (!pPath.includes('://')) {
                 path = `/assets/members/${userData.username}/portfolio/previews/${pName}.${pExt}`
             }
