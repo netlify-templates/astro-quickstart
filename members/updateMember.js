@@ -41,9 +41,6 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             }
             else eUserName = [eUserName]
             let lName = eUserName[eUserName.length-1]
-            if (userData.name === 'Juhi Bantwal') {
-                console.log(lName)
-            }
             if (lName.includes('-')) {
                 lName = lName.split('-')
                 lName = lName.join('')
@@ -123,6 +120,9 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             pName = pName.join('.')
     
             if (pExt.endsWith('pdf') || pExt.endsWith('svg')) {
+                if (userData.name === 'Juhi Bantwal') {
+                    console.log(pExt)
+                }
                 if (pExt.includes('.')) pExt = pExt.split('.')
                 else pExt = [pExt]
                 pExt.pop()
