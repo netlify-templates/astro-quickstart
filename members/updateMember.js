@@ -62,13 +62,15 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             if (userData.location.city && userData.location.state) userData.location.combined = `${userData.location.city}, ${userData.location.state}`
             else if (userData.location.city) userData.location.combined = userData.location.city
             else if (userData.location.state) userData.location.combined = userData.location.state
-        
-            userData.location.mapLink = userData.location.combined
-            console.log(69, userData.location.mapLink)
-            while (userData.location.mapLink.includes(' ')) {
-                userData.location.mapLink = userData.location.mapLink.split(' ').join('+')
+
+            if (userData.location.city || userData.location.state) {
+                userData.location.mapLink = userData.location.combined
+                console.log(69, userData.location.mapLink)
+                while (userData.location.mapLink.includes(' ')) {
+                    userData.location.mapLink = userData.location.mapLink.split(' ').join('+')
+                }
+                userData.location.mapLink = `https://www.google.com/maps/place/${userData.location.mapLink}`
             }
-            userData.location.mapLink = `https://www.google.com/maps/place/${userData.location.mapLink}`
         }
     
         if (userData.socials) {
