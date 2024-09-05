@@ -36,13 +36,11 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             let uName = userData.name
     
             let eUserName = uName
-            console.log(39, eUserName)
             if (eUserName.includes(' ')) {
                 eUserName = eUserName.split(' ')
             }
             else eUserName = [eUserName]
             let lName = eUserName[eUserName.length-1]
-            console.log(45, lName)
             if (lName.includes('-')) {
                 lName = lName.split('-')
                 lName = lName.join('')
@@ -60,7 +58,7 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
         }
     
         if (userData.location) {
-            if (Array.isArray(userData) || typeof userData) userData.location = {}
+            if (!Array.isArray(userData) && typeof userData !== 'object') userData.location = {}
             if (userData.location.city && userData.location.state) userData.location.combined = `${userData.location.city}, ${userData.location.state}`
             else if (userData.location.city) userData.location.combined = userData.location.city
             else if (userData.location.state) userData.location.combined = userData.location.state
@@ -123,14 +121,12 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             pName = pName.join('.')
     
             if (pExt.endsWith('pdf') || pExt.endsWith('svg')) {
-                console.log(126, pExt)
                 if (pExt.includes('.')) pExt = pExt.split('.')
                 else pExt = [pExt]
                 pExt.pop()
                 pExt = `${pExt.join('.')}png`
             }
     
-            console.log(133, pPath)
             if (!pPath.includes('://')) {
                 path = `/assets/members/${userData.username}/portfolio/previews/${pName}.${pExt}`
             }
@@ -139,13 +135,11 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             }
     
             var capt = photo.capt
-            console.log(142, capt)
             while (capt.includes('<a target="_blank" href="/')) {
                 capt = capt.replace('<a target="_blank" href="/', '<a href="/')
             }
     
             var desc = photo.desc
-            console.log(148, desc)
             while (desc.includes('<a target="_blank" href="/')) {
                 desc = desc.replace('<a target="_blank" href="/', '<a href="/')
             }
@@ -157,7 +151,6 @@ function updateUserData(userData, defaultBio, updateLeftData, getUserGrade) {
             var title = `${capt}. Click to enlarge!`.replace('..', '.').replace('!.', '!')
             title = title.split('<')
             title.forEach(function(t, i) {
-                console.log(160, t)
                 if (t.includes('>')) {
                 t = t.split('>')[1]
                 title[i] = t
