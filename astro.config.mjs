@@ -23,7 +23,6 @@ files.forEach((file, i) => {
                         info = JSON.parse(info)
                         var status = info.status
                         if (status === 'active' || status === 'gradActive') {
-                            console.log(info.username)
                             memberUrls.push(`${siteUrl}/members/${file}`);
                         }
                     }
