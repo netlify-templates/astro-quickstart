@@ -230,7 +230,7 @@ function getUserGrade(gradYear) {
     let gradesObj = [
         'Senior', 
         'Junior', 
-        'Sophmore', 
+        'Sophomore', 
         'Freshman'
     ]
     let grade = ''
