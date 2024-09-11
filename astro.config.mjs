@@ -36,7 +36,7 @@ export default defineConfig({
     site: siteUrl,
     trailingSlash: "ignore",
     integrations: [sitemap({
-        customPages: [].concat(memberUrls),
+        // customPages: [].concat(memberUrls),
         priority: 0.5,
         changefreq: 'monthly'
     })],
