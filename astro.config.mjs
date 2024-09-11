@@ -9,12 +9,23 @@ const directoryPath = path.join('./', 'members');
 const files = fs.readdirSync(directoryPath);
 
 const memberUrls = []
-files.forEach((file) => {
+files.forEach(file => {
     var isDir = fs.lstatSync(`${directoryPath}/${file}`).isDirectory()
     if (isDir) {
-        const fileName = file.split('.')[0];
-        if (!fileName.startsWith('_')) {
-            memberUrls.push(`${siteUrl}/members/${fileName}`);
+        if (!file.startsWith('_')) {
+            var info = `${directoryPath}/${file}/info.json`
+            if (fs.existsSync(info)) {
+                info = fs.readFileSync(info)
+                if (info) {
+                    if (info.startsWith('var data = ')) info = info.slice('var data = '.length)
+                    if (info.endsWith(`\n\nexport default data`)) info = info.slice(0, -1*'\n\nexport default data'.length)
+                    if  (info.startsWith('{') && info.endsWith('}')) {
+                        info = JSON.parse(info)
+                        var status = info.status
+                        memberUrls.push(`${siteUrl}/members/${file}`);
+                    }
+                }
+            }
         }
     }
 });
