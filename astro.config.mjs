@@ -13,7 +13,7 @@ files.forEach(file => {
     var isDir = fs.lstatSync(`${directoryPath}/${file}`).isDirectory()
     if (isDir) {
         if (!file.startsWith('_')) {
-            var info = `${directoryPath}/${file}/info.json`
+            var info = `${directoryPath}/${file}/info.js`
             if (fs.existsSync(info)) {
                 info = fs.readFileSync(info)
                 if (info) {
