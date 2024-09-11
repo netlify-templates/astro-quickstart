@@ -16,6 +16,7 @@ files.forEach(file => {
             var info = `${directoryPath}/${file}/info.js`
             if (fs.existsSync(info)) {
                 info = fs.readFileSync(info)
+                console.log(info)
                 if (info) {
                     if (info.startsWith('var data = ')) info = info.slice('var data = '.length)
                     if (info.endsWith(`\n\nexport default data`)) info = info.slice(0, -1*'\n\nexport default data'.length)
