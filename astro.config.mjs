@@ -13,7 +13,9 @@ files.forEach((file) => {
     var isDir = fs.lstatSync(`${directoryPath}/${file}`).isDirectory()
     if (isDir) {
         const fileName = file.split('.')[0];
-        memberUrls.push(`${siteUrl}/members/${fileName}`);
+        if (!fileName.startsWith('_')) {
+            memberUrls.push(`${siteUrl}/members/${fileName}`);
+        }
     }
 });
 
