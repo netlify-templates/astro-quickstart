@@ -21,9 +21,11 @@ files.forEach((file, i) => {
                     if (info.endsWith(`\n\nexport default data`)) info = info.slice(0, -1*'\n\nexport default data'.length)
                     if  (info.startsWith('{') && info.endsWith('}')) {
                         info = JSON.parse(info)
-                        if (i <= 1) console.log(info)
                         var status = info.status
-                        memberUrls.push(`${siteUrl}/members/${file}`);
+                        if (status === 'active' || status === 'gradActive') {
+                            console.log(info.username)
+                            memberUrls.push(`${siteUrl}/members/${file}`);
+                        }
                     }
                 }
             }
