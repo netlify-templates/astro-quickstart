@@ -15,15 +15,15 @@ var data = {
   },
   "pfp": {
     "g4g": {
-    "sizes": [
-      {
-      "ext": "png",
-      "name": "full"
-      }
-    ]
+      "sizes": [
+        {
+          "ext": "png",
+          "name": "full"
+        }
+      ]
     },
     "google": {
-    "url": "AEdFTp7icI4wRK0FPsc17CnhxoQslGk8Pj8cUQo8a6S80w"
+      "url": "AEdFTp7icI4wRK0FPsc17CnhxoQslGk8Pj8cUQo8a6S80w"
     }
   },
   "location": {
@@ -37,48 +37,48 @@ var data = {
   },
   "socials": [
     {
-    "url": "https://adarshrkumar.dev", 
-    "name": "Website"
+      "url": "https://adarshrkumar.dev", 
+      "name": "Website"
     },
     {
-    "url": "https://youtube.com/adarshrkumar", 
-    "name": "YouTube"
+      "url": "https://youtube.com/adarshrkumar", 
+      "name": "YouTube"
     },
     {
-    "url": "https://instagram.com/adarshrkumar", 
-    "name": "Instagram"
+      "url": "https://instagram.com/adarshrkumar", 
+      "name": "Instagram"
     },
     {
-    "url": "https://threads.net/@adarshrkumar", 
-    "name": "Threads"
+      "url": "https://threads.net/@adarshrkumar", 
+      "name": "Threads"
     },
     {
-    "url": "https://X.com/@adarshrkumar", 
-    "name": "X"
+      "url": "https://X.com/@adarshrkumar", 
+      "name": "X"
     },
     {
-    "url": "https://discord.com/users/768273827549282305", 
-    "name": "Discord"
+      "url": "https://discord.com/users/768273827549282305", 
+      "name": "Discord"
     },
     {
-    "url": "https://instagram.com/akumarrws", 
-    "name": "Instagram"
+      "url": "https://instagram.com/akumarrws", 
+      "name": "Instagram"
     },
     {
-    "url": "https://threads.net/@akumarrws", 
-    "name": "Threads"
+      "url": "https://threads.net/@akumarrws", 
+      "name": "Threads"
     },
     {
-    "url": "https://instagram.com/akumar.photos", 
-    "name": "Instagram"
+      "url": "https://instagram.com/akumar.photos", 
+      "name": "Instagram"
     },
     {
-    "url": "https://X.com/akumarrws", 
-    "name": "X"
+      "url": "https://X.com/akumarrws", 
+      "name": "X"
     },
     {
-    "url": "https://discord.com/users/1097241365198409728", 
-    "name": "Discord"
+      "url": "https://discord.com/users/1097241365198409728", 
+      "name": "Discord"
     }
   ]
 }
