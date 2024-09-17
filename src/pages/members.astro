@@ -1,27 +1,30 @@
 ---
-var members = await Astro.glob('../../members/*/info.js')
+var allMembers = await Astro.glob('../../members/*/info.js')
+var members = []
 
-members.forEach((member, i) => {
-    member = member.default
-    var role = member.role
-
-    if (!!role && role !== 'Member') {
-        members.push(member)
-        members.splice(i, 1)
-    }
+var roleMembers = allMembers.filter(m => {
+    m = m.default
+    var r = m.role
+    return !!r && r !== 'Member'
 })
 
-members.forEach((member, i) => {
-    member = member.default
-    var role = member.role
-
-    if (!role || role === 'Member') {
-        if (member.username !== 'default') {
-            members.push(member)
-        }
-        members.splice(i, 1)
-    }
+var noRoleMembers = allMembers.filter(m => {
+    m = m.default
+    var r = m.role
+    return !r || r === 'Member'
 })
+
+if (roleMembers) {
+    roleMembers.forEach(m => {
+        members.push(m)
+    })
+}
+
+if (allMembers) {
+    allMembers.forEach(m => {
+        members.push(m)
+    })
+}
 
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
