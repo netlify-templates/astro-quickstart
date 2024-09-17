@@ -1,6 +1,26 @@
 ---
 var members = await Astro.glob('../../members/*/info.js')
 
+members.forEach((member, i) => {
+    member = member.default
+    var role = member.role
+
+    if (!!role && role !== 'Member') {
+        members.push(member)
+        members.splice(i, 1)
+    }
+})
+
+members.forEach((member, i) => {
+    member = member.default
+    var role = member.role
+
+    if (!role || role === 'Member') {
+        members.push(member)
+        members.splice(i, 1)
+    }
+})
+
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
 
