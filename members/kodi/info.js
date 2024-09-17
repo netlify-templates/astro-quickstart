@@ -5,7 +5,7 @@ var data = {
     "role": false,
     "pronunciation": false,
     "email": {
-        "g4g": true,
+        "g4g": false,
         "dtech": {
             "year": '25'
         }
