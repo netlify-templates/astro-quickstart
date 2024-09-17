@@ -1,4 +1,11 @@
 ---
+var defaultMembers = [
+    {
+        name: 'Kodi Chin', 
+        year: 25, 
+    }
+]
+
 var allMembers = await Astro.glob('../../members/*/info.js')
 var members = []
 
@@ -19,6 +26,48 @@ var noRoleMembers = allMembers.filter(m => {
     }
     else return false
 })
+
+defaultMembers.forEach(m => {
+    var name = m.name
+    var year = m.year
+
+    var username = name.toLowerCase()
+
+    if (username.includes(' ')) {
+        username = username.split(' ')
+
+        username = username[0]
+        // var firstPart = username[0]
+        // var firstLett = firstPart.slice(0, 1)
+
+        // username = username.slice(1)
+
+        // if (Array.isArray(username)) username = username.join(' ')
+
+        // if (username.includes(' ')) {
+        //     username = username.split(' ')
+        //     username = username.join('')
+        // }
+        // if (username.includes('-')) {
+        //     username = username.split('-')
+        //     username = username.join('')
+        // }
+
+        // username = `${firstLett}${username}`
+    }
+
+    var mObj = {
+        default: {
+            status: 'active'
+            username: `${username}?year=${year}`, 
+            name: name, 
+        }
+    }
+
+    noRoleMembers.push(mObj)
+})
+
+noRoleMembers.sort()
 
 if (roleMembers) {
     roleMembers.forEach(m => {
