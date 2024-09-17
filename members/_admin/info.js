@@ -27,8 +27,8 @@ var data = {
   },
   "socials": [
     {
-    "url": "https://instagram.com/4goodgraphics", 
-    "name": "Instagram"
+      "url": "https://instagram.com/4goodgraphics", 
+      "name": "Instagram"
     }
   ]
 }
