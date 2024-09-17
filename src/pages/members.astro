@@ -4,14 +4,20 @@ var members = []
 
 var roleMembers = allMembers.filter(m => {
     m = m.default
-    var r = m.role
-    return !!r && r !== 'Member'
+    if (m) {
+        var r = m.role
+        return !!r && r !== 'Member'
+    }
+    else return false
 })
 
 var noRoleMembers = allMembers.filter(m => {
     m = m.default
-    var r = m.role
-    return !r || r === 'Member'
+    if (m) {
+        var r = m.role
+        return !r || r === 'Member'
+    }
+    else return false
 })
 
 if (roleMembers) {
