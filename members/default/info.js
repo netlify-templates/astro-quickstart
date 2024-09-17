@@ -13,7 +13,14 @@ var data = {
         }
     },
     "pfp": {
-        "g4g": true,
+        "g4g": {
+            "sizes": [
+                {
+                    "ext": "png",
+                    "name": "full"
+                }
+            ]
+        },
         "google": {
             "url": "ACg8ocLX8fCYoQQDPqPtNCx8lhtB0LjhJ7t5WD_y4BFXYGPY-8QRgCbv"
         }
