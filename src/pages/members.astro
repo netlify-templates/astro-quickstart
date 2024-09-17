@@ -16,7 +16,9 @@ members.forEach((member, i) => {
     var role = member.role
 
     if (!role || role === 'Member') {
-        members.push(member)
+        if (member.username !== 'default') {
+            members.push(member)
+        }
         members.splice(i, 1)
     }
 })
