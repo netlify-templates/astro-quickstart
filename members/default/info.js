@@ -2,9 +2,7 @@ var data = {
     "status": "active", 
     "username": "default", 
     "name": "{member_name}",
-    "role": {
-        "name": "Member"
-    },
+    "role": false,
     "pronunciation": false,
     "email": {
         "g4g": true,
