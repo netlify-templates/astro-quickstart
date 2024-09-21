@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /assets/arrows/*
-Disallow: /assets/fonts/*
-Disallow: /assets/icons/*
-Disallow: /members?m=*
-
-Sitemap: https://graphics-for-good.com/sitemap-index.xml
