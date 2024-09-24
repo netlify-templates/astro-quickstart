@@ -4,17 +4,15 @@ var members = []
 
 allMembers.map(m => {
     var member = m.default
-    var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
-    if (role) {
-        members.push(member)
-    }
+    var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
+
+    if (role !== 'Member') member.push(m)
 })
 allMembers.map(m => {
     var member = m.default
-    var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
-    if (!role) {
-        members.push(member)
-    }
+    var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
+
+    if (role === 'Member') member.push(m)
 })
 
 
