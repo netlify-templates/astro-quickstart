@@ -13,6 +13,8 @@ if (orderedMembers.length < 0) {
     }
 }
 
+console.log(members)
+
 allMembers.map(m => {
     var member = m.default
     var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
