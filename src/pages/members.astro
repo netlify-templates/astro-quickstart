@@ -6,13 +6,13 @@ allMembers.map(m => {
     var member = m.default
     var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
 
-    if (role !== 'Member') member.push(m)
+    if (role !== 'Member') members.push(m)
 })
 allMembers.map(m => {
     var member = m.default
     var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
 
-    if (role === 'Member') member.push(m)
+    if (role === 'Member') members.push(m)
 })
 
 
