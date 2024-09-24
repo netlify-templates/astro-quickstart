@@ -1,5 +1,20 @@
 ---
-var members = await Astro.glob('../../members/*/info.js')
+var allMembers = await Astro.glob('../../members/*/info.js')
+var members = []
+
+allMembers.map(member => {
+    var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
+    if (role) {
+        members.push(member)
+    }
+})
+allMembers.map(member => {
+    var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
+    if (!role) {
+        members.push(member)
+    }
+})
+
 
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/hero.astro'
