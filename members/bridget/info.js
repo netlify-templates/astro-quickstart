@@ -22,7 +22,7 @@ var data = {
   "bio": {
     "role": "avid designer and member", 
     "w1": "an", 
-    "end": "Most of the time, you'll catch her doing schoolwork or at practice for cross country, but occasionally, you'll see her indulge herself in the world of digital art or baking an ungodly amount of sweets."
+    "end": "Most of the time, you'll catch her doing schoolwork or at practice for cross country, but occasionally, you'll see her indulge in digital art or baking an ungodly amount of sweets."
   }, 
   "socials": [],
   "portfolio": []
