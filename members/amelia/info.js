@@ -22,7 +22,7 @@ var data = {
   "bio": {
     "role": "active designer", 
     "w1": "an", 
-    "end": "In her free time, you’ll often see her playing video games or struggling with art. "
+    "end": "In her free time, you'll often see her playing video games or struggling with art. "
   }, 
   "socials": [],
   "portfolio": []
