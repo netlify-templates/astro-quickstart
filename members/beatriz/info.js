@@ -19,7 +19,7 @@ var data = {
     "state": ""
   }, 
   "bio": {
-    "end": "She is an avid reader of anything fantasy and hopes to create her own fantasy world one day. In addition, she loves to hone her art skills and hike in the wilderness."
+    "end": "She is an avid reader of anything fantasy and hopes to create her own fantasy world someday. In addition, she loves to hone her art skills and hike in the wilderness."
   }, 
   "socials": [],
   "portfolio": []
