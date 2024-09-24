@@ -16,14 +16,14 @@ if (orderedMembers.length < 0) {
 allMembers.map(m => {
     var member = m.default
     var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
-    var hasOrder = !!member.order
+    var hasOrder = false//!!member.order
 
     if (role !== 'Member' && !hasOrder) members.push(m)
 })
 allMembers.map(m => {
     var member = m.default
     var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
-    var hasOrder = !!member.order
+    var hasOrder = false//!!member.order
 
     if (role === 'Member' && !hasOrder) members.push(m)
 })
