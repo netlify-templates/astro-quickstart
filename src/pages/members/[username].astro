@@ -44,7 +44,12 @@ import MemberPageTemplate from '../../components/memberPageTemplate.astro'
 var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 
-var userData = userDatas.find(data => !!data.default ? (data.default.username === username) : false)
+function cLog(d) {
+  console.log(d)
+  return false
+}
+
+var userData = userDatas.find(data => !!data.default ? (data.default.username === username) : cLog(data))
 
 userData = updateMember(userData)
 
