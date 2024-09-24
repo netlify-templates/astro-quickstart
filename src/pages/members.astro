@@ -3,19 +3,29 @@ var allMembers = await Astro.glob('../../members/*/info.js')
 var members = []
 
 var orderedMembers = allMembers.filter(m => !!m.default.order)
-console.log(orderedMembers)
+
+if (orderedMembers.length < 0) {
+    for (let i = 1; i <= orderedMembers.length; i++) {
+        var orderedMember = allMembers.filter(m => m.default.order === i)
+        orderedMember.forEach(m => {
+            members.push(m)
+        })
+    }
+}
 
 allMembers.map(m => {
     var member = m.default
     var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
+    var hasOrder = !!member.order
 
-    if (role !== 'Member') members.push(m)
+    if (role !== 'Member' && !hasOrder) members.push(m)
 })
 allMembers.map(m => {
     var member = m.default
     var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
+    var hasOrder = !!member.order
 
-    if (role === 'Member') members.push(m)
+    if (role === 'Member' && !hasOrder) members.push(m)
 })
 
 
