@@ -77,6 +77,7 @@ function updateUserData(userData) {
             userData.socials[i].icon = `/assets/icons/${social.name.toLowerCase()}.svg`
             })
         }
+        else userData.socials = []
     
         if (!!userData.bio === false) {
             userData.bio = {}
@@ -164,6 +165,7 @@ function updateUserData(userData) {
             userData.portfolio[i].onclick = onclickVal
             })
         }
+        else userData.portfolio = []
     }
     return userData
 }
