@@ -2,13 +2,15 @@
 var allMembers = await Astro.glob('../../members/*/info.js')
 var members = []
 
-allMembers.map(member => {
+allMembers.map(m => {
+    var member = m.default
     var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
     if (role) {
         members.push(member)
     }
 })
-allMembers.map(member => {
+allMembers.map(m => {
+    var member = m.default
     var role = !!member.role ? member.role.name === 'Member' ? '' : member.role.name : ''
     if (!role) {
         members.push(member)
