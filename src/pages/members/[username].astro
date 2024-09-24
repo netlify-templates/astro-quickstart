@@ -22,9 +22,11 @@ export function getStaticPaths() {
         {params: {username: 'luce'}}, 
         {params: {username: 'mia'}}, 
         {params: {username: 'miriam'}}, 
+        {params: {username: 'maya'}}, 
         {params: {username: 'robin'}}, 
         {params: {username: 'samantha'}}, 
         {params: {username: 'sayuri'}}, 
+        {params: {username: 'shikha'}}, 
         {params: {username: 'shikha'}}, 
 
         {params: {username: 'default'}},
@@ -62,7 +64,7 @@ else userData.status = 'inactive'
           }
           <h1 class="name" id="name">{userData.name}</h1>
           {
-            (userData.status === 'active' && userData.email) ? <a class="email" id="email" href={`mailto:${userData.email.address}`}></a> : ''
+            (userData.status === 'active' && userData.email) ? <a class="email" id="email" href={`mailto:${userData.email.address}`}>{userData.email.address}</a> : ''
           }
           {
             (userData.status === 'active' && userData.location) ? 
