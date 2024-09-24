@@ -75,21 +75,21 @@ else userData.status = 'inactive'
             : ''
           }
           {
-            (userData.status === 'active' && userData.socials) ? 
+            (userData.status === 'active' && userData.socials.length < 0) ? 
               <ul class="socials">
-                {
-                  userData.socials.map((social) => (
-                    <li>
-                      <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
-                    </li>
-                  ))
-                }
+                  {
+                    userData.socials.map((social) => (
+                      <li>
+                        <a href={social.url} target="_blank" style={`background-image: url('${social.icon}')`}></a>
+                      </li>
+                    ))
+                  }
               </ul>
             : ''
           }
           <p class="bio" id="bio" set:html={userData.bio.result}></p>
           {
-            (userData.status === 'active' && userData.portfolio) ? 
+            (userData.status === 'active' && userData.portfolio.length < 0) ? 
                 <h2>Portfolio</h2>
                 <ul class="photos" style="height: auto; gap: 25px;">
                 {
