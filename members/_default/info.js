@@ -1,5 +1,5 @@
 var data = {
-    "status": "active", 
+    "status": "inactive", 
     "username": "default", 
     "name": "{member_name}",
     "role": false,
