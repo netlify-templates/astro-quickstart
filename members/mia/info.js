@@ -23,7 +23,7 @@ var data = {
   "bio": {
     "role": "active member", 
     "w1": "an", 
-    "end": "She likes art and fashion. She also runs a fashion design club at her school."
+    "end": "She likes art and fashion and runs a fashion design club at her school."
   }, 
   "socials": [],
   "portfolio": []
