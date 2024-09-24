@@ -1,7 +1,7 @@
 var data = {
     "status": "active", 
-    "username": "kodi", 
-    "name": "Kodi Chin",
+    "username": "maya", 
+    "name": "Maya Koren",
     "role": false,
     "pronunciation": false,
     "email": {
