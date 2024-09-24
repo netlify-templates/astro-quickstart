@@ -1,7 +1,7 @@
 var data = {
     "status": "active", 
-    "username": "arianna", 
-    "name": "Arianna Minakawa",
+    "username": "tyler", 
+    "name": "Tyler Decourcey",
     "role": false,
     "pronunciation": false,
     "email": {
