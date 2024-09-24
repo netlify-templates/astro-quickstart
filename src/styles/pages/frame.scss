@@ -7,10 +7,12 @@
 }
 
 .frame {
+    box-sizing: border-box;
+
     max-height: 100%;
     width: auto;
     aspect-ratio: 16 / 9;
 
-    border: solid 1px white;
-    border-radius: 5rem;
+    border: solid 2px white;
+    border-radius: 2em;
 }
