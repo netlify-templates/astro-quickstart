@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/hero.astro'
+import '../styles/pages/error.scss'
+
+var error = {
+  code: 404, 
+  name: 'Not Found', 
+  desc: `
+    <h2>Unfortunatly our website does not have the page that you were looking for.</h2><h3>Either we never created this page to begin with or we have deleted it.</h3><h3>Contact <a href="/members/adarsh">The Webmaster</a> to learn more!</h2>
+  `, 
+}
+
+Astro.response.status = error.code;
+Astro.response.statusText = error.name;
+---
+<Layout title="404">
+  <main id="content">
+    <Hero classItems="error">
+      <section>
+        <div>
+          <h1>{error.code} {error.name}</h1>
+          <div set:html={error.desc} />
+        </div>
+      </section>
+    </Hero>
+  </main>
+</Layout>

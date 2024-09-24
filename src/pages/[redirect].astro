@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro'
+import '../styles/pages/frame.scss'
+
+var def = {
+    slug: '/not-correct', 
+    dest: '/', 
+}
+
+var redirects = [
+    {
+        slug: '/sign-up', 
+        dest: 'https://go.graphics-for-good.com/Sign-Up', 
+        mode: 'frame', 
+    }, 
+    {
+        slug: '/status', 
+        dest: 'https://go.graphics-for-good.com/Status', 
+    }
+]
+
+export function getStaticPaths() {
+    return [
+        {params: {redirect: 'status'}}, 
+        {params: {redirect: 'sign-up'}}, 
+    ];
+}
+
+var { redirect } = Astro.params;
+if (!redirect) redirect = 'not-correct'
+redirect = redirects.filter(r => r.slug.endsWith(redirect))
+
+if (redirect.length > 0) redirect = redirect[0]
+else redirect = def
+
+if (!redirect.mode) redirect.mode = 'page'
+if (redirect.mode !== 'frame') return Astro.redirect(redirect.dest)
+
+function getTitle(link) {
+    if (link.startsWith('/')) link = link.slice(1)
+    
+    var nameParts = []
+    if (link.includes('-')) nameParts = link.split('-')
+    else nameParts = [link]
+
+    nameParts.forEach((p, i) => {
+        nameParts[i] = `${p.slice(0, 1).toUpperCase()}${p.slice(1)}`
+    })
+
+    return nameParts.join(' ')
+}
+
+var title = getTitle(redirect.slug)
+
+---
+<Layout title={title}>
+    <main id="content" class="frame-page">
+        <iframe frameborder="0" src={redirect.dest} class="frame">
+            Please click <a href={redirect.dest}>Here</a> to view the page!
+            <script is:inline dest={redirect.dest}>
+                var dest = document.currentScript.getAttribute('dest')
+                if (!dest) dest = '/'
+                location.replace(dest)
+            </script>
+        </frame>
+    </main>
+</Layout>

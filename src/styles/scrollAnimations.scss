@@ -1,0 +1,87 @@
+@import './variables.scss';
+
+@mixin animations {
+    animation-timeline: view();
+}
+  
+@mixin scaleAnimations($axis) {
+    $animationProps: linear both;
+    animation-range: entry var(--fade-animation-value) cover var(--fade-animation-value);
+    
+    @if $axis == both {
+        animation: scaleBoth #{$animationProps};
+    }
+    @else {
+        animation: scaleOne #{$animationProps};
+    }
+    
+
+    @keyframes scaleBoth {
+        from {
+            scale: 0;
+        }
+        to {
+            scale: 1;
+        }
+    }
+    @keyframes scaleOne {
+        from {
+            scale: #{$axis} 0;
+        }
+        to {
+            scale: #{$axis} 1;
+        }
+    }
+}
+
+@mixin splitAnimations {
+    animation: split linear both;
+    animation-range: cover calc(var(--split-animation-value)/1.5) contain calc(var(--split-animation-value)*2);
+}
+  
+
+main:not(.profile, .portal, .frame-page) > * {
+    &:not(.hero, :has( > section)) {
+        @include scaleAnimations(both);
+        @include animations;
+    }
+    &:has( > section) {
+        &:not(.split) {
+            --amt: calc((var(--dWidth)/2) - 50%);
+        }
+        overflow-x: clip;
+        > :is(section:has( ~ section), section ~ section) {
+            --dir: 0;
+            @include splitAnimations;
+            @include animations;
+            &:first-of-type {
+                --dir: -1;
+            }
+            &:last-of-type {
+                --dir:  1;
+            }
+        }
+    }
+    // .vHr {
+    //     transform-origin: top;
+    //     @include scaleAnimations(y);
+    //     @include animations;
+    // }
+    // .hHr {
+    //     @include scaleAnimations(x);
+    //     @include animations;
+    // }
+}
+
+.vHr, .hHr {
+    @include animations;
+}
+
+@keyframes split {
+    from {
+        translate: calc(var(--dir)*((var(--amt, 100%)) + 50px)) 0;//-100%;
+    }
+    to {
+        translate: 0 0;
+    }
+}

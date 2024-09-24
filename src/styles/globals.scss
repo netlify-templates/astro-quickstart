@@ -1,0 +1,416 @@
+@import './variables.scss';
+
+// Import Fonts
+@import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
+@import url('https://fonts.cdnfonts.com/css/brittany-signature');
+@import url('https://fonts.cdnfonts.com/css/buffalo');
+
+@font-face {
+  font-family: 'bakeriebold';
+  font-style: normal;
+  font-weight: 400;
+  src: local('bakeriebold'), url('/assets/fonts/bakeriebold/bakeriesmooth-bold.otf') format('otf');
+}
+
+:root {
+  background-color: var(--orig-bg-color);
+  color: white;
+
+  font-family: var(--font, 'Dekko', sans-serif);
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: var(--scroll-bar-width);
+  height: 100%;
+
+  // border-radius: 25px;
+
+  transition: all 500ms ease-in-out;
+}
+ 
+// Track
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+// Handle
+::-webkit-scrollbar-thumb {
+  background: #999; 
+
+  border-radius: 25px;
+
+  transition: background-color 500ms ease-in;
+}
+
+// Handle on hover
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+  transition: background-color 500ms ease-out;
+}
+
+html {
+  min-width: calc(100dvw - var(--scroll-bar-width));
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+.fullHeight:not(body > *.fullHeight, .hero.fullHeight) {
+  height: 100% !important;
+}
+body.fullHeight {
+  display: flex;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;//10;
+  width: 100%;
+  min-height: 100%;
+  // display: flex;
+  // flex-direction: column;
+}
+
+[bBorder] {
+  border-bottom: solid 2px var(--b-color, white);
+}
+
+[displayFlex] {
+  display: flex;
+  flex-direction: var(--f-direction);
+  gap: var(--gap)
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+.vHr {
+  background-color: white;
+
+  width: 2px;
+  height: var(--height);
+  border-radius: 25px;
+}
+
+.hHr {
+  background-color: var(--b-color, white);
+
+  display: block;
+  margin: var(--marg, 0);
+  width: var(--width, 100%);
+  height: 2px;
+  border-radius: 25px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  --font: 'Dekko', sans-serif;
+  line-height: 100%;
+}
+
+.gradient {
+  // For browsers that do not support gradients
+  background-color: transparent;
+
+  height: 10px;
+  width: 100%;
+  content: '';
+  --bg: linear-gradient(var(--grad-start, var(--orig-bg-color)), var(--grad-end, #6c78e5));
+}
+
+button, [type="submit"], [type="button"] {
+  margin: inherit;
+  padding: inherit;
+  border: inherit;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.btn, button, [type="submit"], [type="button"] {
+  // min-height: 30px;
+  // max-height: 50px;
+
+  text-decoration: none;
+  
+  border: 1px solid var(--border-color);
+  border-radius: 99rem;
+
+  padding: 0.75rem 2rem;
+  box-shadow: 0px 3px 29px 0px rgba(0, 0, 0, 0.06);
+
+  &[transition] {
+    transition: 0.25s ease-in-out;
+  }
+
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  &:not(.primary) {
+    background-color: white;
+    --border-color: black;
+    color: black;
+
+    &:is(:hover, :focus-visible) {
+      background-color: black;
+      --border-color: white;
+      color: white;
+    }
+  }
+  &.primary {
+    background-color: black;
+    --border-color: white;
+    color: white;
+
+    &:is(:hover, :focus-visible) {
+      background-color: white;
+      --border-color: black;  
+      color: black;
+    }
+  }
+}
+
+.missiontext {
+background-color: white;
+  margin: 25px;
+  width: -moz-fit-content;
+  width: fit-content;
+
+  & > .text  {
+    text-align: justify;
+    max-width: 500px;
+  }
+
+  &:not(section#mission section &) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 50px;
+    min-width: 500px;
+    width: calc(500px - 150px);
+    text-align: center;
+  }
+}
+
+.textParent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.text {
+  margin: 0;
+}
+
+main {
+  &:not(.profile) h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2.5rem;
+  }
+  &.profile {
+    & section {
+      box-shadow: var(--main-shadow);
+      border-radius: 25px;
+      transition: 500ms ease-in-out;
+      &:hover, &:is(:focus-within, :has(:focus-visible)) {
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+section {
+  &:not(.split, .split &, .projects & &, .error &) {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &:not(.hero, .split, .photos, .enroll__beta, .error &, .welcome &) {
+    box-shadow: var(--main-shadow);
+    border-radius: 25px;
+    transition: 500ms ease-in-out;
+    &:hover, &:is(:focus-within, :has(:focus-visible)) {
+      border-radius: 10px;
+    }
+  }
+  &:not(.profile > &) h1 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 3rem;
+  }
+  &:not(.profile > &) h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}
+
+section.login-parent {
+  background-color: white;
+}
+
+#menu, .menu {
+  background-color: white;
+  color: black;
+  
+  margin: 32px;
+  padding: 25px;
+
+  width: auto;//400px;
+  max-width: 375px;
+
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  // to stop flickering of text in safari
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  
+  box-shadow: var(--main-shadow);
+  border-radius: 25px;
+
+  transition: 500ms ease-in-out;
+
+  &:hover, &:is(:focus-within, :has(:focus-visible)) {
+    border-radius: 10px;
+  }
+
+  & h1 {
+    color: black;
+    margin: 0;
+    text-transform: uppercase;
+    // line-height: 1;
+    font-weight: 200;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  & > a {
+    text-decoration: none;
+
+    & > li {
+      background-color: white;
+
+      font-size: 22px;
+      transition: all 500ms ease-out;
+      text-align: center;
+
+      #tag {
+        line-height: 1;
+      }
+
+      &:hover {
+        color: blue;
+        transition: all 500ms ease-in;
+      }
+    }
+  }
+}
+
+input[type=text], input[type=email], select, textarea {
+  width: 350px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+a[onclick], :is(button, [type="submit"], [type="button"])[onclick], img[onclick] {
+  cursor: pointer;
+}
+
+form[method="POST"] {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  gap: 12px;
+
+  width: 400px;
+  max-width: 100% !important;
+
+  &:not(section > &) {
+    background-color: white;
+
+    margin: 25px;
+    padding: 25px;
+  }
+
+  section > & {
+    min-width: 400px;
+    
+    & input, & textarea {
+      width: calc(100% - 25px);
+    }
+  }
+
+  &.contact {
+    margin-top: 0;
+  }
+
+  & > *:not(.btn, :is(button, [type="submit"], [type="button"])) {
+    background-color: white;
+  }
+
+  & :is(.btn, :is(button, [type="submit"], [type="button"])) {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-inline-start: auto;
+    // font-size: calc(11pt + 3px);
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :is(input, textarea, select) {
+    &::selection {
+      background-color: var(--orig-bg-color);
+
+      border-radius: 25px;
+      
+      color: white;
+    }
+  }
+}
+
+form[action] * {
+  -webkit-user-select: none; // Safari
+  -ms-user-select: none; // IE 10 and IE 11
+  user-select: none; // Standard syntax
+}
+
+@media (width < 450px) {
+  form[method="POST"] {
+    section > & {
+      min-width: 100%;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6, img, .btn, :is(button, [type="submit"], [type="button"]) {
+  &[onclick]:not(section &) {
+    -webkit-user-select: none; // Safari
+    -ms-user-select: none; // IE 10 and IE 11
+    user-select: none; // Standard syntax
+  }
+  section :is(img, .btn, :is(button, [type="submit"], [type="button"])) {
+    -webkit-user-select: none; // Safari
+    -ms-user-select: none; // IE 10 and IE 11
+    user-select: none; // Standard syntax
+  }
+}
+
+a, :is(button, [type="submit"], [type="button"]) {
+  line-height: 1;
+}
+

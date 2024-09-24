@@ -1,0 +1,19 @@
+---
+var infoboxTransitionTime = '500ms'
+var msg = 'Hello, do you copy?'
+var infoboxEnabled = false
+
+import '../styles/components/infobox.scss'
+---
+<dialog id="infobox" class="infobox">
+  <a href="javascript:closeInfobox()" draggable="false">
+    <img src="/assets/icons/x.svg" class="cSpan" draggable="false">
+  </a>
+  <div class="infobox-inner"></div>
+</dialog>
+<script infoboxTransitionTime={infoboxTransitionTime} msg={msg} infoboxEnabled={infoboxEnabled} is:inline>
+  var infoboxTransitionTime = document.currentScript.getAttribute('infoboxTransitionTime')
+  var msg = document.currentScript.getAttribute('msg')
+  var infoboxEnabled = document.currentScript.getAttribute('infoboxEnabled')
+</script>
+<script src="/infobox.js" is:inline></script>

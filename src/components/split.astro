@@ -1,0 +1,18 @@
+---
+import '../styles/components/split.scss'
+
+export interface Props {
+	idName: string;
+  classItems: string;
+}
+
+const { idName, classItems } = Astro.props as Props;
+let className = 'split'
+if (!!classItems) { 
+  className = `${className} ${classItems}`
+}
+
+---
+<section class={className} id={idName}>
+  <slot />
+</section>

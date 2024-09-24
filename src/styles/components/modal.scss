@@ -1,0 +1,98 @@
+.modal {
+    --margin: 50px;
+
+    margin: calc(var(--margin) - 9px);
+    padding: 0;
+
+	height: calc(100% - (var(--margin)*2) + 18px);
+    width: calc(100% - (var(--margin)*2) + 18px);
+
+	background-color: white;
+    background: transparent;
+    color: black;
+  
+    border: none;
+    border-radius: 25px;
+
+	isolation: isolate;
+
+	transition: 500ms ease-in-out;
+  
+    &::backdrop {
+		width: 100%;
+		height: 100%;
+
+		background-color: var(--orig-bg-color, #1a4276);
+		opacity: 75%;
+    }
+  
+    & content {
+		height: 100%;
+    }
+    
+    &.isHover {
+		border-radius: 10px;
+    }
+  
+    & div {
+		&:not(#top, #bot, #photo) {
+			height: calc(100% - 100px);
+
+			display: flex;
+			justify-content: center;
+		}
+
+		&#top, &#bot {
+			padding: 12.5px;
+
+			height: 25px;
+
+			text-align: center;
+		
+			* {
+				background-color: transparent;
+			}
+		}  
+    }
+  
+    .cSpan {
+		position: absolute;
+		top: 12.5px;
+		right: 12.5px;
+
+		/*  margin: 12.5px;  */
+
+		width: 25px !important;
+		aspect-ratio: 1;
+
+		cursor: pointer;
+    }
+  
+    #photo {
+		background-color: white;
+
+		transition: 500ms ease-in;
+
+		&:hover {
+			transition: 500ms ease-out;
+		}
+
+		&.h:not(img) {
+			height: 100%;
+		}
+		&.w:not(img) {
+			width: 100%;
+		}
+    }
+    & img#photo:not(.w):not(.h) {
+		max-width: 100%;
+		max-height: 100%;
+		height: 100%;
+    }
+  
+    & iframe#photo {
+		border: none;
+    }
+  }
+  
+  

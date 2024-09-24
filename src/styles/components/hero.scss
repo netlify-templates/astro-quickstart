@@ -1,0 +1,82 @@
+.hero {
+    --padding-inline: 10vw;
+
+    padding: 0 var(--padding-inline);
+
+    width: calc(100% - var(--padding-inline)*2);
+
+    background-color: #6c78e5;
+    background-image: url('/assets/header.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+  
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &:not(&.fullHeight) {
+        min-height: 37.5vw;
+    }
+    
+    &.fullHeight {
+        flex: 1;
+
+        min-height: calc(100% - 210px);
+        align-items: center;
+    }
+  
+    & > div {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+
+        & > * {
+            max-width: fit-content;
+        }
+    }
+  
+    & h1:not(#menu > h1):not(#whymakethisclub), & h2, & h3 {
+        --shadow-color: #0a0a52;
+        --shadow-size: 10px;
+        text-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
+    }
+  
+    & h1:not(#menu > h1):not(#whymakethisclub) {
+        margin: 0;
+
+        max-width: 12.89ch;
+
+        font-size: 4.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+    & h2 {
+        margin: 0;
+
+        max-width: 30.39ch;
+
+        font-size: 2.4rem;
+        font-weight: 400;
+    }
+    & h3 {
+        margin: 0;
+
+        max-width: 56.59ch;
+
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+
+    &:not(.error) > section {
+        background: white;
+        color: black;
+    }
+  }
+    
+  

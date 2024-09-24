@@ -1,0 +1,56 @@
+main:is(.portal, #portal) {
+    flex: 1;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    & > #menu {
+        margin: 25px;
+        padding: var(--padding) 25px 25px;
+        
+        background-color: white;
+        color: black;
+    
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+}  
+
+.template {
+    padding: 20px;
+    margin: 20px 15px;
+
+    background-color: white;
+    color: black;
+  
+    * {
+        background-color: inherit;
+        color: inherit;
+    }
+}
+  
+  
+#emailtemplatetext {
+    margin: 10px;
+
+    background-color: white;
+    color: black;
+
+    border-radius: 10px !important;
+    text-align: center;
+}
+#emailtemplatetext > * {
+    background-color: white !important;
+    color: black;
+
+    text-align: center;
+}

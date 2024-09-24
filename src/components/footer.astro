@@ -1,0 +1,77 @@
+---
+import '../styles/components/footer.scss'
+
+var siteUpdatedDate = '08/15/2024'
+var uMember = 'adarsh'
+var uMemberName = `${uMember[0].toUpperCase()}${uMember.slice(1)}`
+var fWord = 'Site'
+
+var unixSiteUpdated = new Date(siteUpdatedDate).getTime()/1000
+var newSiteUpdatedDate = (new Date(siteUpdatedDate))
+var finalDate = newSiteUpdatedDate.toString().slice(0, 15)
+var finalDateS = finalDate.split(' ')
+
+finalDateS[0] = finalDateS[0]
+  .replace('Sun', 'Sunday')
+  .replace('Mon', 'Monday')
+  .replace('Tue', 'Tuesday')
+  .replace('Wed', 'Wednesday')
+  .replace('Thu', 'Thursday')
+  .replace('Fri', 'Friday')
+  .replace('Sat', 'Saturday')
+
+finalDateS[1] = finalDateS[1]
+  .replace('Jan', 'January')
+  .replace('Feb', 'February')
+  .replace('Mar', 'March')
+  .replace('Apr', 'April')
+  .replace('May', 'May')
+  .replace('Jun', 'June')
+  .replace('Jul', 'July')
+  .replace('Aug', 'August')
+  .replace('Sep', 'September')
+  .replace('Oct', 'October')
+  .replace('Nov', 'November')
+  .replace('Dec', 'December')
+
+if (finalDateS[2].startsWith('0')) {
+  finalDateS[2] = finalDateS[2].slice(1)
+}
+if (finalDateS[2].endsWith('1') && finalDateS[2] !== '11') {
+  finalDateS[2] = `${finalDateS[2]}st`
+}
+else if (finalDateS[2].endsWith('2') && finalDateS[2] !== '12') {
+  finalDateS[2] = `${finalDateS[2]}nd`
+}
+else if (finalDateS[2].endsWith('3') && finalDateS[2] !== '13') {
+  finalDateS[2] = `${finalDateS[2]}rd`
+}
+else {
+  finalDateS[2] = `${finalDateS[2]}th`
+}
+finalDate = `${finalDateS[0]}, ${finalDateS[1]} ${finalDateS[2]}, ${finalDateS[3]}`
+
+---
+<footer class="footer">
+    <span>
+        <span class="fWord">Site</span> Updated on <span class="date">{finalDate}</span> by <a href={`/members/${uMember}`} class="member">{uMemberName}</a> | 
+        Check Status at <a href="/status">/status</a>.
+    </span>
+</footer>
+<script is:inline>
+var pageDates = {
+  members: '03/25/2024'
+}
+
+var page = location.pathname.slice(1)
+if (!!page === false) {
+  page = 'index'
+  // page = 'members'
+}
+if (!!pageDates[page]) {
+  siteUpdatedDate = pageDates[page]
+  var fWord = 'Page'
+  document.querySelector('footer > .fWord').textContent = fWord
+  document.querySelector('footer > .date').textContent = pageDates[page]
+}
+</script>

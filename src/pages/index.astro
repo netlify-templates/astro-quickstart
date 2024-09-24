@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/hero.astro'
+import Split from '../components/split.astro'
+
+import Carousels from '../components/carousels.astro'
+import ClubCarousel from '../components/carousels/clubCarousel.astro'
+import WorkCarousel from '../components/carousels/workCarousel.astro'
+
+import '../styles/pages/index.scss'
+import '../styles/photos.scss'
+---
+<Layout title="Home">
+  <main id="content">
+    <Hero>
+      <div>
+        <h1>Graphics for Good</h1>
+        <h2>Empowering Non-Profits Through the Power of Design!</h1>
+      </div>
+    </Hero>
+    <Split idName="mission">
+      <section id="mSection">
+        <h1>Our Mission</h1>
+        <div class="missiontext">
+          <p class="text" centered displayFlex style="--f-direction: column; --gap: 8px;">
+            <span style="text-align: justify;">"Our mission is to help create change in the world through design. We strive to provide free design help for nonprofits that support a wide range of causes."</span>
+            <span displayFlex style="--f-direction: row; justify-content: right;"> - Shikha Iyer, Club Founder</span>
+          </p>
+          <a style="margin-left: auto;" href="/mission" class="btn">Read More</a>
+        </div>
+      </section>
+      <span class="vHr"></span>
+      <section id="contact">
+        <h2 style="font-size: 2.25rem;">Interested in partnering with us?</h2>
+        <h1>Contact Us</h1>
+        <div id="contactDone" style="display: none;">
+          <h3 align="center" style="font-size: 25px; display: none; margin: 0;">Thank You For Submitting!</h2>
+        </div>
+        <form class="contact" action="https://docs.google.com/forms/d/e/1FAIpQLSc4qjrt9QFOiGU4DHHjagYlVsYdS77KiXqwo967oeGySAVMnQ/formResponse" method="POST">
+          <input type="text" name="entry.264713401" placeholder="Full Name" top required>
+          <input type="email" name="entry.2027702877" placeholder="Email Address" required>
+          <textarea type="text" name="entry.656122872" placeholder="Message" required></textarea>
+          <input type="hidden" name="entry.1445095683" value="true" />
+          <!-- add hidden Honeypot input to prevent spams -->
+          <input type="hidden" name="_gotcha" style="display:none!important">
+          <input type="submit" class="primary" onclick="sendMessage()" value="Send">
+        </form>
+      </section>
+    </Split>
+    <div class="hHr"></div>
+    <section id="mwork" class="photos">
+      <Carousels>
+        <section align="center">
+          <h1 style="--text-color: blue; cursor: pointer;" onclick="location.href = '/work?magic=true'" title="Click here to convert to list!">Member Work</h1>
+          <WorkCarousel carouselIndex="0" />
+        </section>
+        <div class="hHr" style="--width: 850px;"></div>
+        <section align="center">
+          <h1 id="cphotos">Club Photos</h1>
+          <ClubCarousel carouselIndex="1" />
+        </section>
+      </Carousels>
+    </section>
+  </main>
+  <script is:inline src="/contact.js"></script>
+  <script is:inline src="/photos.js"></script>
+</Layout>
