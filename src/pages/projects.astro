@@ -64,9 +64,9 @@ var projects = [
 ---
 <Layout title="Projects">
   <main id="content" class="projects">
-    { JSON.stringify(projects) }
     {
       projects.map((row, i) => {
+        { JSON.stringify(row) }
         {i !== 0 ? <span class="hHr"></span> : '' }
         <Split>
           {
