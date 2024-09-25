@@ -66,26 +66,29 @@ var projects = [
   <main id="content" class="projects">
     {
       projects.map((row, i) => {
-        { JSON.stringify(row) }
-        {i !== 0 ? <span class="hHr"></span> : '' }
-        <Split>
-          {
-            row.map((item, i) => {
-              {i !== 0 ? <span class="vHr"></span> : '' }
-              <section>
-                <h1>{item.title}</h1>
-                <TinySplit>
-                  <div>
-                    <p set:html={item.description} />
-                  </div>
-                  <div class="img-parent" style={item.image.styles}>
-                    <img src={`/assets/projects/${item.image.src}`} alt={item.image.alt} />
-                  </div>
-                </TinySplit>
-              </section>
-            })
-          }
-        </Split>
+        return (
+          {i !== 0 ? <span class="hHr"></span> : '' }
+          <Split>
+            {
+              row.map((item, i) => {
+                return (
+                  {i !== 0 ? <span class="vHr"></span> : '' }
+                  <section>
+                    <h1>{item.title}</h1>
+                    <TinySplit>
+                      <div>
+                        <p set:html={item.description} />
+                      </div>
+                      <div class="img-parent" style={item.image.styles}>
+                        <img src={`/assets/projects/${item.image.src}`} alt={item.image.alt} />
+                      </div>
+                    </TinySplit>
+                  </section>
+                )
+              })
+            }
+          </Split>
+        )
       })
     }
   </main>
