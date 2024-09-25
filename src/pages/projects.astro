@@ -67,12 +67,12 @@ var projects = [
     {
       projects.map((row, i) => {
         return (
-          {i !== 0 ? <span class="hHr"></span> : '' }
+          <>{i !== 0 ? <span class="hHr"></span> : '' }</>
           <Split>
             {
               row.map((item, i) => {
                 return (
-                  {i !== 0 ? <span class="vHr"></span> : '' }
+                  <>{i !== 0 ? <span class="vHr"></span> : '' }</>
                   <section>
                     <h1>{item.title}</h1>
                     <TinySplit>
