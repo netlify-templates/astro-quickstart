@@ -45,7 +45,11 @@ function updateUserData(userData) {
                 lName = lName.split('-')
                 lName = lName.join('')
             }
-            eUserName = `${eUserName[0].split('')[0]}${lName}`.toLowerCase()
+
+            var initial = eUserName[0].slice(0, 1)
+            if (userData.email.dtech.initial) initial = userData.email.dtech.initial
+
+            eUserName = `${initial}${lName}`.toLowerCase()
             // if (!!userData.email) {
             //   if (!!userData.email.dtech) {
             //     if (!!userData.email.dtech.email) {
