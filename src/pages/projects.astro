@@ -6,113 +6,87 @@ import Carousel from '../components/carousel.astro'
 
 import '../styles/pages/projects.scss'
 import '../styles/photos.scss'
+
+var projects = [
+  [
+    {
+      title: 'Amphibian Foundation',
+      description: 'Redesign the <a href="https://amphibianfoundation.org/index.php/pages">Why We Do It Page</a> on <a href="https://amphibianfoundation.org">Their Website</a>.',
+      image: {
+        styles: '--max-height: calc(100% - 5px);',
+        src: 'amphibian-foundation.svg',
+        alt: 'The Amphibian Foundation Logo'
+      }
+    },
+    {
+      title: 'Treasure Chest Foundation',
+      description: "They'd like to update it a little to make it more “fresh,” though they like the current logo IDEA and the purple.",
+      image: {
+        styles: '--min-parent-height: 175px; --max-height: calc(100% + 50px); --translate-y: -5px',
+        src: 'treasurechest-foundation.svg',
+        alt: 'The Treasure Chest Foundation Image'
+      }
+    },
+  ],
+  [
+    {
+      title: 'S.A.V.E. Foundation',
+      description: 'Chao from S.A.V.E. wants us to create Instagram posts for #herstory. This is where S.A.V.E posts inspiring stories of strong and brave women.',
+      image: {
+        styles: '',
+        src: 'save-foundation.svg',
+        alt: 'The S.A.V.E. Foundation Logo'
+      }
+    },
+    {
+      title: 'Vanni Aid',
+      description: "We are currently working with Anita from Vanni Aid to re-do their website! Adarsh is working on this.",
+      image: {
+        styles: '',
+        src: 'vanniaid-foundation.svg',
+        alt: 'The Vanni Aid Image'
+      }
+    },
+  ],
+  [
+    {
+      title: 'CORA',
+      description: 'Create an informational flyer about CORA with a design targeted at middle school and high school students for their YEA! (Youth Education Advocacy) program.',
+      image: {
+        styles: '',
+        src: 'cora-foundation.svg',
+        alt: 'The CORA Logo'
+      }
+    },
+  ],
+]
+
 ---
 <Layout title="Projects">
   <main id="content" class="projects">
-    <Split>
-      <section>
-        <h1>Amphibian Foundation</h1>
-        <TinySplit>
-          <div>
-            <p>Redesign the <a href="https://amphibianfoundation.org/index.php/pages">Why We Do It Page</a> on <a href="https://amphibianfoundation.org">Their Website</a>.</p>
-          </div>
-          <div class="img-parent" style="--max-height: calc(100% - 5px);">
-            <img src="/assets/projects/amphibian-foundation.svg" alt="The Amphibian Foundation Logo" />
-          </div>
-        </TinySplit>
-      </section>
-      <span class="vHr"></span>
-      <section>
-        <h1>Treasure Chest Foundation</h1>
-        <TinySplit>
-          <div>
-            <p>They'd like to update it a little to make it more “fresh,” though they like the current logo IDEA and the purple.</p>
-          </div>
-          <div class="img-parent" style="--min-parent-height: 175px; --max-height: calc(100% + 50px); --translate-y: -5px">
-            <img src="/assets/projects/treasurechest-foundation.png" alt="The Treasure Chest Foundation Image" />
-          </div>
-        </TinySplit>
-      </section>
-    </Split>
-    <div class="hHr"></div>
-    <Split>
-      <section>
-        <h1>S.A.V.E Foundation</h1>
-        <TinySplit>
-          <div>
-            <p>Chao from S.A.V.E Foundation wants us to create Instagram posts for #herstory. This is where S.A.V.E posts inspiring stories of strong and brave women.</p>
-          </div>
-          <div class="img-parent">
-            <img src="/assets/projects/save-foundation.svg" alt="The Save Foundation Image" />
-          </div>
-        </TinySplit>
-      </section>
-      <span class="vHr"></span>
-      <section>
-        <h1>Vanni Aid</h1>
-        <TinySplit>
-          <div>
-            <p>We are currently working with Anita from Vanni Aid to re-do their website! Adarsh is working on this.</p>
-          </div>
-          <div class="img-parent">
-            <img src="/assets/projects/vanniaid-foundation.jpg" alt="The Vanni Aid Image" />
-          </div>
-        </TinySplit>
-      </section>
-    </Split>
-    <div class="hHr"></div>
-    <Split>
-      <span class="vHr"></span>
-      <section>
-        <h1>CORA</h1>
-        <TinySplit>
-          <div>
-            <p>Create an informational flyer about CORA with a design targeted at middle school and high school students for their YEA! (Youth Education Advocacy) program. </p>
-          </div>
-          <div class="img-parent">
-            <img src="/assets/projects/cora-foundation.png" alt="The CORA Image" />
-          </div>
-        </TinySplit>
-      </section>
-      <span class="vHr"></span>
-      <!-- <section>
-        <h1>Project Title</h1>
-        <TinySplit>
-          <div>
-            <p>things things</p>
-          </div>
-          <div class="img-parent">
-
-          </div>
-        </TinySplit>
-      </section> -->
-    </Split>
-    <div class="hHr"></div>
-    <!-- <Split>
-      <section>
-        <h1>Project Title</h1>
-        <TinySplit>
-          <div>
-            <p>things things</p>
-          </div>
-          <div class="img-parent">
-
-          </div>
-        </TinySplit>
-      </section>
-      <span class="vHr"></span>
-      <section>
-        <h1>Project Title</h1>
-        <TinySplit>
-          <div>
-            <p>things things</p>
-          </div>
-          <div class="img-parent">
-
-          </div>
-        </TinySplit>
-      </section>
-    </Split> -->
+    {
+      projects.map((row, i) => {
+        {i !== 0 ? <span class="hHr"></span> : '' }
+        <Split>
+          {
+            row.map((item, i) => {
+              {i !== 0 ? <span class="vHr"></span> : '' }
+              <section>
+                <h1>{item.title}</h1>
+                <TinySplit>
+                  <div>
+                    <p set:html={item.description} />
+                  </div>
+                  <div class="img-parent" style={item.image.styles}>
+                    <img src={`/assets/projects/${item.image.src}`} alt={item.image.alt} />
+                  </div>
+                </TinySplit>
+              </section>
+            })
+          }
+        </Split>
+      })
+    }
   </main>
   <script is:inline src="/projects.js"></script>
   <script is:inline src="/modal.js"></script>
