@@ -3,8 +3,8 @@ var data = {
   "username": "samantha", 
   "name": "Samantha Wolff",
   "date": "the start of the 23-24 school year", 
+  "year": 25, 
   "graduated": false,
-  "pronunciation": false, 
   "portfolio": [
     {
       "img": {

@@ -181,11 +181,10 @@ function updateLeftData(userData) {
       userData.date = dateObjFromDate
     }
   
-    let leftDefaultBio = defaultBio(userData.name)
-      .replace('{pronunciation}', '')
-      .replace(' is ', ' was ')
-    leftDefaultBio = leftDefaultBio.substr(0, leftDefaultBio.length - 1)
-    var bioText = `${leftDefaultBio} until ${userData.date}.`
+    let leftDefaultBio = defaultBio(userData.name, getUserGrade(userData.year))
+        .replace(' a Member of ', ' was a Member of ')
+    leftDefaultBio = leftDefaultBio.slice(0, leftDefaultBio.length - 1)
+    var bioText = `${leftDefaultBio} until ${dateObjFromDate}.`
   
     if (typeof userData.graduated === 'object' && !!userData.graduated[0] === false) {
       bioText = `${bioText} They graduated in ${userData.graduated.year}`
