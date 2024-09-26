@@ -11,9 +11,4 @@ import '../styles/components/infobox.scss'
   </a>
   <div class="infobox-inner"></div>
 </dialog>
-<script infoboxTransitionTime={infoboxTransitionTime} msg={msg} infoboxEnabled={infoboxEnabled} is:inline>
-  var infoboxTransitionTime = document.currentScript.getAttribute('infoboxTransitionTime')
-  var msg = document.currentScript.getAttribute('msg')
-  var infoboxEnabled = document.currentScript.getAttribute('infoboxEnabled')
-</script>
-<script src="/infobox.js" is:inline></script>
+<script src="/infobox.js" is:inline infoboxTransitionTime={infoboxTransitionTime} msg={msg} infoboxEnabled={infoboxEnabled}></script>

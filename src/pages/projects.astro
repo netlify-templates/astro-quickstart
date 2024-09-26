@@ -69,6 +69,7 @@ var projects = [
         return (
           <>{i !== 0 ? <span class="hHr"></span> : '' }</>
           <Split>
+            <>{row.length%2 === 1 ? <span class="vHr"></span> : '' }</>
             {
               row.map((item, i) => {
                 return (
@@ -87,6 +88,7 @@ var projects = [
                 )
               })
             }
+            <>{row.length%2 === 1 ? <span class="vHr"></span> : '' }</>
           </Split>
         )
       })

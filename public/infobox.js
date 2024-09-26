@@ -1,3 +1,7 @@
+var infoboxTransitionTime = document.currentScript.getAttribute('infoboxTransitionTime')
+var msg = document.currentScript.getAttribute('msg')
+var infoboxEnabled = document.currentScript.getAttribute('infoboxEnabled')
+
 if (!!infoboxEnabled) ifEnabled()
 function ifEnabled() {
     var infobox = document.getElementById('infobox')
