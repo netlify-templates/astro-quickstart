@@ -219,7 +219,8 @@ function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
 }
 
 function getUserGrade(gradYear) {
-    gradYear += 2000
+    let century = parseInt(`${new Date().getFullYear().toString().slice(0, 2)}00`)
+    gradYear += century
     let currentYear = new Date().getFullYear()
     let yearsLeft = gradYear - currentYear
   
