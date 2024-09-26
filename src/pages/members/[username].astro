@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
+import Modal from '../../components/modal.astro'
+
 import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
 
@@ -110,5 +112,5 @@ else userData.status = 'inactive'
     }
   </main>
   <script is:inline src="/members.js"></script>
-  <script is:inline src="/modal.js"></script>
+  <Modal />
 </Layout>
