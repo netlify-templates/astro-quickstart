@@ -6,6 +6,7 @@ var data = {
   "email": {
     "g4g": false,
     "dtech": {
+      "initial": "m", 
       "year": 26
     }
   }, 
