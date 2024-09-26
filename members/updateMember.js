@@ -190,8 +190,9 @@ function updateLeftData(userData) {
     if (typeof userData.graduated === 'object' && !!userData.graduated[0] === false) {
       bioText = `${bioText} They graduated in ${userData.graduated.year}`
     }
-    userData.bio = bioText
-  
+
+    userData.bio = {result: bioText}
+
     return userData
   }
   
