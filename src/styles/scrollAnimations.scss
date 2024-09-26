@@ -40,7 +40,7 @@
 }
   
 
-main:not(.profile, .portal, .frame-page) > * {
+main:not(.projects, .profile, .portal, .frame-page) > * {
     &:not(.hero, :has( > section)) {
         @include scaleAnimations(both);
         @include animations;
@@ -62,6 +62,7 @@ main:not(.profile, .portal, .frame-page) > * {
             }
         }
     }
+
     // .vHr {
     //     transform-origin: top;
     //     @include scaleAnimations(y);
@@ -71,10 +72,10 @@ main:not(.profile, .portal, .frame-page) > * {
     //     @include scaleAnimations(x);
     //     @include animations;
     // }
-}
 
-.vHr, .hHr {
-    @include animations;
+    .vHr, .hHr {
+        @include animations;
+    }
 }
 
 @keyframes split {
