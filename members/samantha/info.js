@@ -5,26 +5,6 @@ var data = {
   "date": "the start of the 23-24 school year", 
   "graduated": false,
   "pronunciation": false, 
-  "email": {
-    "g4g": false,
-    "dtech": {
-      "year": 25
-    }
-  }, 
-  "pfp": {
-    "google": {
-      "url": "AD5-WCnnmJnIpvLyc4r-7-dAAE4rSc8HOVtSXsuDb_xv",
-      "a": "a-"
-    }
-  },
-  "location": {
-    "city": "Bay Area", 
-    "state": ""
-  }, 
-  "bio": {
-
-  }, 
-  "socials": [],
   "portfolio": [
     {
       "img": {
