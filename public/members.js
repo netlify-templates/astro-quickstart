@@ -1,5 +1,3 @@
-var socials = document.querySelector('.socials')
-var photos = document.querySelector('.photos')
 var profile = document.querySelector('.profile')
 
 var queryString = window.location.search;
@@ -51,31 +49,31 @@ function showItem(img, element, capt, desc, c) {
 }
 
 
-//var footerHTML = 
-//document.querySelectorAll('footer')[
-//  document.querySelectorAll('footer').length - 1
-//].innerHTML
-//document.querySelectorAll('footer')[
-//  document.querySelectorAll('footer').length - 1
-//].remove()
-if (!!user) {
-  var sHTML = socials.innerHTML
-  while (sHTML.includes('\n')) sHTML = sHTML.replace('\n', '')
-  while (sHTML.startsWith(' ')) sHTML = sHTML.substring(1)
+// if (!!user) {
+//   var socials = document.querySelector('.socials')
+//   if (socials) {
+//     var sHTML = socials.innerHTML
+//     while (sHTML.includes('\n')) sHTML = sHTML.replace('\n', '')
+//     while (sHTML.startsWith(' ')) sHTML = sHTML.substring(1)
 
-  var pHTML = photos.innerHTML
-  while (pHTML.includes('\n')) pHTML = pHTML.replace('\n', '')
-  while (pHTML.startsWith(' ')) pHTML = pHTML.substring(1)
+//       if (!!sHTML === false) {
+//       socials.remove()
+//     }
+//   }
 
-  if (!!sHTML === false) {
-    socials.remove()
-  }
-  if (!!pHTML === false) {
-    let possPortH2 = profile.querySelector('section > h2:has( + .photos)')
-    if (!!possPortH2 === false) possPortH2 = document.querySelector('section > h2')
-    if (possPortH2.textContent.toLowerCase() === 'portfolio') {
-      possPortH2.remove()
-    }
-    photos.remove()
-  }
-}
+//   var photos = document.querySelector('.photos')
+//   if (photos) {
+//     var pHTML = photos.innerHTML
+//     while (pHTML.includes('\n')) pHTML = pHTML.replace('\n', '')
+//     while (pHTML.startsWith(' ')) pHTML = pHTML.substring(1)
+  
+//     if (!!pHTML === false) {
+//       let possPortH2 = profile.querySelector('section > h2:has( + .photos)')
+//       if (!!possPortH2 === false) possPortH2 = document.querySelector('section > h2')
+//       if (possPortH2.textContent.toLowerCase() === 'portfolio') {
+//         possPortH2.remove()
+//       }
+//       photos.remove()
+//     }
+//   }
+// }
