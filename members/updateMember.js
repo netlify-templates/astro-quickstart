@@ -178,7 +178,7 @@ function updateLeftData(userData) {
     let dateObjFromDate = new Date(userData.date)
     if (!!dateObjFromDate) {
       dateObjFromDate = dateObjFromDate.toDateString()
-      userData.date = dateObjFromDate
+      if (dateObjFromDate === 'Invalid Date') dateObjFromDate = userData.date
     }
   
     let leftDefaultBio = defaultBio(userData.name, getUserGrade(userData.year))
