@@ -215,7 +215,7 @@ function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
       name = name.split('(')[1].split(')')[0]
     }
     if (!!role === false) role = 'Member'
-    return `${name}${pronunciation || ''} is a ${grade} at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City${removeAnd}${w1} ${role} ${w2} the Graphics for Good club.`
+    return `${name}${pronunciation || ''} is a ${grade} at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City${removeAnd}${w1} ${role} ${w2} Graphics for Good.`
 }
 
 function getUserGrade(gradYear) {
