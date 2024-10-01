@@ -29,7 +29,7 @@ $tiny-split-image-parent-min-height: 0px;
     --shadow-size: #{$shadow-size};
     --main-shadow: #{$main-shadow};
 
-    --font: #{font};
+    --font: #{$font};
 
     --tiny-split-image-parent-min-height: #{$tiny-split-image-parent-min-height};
 }
