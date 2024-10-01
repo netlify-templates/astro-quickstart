@@ -12,6 +12,8 @@ $shadow-color: black;
 $shadow-size: 10px;
 $main-shadow: $shadow-color 0 0 $shadow-size;
 
+$font: 'Dekko', system-ui, sans-serif;
+
 $tiny-split-image-parent-min-height: 0px;
 
 :root {
@@ -26,6 +28,8 @@ $tiny-split-image-parent-min-height: 0px;
     --shadow-color: #{$shadow-color};
     --shadow-size: #{$shadow-size};
     --main-shadow: #{$main-shadow};
+
+    --font: #{font};
 
     --tiny-split-image-parent-min-height: #{$tiny-split-image-parent-min-height};
 }
