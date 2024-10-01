@@ -22,7 +22,7 @@ var data = {
         "state": ""
     },
     "bio": {
-
+        "end": "She's an avid reader and loves drawing and painting with watercolors.", 
     },
     "socials": [
         // {
