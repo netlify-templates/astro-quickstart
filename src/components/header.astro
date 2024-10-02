@@ -6,8 +6,10 @@ var domain = Astro.url.origin
 if (path.startsWith('/') && path !== '/') path = path.slice(1)
 if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
 
-var reps = await Astro.glob('../../config/pages/custom.js')
-var reps = reps.find(data => data).default
+var navLinkChanges = await Astro.glob('../../config/pages/custom.js')
+navLinkChanges = navLinkChanges.find(data => data).default
+
+var pathChanges = navLinkChanges.pathChanges
 
 var pages = await Astro.glob('../pages/*.astro')
 
@@ -41,7 +43,7 @@ function getLink(link) {
   else if (fileName.startsWith('[') && fileName.endsWith(']')) return ''
   else if (parseInt(fileName)) return ''
 
-  var rep = reps.filter(r => r.key === fileName)
+  var rep = pathChanges.filter(r => r.key === fileName)
   if (rep.length > 0) fileName = rep[0].value
 
   var nameParts = []
