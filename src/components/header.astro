@@ -6,7 +6,7 @@ var domain = Astro.url.origin
 if (path.startsWith('/') && path !== '/') path = path.slice(1)
 if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
 
-var navLinkChanges = await Astro.glob('../../config/pages/custom.js')
+var navLinkChanges = await Astro.glob('../../config/navbar/links.js')
 navLinkChanges = navLinkChanges.find(data => data).default
 
 var pathChanges = navLinkChanges.pathChanges
