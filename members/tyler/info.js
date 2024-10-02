@@ -22,7 +22,7 @@ var data = {
         "state": ""
     },
     "bio": {
-
+        "end": "He likes corgis and Minecraft and enjoys ice hockey.",
     },
     "socials": [
         // {
