@@ -35,15 +35,11 @@ import Hero from '../components/hero.astro'
 import '../styles/pages/members.scss'
 import '../styles/photos.scss'
 
-
-var url = Astro.url.toString()
-if (url.includes('?')) console.log(url)
 ---
 <Layout title="Members">
     <main id="content">
         <Hero classItems="fullHeight">
             <ul id="menu">
-                <span>{url}</span>
                 <h1>Club Members</h1>
                 {
                     members.map((member) => {
@@ -71,5 +67,12 @@ if (url.includes('?')) console.log(url)
             </ul>
         </Hero>
     </main>
+    <script>
+        var locationSearch = location.search
+        var searchParams = new URLSearchParams(searchParams)
+        var m = params.get('m')
+
+        if (m) location.href = m
+    </script>
     <script is:inline src="/members.js"></script>
 </Layout>
