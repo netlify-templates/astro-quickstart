@@ -73,6 +73,10 @@ import '../styles/photos.scss'
         var m = params.get('m')
 
         if (m) location.href = m
+
+        if (location.href.includes('?')) {
+            location.href = location.pathname
+        }
     </script>
     <script is:inline src="/members.js"></script>
 </Layout>
