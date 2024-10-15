@@ -70,7 +70,7 @@ import '../styles/photos.scss'
     <script is:inline>
         var locationSearch = location.search
         var searchParams = new URLSearchParams(searchParams)
-        var m = params.get('m')
+        var m = searchParams.get('m')
 
         if (m) location.href = m
 
