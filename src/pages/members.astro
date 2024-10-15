@@ -36,7 +36,7 @@ import '../styles/pages/members.scss'
 import '../styles/photos.scss'
 
 
-var url = Astro.url
+var url = Astro.url.toString()
 if (url.includes('?')) console.log(url)
 ---
 <Layout title="Members">
