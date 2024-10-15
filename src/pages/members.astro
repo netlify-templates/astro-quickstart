@@ -34,12 +34,16 @@ import Hero from '../components/hero.astro'
 
 import '../styles/pages/members.scss'
 import '../styles/photos.scss'
+
+
+var url = Astro.url
+if (url.includes('?')) console.log(url)
 ---
 <Layout title="Members">
     <main id="content">
         <Hero classItems="fullHeight">
             <ul id="menu">
-                <h1>Club Members</h1>
+                <h1>Club Members @{url}</h1>
                 {
                     members.map((member) => {
                         member = member.default
