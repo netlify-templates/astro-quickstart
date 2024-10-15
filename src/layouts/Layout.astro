@@ -28,6 +28,7 @@ if (currentPath.includes('//')) currentPath = currentPath.split('//').join('/')
 var currentSite = Astro.site.toString()
 if (currentPath.endsWith('/')) currentSite = currentSite.substring(0, -1*'/'.length)
 var currentPage = `${Astro.site}${currentPath}`
+if (currentPage.includes('//')) currentPage = currentPage.split('//').join('/')
 ---
 <!DOCTYPE html>
 <html lang="en">
