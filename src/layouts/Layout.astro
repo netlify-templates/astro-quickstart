@@ -23,12 +23,7 @@ const { title } = Astro.props as Props;
 let dTitle = `${title} | ${sTitle}`
 if (title === 'Home') dTitle = sTitle
 
-var currentPath = `/${Astro.url.pathname}`
-if (currentPath.includes('//')) currentPath = currentPath.split('//').join('/')
-var currentSite = Astro.site.toString()
-if (currentPath.endsWith('/')) currentSite = currentSite.substring(0, -1*'/'.length)
-var currentPage = `${Astro.site}${currentPath}`
-if (currentPage.includes('//')) currentPage = currentPage.split('//').join('/')
+var canonicalUrl = new URL(Astro.url.pathname, Astro.site)
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +41,7 @@ if (currentPage.includes('//')) currentPage = currentPage.split('//').join('/')
     <meta name="twitter:description" content={description}> 
     <meta name="twitter:image" content={pImg}> 
     <link href={largeFavicon} rel="icon" type="image/png" />
-    <link rel="canonical" href={currentPage} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{dTitle}</title>
   </head>
