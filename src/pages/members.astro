@@ -68,13 +68,7 @@ import '../styles/photos.scss'
         </Hero>
     </main>
     <script is:inline>
-        var locationSearch = location.search
-        var searchParams = new URLSearchParams(searchParams)
-        var m = searchParams.get('m')
-
-        if (m) location.href = `./${m}`
-
-        if (location.href.includes('?')) {
+        if (location.href.includes('?m=')) {
             // location.href = location.pathname
         }
     </script>
