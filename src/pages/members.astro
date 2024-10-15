@@ -43,7 +43,8 @@ if (url.includes('?')) console.log(url)
     <main id="content">
         <Hero classItems="fullHeight">
             <ul id="menu">
-                <h1>Club Members @{url}</h1>
+                <span>{url}</span>
+                <h1>Club Members</h1>
                 {
                     members.map((member) => {
                         member = member.default
