@@ -72,10 +72,10 @@ import '../styles/photos.scss'
         var searchParams = new URLSearchParams(searchParams)
         var m = searchParams.get('m')
 
-        if (m) location.href = m
+        if (m) location.href = `./${m}`
 
         if (location.href.includes('?')) {
-            location.href = location.pathname
+            // location.href = location.pathname
         }
     </script>
     <script is:inline src="/members.js"></script>
