@@ -61,8 +61,8 @@ var canonicalUrl = new URL(Astro.url.pathname, Astro.site)
       })
     </script>
     <script is:inline src="/script.js"></script>
-    <script is:inline>
+    <!-- <script is:inline>
       javascript:(function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();
-    </script>
+    </script> -->
   </body>
 </html>
