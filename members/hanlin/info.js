@@ -4,7 +4,6 @@ var data = {
   "name": "Hanlin Su",
   "pronunciation": false,
   "email": {
-    "g4g": true,
     "dtech": {
       "year": 25
     }

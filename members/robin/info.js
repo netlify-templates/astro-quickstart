@@ -4,7 +4,6 @@ var data = {
   "name": "Robin Solis-Rodriguez",
   "pronunciation": false,
   "email": {
-    "g4g": false,
     "dtech": {
       "initial": "m", 
       "year": 26

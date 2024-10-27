@@ -29,37 +29,33 @@ function updateUserData(userData) {
     
     
         if (!userData.email) userData.email = {}
-        if (!!userData.email.g4g) {
-            userData.email.address = `${userData.username}@graphics-for-good.com`
-        }
-        else {
-            let uName = userData.name
-    
-            let eUserName = uName
-            if (eUserName.includes(' ')) {
-                eUserName = eUserName.split(' ')
-            }
-            else eUserName = [eUserName]
-            let lName = eUserName[eUserName.length-1]
-            if (lName.includes('-')) {
-                lName = lName.split('-')
-                lName = lName.join('')
-            }
+        let uName = userData.name
 
-            var initial = eUserName[0].slice(0, 1)
-            if (userData.email.dtech.initial) initial = userData.email.dtech.initial
-
-            eUserName = `${initial}${lName}`.toLowerCase()
-            // if (!!userData.email) {
-            //   if (!!userData.email.dtech) {
-            //     if (!!userData.email.dtech.email) {
-            //       eUserName = userData.email.dtech.email
-            //     }
-            //   }
-            // }
-            if (!userData.email.dtech) userData.email.dtech = {year: 0}
-            userData.email.address = `${eUserName}${userData.email.dtech.year}` + '@dtechhs.org'
+        let eUserName = uName
+        if (eUserName.includes(' ')) {
+            eUserName = eUserName.split(' ')
         }
+        else eUserName = [eUserName]
+        let lName = eUserName[eUserName.length-1]
+        if (lName.includes('-')) {
+            lName = lName.split('-')
+            lName = lName.join('')
+        }
+
+        var initial = eUserName[0].slice(0, 1)
+        if (userData.email.dtech.initial) initial = userData.email.dtech.initial
+
+        eUserName = `${initial}${lName}`.toLowerCase()
+        // if (!!userData.email) {
+        //   if (!!userData.email.dtech) {
+        //     if (!!userData.email.dtech.email) {
+        //       eUserName = userData.email.dtech.email
+        //     }
+        //   }
+        // }
+        if (!userData.email.dtech) userData.email.dtech = {year: ''}
+        if (!userData.email.year) userData.email.dtech.year = ''
+        userData.email.address = `${eUserName}${userData.email.dtech.year}` + '@dtechhs.org'
     
         if (userData.location) {
             if (!Array.isArray(userData.location) && typeof userData.location !== 'object') userData.location = {}

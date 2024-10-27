@@ -4,7 +4,6 @@ var data = {
   "name": "Lorelai Hartman",
   "pronunciation": false,
   "email": {
-    "g4g": false,
     "dtech": {
       "year": 25
     }
