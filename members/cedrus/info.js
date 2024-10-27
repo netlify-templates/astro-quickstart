@@ -4,9 +4,7 @@ var data = {
   "name": "Cedrus Fink",
   "pronunciation": false,
   "email": {
-    "dtech": {
-      "year": 27
-    }
+    "year": 27
   }, 
   "pfp": {
     "google": {

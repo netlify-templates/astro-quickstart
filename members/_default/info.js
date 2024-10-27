@@ -5,10 +5,7 @@ var data = {
     "role": false,
     "pronunciation": false,
     "email": {
-        "g4g": true,
-        "dtech": {
-            "year": '{member_year}'
-        }
+        "year": '{member_year}'
     },
     "pfp": {
         "g4g": {

@@ -1,16 +1,11 @@
 var data = {
   "status": "active", 
-  "order": 4, 
   "username": "isabelle", 
   "name": "Isabelle Anderson",
-  "role": {
-    "name": "Website Assistant"
-  }, 
+  "role": false, 
   "pronunciation": false, 
   "email": {
-    "dtech": {
-      "year": 25
-    }
+    "year": 25
   }, 
   "pfp": {
     "google": {

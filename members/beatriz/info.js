@@ -4,9 +4,7 @@ var data = {
   "name": "Beatriz Meneses",
   "pronunciation": false,
   "email": {
-    "dtech": {
-      "year": 27
-    }
+    "year": 27
   }, 
   "pfp": {
     "google": {

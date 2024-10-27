@@ -4,9 +4,7 @@ var data = {
   "name": "Lorelai Hartman",
   "pronunciation": false,
   "email": {
-    "dtech": {
-      "year": 25
-    }
+    "year": 25
   }, 
   "pfp": {
     "google": {

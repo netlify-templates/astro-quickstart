@@ -4,9 +4,7 @@ var data = {
   "name": "Luce Dittrich",
   "pronunciation": false,
   "email": {
-    "dtech": {
-      "year": 26
-    }
+    "year": 26
   }, 
   "pfp": {
     "google": {

@@ -5,9 +5,7 @@ var data = {
   "role": false, 
   "pronunciation": false,
   "email": {
-    "dtech": {
-      "year": 26
-    }
+    "year": 26
   }, 
   "pfp": {
     "google": {

@@ -4,7 +4,7 @@ function updateUserData(userData) {
 
         var grade = 'Unknown'
         if (userData.email) {
-            grade = getUserGrade(userData.email.dtech.year)
+            grade = getUserGrade(userData.email.year)
         }
         if ((grade === 'Graduated' && userData.status !== 'activeGrad') || userData.status === 'inactive') {
             userData = updateLeftData(userData)
@@ -43,19 +43,22 @@ function updateUserData(userData) {
         }
 
         var initial = eUserName[0].slice(0, 1)
-        if (userData.email.dtech.initial) initial = userData.email.dtech.initial
+        if (userData.email.initial) initial = userData.email.initial
 
         eUserName = `${initial}${lName}`.toLowerCase()
-        // if (!!userData.email) {
-        //   if (!!userData.email.dtech) {
-        //     if (!!userData.email.dtech.email) {
-        //       eUserName = userData.email.dtech.email
-        //     }
-        //   }
-        // }
-        if (!userData.email.dtech) userData.email.dtech = {year: ''}
-        if (!userData.email.year) userData.email.dtech.year = ''
-        userData.email.address = `${eUserName}${userData.email.dtech.year}` + '@dtechhs.org'
+
+        // Username Override
+        if (!!userData.email) {
+          if (!!userData.email) {
+            if (!!userData.email.username) {
+              eUserName = userData.email.username
+            }
+          }
+        }
+
+        if (!userData.email) userData.email = {year: ''}
+        if (!userData.email.year) userData.email.year = ''
+        userData.email.address = `${eUserName}${userData.email.year}` + '@dtechhs.org'
     
         if (userData.location) {
             if (!Array.isArray(userData.location) && typeof userData.location !== 'object') userData.location = {}
