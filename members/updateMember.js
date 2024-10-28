@@ -219,7 +219,7 @@ function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
         grade = 'student'
     }
 
-    var bio = `${name}${pronunciation || ''} is a `
+    var bio = `${name}${pronunciation || ''} is a ${grade} `
     if (w1 !== 'left') {
         bio += 'at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City'
     }
