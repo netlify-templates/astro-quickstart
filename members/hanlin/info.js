@@ -4,7 +4,7 @@ var data = {
   "name": "Hanlin Su",
   "date": "the start of the 24-25 school year", 
   "year": 25, 
-  "graduated": false
+  "graduated": false,
   "pronunciation": false,
   "email": {
     "year": 25
