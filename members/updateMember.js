@@ -216,7 +216,7 @@ function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
 
     if (!!role === false) role = 'Member'
     if (w1 === 'left') {
-        grade = 'student'
+        grade = 'Student'
     }
 
     var bio = `${name}${pronunciation || ''} is a ${grade}`
