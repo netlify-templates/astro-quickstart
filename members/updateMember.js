@@ -204,7 +204,7 @@ function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
     if (!!name === false) {
       name = ''
     }
-    if (!removeAnd === false) {
+    if (removeAnd) {
       removeAnd = ', '
     }
     else {
@@ -219,9 +219,9 @@ function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
         grade = 'student'
     }
 
-    var bio = `${name}${pronunciation || ''} is a ${grade} `
+    var bio = `${name}${pronunciation || ''} is a ${grade}`
     if (w1 !== 'left') {
-        bio += 'at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City'
+        bio += ' at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City'
     }
     if (w1 === 'left') {
         w1 = 'a'
