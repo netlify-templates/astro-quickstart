@@ -15,21 +15,24 @@ if (urlPath.split('/').length >= 3) {
 else user = urlParams.get('m')
 
 function showItem(img, element, capt, desc, c) {
+  if (!element) element = 'object'
+  if (element === 'img') element = 'div'
+
   var cLink = document.querySelector("#cSpan").parentNode
-  cLink.href = `javascript:hideModal('${element.replace('img', 'div')}')`
-  while (capt.includes('  ')) {
-    capt = capt.replace('  ', ' ')
+  cLink.href = `javascript:hideModal('${element}')`
+
+  if (capt.includes('  ')) {
+    capt = capt.split('  ').join(' ')
   }
-  while (capt.includes('<a target="_blank" href="/')) {
-    capt = capt.replace('<a target="_blank" href="/', '<a href="/')
+  if (capt.includes('<a target="_blank" href="/')) {
+    capt = capt.split('<a target="_blank" href="/').join('<a href="/')
   }
-  while (desc.includes('  ')) {
-    desc = desc.replace('  ', ' ')
+  if (desc.includes('  ')) {
+    desc = desc.split('  ').join(' ')
   }
-  while (desc.includes('<a target="_blank" href="/')) {
-    desc = desc.replace('<a target="_blank" href="/', '<a href="/')
+  if (desc.includes('<a target="_blank" href="/')) {
+    desc = desc.split('<a target="_blank" href="/').join('<a href="/')
   }
-  if (!!element === false) element = 'object'
 
   var tElement = document.querySelector('[tElement]')
   tElement.innerHTML = capt
