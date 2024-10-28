@@ -223,6 +223,9 @@ function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
     if (w1 !== 'left') {
         bio += 'at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City'
     }
+    if (w1 === 'left') {
+        w1 = 'a'
+      }
     bio += `${removeAnd}${w1} ${role} ${w2} Graphics for Good.`
 
     return bio
