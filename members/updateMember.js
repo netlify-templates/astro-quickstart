@@ -180,7 +180,7 @@ function updateLeftData(userData) {
       if (dateObjFromDate === 'Invalid Date') dateObjFromDate = userData.date
     }
   
-    let leftDefaultBio = defaultBio(userData.name, getUserGrade(userData.year))
+    let leftDefaultBio = defaultBio(userData.name, getUserGrade(userData.year), 'left')
         .replace(' a Member of ', ' was a Member of ')
     leftDefaultBio = leftDefaultBio.slice(0, leftDefaultBio.length - 1)
     var bioText = `${leftDefaultBio} until ${dateObjFromDate}.`
@@ -213,8 +213,19 @@ function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
     if (name.includes('(') && name.includes(')')) {
       name = name.split('(')[1].split(')')[0]
     }
+
     if (!!role === false) role = 'Member'
-    return `${name}${pronunciation || ''} is a ${grade} at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City${removeAnd}${w1} ${role} ${w2} Graphics for Good.`
+    if (w1 === 'left') {
+        grade = 'student'
+    }
+
+    var bio = `${name}${pronunciation || ''} is a `
+    if (w1 !== 'left') {
+        bio += 'at <a href="https://dtechhs.org">Design Tech High School</a> in Redwood City'
+    }
+    bio += `${removeAnd}${w1} ${role} ${w2} Graphics for Good.`
+
+    return bio
 }
 
 function getUserGrade(gradYear) {
