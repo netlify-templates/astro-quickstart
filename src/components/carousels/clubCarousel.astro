@@ -1,15 +1,36 @@
 ---
 import Carousel from '../carousel.astro'
 
+var images = await Astro.glob('../../../public/club_photos/previews/*')
+
 const { carouselIndex } = Astro.props
 ---
 <Carousel carouselIndex={carouselIndex}>
-    <img class="left" src="/assets/club_photos/previews/IMG_0506.jpg" draggable="false">
+    <pre>{JSON.stringify(images, null, 4)}</pre>
+    <!-- {
+        images.map((img, i) => {
+            switch (i) {
+                case 0: 
+                    return <img class="left" src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false" />
+                    break
+                case 1: 
+                    return <img class="active" src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false" />
+                    break
+                case 2: 
+                    return <img class="right" src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false" />
+                    break
+                default: 
+                    return <img src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false" />
+                    break
+            }
+        })
+    } -->
+    <!-- <img class="left" src="/assets/club_photos/previews/IMG_0506.jpg" draggable="false">
     <img class="active" src="/assets/club_photos/previews/IMG_0496.jpg" draggable="false">
     <img class="right" src="/assets/club_photos/previews/IMG_0498.jpg" draggable="false">
     <img src="/assets/club_photos/previews/IMG_0499.jpg" draggable="false">
     <img src="/assets/club_photos/previews/IMG_0510.jpg" draggable="false">
     <img src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false">
     <img src="/assets/club_photos/previews/IMG_0513.jpg" draggable="false">
-    <img src="/assets/club_photos/previews/IMG_0515.jpg" draggable="false">
+    <img src="/assets/club_photos/previews/IMG_0515.jpg" draggable="false"> -->
 </Carousel>
