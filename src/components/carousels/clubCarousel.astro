@@ -7,8 +7,8 @@ function getFName(str) {
     if (str.includes('/')) str = str.split('/').slice(-1)[0]
 
     if (str.includes('.')) {
-        str = str.split('.')
-        `${str.slice(0, -2)[0]}.${str.slice(-1)[0]}`
+        console.log(str)
+        str = str.split('.').splice(-2, 1).join('.')
     }
     return str
 }
