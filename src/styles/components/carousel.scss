@@ -1,16 +1,67 @@
-[data-carousel] {
-    display: none;
-}
-
-
 .carousel {
-    max-width: 100%;
+    .imgs {
+        flex: 1;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+        margin: 0;
+        padding: 0;
+        
+        display: grid;
+    
+        // width: calc(var(--cols, 1)*100%);
+    
+        $grid: repeat(var(--cols, 1), 100%);
+        grid-template-columns: $grid;
+        grid-template-rows: repeat(1, 1fr);
+    
+        
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+
+        list-style: none;
+
+        isolation: isolate;
   
+        & > * {
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+        }
+    
+        @for $i from 0 through 10 {
+            &[data-columns="#{$i}"] {
+                --cols: #{$i};
+            }
+            &[data-rows="#{$i}"] {
+                --rows: #{$i};
+            }
+        }
+    }
+
+    & img {
+        --time: 250ms;
+        --shadow-size: 25px;
+        --shadow-color: var(--orig-bg-color);  
+
+        background-color: var(--orig-bg-color);
+
+        max-width: 100%;
+
+        border-radius: 25px;
+
+        box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
+
+        cursor: pointer;
+
+        &.hover-in {
+            transition: var(--time) ease-in;
+
+            &.hover {
+                border-radius: 10px;
+
+                transition: var(--time) ease-out;
+            }
+        }
+    }
+    
     & > a {
         height: 32px;
         aspect-ratio: 1;
@@ -27,78 +78,35 @@
         }
     }
   
-    & > .imgs {
-        flex: 1;
-
-        margin: 0;
-        // margin-block: 55px;
-        padding: 0;
-
-        height: fit-content;
-
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        // column-gap: 80px;
-        align-items: center;
-
-        list-style: none;
-
-        isolation: isolate;
+    // & > .imgs {
+    //     & .active {
+    //         z-index: 2;
+    //     }
+    //     & :not(.active) {
+    //         z-index: 1;
+    //     }
   
-        & .active {
-            z-index: 2;
-        }
-        & :not(.active) {
-            z-index: 1;
-        }
+    //     & .left {
+    //         border-top-right-radius: 0 !important;
+    //         border-bottom-right-radius: 0 !important;
+
+    //         // box-shadow-right: none;
+    //     }
   
-        & .left {
-            border-top-right-radius: 0 !important;
-            border-bottom-right-radius: 0 !important;
+    //     & .right {
+    //         border-top-left-radius: 0 !important;
+    //         border-bottom-left-radius: 0 !important;
 
-            // box-shadow-right: none;
-        }
-  
-        & .right {
-            border-top-left-radius: 0 !important;
-            border-bottom-left-radius: 0 !important;
-
-            // box-shadow-left: none;
-        }
-        & :not(.left, .active, .right) {
-            display: none;
-        }
-
-        & img {
-            --time: 250ms;
-            --shadow-size: 25px;
-            --shadow-color: var(--orig-bg-color);  
-
-            background-color: var(--orig-bg-color);
-
-            max-width: 100%;
-
-            border-radius: 25px;
-
-            box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
-
-            cursor: pointer;
-  
-            &.hover-in {
-                transition: var(--time) ease-in;
-
-                &.hover {
-                    border-radius: 10px;
-
-                    transition: var(--time) ease-out;
-                }
-            }
-        }
-    }
+    //         // box-shadow-left: none;
+    //     }
+    //     & :not(.left, .active, .right) {
+    //         display: none;
+    //     }
+    // }
   
     * {
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
     }
-}  
+}
