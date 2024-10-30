@@ -11,6 +11,7 @@ dataColumns = parseInt(dataColumns)
 var forwFunction = `javascript:goBack(${carouselIndex});`
 var backFunction = `javascript:goForw(${carouselIndex});`
 
+console.log(dataColumns)
 ---
 <div class="carousel" data-index={carouselIndex} data-columns={dataColumns}>
   <slot />
