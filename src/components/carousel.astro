@@ -3,7 +3,7 @@ export interface Props {
 	carouselIndex: string;
 }
 
-var { carouselIndex } = Astro.props as Props;
+var { carouselIndex, cols } = Astro.props as Props;
 
 carouselIndex = parseInt(carouselIndex)
 
@@ -11,6 +11,6 @@ var forwFunction = `javascript:goBack(${carouselIndex});`
 var backFunction = `javascript:goForw(${carouselIndex});`
 
 ---
-<div class="carousel" data-index={carouselIndex}>
+<div class="carousel" data-index={carouselIndex} data-columns={dataColumns}>
   <slot />
 </div>

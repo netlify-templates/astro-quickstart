@@ -1,4 +1,13 @@
 .carousel {
+    @for $i from 0 through 10 {
+        &[data-columns="#{$i}"] {
+            --cols: #{$i};
+        }
+        &[data-rows="#{$i}"] {
+            --rows: #{$i};
+        }
+    }
+
     .imgs {
         flex: 1;
 
@@ -24,15 +33,6 @@
         & > * {
             scroll-snap-align: center;
             scroll-snap-stop: always;
-        }
-    
-        @for $i from 0 through 10 {
-            &[data-columns="#{$i}"] {
-                --cols: #{$i};
-            }
-            &[data-rows="#{$i}"] {
-                --rows: #{$i};
-            }
         }
     }
 
