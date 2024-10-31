@@ -7,6 +7,12 @@
     
     gap: var(--gap);
 
+    .img-container {
+        display: grid;
+        place-items: center;
+        overflow-x: hidden;
+    }
+
     .imgs {
         box-sizing: border-box;
         margin: 0;
