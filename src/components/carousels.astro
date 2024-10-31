@@ -10,31 +10,21 @@ import '../styles/components/carousel.scss'
             i = dataI
         }
 
-        let imgs = document.createElement('ul')
-        imgs.classList.add('imgs')
-
         var images = carousel.querySelectorAll('img')
         images.forEach(function(img, i) {
-            var newImg = img.cloneNode(true)
-            newImg.onmouseover = function(e) {
+            img.onmouseover = function(e) {
                 e.target.setAttribute('hover-in', '')
                 setTimeout(function() {
                     e.target.setAttribute('hover', '')
                 }, 1);
             }
-            newImg.onmouseout = function(e) {
+            img.onmouseout = function(e) {
                 e.target.removeAttribute('hover')
                 setTimeout(function(e) {
                     e.target.removeAttribute('hover-in')
                 }, 1)
             }
-            imgs.appendChild(newImg)
-            img.remove()
         })
-
-        carousel.appendChild(leftArrow)
-        carousel.appendChild(imgs)
-        carousel.appendChild(rightArrow)
     })
 </script>
 <script is:inline>

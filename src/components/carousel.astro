@@ -17,7 +17,9 @@ console.log(dataColumns)
   <a hidden href="#" onClick={backFunction}>
     <img src="/assets/arrows/L.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Backward.`} />
   </a>
-  <slot />
+  <div class="imgs">
+    <slot />
+  </div>
   <a hidden href="#" onClick={forwFunction}>
     <img src="/assets/arrows/R.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Forwards.`} />
   </a>
