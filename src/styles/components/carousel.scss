@@ -1,14 +1,19 @@
 .carousel {
+    --gap: 25px;
+
     display: grid;
     grid-template-columns: 1fr auto 1fr;
+    place-items: center;
+    
+    gap: var(--gap);
 
     .imgs {
         box-sizing: border-box;
         margin: 0;
-        padding: 25px;
+        padding: var(--gap);
         
         display: grid;
-        gap: 60px;
+        gap: calc(var(--gap)*2 + 10px);
     
         // width: calc(var(--cols, 1)*100%);
     
@@ -42,7 +47,7 @@
 
     & .imgs img {
         --time: 250ms;
-        --shadow-size: 25px;
+        --shadow-size: var(--gap);
         --shadow-color: var(--orig-bg-color);  
 
         margin-inline: auto;
@@ -57,7 +62,7 @@
         background-color: var(--orig-bg-color);
         box-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
         
-        border-radius: 25px;
+        border-radius: var(--gap);
 
         cursor: pointer;
 
