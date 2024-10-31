@@ -15,7 +15,7 @@ function getFName(str) {
 
 const { carouselIndex } = Astro.props
 ---
-<Carousel carouselIndex={carouselIndex} dataColumns={images.length}>
+<Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId="clubCarousel">
     {
         images.map((img, i) => {
             img = img.default
