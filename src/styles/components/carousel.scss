@@ -3,8 +3,9 @@
     grid-template-columns: 1fr auto 1fr;
 
     .imgs {
+        box-sizing: border-box;
         margin: 0;
-        padding: 0;
+        padding: 25px;
         
         display: grid;
     
