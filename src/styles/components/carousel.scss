@@ -29,7 +29,7 @@
     
     }
 
-    @for $i from 0 through 10 {
+    @for $i from 0 through 100 {
         &[data-columns="#{$i}"] {
             --cols: #{$i};
         }
