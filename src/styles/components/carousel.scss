@@ -27,13 +27,14 @@
             scroll-snap-stop: always;
         }
     
-        @for $i from 0 through 10 {
-            &[data-columns="#{$i}"] {
-                --cols: #{$i};
-            }
-            &[data-rows="#{$i}"] {
-                --rows: #{$i};
-            }
+    }
+
+    @for $i from 0 through 10 {
+        &[data-columns="#{$i}"] {
+            --cols: #{$i};
+        }
+        &[data-rows="#{$i}"] {
+            --rows: #{$i};
         }
     }
 
