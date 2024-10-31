@@ -79,7 +79,7 @@ var dId = 'workCarousel'
 <Carousel carouselIndex={carouselIndex} dataColumns={17} dataId={dId}>
         {
             images.map((img, i) => {
-                return <img id={`${workCarousel}-${i}`} src={`/assets/members/${img.username}/portfolio/previews/${img.file}`} draggable="false" />
+                return <img id={`${dId}-${i}`} src={`/assets/members/${img.username}/portfolio/previews/${img.file}`} draggable="false" />
             })
         }
 </Carousel>
