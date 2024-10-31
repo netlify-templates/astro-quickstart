@@ -3,7 +3,7 @@ export interface Props {
 	carouselIndex: string;
 }
 
-var { carouselIndex, dataColumns } = Astro.props as Props;
+var { carouselIndex, dataColumns, dataId } = Astro.props as Props;
 
 carouselIndex = parseInt(carouselIndex)
 dataColumns = parseInt(dataColumns).toString()
@@ -11,7 +11,6 @@ dataColumns = parseInt(dataColumns).toString()
 var forwFunction = `javascript:goBack(this.parentNode.parentNode);`
 var backFunction = `javascript:goForw(this.parentNode.parentNode);`
 
-console.log(dataColumns)
 ---
 <div class="carousel" id={dataId} data-index={carouselIndex} data-columns={dataColumns}>
   <a href={`#${dataId}`} onClick={backFunction}>
