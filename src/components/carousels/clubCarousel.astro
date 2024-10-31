@@ -14,33 +14,13 @@ function getFName(str) {
 }
 
 const { carouselIndex } = Astro.props
+var dId = 'clubCarousel'
 ---
-<Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId="clubCarousel">
+<Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId={dId}>
     {
         images.map((img, i) => {
             img = img.default
-            switch (i) {
-                case 0: 
-                    return <img class="left" src={`/assets/club_photos/previews/${getFName(img.src)}`} draggable="false" />
-                    break
-                case 1: 
-                    return <img class="active" src={`/assets/club_photos/previews/${getFName(img.src)}`} draggable="false" />
-                    break
-                case 2: 
-                    return <img class="right" src={`/assets/club_photos/previews/${getFName(img.src)}`} draggable="false" />
-                    break
-                default: 
-                    return <img src={`/assets/club_photos/previews/${getFName(img.src)}`} draggable="false" />
-                    break
-            }
+            return <img id={`${dId}-${i}`} src={`/assets/club_photos/previews/${getFName(img.src)}`} draggable="false" />
         })
     }
-    <!-- <img class="left" src="/assets/club_photos/previews/IMG_0506.jpg" draggable="false">
-    <img class="active" src="/assets/club_photos/previews/IMG_0496.jpg" draggable="false">
-    <img class="right" src="/assets/club_photos/previews/IMG_0498.jpg" draggable="false">
-    <img src="/assets/club_photos/previews/IMG_0499.jpg" draggable="false">
-    <img src="/assets/club_photos/previews/IMG_0510.jpg" draggable="false">
-    <img src="/assets/club_photos/previews/IMG_0512.jpg" draggable="false">
-    <img src="/assets/club_photos/previews/IMG_0513.jpg" draggable="false">
-    <img src="/assets/club_photos/previews/IMG_0515.jpg" draggable="false"> -->
 </Carousel>

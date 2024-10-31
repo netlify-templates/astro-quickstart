@@ -2,24 +2,84 @@
 import Carousel from '../carousel.astro'
 
 const { carouselIndex } = Astro.props
+
+var images = [
+    {
+        username: "isabelle", 
+        file: "Birds-are-essential-for-our-environment!.png", 
+    }, 
+    {
+        username: "shikha", 
+        file: "Did-you-know.png", 
+    }, 
+    {
+        username: "shikha", 
+        file: "Women's-History-Month!.png", 
+    }, 
+    {
+        username: "juhi", 
+        file: "Little-Wishes-Hospital-Gown-Feb-2023_4.png", 
+    }, 
+    {
+        username: "juhi", 
+        file: "Little-Wishes-Hospital-Gown-Feb-2023_5.png", 
+    }, 
+    {
+        username: "juhi", 
+        file: "Little-Wishes-Hospital-Gown-Feb-2023_6.png", 
+    }, 
+    {
+        username: "juhi", 
+        file: "Little-Wishes-Hospital-Gown-Feb-2023_7.png", 
+    }, 
+    {
+        username: "samantha", 
+        file: "Help-save-the-oceans_1.png", 
+    }, 
+    {
+        username: "samantha", 
+        file: "Help-save-the-oceans_2.png", 
+    }, 
+    {
+        username: "samantha", 
+        file: "Help-save-the-oceans_3.png", 
+    }, 
+    {
+        username: "samantha", 
+        file: "Help-save-the-oceans_4.png", 
+    }, 
+    {
+        username: "isabelle", 
+        file: "DON'T-EAT-FROGS.png", 
+    }, 
+    {
+        username: "isabelle", 
+        file: "Untitled-(800-x-1000-px).png", 
+    }, 
+    {
+        username: "shikha", 
+        file: "Elarra.jpg", 
+    }, 
+    {
+        username: "shikha", 
+        file: "Fairy.jpg", 
+    }, 
+    {
+        username: "shikha", 
+        file: "c3.jpg", 
+    }, 
+    {
+        username: "shikha", 
+        file: "Rapunzel.jpg", 
+    }, 
+]
+
+var dId = 'workCarousel'
 ---
-<Carousel carouselIndex={carouselIndex} dataColumns={17} dataId="workCarousel">
-    <img class="left" src="/assets/members/isabelle/portfolio/previews/Birds-are-essential-for-our-environment!.png" draggable="false">
-    <img class="active" src="/assets/members/shikha/portfolio/previews/Did-you-know.png" draggable="false">
-    <img class="right" src="/assets/members/shikha/portfolio/previews/Women's-History-Month!.png" draggable="false">
-    <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_4.png" draggable="false">
-    <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_5.png" draggable="false">
-    <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_6.png" draggable="false">
-    <img src="/assets/members/juhi/portfolio/previews/Little-Wishes-Hospital-Gown-Feb-2023_7.png" draggable="false">
-    <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_1.png" draggable="false">
-    <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_2.png" draggable="false">
-    <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_3.png" draggable="false">
-    <img src="/assets/members/samantha/portfolio/previews/Help-save-the-oceans_4.png" draggable="false">
-    <img src="/assets/members/isabelle/portfolio/previews/DON'T-EAT-FROGS.png" draggable="false">
-    <img src="/assets/members/isabelle/portfolio/previews/Untitled-(800-x-1000-px).png" draggable="false">
-    <img src="/assets/members/shikha/portfolio/previews/Elarra.jpg" draggable="false">
-    <img src="/assets/members/shikha/portfolio/previews/Fairy.jpg" draggable="false">
-    <img src="/assets/members/shikha/portfolio/previews/c3.jpg" draggable="false">
-    <img src="/assets/members/shikha/portfolio/previews/Rapunzel.jpg" draggable="false">
-    <!--<img src="/assets/members/hanlin/portfolio/previews/G4G-Ad.png" draggable="false">-->
+<Carousel carouselIndex={carouselIndex} dataColumns={17} dataId={dId}>
+        {
+            images.map((img, i) => {
+                return <img id={`${workCarousel}-${i}`} src={`/assets/members/${img.username}/portfolio/previews/${img.file}`} draggable="false" />
+            })
+        }
 </Carousel>
