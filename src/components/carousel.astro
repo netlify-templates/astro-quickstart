@@ -13,7 +13,7 @@ var backFunction = `javascript:goForw(this.parentNode.parentNode);`
 
 ---
 <div class="carousel" id={dataId} data-index={carouselIndex} data-columns={dataColumns}>
-  <a href={`#${dataId}`} onClick={backFunction}>
+  <a class="arrow" hidden href={`#${dataId}`} onClick={backFunction}>
     <img src="/assets/arrows/L.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Backward.`} />
   </a>
   <div class="img-container">
@@ -21,7 +21,7 @@ var backFunction = `javascript:goForw(this.parentNode.parentNode);`
       <slot />
     </div>
   </div>
-  <a href={`#${dataId}`} onClick={forwFunction}>
+  <a class="arrow" hidden href={`#${dataId}`} onClick={forwFunction}>
     <img src="/assets/arrows/R.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Forwards.`} />
   </a>
 </div>

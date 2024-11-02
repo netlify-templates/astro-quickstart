@@ -1,13 +1,15 @@
 .carousel {
     --gap: 25px;
 
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     gap: var(--gap);
 
     .img-container {
+        flex: 1;
+
         display: grid;
         place-items: center;
         overflow-x: hidden;
@@ -83,7 +85,7 @@
         }
     }
     
-    & > a {
+    & > .arrow {
         height: 32px;
         aspect-ratio: 1;
 
