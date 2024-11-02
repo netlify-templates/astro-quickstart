@@ -21,8 +21,8 @@
 
 // Custom Scrollbar
 ::-webkit-scrollbar {
-  width: var(--scroll-bar-width);
-  height: 100%;
+  width: var(--scroll-bar-size);
+  height: var(--scroll-bar-size);
 
   // border-radius: 25px;
 
