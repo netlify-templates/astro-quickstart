@@ -52,8 +52,8 @@ main:not(.projects, .profile, .portal, .frame-page) > * {
         overflow-x: clip;
         > :is(section:has( ~ section), section ~ section) {
             --dir: 0;
-            @include splitAnimations;
-            @include animations;
+            // @include splitAnimations;
+            // @include animations;
             &:first-of-type {
                 --dir: -1;
             }
