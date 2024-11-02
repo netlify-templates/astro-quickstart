@@ -1,0 +1,11 @@
+.img-parent {
+    > input[type="checkbox"] {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    > img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

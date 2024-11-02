@@ -1,4 +1,9 @@
 ---
 const { id, src, draggable } = Astro.props as Props;
+
+import '../styles/components/largeImage.scss'
 ---
-<img id={id || null} src={src} style={`--bg: url('${src}')`} draggable={draggable || false} />
+<label class="img-parent">
+    <input type="checkbox" />
+    <img id={id || null} src={src} style={`--bg: url('${src}')`} draggable={draggable || false} />
+</label>

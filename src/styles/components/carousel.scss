@@ -53,7 +53,7 @@
         }
     }
 
-    & .imgs img {
+    & .imgs .img-parent {
         --time: 250ms;
         --shadow-size: var(--gap);
         --shadow-color: var(--orig-bg-color);  
