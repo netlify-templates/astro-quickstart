@@ -79,7 +79,8 @@ var dId = 'workCarousel'
 <Carousel carouselIndex={carouselIndex} dataColumns={17} dataId={dId}>
         {
             images.map((img, i) => {
-                return <img id={`${dId}-${i}`} src={`/assets/members/${img.username}/portfolio/previews/${img.file}`} draggable="false" />
+                var src = `/assets/members/${img.username}/portfolio/previews/${img.file}`
+                return <img id={`${dId}-${i}`} src={src} style={`--bg: url('${src}')`} draggable="false" />
             })
         }
 </Carousel>

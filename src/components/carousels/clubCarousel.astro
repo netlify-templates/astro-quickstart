@@ -20,7 +20,8 @@ var dId = 'clubCarousel'
     {
         images.map((img, i) => {
             img = img.default
-            return <img id={`${dId}-${i}`} src={`/assets/club_photos/previews/${getFName(img.src)}`} draggable="false" />
+            var src = `/assets/club_photos/previews/${getFName(img.src)}`
+            return <img id={`${dId}-${i}`} src={src} style={`--bg: url('${src}')`} draggable="false" />
         })
     }
 </Carousel>
