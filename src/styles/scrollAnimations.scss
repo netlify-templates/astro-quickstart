@@ -42,8 +42,8 @@
 
 main:not(.projects, .profile, .portal, .frame-page) > * {
     &:not(.hero, :has( > section)) {
-        @include scaleAnimations(both);
-        @include animations;
+        // @include scaleAnimations(both);
+        // @include animations;
     }
     &:has( > section) {
         &:not(.split) {
