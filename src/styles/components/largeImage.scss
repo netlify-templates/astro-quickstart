@@ -1,12 +1,14 @@
 .img-parent {
     overflow: hidden;
-    width: fit-content;
-    height: fit-content;
+    display: grid;
 
     > input[type="checkbox"] {
         visibility: hidden;
         width: 0;
         height: 0;
+        margin: 0;
+        border: 0;
+        padding: 0;
     }
     > img {
         max-width: 100%;
