@@ -41,10 +41,10 @@
   
 
 main:not(.projects, .profile, .portal, .frame-page) > * {
-    &:not(.hero, :has( > section)) {
-        // @include scaleAnimations(both);
-        // @include animations;
-    }
+    // &:not(.hero, :has( > section)) {
+    //     @include scaleAnimations(both);
+    //     @include animations;
+    // }
     &:has( > section) {
         &:not(.split) {
             --amt: calc((var(--dWidth)/2) - 50%);
