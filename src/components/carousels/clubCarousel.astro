@@ -1,5 +1,6 @@
 ---
 import Carousel from '../carousel.astro'
+import largeImage from '../largeImage.astro'
 
 var images = await Astro.glob('../../../public/assets/club_photos/previews/*')
 
@@ -21,7 +22,7 @@ var dId = 'clubCarousel'
         images.map((img, i) => {
             img = img.default
             var src = `/assets/club_photos/previews/${getFName(img.src)}`
-            return <img id={`${dId}-${i}`} src={src} style={`--bg: url('${src}')`} draggable="false" />
+            return <largeImage id={`${dId}-${i}`} src={src} draggable={false} />
         })
     }
 </Carousel>

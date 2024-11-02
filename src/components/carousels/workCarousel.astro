@@ -1,5 +1,6 @@
 ---
 import Carousel from '../carousel.astro'
+import largeImage from '../largeImage.astro'
 
 const { carouselIndex } = Astro.props
 
@@ -80,7 +81,7 @@ var dId = 'workCarousel'
         {
             images.map((img, i) => {
                 var src = `/assets/members/${img.username}/portfolio/previews/${img.file}`
-                return <img id={`${dId}-${i}`} src={src} style={`--bg: url('${src}')`} draggable="false" />
+                return <largeImage id={`${dId}-${i}`} src={src} draggable={false} />
             })
         }
 </Carousel>

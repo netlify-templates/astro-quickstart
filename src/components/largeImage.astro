@@ -1,0 +1,4 @@
+---
+const { id, src, draggable } = Astro.props as Props;
+---
+<img id={id || null} src={src} style={`--bg: url('${src}')`} draggable={draggable || false} />
