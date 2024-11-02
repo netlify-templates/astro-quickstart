@@ -74,10 +74,10 @@
 
         cursor: pointer;
 
-        &.hover-in {
+        &:has([hover-in]) {
             transition: var(--time) ease-in;
 
-            &.hover {
+            &:has([hover]) {
                 border-radius: 10px;
 
                 transition: var(--time) ease-out;
