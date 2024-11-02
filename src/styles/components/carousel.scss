@@ -21,7 +21,7 @@
         display: grid;
         gap: calc(var(--gap)*2 + 10px);
     
-        // width: calc(var(--cols, 1)*100%);
+        width: 100%;
     
         $grid: repeat(var(--cols, 1), 100%);
         grid-template-columns: $grid;
