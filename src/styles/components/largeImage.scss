@@ -1,4 +1,8 @@
 .img-parent {
+    overflow: hidden;
+    width: fit-content;
+    height: fit-content;
+
     > input[type="checkbox"] {
         visibility: hidden;
         width: 0;
