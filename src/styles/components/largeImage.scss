@@ -2,6 +2,12 @@
     overflow: hidden;
     display: grid;
 
+    &:has(> input[type="checkbox"]:checked) {
+        position: absolute;
+        inset: 0;
+        grid-template-rows: 1fr auto 1fr;
+    }
+
     > input[type="checkbox"] {
         visibility: hidden;
         width: 0;
@@ -9,9 +15,11 @@
         margin: 0;
         border: 0;
         padding: 0;
+
     }
     > img {
         max-width: 100%;
         max-height: 100%;
+        pointer-events: none;
     }
 }
