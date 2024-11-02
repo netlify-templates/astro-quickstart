@@ -52,6 +52,8 @@ main:not(.projects, .profile, .portal, .frame-page) > * {
         overflow-x: clip;
         > :is(section:has( ~ section), section ~ section) {
             --dir: 0;
+
+            /* Uncomment These After Debugging or when deciding to bring back the split animations on sections */
             // @include splitAnimations;
             // @include animations;
             &:first-of-type {
