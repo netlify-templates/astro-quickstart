@@ -75,13 +75,25 @@ var images = [
     }, 
 ]
 
+function getFName(name) {
+    if (name.includes('.')) {
+        name = name.split('.').splice(-1).join('.')
+    }
+    return name
+}
+
+function toProper(user) {
+    user = `${user.slice(0, 1).toUpperCase()}${user.slice(1)}`
+    return user
+}
+
 var dId = 'workCarousel'
 ---
 <Carousel carouselIndex={carouselIndex} dataColumns={17} dataId={dId}>
         {
             images.map((img, i) => {
                 var src = `/assets/members/${img.username}/portfolio/previews/${img.file}`
-                return <LargeImage id={`${dId}-${i}`} src={src} draggable={false} />
+                return <LargeImage id={`${dId}-${i}`} src={src} alt={`${getFName(img.file)} by ${toProper(img.username)}`}draggable={false} />
             })
         }
 </Carousel>
