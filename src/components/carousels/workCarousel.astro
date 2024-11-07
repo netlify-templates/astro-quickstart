@@ -22,7 +22,7 @@ import img14 from '../../../members/shikha/portfolio/Fairy.jpg'
 import img15 from '../../../members/shikha/portfolio/c3.jpg'
 import img16 from '../../../members/shikha/portfolio/Rapunzel.jpg'
 
-var data = [
+var imgs = [
     {
         username: "isabelle", 
         file: "Birds-are-essential-for-our-environment!.png", 
@@ -109,13 +109,6 @@ var data = [
         img: img16,
     }, 
 ]
-
-var imgs = []
-data.forEach(img => {
-    var src = `/assets/members/${img.username}/portfolio/${img.file}`
-    import Image from `../../../public${src}`
-    imgs.push(Image)
-})
 
 function getFName(name) {
     if (name.includes('.')) {
