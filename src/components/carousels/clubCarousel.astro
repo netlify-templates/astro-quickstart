@@ -2,7 +2,7 @@
 import Carousel from '../carousel.astro'
 import LargeImage from '../largeImage.astro'
 
-var images = await Astro.glob('../../../public/assets/club_photos/previews/*')
+var images = await Astro.glob('../../../imgs/club_photos/*')
 
 function getFName(str) {
     if (str.includes('/')) str = str.split('/').slice(-1)[0]
@@ -21,8 +21,9 @@ var dId = 'clubCarousel'
     {
         images.map((img, i) => {
             img = img.default
-            var src = `/assets/club_photos/previews/${getFName(img.src)}`
-            return <LargeImage id={`${dId}-${i}`} src={src} draggable={false} />
+            return <pre>${getFName(img.src)}</pre>
+            // var src = `/assets/club_photos/previews/${getFName(img.src)}`
+            // return <LargeImage id={`${dId}-${i}`} src={src} draggable={false} />
         })
     }
 </Carousel>
