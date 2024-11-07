@@ -14,10 +14,12 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
         // background-opacity: 0.9;
 
         > img {
-            background-image: var(--bg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
+            max-height: 100dvh;
+            max-width: 100dvw;
+            // background-image: var(--bg);
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            // background-position: center;
 
             border-radius: inherit;
             box-shadow: inherit;
