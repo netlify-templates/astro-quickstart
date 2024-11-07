@@ -3,6 +3,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
 }
 
 .img-parent {
+    position: relative;
     overflow: hidden;
     // display: grid;
     height: fit-content;
@@ -47,13 +48,15 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
     }
 
     > input[type="checkbox"] {
+        position: absolute;
+        bottom: 100%;
+        right: 100%;
         visibility: hidden;
         width: 0;
         height: 0;
         margin: 0;
         border: 0;
         padding: 0;
-
     }
     > .img-container{
         height: fit-content;
