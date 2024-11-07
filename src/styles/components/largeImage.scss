@@ -64,8 +64,8 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             max-height: 100%;
             max-width: 100%;
         }
-        > img {
-            // pointer-events: none;
-        }
+        // > img {
+        //     pointer-events: none;
+        // }
     }
 }
