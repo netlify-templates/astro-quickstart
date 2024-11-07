@@ -5,32 +5,42 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
 .img-parent {
     overflow: hidden;
     // display: grid;
+    height: fit-content;
 
     &:has(> input[type="checkbox"]:checked) {
         inset: 0;
-        &::before, > img {
-            position: fixed;
-        }
         &::before {
-            content: '';
-            inset: 0;
             background-color: var(--bg-color);
             // opacity: 0.9;
         }
 
-        > img {
-            --val: 1rem;
-            inset: var(--val);
+        > .img-parent {
+            position: fixed;
+            inset: 0;
 
-            max-height: calc(100dvh - val*2);
-            max-width: calc(100dvw - val*2);
-            // background-image: var(--bg);
-            // background-repeat: no-repeat;
-            // background-size: cover;
-            // background-position: center;
+            box-sizing: border-box;
+            padding: 2rem;
 
-            border-radius: inherit;
-            box-shadow: inherit;
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-color: var(--bg-color);
+            }
+            > img {
+                --val: 1rem;
+                inset: var(--val);
+    
+                max-height: 100%;
+                max-width: 100%;
+                // background-image: var(--bg);
+                // background-repeat: no-repeat;
+                // background-size: cover;
+                // background-position: center;
+    
+                border-radius: inherit;
+                box-shadow: inherit;
+            }
         }
     }
 
@@ -43,9 +53,12 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
         padding: 0;
 
     }
-    > img {
-        max-width: 100%;
-        max-height: 100%;
-        pointer-events: none;
+    > .img-parent {
+        height: fit-content;
+        > img {
+            max-width: 100%;
+            max-height: 100%;
+            // pointer-events: none;
+        }
     }
 }
