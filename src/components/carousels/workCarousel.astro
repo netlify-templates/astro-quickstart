@@ -77,7 +77,7 @@ var data = [
 
 var imgs = []
 data.forEach(img => {
-    var src = `/assets/members/${img.username}/portfolio/previews/${img.file}`
+    var src = `/assets/members/${img.username}/portfolio/${img.file}`
     import Image from `../../../public${src}`
     imgs.push(Image)
 })
