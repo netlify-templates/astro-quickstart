@@ -93,7 +93,8 @@ var dId = 'workCarousel'
         {
             images.map((img, i) => {
                 var src = `/assets/members/${img.username}/portfolio/previews/${img.file}`
-                return <LargeImage id={`${dId}-${i}`} src={src} alt={`${getFName(img.file)} by ${toProper(img.username)}`}draggable={false} />
+                return <pre>${getFName(img.src)}</pre>
+                // return <LargeImage id={`${dId}-${i}`} src={src} alt={`${getFName(img.file)} by ${toProper(img.username)}`}draggable={false} />
             })
         }
 </Carousel>
