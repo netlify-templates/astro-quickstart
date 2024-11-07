@@ -8,10 +8,11 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
 
     &:has(> input[type="checkbox"]:checked) {
         inset: 0;
-        > input[type="checkbox"], > img {
+        &::before, > img {
             position: fixed;
         }
-        > input[type="checkbox"] {
+        &::before {
+            content: '';
             inset: 0;
             background-color: var(--bg-color);
             opacity: 0.9;
