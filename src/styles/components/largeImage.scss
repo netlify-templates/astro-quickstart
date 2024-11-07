@@ -7,15 +7,22 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
     display: grid;
 
     &:has(> input[type="checkbox"]:checked) {
-        position: fixed;
         inset: 0;
-        // grid-template-rows: 1fr auto 1fr;
-        place-items: center;
-        // background-opacity: 0.9;
+        &::before, > img {
+            position: fixed;
+        }
+        &::before {
+            inset: 0;
+            background-color: var(--bg-color);
+            opacity: 0.9;
+        }
 
         > img {
-            max-height: 100dvh;
-            max-width: 100dvw;
+            --val: 1rem;
+            inset: var(--val);
+
+            max-height: calc(100dvh - val*2);
+            max-width: calc(100dvw - val*2);
             // background-image: var(--bg);
             // background-repeat: no-repeat;
             // background-size: cover;
@@ -23,7 +30,6 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
 
             border-radius: inherit;
             box-shadow: inherit;
-            // background-color: var(--bg-color);
         }
     }
 
