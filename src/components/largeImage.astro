@@ -1,11 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 
-const { id, src, alt, draggable } = Astro.props as Props;
+const { img, id, src, alt, draggable } = Astro.props as Props;
 
 import '../styles/components/largeImage.scss'
 ---
 <label class="img-parent">
     <input type="checkbox" />
-    <Image id={id || null} src={src} style={`--bg: url('${src}')`} alt={alt || ''} draggable={draggable || false} />
+    {
+        !!img
+         ? <Image id={id || null} src={img} style={`--bg: url('${img.src}')`} alt={alt || ''} draggable={draggable || false} />
+         : <Image id={id || null} src={src} style={`--bg: url('${    src}')`} alt={alt || ''} draggable={draggable || false} />
+    }
 </label>

@@ -128,7 +128,7 @@ var dId = 'workCarousel'
     {
         images.map((data, i) => {
             var img = data.img
-            return <LargeImage id={`${dId}-${i}`} src={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
+            return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
         })
     }
 </Carousel>
