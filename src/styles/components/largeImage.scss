@@ -21,6 +21,8 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             box-sizing: border-box;
             padding: 2rem;
 
+            border-radius: inherit;
+
             &::before {
                 content: '';
                 position: absolute;
@@ -39,7 +41,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
                 // background-position: center;
     
                 border-radius: inherit;
-                box-shadow: inherit;
+                // box-shadow: inherit;
             }
         }
     }
