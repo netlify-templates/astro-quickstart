@@ -60,9 +60,11 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
     }
     > .img-container{
         height: fit-content;
-        > img {
-            max-width: 100%;
+        &, > img {
             max-height: 100%;
+            max-width: 100%;
+        }
+        > img {
             // pointer-events: none;
         }
     }
