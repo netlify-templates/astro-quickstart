@@ -33,7 +33,6 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             > img {
                 max-height: 100%;
                 max-width: 100%;
-                width: auto;
                 // background-image: var(--bg);
                 // background-repeat: no-repeat;
                 // background-size: cover;
@@ -62,8 +61,9 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             max-height: 100%;
             max-width: 100%;
         }
-        // > img {
-        //     pointer-events: none;
-        // }
+        > img {
+            width: auto;
+            //     pointer-events: none;
+        }
     }
 }
