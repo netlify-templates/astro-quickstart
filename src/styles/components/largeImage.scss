@@ -6,7 +6,14 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
     position: relative;
     overflow: hidden;
     // display: grid;
+    max-height: 100%;
     height: fit-content;
+    &, >.img-container {
+        &, > img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
 
     &:has(> input[type="checkbox"]:checked) {
         inset: 0;
@@ -57,10 +64,6 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
     }
     > .img-container{
         height: fit-content;
-        &, > img {
-            max-height: 100%;
-            max-width: 100%;
-        }
         > img {
             width: auto;
             //     pointer-events: none;
