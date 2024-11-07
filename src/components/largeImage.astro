@@ -10,8 +10,8 @@ import '../styles/components/largeImage.scss'
     <div class="img-container">
         {
             !!img
-             ? <Image id={id || null} src={img} style={`--bg: url('${img.src}')`} alt={alt || ''} draggable={draggable || false} />
-             : <Image id={id || null} src={src} style={`--bg: url('${    src}')`} alt={alt || ''} draggable={draggable || false} />
+             ? <img id={id || null} src={img} style={`--bg: url('${img.src}')`} alt={alt || ''} draggable={draggable || false} />
+             : <img id={id || null} src={src} style={`--bg: url('${    src}')`} alt={alt || ''} draggable={draggable || false} />
         }
     </div>
 </label>
