@@ -4,7 +4,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
 
 .img-parent {
     overflow: hidden;
-    display: grid;
+    // display: grid;
 
     &:has(> input[type="checkbox"]:checked) {
         inset: 0;
