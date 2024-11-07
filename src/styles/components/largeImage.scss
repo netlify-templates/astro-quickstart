@@ -8,9 +8,12 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
     // display: grid;
     height: fit-content;
     &:not(:has(> input[type="checkbox"]:checked)) {
-        &, * {
+        * {
             max-height: var(--max, 100%);
             max-width: 100%;
+        }
+        > .img-container > img {
+            max-height: calc(var(--max, 100%) - 25px*2);
         }
     }
 
