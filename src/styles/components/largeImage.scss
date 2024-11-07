@@ -14,7 +14,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             // opacity: 0.9;
         }
 
-        > .img-parent {
+        > .img-container {
             position: fixed;
             inset: 0;
 
@@ -53,7 +53,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
         padding: 0;
 
     }
-    > .img-parent {
+    > .img-container{
         height: fit-content;
         > img {
             max-width: 100%;
