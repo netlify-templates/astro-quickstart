@@ -14,6 +14,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
         }
         > .img-container > img {
             max-height: calc(var(--max, 100%) - 25px*2);
+            max-width: calc(100% - 25px*2);
         }
     }
 
