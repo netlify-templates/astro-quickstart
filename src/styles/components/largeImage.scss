@@ -31,9 +31,6 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
                 background-color: var(--bg-color);
             }
             > img {
-                --val: 1rem;
-                inset: var(--val);
-    
                 max-height: 100%;
                 max-width: 100%;
                 // background-image: var(--bg);
