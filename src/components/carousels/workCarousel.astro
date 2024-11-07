@@ -4,7 +4,7 @@ import LargeImage from '../largeImage.astro'
 
 const { carouselIndex } = Astro.props
 
-var images = [
+var data = [
     {
         username: "isabelle", 
         file: "Birds-are-essential-for-our-environment!.png", 
@@ -75,6 +75,13 @@ var images = [
     }, 
 ]
 
+var imgs = []
+data.forEach(img => {
+    var src = `/assets/members/${img.username}/portfolio/previews/${img.file}`
+    import Image from `../../../public${src}`
+    imgs.push(Image)
+})
+
 function getFName(name) {
     if (name.includes('.')) {
         name = name.split('.').splice(-1).join('.')
@@ -92,9 +99,7 @@ var dId = 'workCarousel'
 <Carousel carouselIndex={carouselIndex} dataColumns={17} dataId={dId}>
         {
             images.map((img, i) => {
-                var src = `/assets/members/${img.username}/portfolio/previews/${img.file}`
-                import Image from `../../../public${src}`
-                return <pre>{Image.src}</pre>
+                return <pre>{img.src}</pre>
                 // return <LargeImage id={`${dId}-${i}`} src={src} alt={`${getFName(img.file)} by ${toProper(img.username)}`}draggable={false} />
             })
         }
