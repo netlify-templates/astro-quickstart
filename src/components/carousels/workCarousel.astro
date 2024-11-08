@@ -49,9 +49,9 @@ var members = [
 
 members.forEach((m, i) => {
     m.imgs.forEach(img => {
+        var img = img.default
+        
         if (typeof img === 'object') {
-            var img = img.default
-
             var obj = img
             obj.username = m.username
 
@@ -63,10 +63,10 @@ members.forEach((m, i) => {
             images.push(obj)
         }
         else if (typeof img === 'string') {
-            if (getFExt(img.default) === 'pdf') {
+            if (getFExt(img) === 'pdf') {
                 members[i].fullRes.push({
-                    name: getFNameNoExt(img.default), 
-                    src: img.default
+                    name: getFNameNoExt(img), 
+                    src: img
                 })
             }
         }
