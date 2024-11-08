@@ -51,10 +51,9 @@ members.forEach((m, i) => {
     m.imgs.forEach(img => {
         if (typeof img === 'object') {
             var img = img.default
-            var obj = {
-                username: m.username, 
-                img: img,
-            }
+
+            var obj = img
+            obj.username = m.username
 
             var hasFRes = members[i].fullRes.filter(r => r.name === getFNameNoExt(img.src))
             if (hasFRes) {
@@ -110,8 +109,8 @@ var dId = 'workCarousel'
 ---
 <Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId={dId}>
     {
-        images.map((data, i) => {
-            return <pre>{JSON.stringify(data, null, 4)}</pre>
+        images.map((img, i) => {
+            return <pre>{JSON.stringify(img, null, 4)}</pre>
             // return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
         })
     }
