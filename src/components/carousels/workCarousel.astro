@@ -22,41 +22,57 @@ import img15 from '../../../members/shikha/portfolio/Fairy.jpg'
 import img16 from '../../../members/shikha/portfolio/c3.jpg'
 import img17 from '../../../members/shikha/portfolio/Rapunzel.jpg'
 
-var members = [
-    {
-        username: 'isabelle', 
-        path: '../../../members/isabelle/portfolio/'
-    }, 
-    {
-        username: 'juhi', 
-        path: '../../../members/juhi/portfolio/'
-    }, 
-    {
-        username: 'shikha', 
-        path: '../../../members/shikha/portfolio/'
-    }, 
-    {
-        username: 'samantha', 
-        path: '../../../members/samantha/portfolio/'
-    }, 
-]
-
 var images = []
 
-members.forEach(m => {
-    async function addImgs() {
-        var imgs = await Astro.glob(m.path)
-        imgs.forEach(img => {
+addImgs()
+async function addImgs() {
+    var members = [
+        {
+            username: 'isabelle', 
+            imgs: await Astro.glob('../../../members/isabelle/portfolio/*')
+        }, 
+        {
+            username: 'juhi', 
+            imgs: await Astro.glob('../../../members/juhi/portfolio/')
+        }, 
+        {
+            username: 'shikha', 
+            imgs: await Astro.glob('../../../members/shikha/portfolio/*')
+        }, 
+        {
+            username: 'samantha', 
+            imgs: await Astro.glob('../../../members/samantha/portfolio/*')
+        }, 
+    ]
+
+    members.forEach(m => {
+        m.imgs.forEach(img => {
+            // if (getFExt(img.src) !== 'pdf')
             images.push({
                 username: m.username, 
                 img: img,
             })
         })
-    }
-})
+    })
+}
 
 function getFName(str) {
     if (str.includes('/')) str = str.split('/').slice(-1)[0]
+    return str
+}
+
+function getFExt(str, level=1) {
+    str = getFName(str)
+    if (str.includes('.') && level > 0) {
+        switch (level) {
+            case 1: 
+                str = str.split('.').slice(-1, -1).join('.')
+                break
+            default: 
+                str = str.split('.').slice(-1*level, -1).join('.')
+                break
+        }
+    }
     return str
 }
 
