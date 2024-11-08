@@ -8,6 +8,6 @@ import '../styles/components/largeImage.scss'
 <label class="img-parent">
     <input type="checkbox" />
     <div class="img-container">
-        <img id={id || null} src={src} style={`--bg: url('${src}')`} alt={alt || ''} orientation={orientation || ''} draggable={draggable || false} />
+        <img id={id || null} src={src} style={`--bg: url('${src}')`} alt={alt || ''} orientation={orientation || ''} draggable={draggable || false} loading="lazy" decoding="async" />
     </div>
 </label>
