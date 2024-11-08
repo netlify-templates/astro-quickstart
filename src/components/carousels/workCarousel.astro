@@ -55,9 +55,9 @@ members.forEach((m, i) => {
             var obj = img
             obj.username = m.username
 
-            var hasFRes = members[i].fullRes.filter(r => r.name === getFNameNoExt(img.src))
-            if (hasFRes) {
-                obj.fullRes = hasFRes[0].src
+            var fullRes = members[i].fullRes.filter(r => r.name === getFNameNoExt(img.src))
+            if (fullRes.length > 0) {
+                obj.fullRes = fullRes[0].src
             }
 
             images.push(obj)
