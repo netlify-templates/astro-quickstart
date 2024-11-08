@@ -10,11 +10,11 @@ var { carouselIndex, dataColumns, dataId } = Astro.props as Props;
 carouselIndex = parseInt(carouselIndex)
 dataColumns = parseInt(dataColumns).toString()
 
-var forwFunction = `javascript:goBack(this.parentNode.parentNode);`
-var backFunction = `javascript:goForw(this.parentNode.parentNode);`
+var forwFunction = `javascript:goBack(this);`
+var backFunction = `javascript:goForw(this);`
 
 ---
-<div class="carousel" id={dataId} data-index={carouselIndex} data-columns={dataColumns}>
+<div class="carousel" id={dataId} data-index={carouselIndex} data-columns={dataColumns} active-index={0}>
   <a class="arrow" hidden href={`#${dataId}`} onClick={backFunction}>
     <img src="/assets/arrows/L.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Backward.`} />
   </a>

@@ -16,12 +16,21 @@ import '../styles/components/carousel.scss'
     })
 </script>
 <script is:inline>
-    function setImg(car=0) {
-    }
-    
-    function goBack(car=0) {
+    function goBack(arrow) {
+        var carousel = arrow.parentNode.parentNode
+        var dataColumns = carousel.getAttribute('data-columns')
+
+        var active = carousel.getAttribute('active-index')
+        if (active <= 0) return
+        carousel.setAttribute(active-1)
     }
   
-    function goForw(car=0) {
+    function goForw(arrow) {
+        var carousel = arrow.parentNode.parentNode
+        var dataColumns = carousel.getAttribute('data-columns')
+
+        var active = carousel.getAttribute('active-index')
+        if (active >= dataColumns-1) return
+        carousel.setAttribute(active+1)
     }
 </script>
