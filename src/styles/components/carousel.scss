@@ -76,15 +76,7 @@
 
         cursor: pointer;
 
-        &:has([hover-in]) {
-            transition: var(--time) ease-in;
-
-            &:has([hover]) {
-                border-radius: 10px;
-
-                transition: var(--time) ease-out;
-            }
-        }
+        transition: var(--time) ease-in-out;
     }
     
     & > .arrow {
