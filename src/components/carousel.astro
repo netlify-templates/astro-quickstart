@@ -14,7 +14,7 @@ var forwFunction = `javascript:goBack(this);`
 var backFunction = `javascript:goForw(this);`
 
 ---
-<div class="carousel" id={dataId} data-index={carouselIndex} data-columns={dataColumns} active-index={0}>
+<div class="carousel" id={dataId} data-index={carouselIndex} data-columns={dataColumns} active-item={1}>
   <a class="arrow" hidden href={`#${dataId}`} onClick={backFunction}>
     <img src="/assets/arrows/L.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Backward.`} />
   </a>

@@ -16,17 +16,26 @@ import '../styles/components/carousel.scss'
     })
 </script>
 <script is:inline>
-    function setImg(carousel, pos) {
-        var size = ''
+    function setImg(carousel, active) {
+        var imgs = carousel.querySelector('.imgs')
+
+        var dataColumns = carousel.getAttribute('data-columns')
+        var size = (imgs.clientWidth + 25) / dataColumns
+
+        var pos = size*(active-1)
+
+        imgs.scrollTo({
+            left: size,
+            // behavior: "smooth",
+        });
     }
 
     function goBack(arrow) {
         var carousel = arrow.parentNode.parentNode
-        var dataColumns = carousel.getAttribute('data-columns')
 
-        var active = carousel.getAttribute('active-index')
-        if (active <= 0) return
-        carousel.setAttribute(active-1)
+        var active = carousel.getAttribute('active-item')
+        if (active < 1) return
+        carousel.setAttribute('active-item', active-1)
 
         setImg(carousel, active)
     }
@@ -35,9 +44,9 @@ import '../styles/components/carousel.scss'
         var carousel = arrow.parentNode.parentNode
         var dataColumns = carousel.getAttribute('data-columns')
 
-        var active = carousel.getAttribute('active-index')
-        if (active >= dataColumns-1) return
-        carousel.setAttribute(active+1)
+        var active = carousel.getAttribute('active-item')
+        if (active > dataColumns) return
+        carousel.setAttribute('active-item', active+1)
 
         setImg(carousel, active)
     }
