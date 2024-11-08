@@ -85,9 +85,11 @@ var dId = 'workCarousel'
 ---
 <Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId={dId}>
     {
-        images.map((img, i) => {
-            return <pre>{JSON.stringify(img, null, 4)}</pre>
-            // return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
-        })
+        setTimeout(function() {
+            images.map((img, i) => {
+                return <pre>{JSON.stringify(img, null, 4)}</pre>
+                // return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
+            })
+        }, 1)
     }
 </Carousel>
