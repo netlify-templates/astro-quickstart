@@ -110,6 +110,10 @@ var images = [
     }, 
 ]
 
+images.forEach((item, i) => {
+    item.img = await Astro.glob(`../../../members/${item.username}/portfolio/${item.file}`)
+})
+
 function getFName(name) {
     if (name.includes('.')) {
         name = name.split('.').splice(-1).join('.')
@@ -127,8 +131,11 @@ var dId = 'workCarousel'
 <Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId={dId}>
     {
         images.map((data, i) => {
-            var img = data.img
-            return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
+            return <>{
+                data.img.map(img => {
+                    return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
+                })
+            }</>
         })
     }
 </Carousel>
