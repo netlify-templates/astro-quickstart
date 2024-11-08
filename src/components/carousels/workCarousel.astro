@@ -28,34 +28,61 @@ var members = [
     {
         username: 'isabelle', 
         imgs: await Astro.glob('../../../members/isabelle/portfolio/*')
+        fullRes: [], 
     }, 
     {
         username: 'juhi', 
         imgs: await Astro.glob('../../../members/juhi/portfolio/*')
+        fullRes: [], 
     }, 
     {
         username: 'shikha', 
         imgs: await Astro.glob('../../../members/shikha/portfolio/*')
+        fullRes: [], 
     }, 
     {
         username: 'samantha', 
         imgs: await Astro.glob('../../../members/samantha/portfolio/*')
+        fullRes: [], 
     }, 
 ]
 
-members.forEach(m => {
+members.forEach((m, i) => {
     m.imgs.forEach(img => {
         if (typeof img === 'object') {
-            images.push({
+            var img = img.default
+            var obj = {
                 username: m.username, 
                 img: img,
-            })
+            }
+
+            var hasFRes = members[i].fullRes.filter(r => r.name === getFNameNoExt(img.src))
+            if (hasFRes) {
+                obj.fullRes = hasFRes[0].src
+            }
+
+            images.push(obj)
+        }
+        else if (typeof img === 'string') {
+            if (getFExt(img.default) === 'pdf') {
+                members[i].fullRes.push({
+                    name: getFNameNoExt(img.default), 
+                    src: img.default
+                })
+            }
         }
     })
 })
 
 function getFName(str) {
     if (str.includes('/')) str = str.split('/').slice(-1)[0]
+    return str
+}
+
+function getFNameNoExt(str) {
+    if (str.includes('/')) str = str.split('/').slice(-1)[0]
+    str = str.slice(0, -1*getFExt(str).length)
+
     return str
 }
 
@@ -84,7 +111,6 @@ var dId = 'workCarousel'
 <Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId={dId}>
     {
         images.map((data, i) => {
-            data.img = data.img.default
             return <pre>{JSON.stringify(data, null, 4)}</pre>
             // return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
         })
