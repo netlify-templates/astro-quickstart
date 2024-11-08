@@ -68,6 +68,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
     }
     > .img-container{
         height: fit-content;
+        width: fit-content;
         > img {
             width: auto;
             //     pointer-events: none;
