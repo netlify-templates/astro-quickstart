@@ -22,7 +22,7 @@ var dId = 'clubCarousel'
     {
         images.map((img, i) => {
             img = img.default
-            return <pre>{JSON.stringify(img.src, null, 4)}</pre>
+            return <pre>{JSON.stringify(img, null, 4)}</pre>
             // var src = `/assets/club_photos/previews/${getFName(img.src)}`
             // return <LargeImage id={`${dId}-${i}`} src={src} draggable={false} />
         })
