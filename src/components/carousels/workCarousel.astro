@@ -110,12 +110,12 @@ var images = [
     }, 
 ]
 
-addImgs()
-async function addImgs() {
-    images.forEach((item, i) => {
+images.forEach((item, i) => {
+    addImgs()
+    async function addImgs() {
         item.img = await Astro.glob(`../../../members/${item.username}/portfolio/${item.file}`)
-    })
-}
+    }
+})
 
 function getFName(name) {
     if (name.includes('.')) {
