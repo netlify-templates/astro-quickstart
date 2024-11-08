@@ -111,9 +111,10 @@ var images = [
 ]
 
 images.forEach((item, i) => {
+    var path = `../../../members/${item.username}/portfolio/${item.file}`
     addImgs()
     async function addImgs() {
-        item.img = await Astro.glob(`../../../members/${item.username}/portfolio/${item.file}`)
+        item.img = await Astro.glob(path)
     }
 })
 
