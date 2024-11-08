@@ -18,7 +18,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             box-sizing: border-box;
             margin: var(--mar);
             max-height: calc(var(--max, 100%) - var(--mar)*2);
-            max-width: calc(var(--max, 100%) - var(--mar)*2);
+            max-width: calc(100% - var(--mar)*2);
         }
     }
 
