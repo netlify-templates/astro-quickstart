@@ -24,37 +24,34 @@ import img17 from '../../../members/shikha/portfolio/Rapunzel.jpg'
 
 var images = []
 
-addImgs()
-async function addImgs() {
-    var members = [
-        {
-            username: 'isabelle', 
-            imgs: await Astro.glob('../../../members/isabelle/portfolio/*')
-        }, 
-        {
-            username: 'juhi', 
-            imgs: await Astro.glob('../../../members/juhi/portfolio/*')
-        }, 
-        {
-            username: 'shikha', 
-            imgs: await Astro.glob('../../../members/shikha/portfolio/*')
-        }, 
-        {
-            username: 'samantha', 
-            imgs: await Astro.glob('../../../members/samantha/portfolio/*')
-        }, 
-    ]
+var members = [
+    {
+        username: 'isabelle', 
+        imgs: await Astro.glob('../../../members/isabelle/portfolio/*')
+    }, 
+    {
+        username: 'juhi', 
+        imgs: await Astro.glob('../../../members/juhi/portfolio/*')
+    }, 
+    {
+        username: 'shikha', 
+        imgs: await Astro.glob('../../../members/shikha/portfolio/*')
+    }, 
+    {
+        username: 'samantha', 
+        imgs: await Astro.glob('../../../members/samantha/portfolio/*')
+    }, 
+]
 
-    members.forEach(m => {
-        m.imgs.forEach(img => {
-            // if (getFExt(img.src) !== 'pdf')
-            images.push({
-                username: m.username, 
-                img: img,
-            })
+members.forEach(m => {
+    m.imgs.forEach(img => {
+        // if (getFExt(img.src) !== 'pdf')
+        images.push({
+            username: m.username, 
+            img: img,
         })
     })
-}
+})
 
 function getFName(str) {
     if (str.includes('/')) str = str.split('/').slice(-1)[0]
@@ -85,11 +82,9 @@ var dId = 'workCarousel'
 ---
 <Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId={dId}>
     {
-        setTimeout(function() {
-            images.map((img, i) => {
-                return <pre>{JSON.stringify(img, null, 4)}</pre>
-                // return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
-            })
-        }, 1)
+        images.map((img, i) => {
+            return <pre>{JSON.stringify(img, null, 4)}</pre>
+            // return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
+        })
     }
 </Carousel>
