@@ -22,107 +22,42 @@ import img15 from '../../../members/shikha/portfolio/Fairy.jpg'
 import img16 from '../../../members/shikha/portfolio/c3.jpg'
 import img17 from '../../../members/shikha/portfolio/Rapunzel.jpg'
 
-var images = [
+var members = [
     {
-        username: "isabelle", 
-        file: "Birds-are-essential-for-our-environment!.png", 
-        img: img1,
+        username: 'isabelle', 
+        path: '../../../members/isabelle/portfolio/'
     }, 
     {
-        username: "shikha", 
-        file: "Did-you-know.png", 
-        img: img2,
+        username: 'juhi', 
+        path: '../../../members/juhi/portfolio/'
     }, 
     {
-        username: "shikha", 
-        file: "Women's-History-Month!.png", 
-        img: img3,
+        username: 'shikha', 
+        path: '../../../members/shikha/portfolio/'
     }, 
     {
-        username: "juhi", 
-        file: "Little-Wishes-Hospital-Gown-Feb-2023_4.png", 
-        img: img4,
-    }, 
-    {
-        username: "juhi", 
-        file: "Little-Wishes-Hospital-Gown-Feb-2023_5.png", 
-        img: img5,
-    }, 
-    {
-        username: "juhi", 
-        file: "Little-Wishes-Hospital-Gown-Feb-2023_6.png", 
-        img: img6,
-    }, 
-    {
-        username: "juhi", 
-        file: "Little-Wishes-Hospital-Gown-Feb-2023_7.png", 
-        img: img7,
-    }, 
-    {
-        username: "samantha", 
-        file: "Help-save-the-oceans_1.png", 
-        img: img8,
-    }, 
-    {
-        username: "samantha", 
-        file: "Help-save-the-oceans_2.png", 
-        img: img9,
-    }, 
-    {
-        username: "samantha", 
-        file: "Help-save-the-oceans_3.png", 
-        img: img10,
-    }, 
-    {
-        username: "samantha", 
-        file: "Help-save-the-oceans_4.png", 
-        img: img11,
-    }, 
-    {
-        username: "isabelle", 
-        file: "DON'T-EAT-FROGS.png", 
-        img: img12,
-    }, 
-    {
-        username: "isabelle", 
-        file: "Untitled-(800-x-1000-px).png", 
-        img: img13,
-    }, 
-    {
-        username: "shikha", 
-        file: "Elarra.jpg", 
-        img: img14,
-    }, 
-    {
-        username: "shikha", 
-        file: "Fairy.jpg", 
-        img: img15,
-    }, 
-    {
-        username: "shikha", 
-        file: "c3.jpg", 
-        img: img16,
-    }, 
-    {
-        username: "shikha", 
-        file: "Rapunzel.jpg", 
-        img: img17,
+        username: 'samantha', 
+        path: '../../../members/samantha/portfolio/'
     }, 
 ]
 
-images.forEach((item, i) => {
-    var path = `../../../members/${item.username}/portfolio/${item.file}`
-    addImgs()
+var images = []
+
+members.forEach(m => {
     async function addImgs() {
-        item.img = await Astro.glob(path)
+        var imgs = await Astro.glob(m.path)
+        imgs.forEach(img => {
+            images.push({
+                username: m.username, 
+                img: img,
+            })
+        })
     }
 })
 
-function getFName(name) {
-    if (name.includes('.')) {
-        name = name.split('.').splice(-1).join('.')
-    }
-    return name
+function getFName(str) {
+    if (str.includes('/')) str = str.split('/').slice(-1)[0]
+    return str
 }
 
 function toProper(user) {
@@ -134,9 +69,9 @@ var dId = 'workCarousel'
 ---
 <Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId={dId}>
     {
-        images.map((data, i) => {
-            var img = data.img[0]
-            return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
+        images.map((img, i) => {
+            return <pre>{JSON.stringify(img, null, 4)}</pre>
+            // return <LargeImage id={`${dId}-${i}`} img={img} alt={`${getFName(data.file)} by ${toProper(data.username)}`}draggable={false} />
         })
     }
 </Carousel>
