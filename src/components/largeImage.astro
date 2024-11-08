@@ -1,9 +1,7 @@
 ---
 // import { Image } from 'astro:assets';
 
-const { img, id, src, alt, draggable } = Astro.props as Props;
-
-if (img) src = img.src
+const { id, src, alt, draggable } = Astro.props as Props;
 
 import '../styles/components/largeImage.scss'
 ---
