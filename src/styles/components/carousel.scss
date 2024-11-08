@@ -55,6 +55,12 @@
         }
     }
 
+    @for $i from 0 through 100 {
+        &[active-index="#{$i}"] {
+            --active: #{$i};
+        }
+    }
+
     & .imgs .img-parent {
         --time: 250ms;
         --shadow-size: var(--gap);

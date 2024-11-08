@@ -13,8 +13,8 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             max-width: 100%;
         }
         > .img-container > img {
-            max-height: calc(var(--max, 100%) - 25px*2);
-            max-width: calc(100% - 25px*2);
+            box-sizing: border-box;
+            padding: 25px;
         }
     }
 
