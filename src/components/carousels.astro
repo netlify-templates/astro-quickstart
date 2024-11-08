@@ -10,12 +10,16 @@ import '../styles/components/carousel.scss'
             i = dataI
         }
 
-        carousel.querySelectorAll('.arrow').forEach(a => {
-            a.removeAttribute('hidden')
-        })
+        // carousel.querySelectorAll('.arrow').forEach(a => {
+        //     a.removeAttribute('hidden')
+        // })
     })
 </script>
 <script is:inline>
+    function setImg(carousel, pos) {
+        var size = ''
+    }
+
     function goBack(arrow) {
         var carousel = arrow.parentNode.parentNode
         var dataColumns = carousel.getAttribute('data-columns')
@@ -23,6 +27,8 @@ import '../styles/components/carousel.scss'
         var active = carousel.getAttribute('active-index')
         if (active <= 0) return
         carousel.setAttribute(active-1)
+
+        setImg(carousel, active)
     }
   
     function goForw(arrow) {
@@ -32,5 +38,7 @@ import '../styles/components/carousel.scss'
         var active = carousel.getAttribute('active-index')
         if (active >= dataColumns-1) return
         carousel.setAttribute(active+1)
+
+        setImg(carousel, active)
     }
 </script>
