@@ -12,14 +12,11 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             max-height: var(--max, 100%);
             max-width: 100%;
         }
-        > .img-container {
-            --mar: 25px;
-
-            box-sizing: border-box;
-            margin: var(--mar);
-            max-height: calc(var(--max, 100%) - var(--mar)*2);
-            max-width: calc(100% - var(--mar)*2);
-        }
+        // > .img-container {
+        //     box-sizing: border-box;
+        //     max-height: var(--max, 100%);
+        //     max-width: 100%;
+        // }
     }
 
     &:has(> input[type="checkbox"]:checked) {
