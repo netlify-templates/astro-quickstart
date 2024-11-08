@@ -24,10 +24,7 @@ import '../styles/components/carousel.scss'
 
         var pos = size*(active-1)
 
-        imgs.scrollTo({
-            left: size,
-            // behavior: "smooth",
-        });
+        imgs.scrollTo(pos, 0);
     }
 
     function goBack(arrow) {
@@ -37,7 +34,7 @@ import '../styles/components/carousel.scss'
         if (active < 1) return
         carousel.setAttribute('active-item', active-1)
 
-        setImg(carousel, active)
+        setImg(carousel, 'back')
     }
   
     function goForw(arrow) {
@@ -48,6 +45,6 @@ import '../styles/components/carousel.scss'
         if (active > dataColumns) return
         carousel.setAttribute('active-item', active+1)
 
-        setImg(carousel, active)
+        setImg(carousel, 'forw')
     }
 </script>
