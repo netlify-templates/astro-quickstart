@@ -59,11 +59,12 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
         bottom: 100%;
         right: 100%;
         visibility: hidden;
+        margin: 0;
+        border: none;
+        padding: 0;
         width: 0;
         height: 0;
-        margin: 0;
-        border: 0;
-        padding: 0;
+        background-color: transparent;
     }
     > .img-container{
         height: fit-content;

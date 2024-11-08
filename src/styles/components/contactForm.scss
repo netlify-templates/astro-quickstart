@@ -1,0 +1,35 @@
+.contact-form {
+    position: relative;
+
+    > .submitted {
+        position: absolute;
+        bottom: 100%;
+        right: 100%;
+        visibility: hidden;
+        margin: 0;
+        border: none;
+        padding: 0;
+        width: 0;
+        height: 0;
+        background-color: transparent;
+
+        &:checked {
+            pointer-events: none;
+            ~ .contact-form {
+                display: none;
+
+                .submit-label {
+                    pointer-events: none;
+                }
+            }
+        }
+        &:not(:checked) {
+            ~ .form-submitted {
+                display: none;
+            }
+        }
+
+    }
+
+    
+}
