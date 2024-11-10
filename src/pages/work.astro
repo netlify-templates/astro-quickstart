@@ -11,19 +11,10 @@ import '../styles/photos.scss'
     <section class="photos" id="mwork">
       <Carousels>
         <section>
-          <style>
-            section.photos#mwork > h1 {
-              -webkit-user-select: none; /* Safari */
-              -ms-user-select: none; /* IE 10 and IE 11 */
-              user-select: none; /* Standard syntax */
-            }
-          </style>
-          <h1 style="--text-color: blue; cursor: pointer;" onclick="magic()" title="Click here to convert to list!">Member Work</h1>
-          <WorkCarousel carouselIndex="0" />
+          <h1>Member Work</h1>
+          <WorkCarousel />
         </section>
       </Carousels>
     </section>
   </main>
-  <script is:inline src="/convertCarousel.js"></script>
-  <script is:inline src="/work.js"></script>
 </Layout>
