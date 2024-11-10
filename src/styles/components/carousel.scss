@@ -25,7 +25,7 @@
     
         width: 100%;
         --pMax: 750px;
-        --max: calc(var(--pMax) - var(--gap)*2);
+        --max: calc(var(--pMax) - var(--gap)*2 - 10px);
         max-height: var(--pMax);
     
         $grid: repeat(var(--cols, 1), 100%);
