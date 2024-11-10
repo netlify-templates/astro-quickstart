@@ -41,13 +41,13 @@
         }
     }
   
-    & h1:not(#menu > h1):not(#whymakethisclub), & h2, & h3 {
+    & h1:not(#menu > h1):not(.missiontitle), & h2, & h3 {
         --shadow-color: #0a0a52;
         --shadow-size: 10px;
         text-shadow: var(--shadow-color, var(--orig-bg-color)) 0px 0px var(--shadow-size);
     }
   
-    & h1:not(#menu > h1):not(#whymakethisclub) {
+    & h1:not(#menu > h1):not(.missiontitle) {
         margin: 0;
 
         max-width: 12.89ch;

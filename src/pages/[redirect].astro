@@ -16,6 +16,10 @@ var redirects = [
     {
         slug: '/status', 
         dest: 'https://go.graphics-for-good.com/Status', 
+    },
+    {
+        slug: '/about', 
+        dest: '/mission', 
     }
 ]
 
@@ -23,6 +27,7 @@ export function getStaticPaths() {
     return [
         {params: {redirect: 'status'}}, 
         {params: {redirect: 'sign-up'}}, 
+        {params: {redirect: 'about'}}, 
     ];
 }
 
