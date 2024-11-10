@@ -24,8 +24,9 @@
         gap: calc(var(--gap)*2 + 10px);
     
         width: 100%;
-        --max: calc(750px - var(--gap)*2);
-        max-height: var(--max);
+        --pMax: 750px;
+        --max: calc(var(--pMax) - var(--gap)*2);
+        max-height: var(--pMax);
     
         $grid: repeat(var(--cols, 1), 100%);
         grid-template-columns: $grid;
