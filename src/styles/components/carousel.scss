@@ -24,7 +24,7 @@
         gap: calc(var(--gap)*2 + 10px);
     
         width: 100%;
-        --max: 750px;
+        --max: calc(750px - var(--gap)*2);
         max-height: var(--max);
     
         $grid: repeat(var(--cols, 1), 100%);
