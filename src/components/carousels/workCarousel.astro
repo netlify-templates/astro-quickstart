@@ -4,24 +4,6 @@ import LargeImage from '../largeImage.astro'
 
 const { carouselIndex } = Astro.props
 
-import img1  from '../../../members/isabelle/portfolio/Birds-are-essential-for-our-environment!.svg'
-import img2  from '../../../members/shikha/portfolio/Did-you-know.svg'
-import img3  from "../../../members/shikha/portfolio/Women's-History-Month!.svg"
-import img4  from '../../../members/juhi/portfolio/Little-Wishes-Hospital-Gown-Feb-2023_4.png'
-import img5  from '../../../members/juhi/portfolio/Little-Wishes-Hospital-Gown-Feb-2023_5.png'
-import img6  from '../../../members/juhi/portfolio/Little-Wishes-Hospital-Gown-Feb-2023_6.png'
-import img7  from '../../../members/juhi/portfolio/Little-Wishes-Hospital-Gown-Feb-2023_7.png'
-import img8  from '../../../members/samantha/portfolio/Help-save-the-oceans_1.svg'
-import img9  from '../../../members/samantha/portfolio/Help-save-the-oceans_2.svg'
-import img10  from '../../../members/samantha/portfolio/Help-save-the-oceans_3.svg'
-import img11 from '../../../members/samantha/portfolio/Help-save-the-oceans_4.svg'
-import img12 from "../../../members/isabelle/portfolio/DON'T-EAT-FROGS.svg"
-import img13 from '../../../members/isabelle/portfolio/Untitled-(800-x-1000-px).svg'
-import img14 from '../../../members/shikha/portfolio/Elarra.jpg'
-import img15 from '../../../members/shikha/portfolio/Fairy.jpg'
-import img16 from '../../../members/shikha/portfolio/c3.jpg'
-import img17 from '../../../members/shikha/portfolio/Rapunzel.jpg'
-
 var images = []
 
 var members = [
@@ -52,6 +34,18 @@ var members = [
     }, 
 ]
 
+images.forEach((img, i) => {
+    var username = img.username
+    var member = members.filter(m => m.username === username)[0]
+        
+    var fullRes = member.fullRes.filter(r => r.name === getFNameNoExt(img.src))
+    if (fullRes.length > 0) {
+        img.fullRes = fullRes[0].src
+    }
+
+    images[i] = img
+})
+
 members.forEach((m, i) => {
     m.imgs.forEach(img => {
         var img = img.default
@@ -66,14 +60,6 @@ members.forEach((m, i) => {
             }
 
             images.push(obj)
-        }
-        else if (typeof img === 'string') {
-            if (getFExt(img) === 'pdf') {
-                members[i].fullRes.push({
-                    name: getFNameNoExt(img), 
-                    src: img
-                })
-            }
         }
     })
 })
