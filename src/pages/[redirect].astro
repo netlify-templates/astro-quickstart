@@ -21,6 +21,10 @@ var redirects = [
         slug: '/about', 
         dest: '/mission', 
     }
+    {
+        slug: '/RemoveG4GEmailFromDTechGMail', 
+        dest: 'https://scribehow.com/shared/Delete_Gmail_Account_From_Settings__78OV_z6vSX-eRlqEdG1kgA', 
+    }
 ]
 
 export function getStaticPaths() {
@@ -28,6 +32,7 @@ export function getStaticPaths() {
         {params: {redirect: 'status'}}, 
         {params: {redirect: 'sign-up'}}, 
         {params: {redirect: 'about'}}, 
+        {params: {redirect: 'RemoveG4GEmailFromDTechGMail'}}, 
     ];
 }
 
