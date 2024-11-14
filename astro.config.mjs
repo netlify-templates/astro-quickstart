@@ -17,6 +17,7 @@ members.forEach(username => {
             if (info) {
                 if (info.startsWith('var data = ')) info = info.slice('var data = '.length)
                 if (info.endsWith(`\n\nexport default data`)) info = info.slice(0, -1*'\n\nexport default data'.length)
+                console.log(info)
                 if  (info.startsWith('{') && info.endsWith('}')) {
                     info = JSON.parse(info)
                     info.username = username
@@ -24,7 +25,6 @@ members.forEach(username => {
                     info = JSON.stringify(info, null, 2)
                     info = `var data = ${info}\n\nexport default data`
                     fs.writeFileSync( `${directoryPath}/${username}/info.js`, info)
-                    console.log(username)
                 }
             }
         }
