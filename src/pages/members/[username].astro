@@ -16,14 +16,15 @@ function getFName(str) {
 
 function getFNameNoExt(str) {
   if (str.includes('/')) str = str.split('/').slice(-1)[0]
-  str = str.slice(0, -1*getFExt(str, 3).length)
+  str = str.slice(0, -1*getFExt(str, 2).length)
 
   return str
 }
 
 function getFExt(str, level=1) {
   str = getFName(str)
-  if (str.includes('.') && level > 0) {
+  if (level < 0) level *= =1
+  if (str.includes('.')) {
     switch (level) {
       case 1: 
         str = str.split('.').slice(-1, -1).join('.')
