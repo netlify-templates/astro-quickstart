@@ -9,8 +9,7 @@ import '../../styles/photos.scss'
 
 import updateMember from '../../../members/updateMember.js'
 
-var portfolioImgs = await Astro.glob('../../../members/*/portfolio/*'), 
-
+var portfolioImgs = await Astro.glob('../../../members/*/portfolio/*')
 
 export function getStaticPaths() {
     return [
@@ -110,7 +109,7 @@ else userData.status = 'inactive'
                   userData.portfolio.map(photo => {
                     var file = photo.file
                     var img = portfolioImgs.filter(i => {console.log(i.src); return false})
-                    <pre>{JSON.stringify(photo, null, 4)}</pre>
+                    return <pre>{JSON.stringify(photo, null, 4)}</pre>
                     // <li>
                     //   <LargeImage src={photo.file} alt={photo.title || ''} onclick={photo.onclick || ''} />
                     // </li>
