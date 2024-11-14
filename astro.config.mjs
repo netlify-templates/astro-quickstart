@@ -19,7 +19,7 @@ members.forEach((username, i) => {
                     portfolio.push({
                         file: `${username}-${i}`
                     })
-                    fs.renameSync(`${directoryPath}/${username}/portfolio/${i}`, `${directoryPath}/${username}/portfolio/${username}-${i}`)
+                    // fs.renameSync(`${directoryPath}/${username}/portfolio/${i}`, `${directoryPath}/${username}/portfolio/${username}-${i}`)
                 })
             }
         }
