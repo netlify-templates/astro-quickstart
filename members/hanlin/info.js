@@ -1,8 +1,8 @@
 var data = {
-  "status": "inactive", 
+  "status": "active", 
   "username": "hanlin", 
   "name": "Hanlin Su",
-  "date": "the start of the 24-25 school year", 
+  // "date": "the start of the 24-25 school year", 
   "year": 25, 
   "graduated": false,
   "pronunciation": false,
