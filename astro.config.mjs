@@ -11,15 +11,10 @@ const members = fs.readdirSync(directoryPath);
 members.forEach((username, i) => {
     var isDir = fs.lstatSync(`${directoryPath}/${username}`).isDirectory()
     if (isDir) {
-        var info = `${directoryPath}/${username}/info.js`
+        var info = `${directoryPath}/${username}/info.json`
         if (fs.existsSync(info)) {
             info = fs.readFileSync(info, 'utf-8')
             if (info) {
-                if (info.startsWith('var data = ')) info = info.slice('var data = '.length)
-                // while (info.startsWith(`\n`)) info = info.slice('\n'.length)
-                if (info.endsWith(`export default data`)) info = info.slice(0, -1*'export default data'.length)
-                while (info.endsWith(`\n`)) info = info.slice(0, -1)
-                console.log(`${username}: ("${info.split('')[0]}", "${info.split('')[info.split('').length-1]}")`)
                 if (info.startsWith('{') && info.endsWith('}')) {
                     info = JSON.parse(info)
                     info.username = username
@@ -27,6 +22,7 @@ members.forEach((username, i) => {
                     info = JSON.stringify(info, null, 2)
                     info = `var data = ${info}\n\nexport default data`
                     fs.writeFileSync( `${directoryPath}/${username}/info.js`, info)
+                    fs.unlinkSync( `${directoryPath}/${username}/info.json`)
                 }
             }
         }
