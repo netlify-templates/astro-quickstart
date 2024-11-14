@@ -21,7 +21,6 @@ allMembers.map(m => {
     if (role !== 'Member' && !hasOrder) members.push(m)
 })
 allMembers.map(m => {
-    console.log(m)
     var member = m.default
     var role = !!member.role ? (!!member.role.name ? member.role.name : '') : ''
     var hasOrder = !!member.order
