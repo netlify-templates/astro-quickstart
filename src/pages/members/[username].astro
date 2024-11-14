@@ -33,7 +33,7 @@ export function getStaticPaths() {
         {params: {username: 'tyler'}}, 
         {params: {username: 'zach'}}, 
 
-        {params: {username: 'default'}},
+        // {params: {username: 'default'}},
         {params: {username: 'juhi'}}, 
         {params: {username: 'rien'}}, 
         {params: {username: 'sam'}}, 
@@ -55,7 +55,9 @@ var userData = userDatas.find(data => {
   return data.name.toLowerCase().includes(username)
 })
 
-if (userData.default) userData = userData.default
+if (userData) {
+  if (userData.default) userData = userData.default
+}
 userData.portfolio = portfolios.find(p => p.username === username)
 userData = updateMember(userData)
 
