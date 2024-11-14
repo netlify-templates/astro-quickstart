@@ -9,37 +9,96 @@ import '../../styles/photos.scss'
 
 import updateMember from '../../../members/updateMember.js'
 
-var portfolioImgs = await Astro.glob('../../../members/*/portfolio/*')
+function getFName(str) {
+  if (str.includes('/')) str = str.split('/').slice(-1)[0]
+  return str
+}
+
+function getFNameNoExt(str) {
+  if (str.includes('/')) str = str.split('/').slice(-1)[0]
+  str = str.slice(0, -1*getFExt(str).length)
+
+  return str
+}
+
+function getFExt(str, level=1) {
+  str = getFName(str)
+  if (str.includes('.') && level > 0) {
+    switch (level) {
+      case 1: 
+        str = str.split('.').slice(-1, -1).join('.')
+        break
+      default: 
+        str = str.split('.').slice(-1*level, -1).join('.')
+        break
+    }
+  }
+  return str
+}
+
+function toProper(user) {
+  user = `${user.slice(0, 1).toUpperCase()}${user.slice(1)}`
+  return user
+}
+
+var pImgs = await Astro.glob('../../../members/*/portfolio/*')
+var portfolioImgs = []
+var fResS = []
+
+pImgs.map(img => {
+  img = img.default
+  if (typeof img === 'object') {
+    var obj = img
+    obj.username = m.username
+
+    var fullRes = fResS.filter(r => r === getFNameNoExt(img.src))
+    if (fullRes.length > 0) {
+      obj.fullRes = fullRes[0]
+    }
+
+    portfolioImgs.push(obj)
+  }
+  else fResS.push(img)
+})
+
+portfolioImgs.forEach((img, i) => {
+  var fullRes = fResS.filter(r => r === getFNameNoExt(img.src))
+  if (fullRes.length > 0) {
+    img.fullRes = fullRes[0]
+  }
+
+  images[i] = img
+})
 
 export function getStaticPaths() {
-    return [
-        {params: {username: 'adarsh'}}, 
-        {params: {username: 'amelia'}}, 
-        {params: {username: 'arianna'}}, 
-        {params: {username: 'beatriz'}}, 
-        {params: {username: 'bridget'}}, 
-        {params: {username: 'cedrus'}}, 
-        {params: {username: 'hanlin'}}, 
-        {params: {username: 'isabelle'}}, 
-        {params: {username: 'jeremy'}}, 
-        {params: {username: 'lorelai'}}, 
-        {params: {username: 'luce'}}, 
-        {params: {username: 'mia'}}, 
-        {params: {username: 'maya'}}, 
-        {params: {username: 'miriam'}}, 
-        {params: {username: 'parker'}}, 
-        {params: {username: 'robin'}}, 
-        {params: {username: 'sayuri'}}, 
-        {params: {username: 'shikha'}}, 
-        {params: {username: 'tyler'}}, 
-        {params: {username: 'zach'}}, 
+  return [
+    {params: {username: 'adarsh'}}, 
+    {params: {username: 'amelia'}}, 
+    {params: {username: 'arianna'}}, 
+    {params: {username: 'beatriz'}}, 
+    {params: {username: 'bridget'}}, 
+    {params: {username: 'cedrus'}}, 
+    {params: {username: 'hanlin'}}, 
+    {params: {username: 'isabelle'}}, 
+    {params: {username: 'jeremy'}}, 
+    {params: {username: 'lorelai'}}, 
+    {params: {username: 'luce'}}, 
+    {params: {username: 'mia'}}, 
+    {params: {username: 'maya'}}, 
+    {params: {username: 'miriam'}}, 
+    {params: {username: 'parker'}}, 
+    {params: {username: 'robin'}}, 
+    {params: {username: 'sayuri'}}, 
+    {params: {username: 'shikha'}}, 
+    {params: {username: 'tyler'}}, 
+    {params: {username: 'zach'}}, 
 
-        {params: {username: '_default'}},
-        {params: {username: 'juhi'}}, 
-        {params: {username: 'rien'}}, 
-        {params: {username: 'sam'}}, 
-        {params: {username: 'samantha'}}, 
-    ];
+    {params: {username: '_default'}},
+    {params: {username: 'juhi'}}, 
+    {params: {username: 'rien'}}, 
+    {params: {username: 'sam'}}, 
+    {params: {username: 'samantha'}}, 
+  ];
 }
 
 const { username } = Astro.params;
@@ -64,7 +123,6 @@ if (userData.status) {
   if (userData.status === 'activeGrad') userData.status = 'active'
 }
 else userData.status = 'inactive'
-
 
 ---
 <Layout title={userData.name}>
