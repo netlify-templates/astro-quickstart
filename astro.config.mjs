@@ -22,7 +22,9 @@ members.forEach((username, i) => {
             username: username, 
             items: portfolio
         }
-        fs.writeFileSync( `${directoryPath}/${username}/portfolio.js`, JSON.stringify(portfolio, null, 4))
+        portfolio = `var items = ${JSON.stringify(portfolio, null, 4)}\n\nexport default items`
+
+        fs.writeFileSync( `${directoryPath}/${username}/portfolio.js`, portfolio)
     }
 });
 
