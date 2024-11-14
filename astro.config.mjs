@@ -16,6 +16,7 @@ members.forEach(username => {
             info = fs.readFileSync(info, 'utf-8')
             if (info) {
                 if (info.startsWith('var data = ')) info = info.slice('var data = '.length)
+                while (info.startsWith(`\n`)) info = info.slice('\n'.length)
                 if (info.endsWith(`export default data`)) info = info.slice(0, -1*'export default data'.length)
                 while (info.endsWith(`\n`)) info = info.slice(0, -1*'\n'.length)
                 console.log(info.replaceAll('\n', ' '))
