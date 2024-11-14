@@ -1,10 +1,10 @@
-var data = {
+{
     "status": "inactive", 
       "name": "{member_name}",
     "role": false,
     "pronunciation": false,
     "email": {
-        "year": '{member_year}'
+        "year": "{member_year}"
     },
     "pfp": {
         "g4g": {
@@ -33,5 +33,3 @@ var data = {
         // }
     ]
 }
-  
-export default data

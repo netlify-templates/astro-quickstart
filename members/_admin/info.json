@@ -1,4 +1,4 @@
-var data = {
+{
   "status": "active", 
   "name": "Admin G4G (Adarsh)",
   "role": {
@@ -28,5 +28,3 @@ var data = {
     }
   ]
 }
-
-export default data

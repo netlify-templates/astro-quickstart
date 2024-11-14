@@ -1,4 +1,4 @@
-var data = {
+{
   "status": "active", 
   "order": 2, 
   "name": "Sayuri Rodrigo",
@@ -33,5 +33,3 @@ var data = {
   "socials": [],
   "portfolio": []
 }
-
-export default data

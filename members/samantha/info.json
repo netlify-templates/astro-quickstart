@@ -1,4 +1,4 @@
-var data = {
+{
   "status": "inactive", 
   "name": "Samantha Wolff",
   "date": "the start of the 23-24 school year", 
@@ -35,5 +35,3 @@ var data = {
     }
   ]
 }
-
-export default data
