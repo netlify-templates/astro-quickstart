@@ -21,12 +21,5 @@
     "bio": {
 
     },
-    "socials": [
-        // {
-        //     "url": "https://instagram.com/4goodgraphics", 
-        //     "name": "Instagram"
-        // }
-    ]
+    "socials": []
 }
-  
-export default data

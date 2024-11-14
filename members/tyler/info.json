@@ -1,4 +1,4 @@
-var data = {
+{
     "status": "active", 
     "name": "Tyler DeCourcey",
     "role": false,
@@ -18,12 +18,7 @@ var data = {
         "state": ""
     },
     "bio": {
-        "end": "He likes corgis and Minecraft and enjoys ice hockey.",
+        "end": "He likes corgis and Minecraft and enjoys ice hockey."
     },
-    "socials": [
-        // {
-        //     "url": "https://instagram.com/4goodgraphics", 
-        //     "name": "Instagram"
-        // }
-    ]
+    "socials": []
 }
