@@ -48,6 +48,7 @@ var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 
 
+console.log(userDatas)
 var userData = userDatas.find(data => data.default.username === username)
 
 userData = updateMember(userData)
