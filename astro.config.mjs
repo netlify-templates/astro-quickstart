@@ -16,12 +16,12 @@ members.forEach((username, i) => {
             info = fs.readFileSync(info, 'utf-8')
             if (info) {
                 if (info.startsWith('var data = ')) info = info.slice('var data = '.length)
-                while (info.startsWith(`\n`)) info = info.slice('\n'.length)
+                // while (info.startsWith(`\n`)) info = info.slice('\n'.length)
                 if (info.endsWith(`export default data`)) info = info.slice(0, -1*'export default data'.length)
                 while (info.endsWith(`\n`)) info = info.slice(0, -1*'\n'.length)
                 var nInfo = info
                 if (i === 0) {
-                    console.log(nInfo.slice(1), nInfo.slice(-1))
+                    console.log(nInfo.split('')[0], nInfo.split('')[nInfo.split('').length-1])
                 }
                 if (info.startsWith('{') && info.endsWith('}')) {
                     info = JSON.parse(info)
