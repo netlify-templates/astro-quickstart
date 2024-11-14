@@ -70,16 +70,17 @@ var title = getTitle(redirect.slug)
     <body>
         Redirecting you to <a href={redirect.dest}>{redirect.dest}</a>.
     </body>
-</html>) : (<Layout title={title}>
+</html>) : ''}
+
+<Layout title={title}>
     <main id="content" class="frame-page">
         <iframe frameborder="0" src={redirect.dest} class="frame">
+            Please click <a href={redirect.dest}>Here</a> to view the page!
+            <script is:inline dest={redirect.dest}>
+                var dest = document.currentScript.getAttribute('dest')
+                if (!dest) dest = '/'
+                location.replace(dest)
+            </script>
         </frame>
     </main>
-</Layout>)}
-
-<!-- Please click <a href={redirect.dest}>Here</a> to view the page!
-<script is:inline dest={redirect.dest}>
-    var dest = document.currentScript.getAttribute('dest')
-    if (!dest) dest = '/'
-    location.replace(dest)
-</script> -->
+</Layout>
