@@ -51,6 +51,7 @@ var userData = userDatas.find(data => data.default.username === username)
 
 if (!userData) return Astro.redirect('/members/')
 
+if (!userData) console.log('\n' + username)
 if (userData.default) userData = userData.default
 else userData = {}
 if (!userData.portfolio) userData.portfolio = []
