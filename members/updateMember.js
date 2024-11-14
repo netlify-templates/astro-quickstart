@@ -107,11 +107,6 @@ function updateUserData(userData, portfolio) {
             userData.bio.result = `${userData.bio.result}${userData.bio.end}`
             }
         }
-    
-        if (userData.portfolio) {
-            console.log(userData.username)
-        }
-        else userData.portfolio = []
     }
     return userData
 }
