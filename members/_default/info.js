@@ -1,7 +1,6 @@
 var data = {
     "status": "inactive", 
-    "username": "default", 
-    "name": "{member_name}",
+      "name": "{member_name}",
     "role": false,
     "pronunciation": false,
     "email": {

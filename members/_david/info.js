@@ -1,6 +1,5 @@
 var data = {
     "status": "active", 
-    "username": "david", 
     "name": "David Rojas",
     "role": false,
     "pronunciation": false,

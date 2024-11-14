@@ -1,7 +1,6 @@
 var data = {
   "status": "active", 
   "order": 1, 
-  "username": "shikha", 
   "name": "Shikha Iyer",
   "role": {
     "name": "President and Founder"

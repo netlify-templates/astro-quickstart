@@ -1,6 +1,5 @@
 var data = {
   "status": "inactive", 
-  "username": "samantha", 
   "name": "Samantha Wolff",
   "date": "the start of the 23-24 school year", 
   "year": 25, 

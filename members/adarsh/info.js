@@ -1,7 +1,6 @@
 var data = {
   "status": "active", 
   "order": 3, 
-  "username": "adarsh", 
   "name": "Adarsh Kumar",
   "role": {
     "name": "Website Manager"

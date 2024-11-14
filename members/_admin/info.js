@@ -1,6 +1,5 @@
 var data = {
   "status": "active", 
-  "username": "_admin", 
   "name": "Admin G4G (Adarsh)",
   "role": {
     "name": "Admin"

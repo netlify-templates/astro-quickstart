@@ -1,6 +1,5 @@
 var data = {
     "status": "active", 
-    "username": "arianna", 
     "name": "Arianna Minakawa",
     "role": false,
     "pronunciation": false,

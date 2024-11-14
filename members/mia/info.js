@@ -1,6 +1,5 @@
 var data = {
   "status": "active", 
-  "username": "mia", 
   "name": "Mia Tucker",
   "role": false, 
   "pronunciation": false,

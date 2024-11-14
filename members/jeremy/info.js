@@ -1,6 +1,5 @@
 var data = {
   "status": "active", 
-  "username": "jeremy", 
   "name": "Jeremy Hasan",
   "pronunciation": false,
   "email": {

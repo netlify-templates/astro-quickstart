@@ -1,7 +1,6 @@
 var data = {
   "status": "active", 
   "order": 2, 
-  "username": "sayuri", 
   "name": "Sayuri Rodrigo",
   "role": {
     "name": "Vice-President"
