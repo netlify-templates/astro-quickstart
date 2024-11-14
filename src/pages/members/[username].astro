@@ -49,7 +49,6 @@ pImgs.map(img => {
   img = img.default
   if (typeof img === 'object') {
     var obj = img
-    obj.username = m.username
 
     var fullRes = fResS.filter(r => r === getFNameNoExt(img.src))
     if (fullRes.length > 0) {
