@@ -30,7 +30,12 @@ members.forEach((username, i) => {
         var portfolio = []
         if (fs.existsSync(`${directoryPath}/${username}/portfolio/`)) {
             if (fs.lstatSync(`${directoryPath}/${username}/portfolio/`).isDirectory()) {
-                portfolio = fs.readdirSync(`${directoryPath}/${username}/portfolio/`)
+                var items = fs.readdirSync(`${directoryPath}/${username}/portfolio/`)
+                items.forEach(i => {
+                    portfolio.push({
+                        file: i
+                    })
+                })
             }
         }
 
