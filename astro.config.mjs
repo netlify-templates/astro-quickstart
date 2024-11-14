@@ -19,7 +19,6 @@ members.forEach((username, i) => {
                 // while (info.startsWith(`\n`)) info = info.slice('\n'.length)
                 if (info.endsWith(`export default data`)) info = info.slice(0, -1*'export default data'.length)
                 while (info.endsWith(`\n`)) info = info.slice(0, -1*'\n'.length)
-                var nInfo = info
                 if (i === 0) {
                     console.log(items(info, 2))
                 }
