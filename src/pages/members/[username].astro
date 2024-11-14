@@ -51,6 +51,7 @@ var userDatas = await Astro.glob('../../../members/*/info.js')
 
 var userData = userDatas.find(data => data.username === username)
 
+console.log('\n', userData)
 if (userData) {
   if (userData.default) userData = userData.default
   if (userData.portfolio) console.log(username)
@@ -58,7 +59,6 @@ if (userData) {
 else userData = {}
 userData.portfolio = portfolios.find(p => p.username === username)
 if (!userData.portfolio) userData.portfolio = []
-console.log('\n', userData)
 userData = updateMember(userData)
 
 if (userData.status) {
