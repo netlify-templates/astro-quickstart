@@ -18,7 +18,7 @@ members.forEach((username, i) => {
                 if (info.startsWith('var data = ')) info = info.slice('var data = '.length)
                 // while (info.startsWith(`\n`)) info = info.slice('\n'.length)
                 if (info.endsWith(`export default data`)) info = info.slice(0, -1*'export default data'.length)
-                while (info.endsWith(`\n`)) info = info.slice(0, -2)
+                while (!info.endsWith('}') && info.split('').length > 0) info = info.slice(0, -1)
                 console.log(`${i}: (${info.split('')[0]}, ${info.split('')[info.split('').length-1]})`)
                 if (info.startsWith('{') && info.endsWith('}')) {
                     info = JSON.parse(info)
