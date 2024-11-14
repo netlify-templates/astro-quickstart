@@ -31,7 +31,7 @@ export function getStaticPaths() {
         {params: {username: 'tyler'}}, 
         {params: {username: 'zach'}}, 
 
-        {params: {username: 'default'}},
+        {params: {username: '_default'}},
         {params: {username: 'juhi'}}, 
         {params: {username: 'rien'}}, 
         {params: {username: 'sam'}}, 
@@ -48,6 +48,8 @@ var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 
 var userData = userDatas.find(data => data.default.username === username)
+
+if (!userData) return Astro.redirect('/members/')
 
 if (userData.default) userData = userData.default
 else userData = {}
