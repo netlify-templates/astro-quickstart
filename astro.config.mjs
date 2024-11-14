@@ -17,8 +17,9 @@ members.forEach((username, i) => {
                 var items = fs.readdirSync(`${directoryPath}/${username}/portfolio/`)
                 items.forEach(i => {
                     portfolio.push({
-                        file: i
+                        file: `${username}-${i}`
                     })
+                    fs.renameSync(`${directoryPath}/${username}/portfolio/${i}`, `${directoryPath}/${username}/portfolio/${username}-${i}`)
                 })
             }
         }

@@ -9,6 +9,9 @@ import '../../styles/photos.scss'
 
 import updateMember from '../../../members/updateMember.js'
 
+var portfolioImgs = await Astro.glob('../../../members/*/portfolio/*'), 
+
+
 export function getStaticPaths() {
     return [
         {params: {username: 'adarsh'}}, 
@@ -104,7 +107,9 @@ else userData.status = 'inactive'
               <h2>Portfolio</h2>
               <ul class="photos" style="height: auto; gap: 25px;">
                 {
-                  userData.portfolio.map((photo) => {
+                  userData.portfolio.map(photo => {
+                    var file = photo.file
+                    var img = portfolioImgs.filter(i => {console.log(i.src); return false})
                     <pre>{JSON.stringify(photo, null, 4)}</pre>
                     // <li>
                     //   <LargeImage src={photo.file} alt={photo.title || ''} onclick={photo.onclick || ''} />
