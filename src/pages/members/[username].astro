@@ -49,7 +49,7 @@ var userDatas = await Astro.glob('../../../members/*/info.js')
 
 
 console.log(userDatas)
-var userData = userDatas.find(data => data.default.username === username)
+var userData = userDatas.find(data => data.default.name.toLowerCase().includes(username))
 
 userData = updateMember(userData)
 
