@@ -16,7 +16,8 @@ members.forEach(username => {
             info = fs.readFileSync(info, 'utf-8')
             if (info) {
                 if (info.startsWith('var data = ')) info = info.slice('var data = '.length)
-                if (info.endsWith(`\n\nexport default data`)) info = info.slice(0, -1*'\n\nexport default data'.length)
+                if (info.endsWith(`export default data`)) info = info.slice(0, -1*'export default data'.length)
+                while (info.endsWith(`\n`)) info = info.slice(0, -1*'\n'.length)
                 console.log(info)
                 if  (info.startsWith('{') && info.endsWith('}')) {
                     info = JSON.parse(info)
