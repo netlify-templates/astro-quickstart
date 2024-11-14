@@ -24,6 +24,7 @@ members.forEach(username => {
                     info = JSON.stringify(info, null, 2)
                     info = `var data = ${info}\n\nexport default data`
                     fs.writeFileSync( `${directoryPath}/${username}/info.js`, info)
+                    console.log(username)
                 }
             }
         }
