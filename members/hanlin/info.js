@@ -1,7 +1,6 @@
 var data = {
   "status": "active", 
   "name": "Hanlin Su",
-  // "date": "the start of the 24-25 school year", 
   "year": 25, 
   "graduated": false,
   "pronunciation": false,

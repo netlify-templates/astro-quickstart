@@ -22,7 +22,7 @@ function updateUserData(userData) {
         else {
             if (!userData.pfp.google) userData.pfp.google = {}
             if (!!userData.pfp.google.a === false) {
-            userData.pfp.google.a = 'a'
+                userData.pfp.google.a = 'a'
             }
             userData.pfp.url = `https://lh3.googleusercontent.com/${userData.pfp.google.a}/${userData.pfp.google.url}=s128`
         }

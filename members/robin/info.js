@@ -17,7 +17,7 @@ var data = {
     "state": ""
   }, 
   "bio": {
-    "end": "When not out on a boat, they like drawing, playing card games, and watching movies.",
+    "end": "When not out on a boat, they like drawing, playing card games, and watching movies."
   }, 
   "socials": [],
   "portfolio": []
