@@ -18,7 +18,7 @@ members.forEach(username => {
                 if (info.startsWith('var data = ')) info = info.slice('var data = '.length)
                 if (info.endsWith(`export default data`)) info = info.slice(0, -1*'export default data'.length)
                 while (info.endsWith(`\n`)) info = info.slice(0, -1*'\n'.length)
-                console.log(info)
+                console.log(info.replaceAll('\n', ' '))
                 if  (info.startsWith('{') && info.endsWith('}')) {
                     info = JSON.parse(info)
                     info.username = username
