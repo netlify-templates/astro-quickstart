@@ -16,7 +16,7 @@ function getFName(str) {
 
 function getFNameNoExt(str) {
   if (str.includes('/')) str = str.split('/').slice(-1)[0]
-  str = str.slice(0, -1*getFExt(str).length)
+  str = str.slice(0, -1*getFExt(str, 2).length)
 
   return str
 }
@@ -50,6 +50,9 @@ pImgs.map(img => {
   if (typeof img === 'object') {
     var obj = img
 
+    var name = getFNameNoExt(img.src)
+    var otherFormats = 
+
     var fullRes = fResS.filter(r => r === getFNameNoExt(img.src))
     if (fullRes.length > 0) {
       obj.fullRes = fullRes[0]
@@ -58,15 +61,6 @@ pImgs.map(img => {
     portfolioImgs.push(obj)
   }
   else fResS.push(img)
-})
-
-portfolioImgs.forEach((img, i) => {
-  var fullRes = fResS.filter(r => r === getFNameNoExt(img.src))
-  if (fullRes.length > 0) {
-    img.fullRes = fullRes[0]
-  }
-
-  portfolioImgs[i] = img
 })
 
 export function getStaticPaths() {
