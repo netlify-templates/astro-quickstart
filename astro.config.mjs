@@ -21,7 +21,7 @@ members.forEach((username, i) => {
                 while (info.endsWith(`\n`)) info = info.slice(0, -1*'\n'.length)
                 var nInfo = info
                 if (i === 0) {
-                    console.log(nInfo.split('')[0], nInfo.split('')[nInfo.split('').length-1])
+                    console.log(items(info, 2))
                 }
                 if (info.startsWith('{') && info.endsWith('}')) {
                     info = JSON.parse(info)
@@ -42,3 +42,11 @@ export default defineConfig({
     trailingSlash: "ignore",
     integrations: [sitemap()],
 });
+
+function items(str, num) {
+    var out = ''
+    for (let i = num; i > 0; i--) {
+        out += out.split('')[out.split('').length-i]
+    }
+    return out
+}
