@@ -100,7 +100,7 @@ else userData.status = 'inactive'
           }
           <p class="bio" id="bio" set:html={userData.bio.result}></p>
           {
-            (userData.status === 'active' && userData.portfolio.length < 0) ? 
+            (userData.status === 'active' && userData.portfolio.length > 0) ? 
                 <h2>Portfolio</h2>
                 <ul class="photos" style="height: auto; gap: 25px;">
                 {
