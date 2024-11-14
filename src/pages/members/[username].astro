@@ -56,6 +56,7 @@ if (userData) {
   if (userData.portfolio) console.log(username)
 }
 userData.portfolio = portfolios.find(p => p.username === username)
+if (!userData.portfolio) userData.portfolio = []
 userData = updateMember(userData)
 
 if (userData.status) {
