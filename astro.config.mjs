@@ -8,7 +8,7 @@ const siteUrl = 'https://graphics-for-good.com';
 const directoryPath = path.join('./', 'members');
 const members = fs.readdirSync(directoryPath);
 
-members.forEach(username => {
+members.forEach((username, i) => {
     var isDir = fs.lstatSync(`${directoryPath}/${username}`).isDirectory()
     if (isDir) {
         var info = `${directoryPath}/${username}/info.js`
@@ -20,7 +20,9 @@ members.forEach(username => {
                 if (info.endsWith(`export default data`)) info = info.slice(0, -1*'export default data'.length)
                 while (info.endsWith(`\n`)) info = info.slice(0, -1*'\n'.length)
                 var nInfo = info
-                console.log(nInfo.slice(1), nInfo.slice(-1))
+                if (i === 0) {
+                    console.log(nInfo.slice(1), nInfo.slice(-1))
+                }
                 if (info.startsWith('{') && info.endsWith('}')) {
                     info = JSON.parse(info)
                     info.username = username
