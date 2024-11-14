@@ -16,7 +16,7 @@ function getFName(str) {
 
 function getFNameNoExt(str) {
   if (str.includes('/')) str = str.split('/').slice(-1)[0]
-  str = str.slice(0, -1*getFExt(str, 2).length)
+  str = str.slice(0, -1*getFExt(str, 3).length)
 
   return str
 }
