@@ -153,6 +153,7 @@ function defaultBio(name, grade, w1, w2, role, pronunciation, removeAnd) {
     else {
       removeAnd = ' and '
     }
+    console.log(username)
     if (name.includes('(') && name.includes(')')) {
       name = name.split('(')[1].split(')')[0]
     }
