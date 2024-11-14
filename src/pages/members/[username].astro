@@ -58,7 +58,7 @@ if (userData) {
 else userData = {}
 userData.portfolio = portfolios.find(p => p.username === username)
 if (!userData.portfolio) userData.portfolio = []
-console.log(username)
+console.log('\n', userData)
 userData = updateMember(userData)
 
 if (userData.status) {
