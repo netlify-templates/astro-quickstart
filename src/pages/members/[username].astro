@@ -8,6 +8,29 @@ import '../../styles/photos.scss'
 
 import updateMember from '../../../members/updateMember.js'
 
+var portfolios = {
+  // adarsh: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // beatriz: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // bridget: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // cedrus: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // hanlin: await Astro.glob('../../../members/mName/portfolio/*'), 
+  isabelle: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // jeremy: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // lorelai: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // luce: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // mia: await Astro.glob('../../../members/mName/portfolio/*'), 
+  maya: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // miriam: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // parker: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // robin: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // sayuri: await Astro.glob('../../../members/mName/portfolio/*'), 
+  shikha: await Astro.glob('../../../members/mName/portfolio/*'), 
+  tyler: await Astro.glob('../../../members/mName/portfolio/*'), 
+  // zach: await Astro.glob('../../../members/mName/portfolio/*'), 
+  juhi: await Astro.glob('../../../members/mName/portfolio/*'), 
+  samantha: await Astro.glob('../../../members/mName/portfolio/*'), 
+}
+
 export function getStaticPaths() {
     return [
         {params: {username: 'adarsh'}}, 
@@ -22,8 +45,8 @@ export function getStaticPaths() {
         {params: {username: 'lorelai'}}, 
         {params: {username: 'luce'}}, 
         {params: {username: 'mia'}}, 
-        {params: {username: 'miriam'}}, 
         {params: {username: 'maya'}}, 
+        {params: {username: 'miriam'}}, 
         {params: {username: 'parker'}}, 
         {params: {username: 'robin'}}, 
         {params: {username: 'sayuri'}}, 
@@ -48,15 +71,16 @@ var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 
 
-console.log(userDatas)
 var userData = userDatas.find(data => data.default.name.toLowerCase().includes(username))
 
-userData = updateMember(userData)
+if (userData.default) userData = userData.default
+userData = updateMember(userData, portfolios[userData.username])
 
 if (userData.status) {
   if (userData.status === 'activeGrad') userData.status = 'active'
 }
 else userData.status = 'inactive'
+
 
 ---
 <Layout title={userData.name}>
