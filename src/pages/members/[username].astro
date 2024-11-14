@@ -8,8 +8,6 @@ import '../../styles/photos.scss'
 
 import updateMember from '../../../members/updateMember.js'
 
-var portfolios = await Astro.glob('../../../members/*/portfolio.js')
-
 export function getStaticPaths() {
     return [
         {params: {username: 'adarsh'}}, 
@@ -51,12 +49,8 @@ var userDatas = await Astro.glob('../../../members/*/info.js')
 
 var userData = userDatas.find(data => data.default.username === username)
 
-if (userData) {
-  if (userData.default) userData = userData.default
-  if (userData.portfolio) console.log(username)
-}
+if (userData.default) userData = userData.default
 else userData = {}
-userData.portfolio = portfolios.find(p => p.username === username)
 if (!userData.portfolio) userData.portfolio = []
 userData = updateMember(userData)
 

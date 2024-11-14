@@ -40,13 +40,6 @@ members.forEach((username, i) => {
                 }
             }
         }
-
-        portfolio = `var items = ${JSON.stringify({
-            username: username, 
-            items: portfolio
-        }, null, 4)}\n\nexport default items`
-
-        fs.writeFileSync( `${directoryPath}/${username}/portfolio.js`, portfolio)
     }
 });
 
