@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro'
 
 import Modal from '../../components/modal.astro'
+import LargeImage from '../../components/largeImage.astro'
 
 import '../../styles/pages/members.scss'
 import '../../styles/photos.scss'
@@ -105,7 +106,7 @@ else userData.status = 'inactive'
                 {
                   userData.portfolio.map((photo) => {
                     <li>
-                      <img src={photo.file} title={photo.title || ''} onclick={photo.onclick || ''} />
+                      <LargeImage src={photo.file} alt={photo.title || ''} onclick={photo.onclick || ''} />
                     </li>
                   })
                 }
