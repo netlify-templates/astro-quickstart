@@ -62,7 +62,7 @@ function getTitle(link) {
 var title = getTitle(redirect.slug)
 
 ---
-{redirect.mode === 'page' ? (<html>
+<!-- {redirect.mode === 'page' ? (<html>
     <head>
         <meta http-equiv="refresh" content={`0; url=${redirect.dest}`} />        
         <script url={redirect.dest}>location.href = document.currentScript.getAttribute('url')</script>
@@ -81,4 +81,4 @@ var title = getTitle(redirect.slug)
             </script>
         </frame>
     </main>
-</Layout>)}
+</Layout>)} -->
