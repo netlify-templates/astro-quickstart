@@ -36,7 +36,13 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             box-sizing: border-box;
             padding: 2rem;
 
+            max-height: 100dvh;
+            max-width: 100dvh;
+
             border-radius: inherit;
+
+            display: grid;
+            place-items: center;
 
             z-index: 2;
 
