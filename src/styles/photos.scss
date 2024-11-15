@@ -52,6 +52,7 @@ ul:is(#photos, .photos) {
     & > li {
         height: auto;
         width: var(--width, auto);
+        min-height: calc((var(--width, auto) / 16) * 9);
 
         grid-column: span 2;
 
