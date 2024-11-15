@@ -29,10 +29,8 @@ function getFExt(str, level=1) {
     switch (level) {
       case 0: 
         break
-      case -1:
-        str = str.slice(-1)
       default: 
-        str = str.slice(level, -1)
+        str = str.slice(level)
         break
     }
     str = str.join('.')
