@@ -28,7 +28,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             position: fixed;
             inset: 0;
             background-color: var(--bg-color);
-            // opacity: 0.9;
+            opacity: 0.9;
         }
 
         > .img-container {
