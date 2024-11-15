@@ -17,6 +17,7 @@ function getFName(str) {
 function getFNameNoExt(str) {
   str = getFName(str)
   str = str.slice(0, -1*getFExt(str, 2).length)
+  console.log(str)
 
   return str
 }
@@ -35,7 +36,6 @@ function getFExt(str, level=1) {
     }
     str = `.${str.join('.')}`
   }
-  console.log(str)
   return str
 }
 
