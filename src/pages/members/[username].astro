@@ -33,7 +33,7 @@ function getFExt(str, level=1) {
         str = str.slice(level)
         break
     }
-    str = str.join('.')
+    str = `.${str.join('.')}`
   }
   console.log(str)
   return str
