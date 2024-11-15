@@ -25,6 +25,8 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
     &:has(> input[type="checkbox"]:checked) {
         inset: 0;
         &::before {
+            position: fixed;
+            inset: 0;
             background-color: var(--bg-color);
             // opacity: 0.9;
         }
@@ -35,11 +37,12 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
 
             box-sizing: border-box;
             padding: 2rem;
+            margin: auto;
+
+            border-radius: inherit;
 
             max-height: 100dvh;
             max-width: 100dvh;
-
-            border-radius: inherit;
 
             display: grid;
             place-items: center;
@@ -53,7 +56,6 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
                 background-color: var(--bg-color);
             }
             > img {
-                margin: auto;
                 max-height: 100%;
                 max-width: 100%;
                 // background-image: var(--bg);
