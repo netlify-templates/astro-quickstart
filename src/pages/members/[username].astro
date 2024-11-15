@@ -38,8 +38,8 @@ function getFExt(str, level=1) {
   return str
 }
 
-function toProper(user) {
-  user = `${user.slice(0, 1).toUpperCase()}${user.slice(1)}`
+function firstName(user) {
+  user = user.split(' ')[0]
   return user
 }
 
@@ -166,7 +166,7 @@ else userData.status = 'inactive'
                     else file = getFNameNoExt(file)
                     var img = portfolioImgs.filter(i => decodeURIComponent(getFNameNoExt(i.src, 2)) === file)
                     <li>
-                      <LargeImage src={img.src} alt={`${file} by ${toProper(img.username)}`} draggable={false} />
+                      <LargeImage src={img.src} alt={`${file} by ${firstName(userData.name)}`} draggable={false} />
                     </li>
                   })
                 }
