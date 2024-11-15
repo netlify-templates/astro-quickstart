@@ -16,6 +16,7 @@ function getFName(str) {
 
 function getFNameNoExt(str) {
   if (str.includes('/')) str = str.split('/').slice(-1)[0]
+  console.log(str)
   str = str.slice(0, -1*getFExt(str, 2).length)
 
   return str
@@ -160,7 +161,7 @@ else userData.status = 'inactive'
                   userData.portfolio.map(photo => {
                     var file = photo.file
                     console.log('\n')
-                    var img = portfolioImgs.filter(i => {console.log(getFNameNoExt(i.src)); return false})
+                    var img = portfolioImgs.filter(i => {getFNameNoExt(i.src); return false})
                     return <pre>{JSON.stringify(img, null, 4)}</pre>
                     // <li>
                     //   <LargeImage src={photo.file} alt={photo.title || ''} onclick={photo.onclick || ''} />
