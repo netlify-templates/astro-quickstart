@@ -167,7 +167,7 @@ else userData.status = 'inactive'
                     var img = portfolioImgs.filter(i => decodeURIComponent(getFNameNoExt(i.src, 2)) === file)
                     return (
                       <li>
-                        <pre>{img.src}</pre>
+                        <pre>{JSON.stringify(img, null, 4)}</pre>
                       </li>
                     )
                     // return (
