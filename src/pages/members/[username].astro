@@ -160,8 +160,12 @@ else userData.status = 'inactive'
                 {
                   userData.portfolio.map(photo => {
                     var file = photo.file
+                    if (getFExt(file) === '.pdf') {
+                      return ''
+                    }
+                    else file = getFNameNoExt(file)
                     console.log(file)
-                    var img = portfolioImgs.filter(i => {console.log(`${decodeURIComponent(getFNameNoExt(i.src))} === ${file}`);return false})
+                    var img = portfolioImgs.filter(i => {console.log(`${decodeURIComponent(getFNameNoExt(i.src))} === ${file}`); return false})
                     return <pre>{JSON.stringify(img, null, 4)}</pre>
                     // <li>
                     //   <LargeImage src={photo.file} alt={photo.title || ''} onclick={photo.onclick || ''} />
