@@ -35,6 +35,8 @@ section.photos {
 
 ul:is(#photos, .photos) {
     --cols: 3;
+    --gap: 25px;
+    --width: calc((100% / var(--cols))) - (var(--gap, 0px));
 
     margin: 0;
     padding: 0;
@@ -45,10 +47,11 @@ ul:is(#photos, .photos) {
 
     display: grid;
     grid-template-columns: repeat(calc(var(--cols)*2), 1fr);
-    gap: 25px;
+    gap: var(--gap);
 
     & > li {
         height: auto;
+        width: var(--width, auto);
 
         grid-column: span 2;
 
