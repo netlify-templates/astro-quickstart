@@ -54,7 +54,7 @@ pImgs.map(img => {
 
     var name = getFNameNoExt(img.src)
 
-    var fullRes = fResS.filter(r => getFNameNoExt(decodeURIComponent(str)) === getFNameNoExt(img.src))
+    var fullRes = fResS.filter(r => getFNameNoExt(r) === getFNameNoExt(img.src))
     if (fullRes.length > 0) {
       obj.fullRes = fullRes[0]
     }
