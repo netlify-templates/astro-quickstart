@@ -161,7 +161,7 @@ else userData.status = 'inactive'
                   userData.portfolio.map(photo => {
                     var file = photo.file
                     console.log(file)
-                    var img = portfolioImgs.filter(i => {getFNameNoExt(i.src); return false})
+                    var img = portfolioImgs.filter(i => decodeURIComponent(getFNameNoExt(i.src)) === file)
                     return <pre>{JSON.stringify(img, null, 4)}</pre>
                     // <li>
                     //   <LargeImage src={photo.file} alt={photo.title || ''} onclick={photo.onclick || ''} />
