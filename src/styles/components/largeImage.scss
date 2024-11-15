@@ -1,5 +1,8 @@
 html:has(.img-parent > input[type="checkbox"]:checked) {
     overflow: clip;
+    body {
+        z-index: 1;
+    }
 }
 
 .img-parent {
@@ -34,6 +37,8 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
             padding: 2rem;
 
             border-radius: inherit;
+
+            z-index: 2;
 
             &::before {
                 content: '';
