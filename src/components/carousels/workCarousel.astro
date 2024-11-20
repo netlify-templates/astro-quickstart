@@ -47,7 +47,8 @@ members.forEach((m, i) => {
                 obj.fullRes = fullRes[0].src
             }
 
-            images.push(obj)
+            var alreadyHas = images.filter(i => getFNameNoExt(i.src) === getFNameNoExt(img.src))
+            if (!alreadyHas) images.push(obj)
         }
     })
 })
