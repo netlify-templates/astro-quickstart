@@ -176,7 +176,7 @@ else userData.status = 'inactive'
                     else img = {}
                     return (
                       <li>
-                        <LargeImage src={img.src} alt={`${file} by ${firstName(userData.name)}`} draggable={false} fullRes={img.fullRes || ''} />
+                        <LargeImage src={img.src} alt={`${file} by ${firstName(userData.name)}`} draggable={false} fullRes={img.fullRes} />
                       </li>
                     )
                   })

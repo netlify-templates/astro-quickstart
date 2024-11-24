@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
+
 import Split from '../components/split.astro'
 import TinySplit from '../components/tinySplit.astro'
-import Carousel from '../components/carousel.astro'
+
+import LargeImage from '../components/largeImage.astro'
 
 import '../styles/pages/projects.scss'
-import '../styles/photos.scss'
 
 // {
 //   title: 'Treasure Chest Foundation',
@@ -46,7 +47,7 @@ var projects = [
       image: {
         styles: '',
         src: 'vanniaid-foundation.jpg',
-        alt: 'The Vanni Aid Image'
+        alt: 'The Vanni Aid Logo'
       }
     },
     {
@@ -60,13 +61,13 @@ var projects = [
     },
   ],
   [
-  {
-      title: 'headstreams',
+    {
+      title: 'Headstreams',
       description: 'Description Coming Soon',
       image: {
         styles: '',
         src: 'headstreams.png',
-        alt: 'The headstreams Logo'
+        alt: 'The Headstreams Logo'
       }
     },
   ]
@@ -79,11 +80,11 @@ var projects = [
         return (
           <>{i !== 0 ? <span class="hHr"></span> : '' }</>
           <Split>
-            <>{row.length%2 === 1 ? <span class="vHr"></span> : '' }</>
+            <>{row.length%2 === 1 ? <span class="vHr"></span> : ''}</>
             {
               row.map((item, i) => {
                 return (
-                  <>{i !== 0 ? <span class="vHr"></span> : '' }</>
+                  <>{i !== 0 ? <span class="vHr"></span> : ''}</>
                   <section>
                     <h1>{item.title}</h1>
                     <TinySplit>
@@ -91,19 +92,17 @@ var projects = [
                         <p set:html={item.description} />
                       </div>
                       <div class="img-parent" style={item.image.styles}>
-                        <img src={`/assets/projects/${item.image.src}`} alt={item.image.alt} />
+                        <LargeImage src={`/assets/projects/${item.image.src}`} alt={item.image.alt} draggable={false} />
                       </div>
                     </TinySplit>
                   </section>
                 )
               })
             }
-            <>{row.length%2 === 1 ? <span class="vHr"></span> : '' }</>
+            <>{row.length%2 === 1 ? <span class="vHr"></span> : ''}</>
           </Split>
         )
       })
     }
   </main>
-  <script is:inline src="/projects.js"></script>
-  <script is:inline src="/modal.js"></script>
 </Layout>
