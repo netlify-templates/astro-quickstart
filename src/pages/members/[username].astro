@@ -185,7 +185,10 @@ else userData.status = 'inactive'
             : ''
           }
         </section>
-      : <section><pre>{userData}</pre></section>
+      : <section>
+          <p>Unknown User Status, Displaying aw UserData.</p>
+          <pre>{JSON.stringify(userData, null, 4)}</pre>
+        </section>
     }
   </main>
   <Modal />
