@@ -174,11 +174,12 @@ else userData.status = 'inactive'
                     var img = portfolioImgs.filter(i => decodeURIComponent(getFNameNoExt(i.src, 2)) === file)
                     if (img.length > 0) img = img[0]
                     else img = {}
-                    return (
-                      <li>
-                        <LargeImage src={img.src} alt={`${file} by ${firstName(userData.name)}`} draggable={false} fullRes={img.fullRes} />
-                      </li>
-                    )
+                    return <pre>{JSON.stringify(img, null, 4)}</pre>
+                    // return (
+                    //   <li>
+                    //     <LargeImage src={img.src} alt={`${file} by ${firstName(userData.name)}`} draggable={false} fullRes={img.fullRes} />
+                    //   </li>
+                    // )
                   })
                 }
               </ul>
