@@ -62,8 +62,6 @@ pImgs.map(img => {
   else fResS.push(getFNameNoExt(img))
 })
 
-console.log(fResS)
-
 portfolioImgs.forEach((img, i) => {
   var fullRes = fResS.filter(r => getFNameNoExt(r) === getFNameNoExt(img.src))
   if (fullRes.length > 0) {
