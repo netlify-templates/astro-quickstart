@@ -49,7 +49,7 @@ members.forEach((m, i) => {
             var alreadyHas = images.filter(i => getFNameNoExt(i.src) === getFNameNoExt(img.src))
             if (!alreadyHas) images.push(img)
         }
-        else members[i].fullRes.push(img)
+        else members[i].fullRes.push(getFNameNoExt(img))
     })
 })
 
