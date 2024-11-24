@@ -25,6 +25,7 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
     &:has(> input[type="checkbox"]:checked) {
         inset: 0;
         &::before {
+            content: '';
             position: fixed;
             inset: 0;
             background-color: var(--bg-color);
@@ -49,12 +50,6 @@ html:has(.img-parent > input[type="checkbox"]:checked) {
 
             z-index: 2;
 
-            &::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background-color: var(--bg-color);
-            }
             > img {
                 max-height: 100%;
                 max-width: 100%;
