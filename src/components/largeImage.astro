@@ -9,5 +9,12 @@ import '../styles/components/largeImage.scss'
     <input type="checkbox" />
     <div class="img-container">
         <img id={id || null} src={src} style={`--bg: url('${src}')`} alt={alt || ''} orientation={orientation || ''} draggable={draggable || false} loading="lazy" decoding="async" />
+        {
+            !!fullRes ? (
+                <iframe id={id || null} src={fullRes}>
+                    <img id={id || null} src={src} style={`--bg: url('${src}')`} alt={alt || ''} orientation={orientation || ''} draggable={draggable || false} loading="lazy" decoding="async" />
+                </iframe>
+            ) : ''
+        }
     </div>
 </label>

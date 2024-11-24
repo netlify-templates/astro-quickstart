@@ -36,20 +36,20 @@ var members = [
 
 members.forEach((m, i) => {
     m.imgs.forEach(img => {
-        var img = img.default
+        img = img.default
         
         if (typeof img === 'object') {
-            var obj = img
-            obj.username = m.username
+            img.username = m.username
 
             var fullRes = members[i].fullRes.filter(r => r.name === getFNameNoExt(img.src))
             if (fullRes.length > 0) {
-                obj.fullRes = fullRes[0].src
+                img.fullRes = fullRes[0].src
             }
 
             var alreadyHas = images.filter(i => getFNameNoExt(i.src) === getFNameNoExt(img.src))
-            if (!alreadyHas) images.push(obj)
+            if (!alreadyHas) images.push(img)
         }
+        else members[i].push(img)
     })
 })
 
@@ -103,8 +103,10 @@ var dId = 'workCarousel'
 ---
 <Carousel carouselIndex={carouselIndex} dataColumns={images.length} dataId={dId}>
     {
-        images.map((img, i) => {
-            return <LargeImage id={`${dId}-${i}`} src={img.src} alt={`${getFNameNoExt(img.src)} by ${toProper(img.username)}`} draggable={false} />
-        })
+        return (
+            images.map((img, i) => {
+                <LargeImage id={`${dId}-${i}`} src={img.src} alt={`${getFNameNoExt(img.src)} by ${toProper(img.username)}`} draggable={false} fullRes={img.fullRes || ''} />
+            })
+        )
     }
 </Carousel>
