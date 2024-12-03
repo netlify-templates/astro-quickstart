@@ -65,6 +65,8 @@ portfolioImgs.forEach((img, i) => {
   portfolioImgs[i] = img
 })
 
+userData.portfolio = portfolioImgs
+
 export function getStaticPaths() {
   return [
     {params: {username: 'adarsh'}}, 
@@ -159,7 +161,7 @@ else userData.status = 'inactive'
               <h2>Portfolio</h2>
               <ul class="photos" style="height: auto; gap: 25px;">
                 {
-                  portfolioImgs.map(photo => {
+                  userData.portfolio.map(photo => {
                     var file = photo.file
                     if (getFExt(file) === '.pdf') {
                       return ''
