@@ -50,13 +50,6 @@ var fResS = []
 pImgs.map(img => {
   img = img.default
   if (typeof img === 'object') {
-    var name = getFNameNoExt(img.src)
-
-    var fullRes = fResS.filter(r => getFNameNoExt(r) === getFNameNoExt(img.src))
-    if (fullRes.length > 0) {
-      img.fullRes = fullRes[0]
-    }
-
     portfolioImgs.push(img)
   }
   else fResS.push(getFNameNoExt(img))
@@ -64,6 +57,7 @@ pImgs.map(img => {
 
 portfolioImgs.forEach((img, i) => {
   var fullRes = fResS.filter(r => getFNameNoExt(r) === getFNameNoExt(img.src))
+  console.lpog(fullRes)
   if (fullRes.length > 0) {
     img.fullRes = fullRes[0]
   }
