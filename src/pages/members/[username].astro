@@ -57,7 +57,7 @@ pImgs.map(img => {
 
 portfolioImgs.forEach((img, i) => {
   var fullRes = fResS.filter(r => getFNameNoExt(r) === getFNameNoExt(img.src))
-  console.log(fullRes)
+  console.log(getFNameNoExt(img.src))
   if (fullRes.length > 0) {
     img.fullRes = fullRes[0]
   }
