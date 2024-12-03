@@ -159,7 +159,7 @@ else userData.status = 'inactive'
               <h2>Portfolio</h2>
               <ul class="photos" style="height: auto; gap: 25px;">
                 {
-                  userData.portfolio.map(photo => {
+                  portfolioImgs.map(photo => {
                     var file = photo.file
                     if (getFExt(file) === '.pdf') {
                       return ''
