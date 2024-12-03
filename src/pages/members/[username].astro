@@ -32,8 +32,8 @@ function getFExt(str, level=1) {
       default: 
         str = str.slice(level)
         break
-      console.log(str)
-    }
+      }
+    console.log(str)
     str = `.${str.join('.')}`
   }
   return str
