@@ -26,13 +26,13 @@ function getFExt(str, level=1) {
   if (level > 0) level *= -1
   if (str.includes('.')) {
     str = str.split('.')
-    console.log(str)
     switch (level) {
       case 0: 
         break
       default: 
-       str = str.slice(level)
+        str = str.slice(level)
         break
+      console.log(str)
     }
     str = `.${str.join('.')}`
   }
