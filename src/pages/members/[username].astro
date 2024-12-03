@@ -26,6 +26,7 @@ function getFExt(str, level=1) {
   if (level > 0) level *= -1
   if (str.includes('.')) {
     str = str.split('.')
+    console.log(str)
     switch (level) {
       case 0: 
         break
@@ -57,7 +58,7 @@ pImgs.map(img => {
 
 portfolioImgs.forEach((img, i) => {
   var fullRes = fResS.filter(r => getFNameNoExt(r) === getFNameNoExt(img.src))
-  console.log(getFNameNoExt(img.src))
+  // console.log(getFNameNoExt(img.src))
   if (fullRes.length > 0) {
     img.fullRes = fullRes[0]
   }
