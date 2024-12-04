@@ -37,7 +37,6 @@ members.forEach((username, i) => {
                     info = JSON.stringify(info, null, 2)
                     info = `var data = ${info}\n\nexport default data`
                     fs.writeFileSync( `${directoryPath}/${username}/info.js`, info)
-                    fs.unlinkSync( `${directoryPath}/${username}/info.json`)
                 }
             }
         }

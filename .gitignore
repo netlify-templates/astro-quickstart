@@ -21,3 +21,6 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Member converted .js files
+members/*/info.js
