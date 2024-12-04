@@ -6,17 +6,12 @@ var domain = Astro.url.origin
 if (path.startsWith('/') && path !== '/') path = path.slice(1)
 if (path.endsWith('/') && path !== '/') path = path.slice(0, path.length-1)
 
-import navLinkChanges from '../../config/navbar/links.js'
+var navLinkChanges = await Astro.glob('../../config/navbar/links.js')
+navLinkChanges = navLinkChanges.find(data => data).default
 
 var pathChanges = navLinkChanges.pathChanges
 
-var pS = await import.meta.glob('../pages/*.astro')
-var pages = []
-for (const path in pS) {
-  var page = await import(path)
-  pages.push(page.default)
-}
-
+var pages = await Astro.glob('../pages/*.astro')
 
 var links = []
 pages.map(page => {
@@ -34,35 +29,13 @@ pages.map(page => {
   }
 })
 
-function getFName(str) {
-  if (str.includes('/')) str = str.split('/').slice(-1)[0]
-  return str
-}
-
-function getFNameNoExt(str) {
-  str = getFName(str)
-  str = str.slice(0, -1*getFExt(str).length)
-
-  return str
-}
-
-function getFExt(str) {
-  str = getFName(str)
-  if (str.includes('.')) {
-    str = str.split('.')
-    str = str.slice(-1)
-    str = `.${str.join('.')}`
-  }
-  return str
-}
-
 function getLink(link) {
-  var lPath = getFNameNoExt(link.moduleId)
+  var lPath = link.url
   var hasHome = false
   
-  var fileName = getFNameNoExt(lPath)
+  var fileName = lPath
   if (fileName.startsWith('/')) fileName = fileName.slice(1)
-  if (fileName === 'index' && !hasHome) {
+  if (fileName === '' && !hasHome) {
     fileName = 'home'
     hasHome = true
   }
