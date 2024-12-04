@@ -57,7 +57,7 @@ function getFExt(str) {
 }
 
 function getLink(link) {
-  var lPath = link.moduleId
+  var lPath = getFNameNoExt(link.moduleId)
   var hasHome = false
   
   var fileName = getFNameNoExt(lPath)

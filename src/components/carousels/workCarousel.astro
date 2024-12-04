@@ -9,32 +9,41 @@ var images = []
 var members = [
     {
         username: 'maya', 
-        imgs: await Astro.glob('../../../members/maya/renamedPortfolio/*'), 
+        images: await import.meta.glob('../../../members/maya/renamedPortfolio/*'), 
         fullRes: [], 
     }, 
     {
         username: 'isabelle', 
-        imgs: await Astro.glob('../../../members/isabelle/renamedPortfolio/*'), 
+        images: await import.meta.glob('../../../members/isabelle/renamedPortfolio/*'), 
         fullRes: [], 
     }, 
     {
         username: 'tyler', 
-        imgs: await Astro.glob('../../../members/tyler/renamedPortfolio/*'), 
+        images: await import.meta.glob('../../../members/tyler/renamedPortfolio/*'), 
         fullRes: [], 
     }, 
     {
         username: 'shikha', 
-        imgs: await Astro.glob('../../../members/shikha/renamedPortfolio/*'), 
+        images: await import.meta.glob('../../../members/shikha/renamedPortfolio/*'), 
         fullRes: [], 
     }, 
     {
         username: 'samantha', 
-        imgs: await Astro.glob('../../../members/samantha/renamedPortfolio/*'), 
+        images: await import.meta.glob('../../../members/samantha/renamedPortfolio/*'), 
         fullRes: [], 
     }, 
 ]
 
+
 members.forEach((m, i) => {
+    m.imgs = []
+    for (const path in m.images) {
+        m.images[path]().then((mod) => {
+            m.imgs.push(mod)
+        })
+    }
+    members[i].imgs = m.images
+    
     m.imgs.forEach(img => {
         img = img.default
         

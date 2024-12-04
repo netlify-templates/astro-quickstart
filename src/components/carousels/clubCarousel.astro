@@ -2,7 +2,14 @@
 import Carousel from '../carousel.astro'
 import LargeImage from '../largeImage.astro'
 
-var images = await Astro.glob('../../../imgs/club_photos/*')
+var imgs = await import.meta.glob('../../../imgs/club_photos/*')
+var images = []
+
+for (const path in imgs) {
+  imgs[path]().then((mod) => {
+    images.push(mod)
+  })
+}
 
 const { carouselIndex } = Astro.props
 
