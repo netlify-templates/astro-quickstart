@@ -173,12 +173,12 @@ userData.portfolio = userImgs
               <ul class="photos" style="height: auto; gap: 25px;">
                 {
                   userData.portfolio.map(img => {
-                    return <pre>{JSON.stringify(img, null, 4)}</pre>
-                    // return (
-                    //   <li>
-                    //     <LargeImage src={img.src} alt={`${file} by ${firstName(userData.name)}`} draggable={false} fullRes={img.fullRes} />
-                    //   </li>
-                    // )
+                    // return <pre>{JSON.stringify(img, null, 4)}</pre>
+                    return (
+                      <li>
+                        <LargeImage src={img.src} alt={`${file} by ${firstName(userData.name)}`} draggable={false} fullRes={img.fullRes} />
+                      </li>
+                    )
                   })
                 }
               </ul>
