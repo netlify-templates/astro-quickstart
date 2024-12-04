@@ -8,13 +8,14 @@ import Layout from '../../layouts/Layout.astro'
     <button id="button">Enroll</button>
   </main>
   <script>
+    var button = document.getElementById('button')
     var lStorName = 'isBeta'
     if (!!localStorage.getItem(lStorName)) {
       button.textContent = 'UnEnroll'
     }
     button.addEventListener('click', function() {
       if (!!localStorage.getItem(lStorName) === false) {
-        localStorage.setItem(lStorName, true)
+        localStorage.setItem(lStorName, true.toString())
         button.textContent = 'UnEnroll'
         alert(`Enrolled you in the beta program.`)
       }

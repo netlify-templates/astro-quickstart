@@ -37,13 +37,15 @@ export function getStaticPaths() {
 }
 
 var { redirect } = Astro.params;
+
 if (!redirect) redirect = 'not-correct'
-redirect = redirects.filter(r => r.slug.endsWith(redirect))
+var redirectObj = redirects.filter(r => r.slug.endsWith(redirect))
 
-if (redirect.length > 0) redirect = redirect[0]
-else redirect = def
+var rObj = {mode: '', dest: ''} as { slug: string; dest: string; mode: string; } | { slug: string; dest: string; mode?: undefined; }
+if (redirectObj.length > 0) rObj = redirectObj[0]
+else rObj = def
 
-if (!redirect.mode) redirect.mode = 'page'
+if (!rObj.mode) rObj.mode = 'page'
 
 function getTitle(link) {
     if (link.startsWith('/')) link = link.slice(1)
@@ -59,28 +61,28 @@ function getTitle(link) {
     return nameParts.join(' ')
 }
 
-var title = getTitle(redirect.slug)
+var title = getTitle(rObj.slug)
 
 ---
-{redirect.mode === 'page' ? (<html>
+{rObj.mode === 'page' ? (<html>
     <head>
-        <meta http-equiv="refresh" content={`0; url=${redirect.dest}`} />        
-        <script url={redirect.dest} is:inlin>location.href = document.currentScript.getAttribute('url')</script>
+        <meta http-equiv="refresh" content={`0; url=${rObj.dest}`} />        
+        <script url={rObj.dest} is:inline>location.href = document.currentScript.getAttribute('url')</script>
     </head>
     <body>
-        Redirecting you to <a href={redirect.dest}>{redirect.dest}</a>.
+        Redirecting you to <a href={rObj.dest}>{rObj.dest}</a>.
     </body>
 </html>) : ''}
 
 <Layout title={title}>
     <main id="content" class="frame-page">
-        <iframe frameborder="0" src={redirect.dest} class="frame">
-            Please click <a href={redirect.dest}>Here</a> to view the page!
-            <script is:inline dest={redirect.dest}>
+        <iframe frameborder="0" src={rObj.dest} class="frame">
+            Please click <a href={rObj.dest}>Here</a> to view the page!
+            <script dest={rObj.dest} is:inline>
                 var dest = document.currentScript.getAttribute('dest')
                 if (!dest) dest = '/'
                 location.replace(dest)
             </script>
-        </frame>
+        </iframe>
     </main>
 </Layout>

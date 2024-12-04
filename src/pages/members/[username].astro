@@ -44,7 +44,7 @@ function firstName(user) {
   return user
 }
 
-var pImgs = await Astro.glob('../../../members/*/portfolio/*')
+var pImgs = await Astro.glob('../../../members/*/renamedPortfolio/*')
 var portfolioImgs = []
 var fResS = []
 
@@ -53,11 +53,11 @@ pImgs.map(img => {
   if (typeof img === 'object') {
     portfolioImgs.push(img)
   }
-  else fResS.push(getFNameNoExt(img))
+  else fResS.push(getFNameNoExt(img, 1))
 })
 
 portfolioImgs.forEach((img, i) => {
-  var fullRes = fResS.filter(r => getFNameNoExt(r) === getFNameNoExt(img.src))
+  var fullRes = fResS.filter(r => getFNameNoExt(r, 1) === getFNameNoExt(img.src, 1))
   // console.log(getFNameNoExt(img.src))
   if (fullRes.length > 0) {
     img.fullRes = fullRes[0]
@@ -97,12 +97,9 @@ export function getStaticPaths() {
   ];
 }
 
-const { username } = Astro.params;
+var { username } = Astro.params;
 if (!username) username = '_admin'
 
-import MemberPageTemplate from '../../components/memberPageTemplate.astro'
-
-var defaultData = await Astro.glob('../../../members/_admin/info.js')
 var userDatas = await Astro.glob('../../../members/*/info.js')
 
 var userData = userDatas.find(data => data.default.username === username)
@@ -126,7 +123,7 @@ userData.portfolio.map((item, i) => {
   if (getFExt(file) === '.pdf') {
     return ''
   }
-  var data = portfolioImgs.filter(img => file === getFNameNoExt(img.src))
+  var data = portfolioImgs.filter(img => file === getFNameNoExt(img.src, 1))
   if (data.length > 0) userImgs.push(data)
 })
 
@@ -176,7 +173,7 @@ userData.portfolio = userImgs
                     // return <pre>{JSON.stringify(img, null, 4)}</pre>
                     return (
                       <li>
-                        <LargeImage src={img.src} alt={`${file} by ${firstName(userData.name)}`} draggable={false} fullRes={img.fullRes} />
+                        <LargeImage src={img.src} alt={`${getFNameNoExt(img.src, 1)} by ${firstName(userData.name)}`} draggable={false} fullRes={img.fullRes} />
                       </li>
                     )
                   })
