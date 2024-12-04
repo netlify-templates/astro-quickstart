@@ -60,11 +60,11 @@ html {
   }
 }
 
-.bttns{
+.btns{
   margin-bottom: 5%;
 }
 
-.bttn{
+.btn{
   padding: 15px;
   border-radius: 5px;
   width: 150px;
@@ -72,7 +72,7 @@ html {
   text-decoration: none;
 }
 
-.bttn.primary{
+.btn.primary{
   display: inline-block;
   width: max-content;
   background: #21A69A;
@@ -81,19 +81,19 @@ html {
   box-shadow: -3px 3px 5px rgb(35 33 33 / 23%);
 }
 
-.bttn.primary:hover {
+.btn.primary:hover {
   background: #21a69a;
   box-shadow: inset 3px 4px 10px rgb(35 33 33 / 40%);
   /* -webkit-box-shadow: inset 3px 4px 10px rgb(35 33 33 / 40%); */
 }
 
-.bttn.secondary{
+.btn.secondary{
   background: transparent;
   border: #093C4F 2px solid;
   color: #0D1D24;
 }
 
-.bttn.secondary:hover {
+.btn.secondary:hover {
   background: #05171f;
   color: white;
 }
