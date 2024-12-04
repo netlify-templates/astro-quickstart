@@ -6,4 +6,6 @@ var custom = {
     
 }
 
-export default {pathChanges: pathChanges, custom: custom}
+var obj = {pathChanges: pathChanges, custom: custom}
+
+export default obj
