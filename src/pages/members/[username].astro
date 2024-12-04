@@ -32,7 +32,8 @@ function getFExt(str, level=1) {
       default: 
         str = str.slice(level)
         break
-    }
+      }
+    console.log(str)
     str = `.${str.join('.')}`
   }
   return str
@@ -50,13 +51,6 @@ var fResS = []
 pImgs.map(img => {
   img = img.default
   if (typeof img === 'object') {
-    var name = getFNameNoExt(img.src)
-
-    var fullRes = fResS.filter(r => getFNameNoExt(r) === getFNameNoExt(img.src))
-    if (fullRes.length > 0) {
-      img.fullRes = fullRes[0]
-    }
-
     portfolioImgs.push(img)
   }
   else fResS.push(getFNameNoExt(img))
@@ -64,6 +58,7 @@ pImgs.map(img => {
 
 portfolioImgs.forEach((img, i) => {
   var fullRes = fResS.filter(r => getFNameNoExt(r) === getFNameNoExt(img.src))
+  // console.log(getFNameNoExt(img.src))
   if (fullRes.length > 0) {
     img.fullRes = fullRes[0]
   }
@@ -125,6 +120,18 @@ if (userData.status) {
 }
 else userData.status = 'inactive'
 
+var userImgs = []
+userData.portfolio.map((item, i) => {
+  var file = item.file
+  if (getFExt(file) === '.pdf') {
+    return ''
+  }
+  var data = portfolioImgs.filter(img => file === getFNameNoExt(img.src))
+  if (data.length > 0) userImgs.push(data)
+})
+
+userData.portfolio = userImgs
+
 ---
 <Layout title={userData.name}>
   <main id="content" class="profile">
@@ -165,15 +172,7 @@ else userData.status = 'inactive'
               <h2>Portfolio</h2>
               <ul class="photos" style="height: auto; gap: 25px;">
                 {
-                  userData.portfolio.map(photo => {
-                    var file = photo.file
-                    if (getFExt(file) === '.pdf') {
-                      return ''
-                    }
-                    else file = getFNameNoExt(file)
-                    var img = portfolioImgs.filter(i => decodeURIComponent(getFNameNoExt(i.src, 2)) === file)
-                    if (img.length > 0) img = img[0]
-                    else img = {}
+                  userData.portfolio.map(img => {
                     // return <pre>{JSON.stringify(img, null, 4)}</pre>
                     return (
                       <li>
@@ -186,8 +185,9 @@ else userData.status = 'inactive'
             : ''
           }
         </section>
-      : <section>
-          <p>Unknown User Status, Displaying aw UserData.</p>
+       : 
+        <section>
+          <p>Unknown User Status, Displaying raw UserData.</p>
           <pre>{JSON.stringify(userData, null, 4)}</pre>
         </section>
     }
