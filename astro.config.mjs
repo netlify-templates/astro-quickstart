@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import path from 'path';
-import fs from 'fs';
+import fs from 'fs-extra';
 
 const siteUrl = 'https://graphics-for-good.com';
 
@@ -19,6 +19,9 @@ members.forEach((username, i) => {
                     portfolio.push({
                         file: `${username}-${i}`
                     })
+                    if (fs.existsSync(`${directoryPath}/${username}/renamedPortfolio/${username}-${i}`)) {
+                        fs.unlinkSync(`${directoryPath}/${username}/renamedPortfolio/${username}-${i}`)
+                    }
                     fs.copySync(`${directoryPath}/${username}/portfolio/${i}`, `${directoryPath}/${username}/renamedPortfolio/${username}-${i}`)
                 })
             }
