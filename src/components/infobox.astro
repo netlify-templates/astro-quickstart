@@ -5,10 +5,14 @@ var infoboxEnabled = false
 
 import '../styles/components/infobox.scss'
 ---
-<dialog id="infobox" class="infobox">
-  <a href="javascript:closeInfobox()" draggable="false">
-    <img src="/assets/icons/x.svg" class="cSpan" draggable="false">
-  </a>
-  <div class="infobox-inner"></div>
-</dialog>
-<script src="/infobox.js" is:inline infoboxTransitionTime={infoboxTransitionTime} msg={msg} infoboxEnabled={infoboxEnabled}></script>
+{
+  !!infoboxEnabled ? (
+    <dialog id="infobox" class="infobox">
+    <a href="javascript:closeInfobox()" draggable="false">
+      <img src="/assets/icons/x.svg" class="cSpan" draggable="false" />
+    </a>
+      <div class="infobox-inner"></div>
+    </dialog>
+    <script src="/infobox.js" is:inline infoboxTransitionTime={infoboxTransitionTime} msg={msg} infoboxEnabled={infoboxEnabled}></script>
+  ) : ''
+}
