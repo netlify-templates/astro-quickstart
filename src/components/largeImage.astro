@@ -1,6 +1,15 @@
 ---
 // import { Image } from 'astro:assets';
 
+export interface Props {
+	id: string;
+	src: URL;
+    alt: string;
+    orientation: string;
+    draggable: boolean;
+    fullRes: URL;
+}
+
 const { id, src, alt, orientation, draggable, fullRes } = Astro.props as Props;
 
 import '../styles/components/largeImage.scss'
@@ -9,11 +18,11 @@ import '../styles/components/largeImage.scss'
     <input type="checkbox" />
     <div class="img-container">
         <!-- <pre>{fullRes}</pre> -->
-        <img id={id || null} src={src} style={`--bg: url('${src}')`} alt={alt || ''} orientation={orientation || ''} draggable={draggable || false} loading="lazy" decoding="async" />
+        <img id={id || null} src={src.toString()} style={`--bg: url('${src}')`} alt={alt || ''} orientation={orientation || ''} draggable={draggable || false} loading="lazy" decoding="async" />
         {
             !!fullRes ? (
-                <iframe id={id || null} src={fullRes}>
-                    <img id={id || null} src={src} style={`--bg: url('${src}')`} alt={alt || ''} orientation={orientation || ''} draggable={draggable || false} loading="lazy" decoding="async" />
+                <iframe id={id || null} src={fullRes.toString()}>
+                    <img id={id || null} src={src.toString()} style={`--bg: url('${src.toString()}')`} alt={alt || ''} orientation={orientation || ''} draggable={draggable || false} loading="lazy" decoding="async" />
                 </iframe>
             ) : ''
         }

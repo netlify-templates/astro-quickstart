@@ -9,8 +9,8 @@ import '../styles/components/contactForm.scss'
     <form class="contact contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc4qjrt9QFOiGU4DHHjagYlVsYdS77KiXqwo967oeGySAVMnQ/formResponse" method="POST">
         <input type="text" name="entry.264713401" placeholder="Organization Name" top required>
         <input type="email" name="entry.2027702877" placeholder="Email Address" required>
-        <textarea type="text" name="entry.656122872" placeholder="Message" required></textarea>
-        <input type="hidden" name="entry.1445095683" value={true} required />
+        <textarea name="entry.656122872" placeholder="Message" required></textarea>
+        <input type="hidden" name="entry.1445095683" value={true.toString()} required />
         <!-- add hidden Honeypot input to prevent spams -->
         <input type="hidden" name="_gotcha" style="display:none!important">
         <label for="contact-submitted" class="submit-label">

@@ -4,16 +4,6 @@ import LargeImage from '../largeImage.astro'
 
 var images = await Astro.glob('../../../imgs/club_photos/*')
 
-function getFName(str) {
-    if (str.includes('/')) str = str.split('/').slice(-1)[0]
-
-    if (str.includes('.')) {
-        var rem = str.split('.').splice(-2, 1)
-        str = str.split(`.${rem}.`).join('.')
-    }
-    return str
-}
-
 const { carouselIndex } = Astro.props
 
 var dId = 'clubCarousel'

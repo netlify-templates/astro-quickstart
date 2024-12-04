@@ -1,12 +1,13 @@
 ---
 import '../styles/components/hero.scss'
 
-export interface Props {
-	idName: string;
-  classItems: string;
-}
+// export interface Props {
+// 	idName: string;
+//   classItems: string;
+//   inlineStyles: string;
+// }
 
-const { idName, classItems, inlineStyles } = Astro.props as Props;
+const { idName, classItems, inlineStyles } = Astro.props;
 let className = 'hero'
 if (!!classItems) { 
   className = `${className} ${classItems}`

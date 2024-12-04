@@ -1,21 +1,18 @@
 ---
 export interface Props {
-	carouselIndex: string;
-	dataColumns: string;
+	carouselIndex: number;
+	dataColumns: number;
 	dataId: string;
 }
 
 var { carouselIndex, dataColumns, dataId } = Astro.props as Props;
 
-carouselIndex = parseInt(carouselIndex)
-dataColumns = parseInt(dataColumns).toString()
-
 var forwFunction = `javascript:goBack(this);`
 var backFunction = `javascript:goForw(this);`
 
 ---
-<div class="carousel" id={dataId} data-index={carouselIndex} data-columns={dataColumns} active-item={1}>
-  <a class="arrow" hidden href={`#${dataId}`} onClick={backFunction}>
+<div class="carousel" id={dataId} data-index={carouselIndex} data-columns={dataColumns.toString()} active-item={1}>
+  <a class="arrow" hidden href={`#${dataId}`} onclick={backFunction}>
     <img src="/assets/arrows/L.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Backward.`} />
   </a>
   <div class="img-container">
@@ -23,7 +20,7 @@ var backFunction = `javascript:goForw(this);`
       <slot />
     </div>
   </div>
-  <a class="arrow" hidden href={`#${dataId}`} onClick={forwFunction}>
+  <a class="arrow" hidden href={`#${dataId}`} onclick={forwFunction}>
     <img src="/assets/arrows/R.svg" class="button" draggable="false" alt={`Move Carousel ${carouselIndex} Forwards.`} />
   </a>
 </div>
