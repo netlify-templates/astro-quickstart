@@ -9,13 +9,14 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^4.15.4",
+    "astro": "^5.0.2",
     "prettier-plugin-astro": "^0.13.0",
     "sass": "^1.77.5"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/sitemap": "^3.2.1",
     "cypress": "^13.11.0",
-    "path-to-regexp": "^8.1.0"
+    "path-to-regexp": "^8.1.0",
+    "rxjs": "^7.8.1"
   }
 }
