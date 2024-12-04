@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # Member converted .js files
 members/*/info.js
+
+# Member renamed portfolio items
+members/*/renamedPortfolio/
