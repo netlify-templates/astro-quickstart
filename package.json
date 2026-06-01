@@ -11,7 +11,7 @@
   "devDependencies": {
     "astro": "^5.0.2",
     "prettier-plugin-astro": "^0.14.0",
-    "typescript": "^5.4.4"
+    "typescript": "^6.0.0"
   },
   "dependencies": {
     "cypress": "^13.7.3"
