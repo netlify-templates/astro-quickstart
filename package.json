@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "astro": "^5.0.2",
-    "prettier-plugin-astro": "^0.14.0",
+    "prettier-plugin-astro": "^1.0.0",
     "typescript": "^5.4.4"
   },
   "dependencies": {
